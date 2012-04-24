@@ -1,0 +1,413 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- OSM Map data (c) OpenStreetMap contributors, CC-BY-SA.-->
+<osm version='0.6' generator='JOSM'>
+ <bounds minlat='52.3865359' minlon='9.7200787' maxlat='52.38797' maxlon='9.7226' origin='vi' />
+  <node id='-123044' visible='true' lat='52.3852842882672' lon='9.720725756147527' />
+  <node id='-123042' visible='true' lat='52.38530591748208' lon='9.720793409526825' />
+  <node id='-123036' timestamp='2009-04-03T19:54:40Z' uid='42191' user='Jano John Akim Franke' visible='true' version='2' lat='52.3873465' lon='9.7231487' />
+  <node id='-123035' timestamp='2011-07-31T08:15:55Z' uid='52797' user='hofoen' visible='true' version='3' lat='52.3883447' lon='9.7224328' />
+  <node id='-123034' timestamp='2011-08-07T11:33:04Z' uid='52797' user='hofoen' visible='true' version='2' lat='52.3889422' lon='9.7220652' />
+  <node id='-123033' timestamp='2011-02-14T08:08:23Z' uid='13203' user='bahnpirat' visible='true' version='3' lat='52.3894528' lon='9.7217482' />
+  <node id='-123032' timestamp='2011-02-14T08:08:25Z' uid='13203' user='bahnpirat' visible='true' version='3' lat='52.389587' lon='9.7217273' />
+  <node id='-123023' timestamp='2011-07-24T09:37:43Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3879919' lon='9.7200592'>
+    <tag k='addr:housenumber' v='5' />
+    <tag k='addr:postcode' v='30167' />
+    <tag k='addr:street' v='Schaufelder Straße' />
+    <tag k='amenity' v='restaurant' />
+    <tag k='cuisine' v='pizza' />
+    <tag k='name' v='Pasta &amp; Pizza' />
+    <tag k='wheelchair' v='limited' />
+  </node>
+  <node id='-123022' timestamp='2010-07-22T16:35:39Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3877615' lon='9.7201759'>
+    <tag k='amenity' v='fast_food' />
+    <tag k='cuisine' v='asian' />
+    <tag k='name' v='China Thai Imbiss' />
+  </node>
+  <node id='-123021' timestamp='2010-07-22T16:35:39Z' uid='52797' user='hofoen' visible='true' version='5' lat='52.3877006' lon='9.7203333'>
+    <tag k='name' v='Kiosk' />
+    <tag k='shop' v='kiosk' />
+  </node>
+  <node id='-123020' timestamp='2011-06-11T13:40:13Z' uid='89943' user='Bengatzer' visible='true' version='2' lat='52.387635' lon='9.7205223'>
+    <tag k='amenity' v='cafe' />
+    <tag k='name' v='Der MuffinMann' />
+    <tag k='opening_hours' v='Mo-Fr 08:00-18:00; Sa 10:00-18:00; Su 10:00-18:00' />
+    <tag k='smoking' v='no' />
+    <tag k='wheelchair' v='limited' />
+  </node>
+  <node id='-123019' timestamp='2011-08-07T11:33:03Z' uid='52797' user='hofoen' visible='true' version='8' lat='52.3874457' lon='9.7207723'>
+    <tag k='name' v='Kranz' />
+    <tag k='operator' v='Claus-Werner Stark' />
+    <tag k='phone' v='+49 511 7010650' />
+    <tag k='shop' v='bakery' />
+    <tag k='wheelchair' v='no' />
+  </node>
+  <node id='-123018' timestamp='2011-06-11T13:40:12Z' uid='89943' user='Bengatzer' visible='true' version='6' lat='52.3870098' lon='9.7207585'>
+    <tag k='amenity' v='fast_food' />
+    <tag k='email' v='info@suppenhandlung.de' />
+    <tag k='name' v='Suppenhandlung' />
+    <tag k='opening_hours' v='Mo-Th 10:00-19:00; Fr 10:00-18:00' />
+    <tag k='phone' v='+49 160 97355113' />
+    <tag k='website' v='http://www.suppenhandlung.de/' />
+    <tag k='wheelchair' v='no' />
+  </node>
+  <node id='-123017' timestamp='2011-06-11T00:36:56Z' uid='312244' user='derhedwig' visible='true' version='7' lat='52.3869176' lon='9.7207403'>
+    <tag k='amenity' v='restaurant' />
+    <tag k='email' v='info@s-bar-hannover.de' />
+    <tag k='name' v='S Bar' />
+    <tag k='operator' v='Nesrin Al-Zein' />
+    <tag k='phone' v='+49 511 35396099' />
+    <tag k='website' v='http://www.s-bar-hannover.de/' />
+    <tag k='wheelchair' v='no' />
+  </node>
+  <node id='-123016' timestamp='2011-07-31T07:20:33Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3871589' lon='9.7221781'>
+    <tag k='name' v='Bikers Base 2.0' />
+    <tag k='opening_hours' v='Mo-Fr 10:00-19:00; Sa 10:00-16:00' />
+    <tag k='shop' v='bicycle' />
+    <tag k='wheelchair' v='limited' />
+  </node>
+  <node id='-123015' timestamp='2011-07-31T07:20:39Z' uid='52797' user='hofoen' visible='true' version='2' lat='52.3873317' lon='9.7218176'>
+    <tag k='name' v='let&apos;s Kiosk' />
+    <tag k='shop' v='kiosk' />
+  </node>
+  <node id='-123014' timestamp='2011-07-31T07:20:41Z' uid='52797' user='hofoen' visible='true' version='10' lat='52.3871886' lon='9.7220924'>
+    <tag k='operator' v='Steinecke' />
+    <tag k='shop' v='bakery' />
+    <tag k='wheelchair' v='limited' />
+  </node>
+  <node id='-123013' timestamp='2011-07-31T07:20:38Z' uid='52797' user='hofoen' visible='true' version='7' lat='52.3873938' lon='9.7217308'>
+    <tag k='name' v='Fleischer' />
+    <tag k='shop' v='butcher' />
+    <tag k='wheelchair' v='no' />
+  </node>
+  <node id='-123012' timestamp='2011-07-31T07:20:38Z' uid='52797' user='hofoen' visible='true' version='4' lat='52.3876888' lon='9.7215598'>
+    <tag k='amenity' v='restaurant' />
+    <tag k='name' v='Francesco Natale' />
+    <tag k='wheelchair' v='no' />
+  </node>
+  <node id='-123011' timestamp='2011-07-31T07:20:39Z' uid='52797' user='hofoen' visible='true' version='3' lat='52.3876492' lon='9.7214936'>
+    <tag k='name' v='Ottilie Wegener' />
+    <tag k='shop' v='florist' />
+    <tag k='wheelchair' v='no' />
+  </node>
+  <node id='-123010' timestamp='2011-07-31T07:20:38Z' uid='52797' user='hofoen' visible='true' version='8' lat='52.387583' lon='9.7214344'>
+    <tag k='amenity' v='fast_food' />
+    <tag k='name' v='Asia Imbiss Bok' />
+    <tag k='smoking' v='no' />
+    <tag k='wheelchair' v='limited' />
+  </node>
+  <node id='-123009' timestamp='2011-06-10T18:01:12Z' uid='312244' user='derhedwig' visible='true' version='1' lat='52.3876883' lon='9.7212772'>
+    <tag k='amenity' v='fast_food' />
+    <tag k='name' v='Asia Imbiss Kok' />
+  </node>
+  <node id='-123008' timestamp='2011-07-24T09:38:04Z' uid='52797' user='hofoen' visible='true' version='12' lat='52.3877047' lon='9.7210724'>
+    <tag k='addr:city' v='Hannover' />
+    <tag k='addr:country' v='DE' />
+    <tag k='addr:housenumber' v='9' />
+    <tag k='addr:postcode' v='30167' />
+    <tag k='addr:street' v='An der Lutherkirche' />
+    <tag k='amenity' v='pub' />
+    <tag k='name' v='Werner´s' />
+    <tag k='smoking' v='dedicated' />
+  </node>
+  <node id='-122991' timestamp='2011-07-27T19:06:35Z' uid='52797' user='hofoen' visible='true' version='8' lat='52.3860123' lon='9.7174801' />
+  <node id='-122990' timestamp='2011-07-27T19:06:34Z' uid='52797' user='hofoen' visible='true' version='5' lat='52.3862409' lon='9.7181434' />
+  <node id='-122989' timestamp='2011-07-27T19:06:33Z' uid='52797' user='hofoen' visible='true' version='6' lat='52.3864436' lon='9.7187535' />
+  <node id='-122988' timestamp='2011-08-07T14:51:03Z' uid='52797' user='hofoen' visible='true' version='8' lat='52.3865313' lon='9.7189935' />
+  <node id='-122987' timestamp='2009-05-28T21:15:03Z' uid='55521' user='Ebbe73' visible='true' version='3' lat='52.3865824' lon='9.7191438' />
+  <node id='-122986' timestamp='2011-02-06T13:53:56Z' uid='52797' user='hofoen' visible='true' version='5' lat='52.3866628' lon='9.7197284' />
+  <node id='-122985' timestamp='2010-03-21T14:13:12Z' uid='42191' user='Jano John Akim Franke' visible='true' version='3' lat='52.3853532' lon='9.720655' />
+  <node id='-122984' timestamp='2010-03-21T14:13:12Z' uid='42191' user='Jano John Akim Franke' visible='true' version='2' lat='52.3853683' lon='9.7206705' />
+  <node id='-122983' timestamp='2010-03-21T14:13:12Z' uid='42191' user='Jano John Akim Franke' visible='true' version='2' lat='52.3853892' lon='9.720676' />
+  <node id='-122982' timestamp='2011-07-30T07:44:32Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3856529' lon='9.7206925' />
+  <node id='-122981' timestamp='2011-07-30T07:44:32Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3856764' lon='9.720765' />
+  <node id='-122980' timestamp='2011-07-30T07:45:00Z' uid='52797' user='hofoen' visible='true' version='2' lat='52.386199' lon='9.720801' />
+  <node id='-122979' timestamp='2011-07-30T07:44:32Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3862405' lon='9.7207332' />
+  <node id='-122978' timestamp='2011-07-30T07:45:00Z' uid='52797' user='hofoen' visible='true' version='3' lat='52.3867893' lon='9.7205969' />
+  <node id='-122977' timestamp='2010-03-21T14:38:04Z' uid='42191' user='Jano John Akim Franke' visible='true' version='1' lat='52.3867037' lon='9.7220053' />
+  <node id='-122976' timestamp='2011-06-27T12:08:59Z' uid='42191' user='Jano John Akim Franke' visible='true' version='1' lat='52.3864549' lon='9.7220625' />
+  <node id='-122975' timestamp='2010-03-21T14:45:42Z' uid='42191' user='Jano John Akim Franke' visible='true' version='1' lat='52.3864496' lon='9.7220636' />
+  <node id='-122974' timestamp='2011-06-11T22:25:42Z' uid='312244' user='derhedwig' visible='true' version='2' lat='52.3863942' lon='9.7221354' />
+  <node id='-122973' timestamp='2011-06-27T12:08:58Z' uid='42191' user='Jano John Akim Franke' visible='true' version='1' lat='52.385771' lon='9.7222499' />
+  <node id='-122972' timestamp='2011-06-11T22:25:39Z' uid='312244' user='derhedwig' visible='true' version='1' lat='52.3857425' lon='9.7222551' />
+  <node id='-122971' timestamp='2011-06-11T22:25:41Z' uid='312244' user='derhedwig' visible='true' version='1' lat='52.3856769' lon='9.7222231' />
+  <node id='-122970' timestamp='2011-08-15T11:22:27Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3851806' lon='9.7223279' />
+  <node id='-122969' timestamp='2011-08-15T11:22:58Z' uid='52797' user='hofoen' visible='true' version='4' lat='52.3850935' lon='9.7223834' />
+  <node id='-122968' timestamp='2011-08-15T11:22:27Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3849804' lon='9.7224479' />
+  <node id='-122967' timestamp='2011-08-15T11:22:57Z' uid='52797' user='hofoen' visible='true' version='5' lat='52.3846594' lon='9.7225114' />
+  <node id='-122966' timestamp='2011-08-15T11:22:26Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3846027' lon='9.722463' />
+  <node id='-122965' timestamp='2011-01-30T19:34:54Z' uid='57645' user='KartoGrapHiti' visible='true' version='6' lat='52.384126' lon='9.7225628' />
+  <node id='-122964' timestamp='2009-05-28T21:15:22Z' uid='55521' user='Ebbe73' visible='true' version='4' lat='52.3835228' lon='9.722683' />
+  <node id='-122963' timestamp='2009-05-28T21:15:22Z' uid='55521' user='Ebbe73' visible='true' version='3' lat='52.383326' lon='9.7224626' />
+  <node id='-122962' timestamp='2011-06-12T14:15:40Z' uid='312244' user='derhedwig' visible='true' version='4' lat='52.3831773' lon='9.7223709' />
+  <node id='-122961' timestamp='2011-07-31T08:15:55Z' uid='52797' user='hofoen' visible='true' version='3' lat='52.3883447' lon='9.7224328' />
+  <node id='-122960' timestamp='2011-07-31T08:15:55Z' uid='52797' user='hofoen' visible='true' version='3' lat='52.3883261' lon='9.7223725' />
+  <node id='-122959' timestamp='2011-08-07T14:18:29Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3875996' lon='9.7213253' />
+  <node id='-122958' timestamp='2011-08-07T14:18:32Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3886931' lon='9.7208683'>
+    <tag k='traffic_calming' v='bump' />
+  </node>
+  <node id='-122957' timestamp='2011-08-07T11:33:06Z' uid='52797' user='hofoen' visible='true' version='7' lat='52.3887994' lon='9.7208581' />
+  <node id='-122956' timestamp='2011-08-07T14:18:33Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3888692' lon='9.7208542'>
+    <tag k='traffic_calming' v='bump' />
+  </node>
+  <node id='-122955' timestamp='2011-08-09T20:08:21Z' uid='52797' user='hofoen' visible='true' version='5' lat='52.3903006' lon='9.7207624' />
+  <node id='-122954' timestamp='2011-08-07T14:51:04Z' uid='52797' user='hofoen' visible='true' version='4' lat='52.387641' lon='9.7207466' />
+  <node id='-122953' timestamp='2011-08-07T14:51:04Z' uid='52797' user='hofoen' visible='true' version='3' lat='52.3876837' lon='9.7205257' />
+  <node id='-122952' timestamp='2011-07-30T07:44:58Z' uid='52797' user='hofoen' visible='true' version='4' lat='52.3879101' lon='9.7199783'>
+    <tag k='traffic_calming' v='hump' />
+  </node>
+  <node id='-122951' timestamp='2011-08-07T11:33:06Z' uid='52797' user='hofoen' visible='true' version='6' lat='52.387936' lon='9.7198825' />
+  <node id='-122950' timestamp='2011-08-07T14:51:04Z' uid='52797' user='hofoen' visible='true' version='4' lat='52.3880315' lon='9.7194028' />
+  <node id='-122949' timestamp='2011-08-07T14:51:03Z' uid='52797' user='hofoen' visible='true' version='6' lat='52.388085' lon='9.7191337' />
+  <node id='-122948' timestamp='2011-08-07T14:51:01Z' uid='52797' user='hofoen' visible='true' version='2' lat='52.3881372' lon='9.7188612' />
+  <node id='-122947' timestamp='2010-03-21T14:07:08Z' uid='42191' user='Jano John Akim Franke' visible='true' version='1' lat='52.3881576' lon='9.7186047' />
+  <node id='-122946' timestamp='2011-02-02T10:54:11Z' uid='42191' user='Jano John Akim Franke' visible='true' version='1' lat='52.3881688' lon='9.718548' />
+  <node id='-122945' timestamp='2011-02-06T13:13:42Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3881836' lon='9.7184734' />
+  <node id='-122944' timestamp='2011-02-02T10:54:10Z' uid='42191' user='Jano John Akim Franke' visible='true' version='1' lat='52.3881986' lon='9.7183974' />
+  <node id='-122943' timestamp='2009-05-28T21:15:18Z' uid='55521' user='Ebbe73' visible='true' version='4' lat='52.3882085' lon='9.7183474' />
+  <node id='-122942' timestamp='2011-02-06T13:13:42Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3883213' lon='9.7177762' />
+  <node id='-122941' timestamp='2009-09-27T13:04:51Z' uid='42191' user='Jano John Akim Franke' visible='true' version='6' lat='52.3885997' lon='9.7163664' />
+  <node id='-122940' timestamp='2011-08-07T11:33:07Z' uid='52797' user='hofoen' visible='true' version='3' lat='52.387523' lon='9.7207495' />
+  <node id='-122939' timestamp='2011-07-30T07:45:00Z' uid='52797' user='hofoen' visible='true' version='2' lat='52.3875038' lon='9.7204998' />
+  <node id='-122938' timestamp='2011-07-27T19:06:35Z' uid='52797' user='hofoen' visible='true' version='5' lat='52.3874685' lon='9.7203142' />
+  <node id='-122937' timestamp='2011-07-27T19:06:35Z' uid='52797' user='hofoen' visible='true' version='5' lat='52.3873534' lon='9.7197989' />
+  <node id='-122936' timestamp='2011-07-27T19:06:34Z' uid='52797' user='hofoen' visible='true' version='4' lat='52.3871592' lon='9.7191537' />
+  <node id='-122935' timestamp='2011-08-07T14:51:03Z' uid='52797' user='hofoen' visible='true' version='6' lat='52.3869453' lon='9.718677' />
+  <node id='-122934' timestamp='2011-07-27T19:06:34Z' uid='52797' user='hofoen' visible='true' version='6' lat='52.3868881' lon='9.7185336' />
+  <node id='-122933' timestamp='2011-07-27T19:06:34Z' uid='52797' user='hofoen' visible='true' version='4' lat='52.3867489' lon='9.7182189' />
+  <node id='-122932' timestamp='2011-07-27T19:06:34Z' uid='52797' user='hofoen' visible='true' version='4' lat='52.3864648' lon='9.7175682' />
+  <node id='-122931' timestamp='2011-07-27T19:06:34Z' uid='52797' user='hofoen' visible='true' version='5' lat='52.3862369' lon='9.7170466' />
+  <node id='-122930' timestamp='2011-07-27T19:06:35Z' uid='52797' user='hofoen' visible='true' version='6' lat='52.3861525' lon='9.7169781' />
+  <node id='-122929' timestamp='2011-08-07T11:33:07Z' uid='52797' user='hofoen' visible='true' version='3' lat='52.3875756' lon='9.7209054'>
+    <tag k='traffic_calming' v='bump' />
+  </node>
+  <node id='-122928' timestamp='2011-08-07T11:33:07Z' uid='52797' user='hofoen' visible='true' version='3' lat='52.3875749' lon='9.7208317'>
+    <tag k='traffic_calming' v='hump' />
+  </node>
+  <node id='-122927' timestamp='2011-08-07T14:19:19Z' uid='52797' user='hofoen' visible='true' version='9' lat='52.3875765' lon='9.7209574' />
+  <node id='-122926' timestamp='2011-08-07T14:19:19Z' uid='52797' user='hofoen' visible='true' version='5' lat='52.3875766' lon='9.7212544' />
+  <node id='-122925' timestamp='2011-08-07T14:19:21Z' uid='52797' user='hofoen' visible='true' version='2' lat='52.3874963' lon='9.7213541' />
+  <node id='-122924' timestamp='2011-07-30T07:44:58Z' uid='52797' user='hofoen' visible='true' version='6' lat='52.3870536' lon='9.7221256' />
+  <node id='-122923' timestamp='2010-03-21T14:38:05Z' uid='42191' user='Jano John Akim Franke' visible='true' version='1' lat='52.3871299' lon='9.7228023' />
+  <node id='-122922' timestamp='2011-07-02T18:37:44Z' uid='42191' user='Jano John Akim Franke' visible='true' version='9' lat='52.387232' lon='9.7233675'>
+    <tag k='TMC:cid_58:tabcd_1:Class' v='Point' />
+    <tag k='TMC:cid_58:tabcd_1:Direction' v='both' />
+    <tag k='TMC:cid_58:tabcd_1:LCLversion' v='9.00' />
+    <tag k='TMC:cid_58:tabcd_1:LocationCode' v='28459' />
+    <tag k='TMC:cid_58:tabcd_1:NextLocationCode' v='28460' />
+    <tag k='TMC:cid_58:tabcd_1:PrevLocationCode' v='47623' />
+    <tag k='highway' v='traffic_signals' />
+  </node>
+  <node id='-122921' timestamp='2009-02-25T03:36:35Z' uid='42191' user='Jano John Akim Franke' visible='true' version='5' lat='52.3869768' lon='9.7219427' />
+  <node id='-122920' timestamp='2011-08-07T14:18:28Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3869802' lon='9.7219164' />
+  <node id='-122919' timestamp='2011-08-07T11:32:53Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3869912' lon='9.7218206' />
+  <node id='-122918' timestamp='2011-07-30T07:44:59Z' uid='52797' user='hofoen' visible='true' version='8' lat='52.3867061' lon='9.7207719' />
+  <node id='-122917' timestamp='2011-08-07T11:32:52Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3867929' lon='9.7208341' />
+  <node id='-122916' timestamp='2011-08-07T11:32:53Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.38746' lon='9.7209034' />
+  <node id='-122915' timestamp='2011-08-07T11:32:53Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3875413' lon='9.7208703' />
+  <node id='-122914' timestamp='2011-08-07T11:32:53Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3875753' lon='9.7208688' />
+  <way id='-123043' action='modify' visible='true'>
+    <nd ref='-122969' />
+    <nd ref='-123042' />
+    <nd ref='-123044' />
+    <nd ref='-122985' />
+    <tag k='highway' v='tertiary' />
+    <tag k='note' v='out_of_bb' />
+  </way>
+  <way id='-123031' action='modify' timestamp='2011-05-05T21:03:46Z' uid='41889' user='Kurt Krampmeier' visible='true'>
+    <nd ref='-123032' />
+    <nd ref='-123033' />
+    <nd ref='-123034' />
+    <nd ref='-122961' />
+    <nd ref='-123035' />
+    <nd ref='-123036' />
+    <nd ref='-122922' />
+    <tag k='cycleway' v='track' />
+    <tag k='highway' v='residential' />
+    <tag k='name' v='Engelbosteler Damm' />
+    <tag k='oneway' v='yes' />
+    <tag k='osmarender:renderName' v='no' />
+    <tag k='postal_code' v='30167' />
+  </way>
+  <way id='-122913' action='modify' timestamp='2010-06-29T18:09:38Z' uid='179033' user='Radeln' visible='true'>
+    <nd ref='-122978' />
+    <nd ref='-122986' />
+    <nd ref='-122987' />
+    <nd ref='-122988' />
+    <nd ref='-122989' />
+    <nd ref='-122990' />
+    <nd ref='-122991' />
+    <nd ref='-122930' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='Hahnenstraße' />
+    <tag k='postal_code' v='30167' />
+  </way>
+  <way id='-122912' timestamp='2011-07-30T07:44:46Z' uid='52797' user='hofoen' visible='true' version='11'>
+    <nd ref='-122978' />
+    <nd ref='-122918' />
+    <nd ref='-122979' />
+    <nd ref='-122980' />
+    <nd ref='-122981' />
+    <nd ref='-122982' />
+    <nd ref='-122983' />
+    <nd ref='-122984' />
+    <nd ref='-122985' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='Im Moore' />
+    <tag k='postal_code' v='30167' />
+  </way>
+  <way id='-122911' timestamp='2011-08-15T11:22:29Z' uid='52797' user='hofoen' visible='true' version='11'>
+    <nd ref='-122962' />
+    <nd ref='-122963' />
+    <nd ref='-122964' />
+    <nd ref='-122965' />
+    <nd ref='-122966' />
+    <nd ref='-122967' />
+    <nd ref='-122968' />
+    <nd ref='-122969' />
+    <nd ref='-122970' />
+    <nd ref='-122971' />
+    <nd ref='-122972' />
+    <nd ref='-122973' />
+    <nd ref='-122974' />
+    <nd ref='-122975' />
+    <nd ref='-122976' />
+    <nd ref='-122977' />
+    <nd ref='-122921' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='Am Kleinen Felde' />
+    <tag k='postal_code' v='30167' />
+  </way>
+  <way id='-122910' action='modify' timestamp='2011-08-07T14:18:38Z' uid='52797' user='hofoen' visible='true'>
+    <nd ref='-122926' />
+    <nd ref='-122959' />
+    <nd ref='-122960' />
+    <nd ref='-123035' />
+    <nd ref='-122961' />
+    <tag k='cycleway' v='opposite' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='Hornemannweg' />
+    <tag k='oneway' v='yes' />
+    <tag k='postal_code' v='30167' />
+    <tag k='width' v='8.9' />
+  </way>
+  <way id='-122909' timestamp='2011-08-07T14:18:38Z' uid='52797' user='hofoen' visible='true' version='8'>
+    <nd ref='-122955' />
+    <nd ref='-122956' />
+    <nd ref='-122957' />
+    <nd ref='-122958' />
+    <nd ref='-122927' />
+    <tag k='cycleway' v='opposite' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='Heisenstraße' />
+    <tag k='oneway' v='yes' />
+    <tag k='postal_code' v='30167' />
+    <tag k='width' v='9.2' />
+  </way>
+  <way id='-122908' timestamp='2011-06-10T16:08:48Z' uid='312244' user='derhedwig' visible='true' version='15'>
+    <nd ref='-122941' />
+    <nd ref='-122942' />
+    <nd ref='-122943' />
+    <nd ref='-122944' />
+    <nd ref='-122945' />
+    <nd ref='-122946' />
+    <nd ref='-122947' />
+    <nd ref='-122948' />
+    <nd ref='-122949' />
+    <nd ref='-122950' />
+    <nd ref='-122951' />
+    <nd ref='-122952' />
+    <nd ref='-122953' />
+    <nd ref='-122954' />
+    <nd ref='-122928' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='Schaufelder Straße' />
+    <tag k='postal_code' v='30167' />
+    <tag k='width' v='13.95' />
+  </way>
+  <way id='-122907' timestamp='2010-03-21T14:13:13Z' uid='42191' user='Jano John Akim Franke' visible='true' version='9'>
+    <nd ref='-122930' />
+    <nd ref='-122931' />
+    <nd ref='-122932' />
+    <nd ref='-122933' />
+    <nd ref='-122934' />
+    <nd ref='-122935' />
+    <nd ref='-122936' />
+    <nd ref='-122937' />
+    <nd ref='-122938' />
+    <nd ref='-122939' />
+    <nd ref='-122940' />
+    <nd ref='-122928' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='Rehbockstraße' />
+    <tag k='postal_code' v='30167' />
+    <tag k='width' v='11.68' />
+  </way>
+  <way id='-122906' timestamp='2011-08-07T11:32:58Z' uid='52797' user='hofoen' visible='true' version='3'>
+    <nd ref='-122928' />
+    <nd ref='-122914' />
+    <nd ref='-122929' />
+    <nd ref='-122927' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='postal_code' v='30167' />
+    <tag k='surface' v='cobblestone' />
+  </way>
+  <way id='-122905' timestamp='2009-05-28T21:16:16Z' uid='55521' user='Ebbe73' visible='true' version='5'>
+    <nd ref='-122927' />
+    <nd ref='-122926' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='postal_code' v='30167' />
+  </way>
+  <way id='-122904' timestamp='2010-03-21T14:13:14Z' uid='42191' user='Jano John Akim Franke' visible='true' version='7'>
+    <nd ref='-122924' />
+    <nd ref='-122925' />
+    <nd ref='-122926' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='oneway' v='yes' />
+    <tag k='postal_code' v='30167' />
+    <tag k='width' v='14' />
+  </way>
+  <way id='-122903' timestamp='2010-03-21T14:38:06Z' uid='42191' user='Jano John Akim Franke' visible='true' version='6'>
+    <nd ref='-122922' />
+    <nd ref='-122923' />
+    <nd ref='-122924' />
+    <nd ref='-122921' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='postal_code' v='30167' />
+  </way>
+  <way id='-122902' timestamp='2011-08-07T14:18:36Z' uid='52797' user='hofoen' visible='true' version='7'>
+    <nd ref='-122917' />
+    <nd ref='-122919' />
+    <nd ref='-122920' />
+    <nd ref='-122921' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='pedestrian' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='postal_code' v='30167' />
+  </way>
+  <way id='-122901' timestamp='2011-08-07T11:32:58Z' uid='52797' user='hofoen' visible='true' version='13'>
+    <nd ref='-122914' />
+    <nd ref='-122915' />
+    <nd ref='-122916' />
+    <nd ref='-122917' />
+    <nd ref='-122918' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='pedestrian' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='postal_code' v='30167' />
+  </way>
+</osm>

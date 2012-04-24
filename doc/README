@@ -1,0 +1,7 @@
+Run ./gen_epydoc.sh to generate API documention using epydoc [1].
+It will be stored in the epydoc/ sub-folder.
+See other files in this directory for more documentation.
+Exhaustive documentation using Sphinx [2] may follow later.
+
+[1] http://epydoc.sourceforge.net/
+[2] http://sphinx.pocoo.org/

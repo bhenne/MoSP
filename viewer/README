@@ -1,0 +1,35 @@
+MoSP-Simulation Viewer
+(pyglet-based)
+
+Starting the Viewer:
+    The Viewer can be started without a running simulation. In this case it just works as a viewer for OpenStreetMap.
+
+    For starting the player with a simulation to display:
+        1. Start a simulation using the SocketPlayerMonitor. It will then wait for a Viewer to connect.
+        2a. When running the simulation on another computer the host must be changed accordingly when initializing the player.
+        2b. When running the simulation on a different port than default (60001), this must be changed when initializing the player, too.
+        3. Start the player. Usually this can be done by simply running player.py
+
+Controls for the player:
+    Move the map using the mouse or arrow-keys.
+
+    Zoom by using the mouse-wheel, +/- keys or CTRL+UP/DOWN
+
+    Other keys:
+        CTRL+F - toggle fullscreen
+        CTRL+S - take screenshot
+        F      - toggle FPS in lower left corner
+        Q/ESC  - quit the Viewer
+        Space  - return to last position the player was centered on
+
+Recording a video:
+    There is no direct way for recording a video. You can however try this little workaround:
+
+    Schedule taking screenshots with the desired refreshrate (here 1/60.0) by calling
+
+        pyglet.clock.schedule_interval(Player.take_screenshot, 1/60.0)
+
+    and create a video using the resulting images.
+    NOTE: This is just a suggestion without any guarantee of actually working. It has not been testet and may result in a large loss of performance!
+    
+    For a nicer look it might be a good idea to disable drawing the bounding box when initializing the SocketPlayerMonitor (for example by setting monitor.draw_bb to False before starting the simulation).

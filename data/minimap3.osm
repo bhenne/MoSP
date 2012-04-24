@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- OSM Map data (c) OpenStreetMap contributors, CC-BY-SA.-->
+<osm version='0.6' generator='JOSM'>
+ <bounds minlat='52.3781404' minlon='9.7104549' maxlat='52.381336399999995' maxlon='9.7164631' origin='vi' />
+  <node id='-124122' action='modify' timestamp='2009-03-14T18:59:56Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3785408' lon='9.7154456'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124121' action='modify' timestamp='2009-03-14T18:59:55Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.378523' lon='9.7155933'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124120' action='modify' timestamp='2009-03-14T18:59:56Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3785558' lon='9.7157924'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124119' action='modify' timestamp='2009-03-14T18:59:55Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3786143' lon='9.7159544'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124118' action='modify' timestamp='2009-03-14T18:59:54Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3786651' lon='9.7160218'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124117' action='modify' timestamp='2009-03-14T18:59:56Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3787498' lon='9.7160788'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124116' action='modify' timestamp='2009-03-14T18:59:56Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3788348' lon='9.716104'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124115' action='modify' timestamp='2009-03-14T18:59:56Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3789478' lon='9.7160564'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124114' action='modify' timestamp='2009-03-14T18:59:56Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3790552' lon='9.7159544'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124113' action='modify' timestamp='2009-03-14T18:59:54Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.379103' lon='9.7158536'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124112' action='modify' timestamp='2009-05-28T21:15:16Z' uid='55521' user='Ebbe73' visible='true' version='3' lat='52.3795686' lon='9.7146855'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124111' action='modify' timestamp='2009-03-14T18:59:55Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3795973' lon='9.7145589'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124110' action='modify' timestamp='2009-03-14T18:59:55Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3796057' lon='9.7144433'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124109' action='modify' timestamp='2009-03-14T18:59:55Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3795785' lon='9.7142569'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124108' action='modify' timestamp='2009-03-14T18:59:54Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3795142' lon='9.7140812'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124107' action='modify' timestamp='2009-05-28T21:15:16Z' uid='55521' user='Ebbe73' visible='true' version='3' lat='52.3794647' lon='9.7140153'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124106' action='modify' timestamp='2009-03-14T18:59:55Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3793856' lon='9.713952'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124105' action='modify' timestamp='2009-03-14T18:59:54Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3792931' lon='9.7139312'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124104' action='modify' timestamp='2009-03-14T18:59:55Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3791756' lon='9.713966'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124103' action='modify' timestamp='2009-03-14T18:59:54Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.379072' lon='9.7140812'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124102' action='modify' timestamp='2009-05-28T21:15:16Z' uid='55521' user='Ebbe73' visible='true' version='4' lat='52.379047' lon='9.7141275'>
+    <tag k='highway' v='sports' />
+  </node>
+  <node id='-124101' action='modify' timestamp='2009-05-28T21:15:16Z' uid='55521' user='Ebbe73' visible='true' version='3' lat='52.3785814' lon='9.7152957'>
+    <tag k='highway' v='sports' />
+  </node>
+  <way id='-124100' action='modify' timestamp='2009-05-28T21:16:37Z' uid='55521' user='Ebbe73' visible='true' version='3'>
+    <nd ref='-124101' />
+    <nd ref='-124102' />
+    <nd ref='-124103' />
+    <nd ref='-124104' />
+    <nd ref='-124105' />
+    <nd ref='-124106' />
+    <nd ref='-124107' />
+    <nd ref='-124108' />
+    <nd ref='-124109' />
+    <nd ref='-124110' />
+    <nd ref='-124111' />
+    <nd ref='-124112' />
+    <nd ref='-124113' />
+    <nd ref='-124114' />
+    <nd ref='-124115' />
+    <nd ref='-124116' />
+    <nd ref='-124117' />
+    <nd ref='-124118' />
+    <nd ref='-124119' />
+    <nd ref='-124120' />
+    <nd ref='-124121' />
+    <nd ref='-124122' />
+    <nd ref='-124101' />
+    <tag k='highway' v='sports' />
+    <tag k='leisure' v='track' />
+    <tag k='name' v='A-Platz' />
+    <tag k='sport' v='multi' />
+  </way>
+</osm>

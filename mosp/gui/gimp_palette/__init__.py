@@ -1,0 +1,1 @@
+"""Use Gimp color palettes."""

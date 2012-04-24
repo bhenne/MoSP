@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <node id='-158383' timestamp='2010-12-07T19:35:36Z' uid='34953' user='Langlaeufer' visible='true' version='5' lat='52.3810181' lon='9.6943362' />
+  <node id='-158382' timestamp='2009-03-18T18:14:01Z' uid='51045' user='Geogast' visible='true' version='9' lat='52.3841278' lon='9.6908035' />
+  <node id='-158381' timestamp='2009-12-28T08:48:05Z' uid='44200' user='keinseier' visible='true' version='4' lat='52.3871146' lon='9.6899577' />
+  <node id='-158380' timestamp='2010-12-07T19:25:55Z' uid='34953' user='Langlaeufer' visible='true' version='3' lat='52.3899615' lon='9.6864296' />
+  <node id='-158379' timestamp='2011-01-05T11:02:36Z' uid='12966' user='Torsten Teubert' visible='true' version='1' lat='52.390845' lon='9.6818431' />
+  <node id='-158378' timestamp='2009-08-30T20:38:29Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3926218' lon='9.6776145'>
+    <tag k='noexit' v='yes' />
+  </node>
+  <node id='-158377' timestamp='2009-05-28T21:15:11Z' uid='55521' user='Ebbe73' visible='true' version='4' lat='52.3960617' lon='9.6725741' />
+  <node id='-158376' timestamp='2010-02-25T19:35:25Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3961824' lon='9.6773847' />
+  <node id='-158375' timestamp='2010-03-19T16:14:05Z' uid='55521' user='Ebbe73' visible='true' version='3' lat='52.3959282' lon='9.6831652'>
+    <tag k='highway' v='traffic_signals' />
+  </node>
+  <node id='-158374' timestamp='2010-03-06T23:54:53Z' uid='55521' user='Ebbe73' visible='true' version='2' lat='52.3964746' lon='9.6881367'>
+    <tag k='addr:housenumber' v='2' />
+    <tag k='addr:postcode' v='30419' />
+    <tag k='addr:street' v='Weirauchstraße' />
+  </node>
+  <node id='-158373' timestamp='2008-09-25T16:19:05Z' uid='28176' user='Nullkommavier' visible='true' version='1' lat='52.3965892' lon='9.6930593' />
+  <node id='-158372' timestamp='2009-06-13T00:58:46Z' uid='55521' user='Ebbe73' visible='true' version='7' lat='52.396338' lon='9.698271' />
+  <node id='-158371' timestamp='2009-05-16T20:37:08Z' uid='42123' user='Ropino' visible='true' version='3' lat='52.3930364' lon='9.7144725' />
+  <node id='-158370' timestamp='2010-10-16T16:24:04Z' uid='42191' user='Jano John Akim Franke' visible='true' version='4' lat='52.4060298' lon='9.7348959' />
+  <node id='-158369' timestamp='2009-04-09T11:25:21Z' uid='95293' user='Nightdive' visible='true' version='2' lat='52.4092373' lon='9.7346948' />
+  <node id='-158368' timestamp='2010-05-02T20:49:50Z' uid='81927' user='e4s' visible='true' version='5' lat='52.4080801' lon='9.7370132' />
+  <node id='-158367' timestamp='2009-09-23T07:10:20Z' uid='177102' user='iko005' visible='true' version='1' lat='52.4053364' lon='9.7475704' />
+  <node id='-158366' timestamp='2009-09-23T07:39:38Z' uid='177102' user='iko005' visible='true' version='1' lat='52.4051587' lon='9.7537965' />
+  <node id='-158365' timestamp='2009-09-23T07:39:39Z' uid='177102' user='iko005' visible='true' version='1' lat='52.4057085' lon='9.7656926' />
+  <node id='-158364' timestamp='2009-09-23T07:39:40Z' uid='177102' user='iko005' visible='true' version='1' lat='52.4065986' lon='9.7805499' />
+  <node id='-158363' timestamp='2010-12-03T13:31:22Z' uid='34953' user='Langlaeufer' visible='true' version='2' lat='52.4065309' lon='9.7908042' />
+  <node id='-158362' timestamp='2010-09-26T13:14:00Z' uid='15075' user='Reddig' visible='true' version='7' lat='52.4029503' lon='9.7916593'>
+    <tag k='highway' v='traffic_signals' />
+  </node>
+  <node id='-158361' timestamp='2011-03-14T14:52:50Z' uid='160164' user='mahau' visible='true' version='4' lat='52.3942388' lon='9.7935301'>
+    <tag k='TMC:cid_58:tabcd_1:Class' v='Point' />
+    <tag k='TMC:cid_58:tabcd_1:Direction' v='negative' />
+    <tag k='TMC:cid_58:tabcd_1:LCLversion' v='9.00' />
+    <tag k='TMC:cid_58:tabcd_1:LocationCode' v='22780' />
+    <tag k='TMC:cid_58:tabcd_1:NextLocationCode' v='22781' />
+    <tag k='TMC:cid_58:tabcd_1:PrevLocationCode' v='22779' />
+  </node>
+  <node id='-158360' timestamp='2009-08-01T22:39:25Z' uid='42191' user='Jano John Akim Franke' visible='true' version='1' lat='52.3912756' lon='9.7873454' />
+  <node id='-158359' timestamp='2011-03-14T14:51:43Z' uid='160164' user='mahau' visible='true' version='2' lat='52.3842227' lon='9.7846993' />
+  <node id='-158358' timestamp='2008-08-15T13:22:23Z' uid='12966' user='Torsten Teubert' visible='true' version='1' lat='52.3756629' lon='9.7771947' />
+  <node id='-158357' timestamp='2007-04-06T21:15:37Z' uid='7068' user='YitLu' visible='true' version='1' lat='52.3679065' lon='9.7788662' />
+  <node id='-158356' timestamp='2008-09-29T16:51:16Z' uid='28176' user='Nullkommavier' visible='true' version='3' lat='52.3566872' lon='9.7857323' />
+  <node id='-158355' timestamp='2007-02-10T21:07:51Z' visible='true' version='1' lat='52.3541478' lon='9.7900414' />
+  <node id='-158354' timestamp='2008-09-21T18:03:59Z' uid='28176' user='Nullkommavier' visible='true' version='2' lat='52.3511946' lon='9.7933031' />
+  <node id='-158353' timestamp='2008-12-15T17:25:02Z' uid='36745' user='Gluko' visible='true' version='7' lat='52.3467698' lon='9.7973302' />
+  <node id='-158352' timestamp='2009-03-28T10:39:49Z' uid='5986' user='user_5986' visible='true' version='9' lat='52.3388611' lon='9.8036836' />
+  <node id='-158351' timestamp='2008-12-15T17:31:27Z' uid='36745' user='Gluko' visible='true' version='2' lat='52.3330709' lon='9.8106843' />
+  <node id='-158350' timestamp='2011-01-21T15:06:27Z' uid='42191' user='Jano John Akim Franke' visible='true' version='1' lat='52.3280374' lon='9.8003848' />
+  <node id='-158349' timestamp='2011-02-21T05:24:10Z' uid='54626' user='mapserver' visible='true' version='3' lat='52.32091' lon='9.7583995' />
+  <node id='-158348' timestamp='2009-05-02T00:25:41Z' uid='55521' user='Ebbe73' visible='true' version='1' lat='52.3383129' lon='9.7415211' />
+  <node id='-158347' timestamp='2009-06-22T18:12:09Z' uid='16692' user='JSp1152' visible='true' version='2' lat='52.3359652' lon='9.727585' />
+  <node id='-158346' timestamp='2009-02-12T09:39:16Z' uid='31118' user='Lulu-Ann' visible='true' version='3' lat='52.3378897' lon='9.7204643' />
+  <node id='-158345' timestamp='2008-12-15T17:00:48Z' uid='36745' user='Gluko' visible='true' version='2' lat='52.341724' lon='9.721013' />
+  <node id='-158344' timestamp='2008-12-15T17:00:48Z' uid='36745' user='Gluko' visible='true' version='2' lat='52.3453114' lon='9.7194633' />
+  <node id='-158343' timestamp='2008-04-02T11:23:06Z' uid='28176' user='Nullkommavier' visible='true' version='1' lat='52.3472929' lon='9.718962' />
+  <node id='-158342' timestamp='2008-03-29T00:48:18Z' uid='28176' user='Nullkommavier' visible='true' version='1' lat='52.3535542' lon='9.7190846' />
+  <node id='-158341' timestamp='2008-03-26T16:59:35Z' uid='28176' user='Nullkommavier' visible='true' version='1' lat='52.3562617' lon='9.7174129' />
+  <node id='-158340' timestamp='2009-02-12T09:32:50Z' uid='31118' user='Lulu-Ann' visible='true' version='9' lat='52.3621339' lon='9.7137654' />
+  <node id='-158339' timestamp='2007-02-17T12:44:03Z' uid='4906' user='lotho' visible='true' version='1' lat='52.3633803' lon='9.7103064' />
+  <node id='-158338' timestamp='2008-02-25T21:24:30Z' uid='28176' user='Nullkommavier' visible='true' version='2' lat='52.3647488' lon='9.7059221' />
+  <node id='-158337' timestamp='2009-12-05T09:44:20Z' uid='63973' user='Gipx' visible='true' version='1' lat='52.3670634' lon='9.7036211' />
+  <node id='-158336' timestamp='2007-08-12T12:47:47Z' uid='11850' user='cs_' visible='true' version='1' lat='52.3728027' lon='9.6993303' />
+  <way id='-158334' action='modify' visible='true'>
+    <nd ref='-158383' />
+    <nd ref='-158336' />
+    <nd ref='-158337' />
+    <nd ref='-158338' />
+    <nd ref='-158339' />
+    <nd ref='-158340' />
+    <nd ref='-158341' />
+    <nd ref='-158342' />
+    <nd ref='-158343' />
+    <nd ref='-158344' />
+    <nd ref='-158345' />
+    <nd ref='-158346' />
+    <nd ref='-158347' />
+    <nd ref='-158348' />
+    <nd ref='-158349' />
+    <nd ref='-158350' />
+    <nd ref='-158351' />
+    <nd ref='-158352' />
+    <nd ref='-158353' />
+    <nd ref='-158354' />
+    <nd ref='-158355' />
+    <nd ref='-158356' />
+    <nd ref='-158357' />
+    <nd ref='-158358' />
+    <nd ref='-158359' />
+    <nd ref='-158360' />
+    <nd ref='-158361' />
+    <nd ref='-158362' />
+    <nd ref='-158363' />
+    <nd ref='-158364' />
+    <nd ref='-158365' />
+    <nd ref='-158366' />
+    <nd ref='-158367' />
+    <nd ref='-158368' />
+    <nd ref='-158369' />
+    <nd ref='-158370' />
+    <nd ref='-158371' />
+    <nd ref='-158372' />
+    <nd ref='-158373' />
+    <nd ref='-158374' />
+    <nd ref='-158375' />
+    <nd ref='-158376' />
+    <nd ref='-158377' />
+    <nd ref='-158378' />
+    <nd ref='-158379' />
+    <nd ref='-158380' />
+    <nd ref='-158381' />
+    <nd ref='-158382' />
+    <nd ref='-158383' />
+  </way>
+</osm>

@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- OSM Map data (c) OpenStreetMap contributors, CC-BY-SA.-->
+<osm version='0.6' generator='JOSM'>
+ <bounds minlat='52.3865359' minlon='9.7200787' maxlat='52.38797' maxlon='9.7226' origin='vi' />
+  <node id='-122809' timestamp='2011-06-11T13:40:13Z' uid='89943' user='Bengatzer' visible='true' version='2' lat='52.387635' lon='9.7205223'>
+    <tag k='amenity' v='cafe' />
+    <tag k='name' v='Der MuffinMann' />
+    <tag k='opening_hours' v='Mo-Fr 08:00-18:00; Sa 10:00-18:00; Su 10:00-18:00' />
+    <tag k='smoking' v='no' />
+    <tag k='wheelchair' v='limited' />
+  </node>
+  <node id='-122806' timestamp='2011-06-11T00:36:56Z' uid='312244' user='derhedwig' visible='true' version='7' lat='52.3869176' lon='9.7207403'>
+    <tag k='amenity' v='restaurant' />
+    <tag k='email' v='info@s-bar-hannover.de' />
+    <tag k='name' v='S Bar' />
+    <tag k='operator' v='Nesrin Al-Zein' />
+    <tag k='phone' v='+49 511 35396099' />
+    <tag k='website' v='http://www.s-bar-hannover.de/' />
+    <tag k='wheelchair' v='no' />
+  </node>
+  <node id='-122805' timestamp='2011-08-07T11:33:03Z' uid='52797' user='hofoen' visible='true' version='8' lat='52.3874457' lon='9.7207723'>
+    <tag k='name' v='Kranz' />
+    <tag k='operator' v='Claus-Werner Stark' />
+    <tag k='phone' v='+49 511 7010650' />
+    <tag k='shop' v='bakery' />
+    <tag k='wheelchair' v='no' />
+  </node>
+  <node id='-122803' timestamp='2011-07-31T07:20:38Z' uid='52797' user='hofoen' visible='true' version='8' lat='52.387583' lon='9.7214344'>
+    <tag k='amenity' v='fast_food' />
+    <tag k='name' v='Asia Imbiss Bok' />
+    <tag k='smoking' v='no' />
+    <tag k='wheelchair' v='limited' />
+  </node>
+  <node id='-122802' timestamp='2011-06-10T18:01:12Z' uid='312244' user='derhedwig' visible='true' version='1' lat='52.3876883' lon='9.7212772'>
+    <tag k='amenity' v='fast_food' />
+    <tag k='name' v='Asia Imbiss Kok' />
+  </node>
+  <node id='-122801' timestamp='2011-07-24T09:38:04Z' uid='52797' user='hofoen' visible='true' version='12' lat='52.3877047' lon='9.7210724'>
+    <tag k='addr:city' v='Hannover' />
+    <tag k='addr:country' v='DE' />
+    <tag k='addr:housenumber' v='9' />
+    <tag k='addr:postcode' v='30167' />
+    <tag k='addr:street' v='An der Lutherkirche' />
+    <tag k='amenity' v='pub' />
+    <tag k='name' v='Werner´s' />
+    <tag k='smoking' v='dedicated' />
+  </node>
+  <node id='-122782' timestamp='2011-08-07T14:19:21Z' uid='52797' user='hofoen' visible='true' version='2' lat='52.3874963' lon='9.7213541' />
+  <node id='-122781' timestamp='2011-07-30T07:44:58Z' uid='52797' user='hofoen' visible='true' version='6' lat='52.3870536' lon='9.7221256' />
+  <node id='-122780' timestamp='2011-08-07T11:33:07Z' uid='52797' user='hofoen' visible='true' version='3' lat='52.3875756' lon='9.7209054'>
+    <tag k='traffic_calming' v='bump' />
+  </node>
+  <node id='-122778' timestamp='2011-08-07T14:19:19Z' uid='52797' user='hofoen' visible='true' version='5' lat='52.3875766' lon='9.7212544' />
+  <node id='-122777' timestamp='2011-08-07T14:19:19Z' uid='52797' user='hofoen' visible='true' version='9' lat='52.3875765' lon='9.7209574' />
+  <node id='-122776' timestamp='2009-02-25T03:36:35Z' uid='42191' user='Jano John Akim Franke' visible='true' version='5' lat='52.3869768' lon='9.7219427' />
+  <node id='-122775' timestamp='2011-08-07T14:18:28Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3869802' lon='9.7219164' />
+  <node id='-122774' timestamp='2011-08-07T11:32:53Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3869912' lon='9.7218206' />
+  <node id='-122772' timestamp='2011-08-07T11:32:52Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3867929' lon='9.7208341' />
+  <node id='-122771' timestamp='2011-08-07T11:32:53Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.38746' lon='9.7209034' />
+  <node id='-122770' timestamp='2011-08-07T11:32:53Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3875413' lon='9.7208703' />
+  <node id='-122769' timestamp='2011-08-07T11:32:53Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3875753' lon='9.7208688' />
+  <way id='-122768' action='modify' timestamp='2010-03-21T14:38:06Z' uid='42191' user='Jano John Akim Franke' visible='true'>
+    <nd ref='-122781' />
+    <nd ref='-122776' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='postal_code' v='30167' />
+  </way>
+  <way id='-122767' timestamp='2010-03-21T14:13:14Z' uid='42191' user='Jano John Akim Franke' visible='true' version='7'>
+    <nd ref='-122781' />
+    <nd ref='-122782' />
+    <nd ref='-122778' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='oneway' v='yes' />
+    <tag k='postal_code' v='30167' />
+    <tag k='width' v='14' />
+  </way>
+  <way id='-122766' action='modify' timestamp='2011-08-07T11:32:58Z' uid='52797' user='hofoen' visible='true'>
+    <nd ref='-122769' />
+    <nd ref='-122780' />
+    <nd ref='-122777' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='postal_code' v='30167' />
+    <tag k='surface' v='cobblestone' />
+  </way>
+  <way id='-122765' timestamp='2009-05-28T21:16:16Z' uid='55521' user='Ebbe73' visible='true' version='5'>
+    <nd ref='-122777' />
+    <nd ref='-122778' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='postal_code' v='30167' />
+  </way>
+  <way id='-122764' timestamp='2011-08-07T14:18:36Z' uid='52797' user='hofoen' visible='true' version='7'>
+    <nd ref='-122772' />
+    <nd ref='-122774' />
+    <nd ref='-122775' />
+    <nd ref='-122776' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='pedestrian' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='postal_code' v='30167' />
+  </way>
+  <way id='-122763' action='modify' timestamp='2011-08-07T11:32:58Z' uid='52797' user='hofoen' visible='true'>
+    <nd ref='-122769' />
+    <nd ref='-122770' />
+    <nd ref='-122771' />
+    <nd ref='-122772' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='pedestrian' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='postal_code' v='30167' />
+  </way>
+</osm>

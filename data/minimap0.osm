@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- OSM Map data (c) OpenStreetMap contributors, CC-BY-SA.-->
+<osm version='0.6' generator='JOSM'>
+  <bounds minlat='52.3865359' minlon='9.7200787' maxlat='52.387969999999996' maxlon='9.7226' origin='vi' />
+  <node id='-38' timestamp='2011-08-07T11:32:53Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3875753' lon='9.7208688' />
+  <node id='-36' timestamp='2011-08-07T11:32:53Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3875413' lon='9.7208703' />
+  <node id='-34' timestamp='2011-08-07T11:32:53Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.38746' lon='9.7209034' />
+  <node id='-32' timestamp='2011-08-07T11:32:52Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3867929' lon='9.7208341' />
+  <node id='-30' timestamp='2011-08-07T11:32:53Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3869912' lon='9.7218206' />
+  <node id='-28' timestamp='2011-08-07T14:18:28Z' uid='52797' user='hofoen' visible='true' version='1' lat='52.3869802' lon='9.7219164' />
+  <node id='-26' timestamp='2009-02-25T03:36:35Z' uid='42191' user='Jano John Akim Franke' visible='true' version='5' lat='52.3869768' lon='9.7219427' />
+  <node id='-24' timestamp='2011-08-07T14:19:19Z' uid='52797' user='hofoen' visible='true' version='9' lat='52.3875765' lon='9.7209574' />
+  <node id='-22' timestamp='2011-08-07T14:19:19Z' uid='52797' user='hofoen' visible='true' version='5' lat='52.3875766' lon='9.7212544' />
+  <node id='-18' timestamp='2011-07-30T07:44:58Z' uid='52797' user='hofoen' visible='true' version='6' lat='52.3870536' lon='9.7221256' />
+  <node id='-16' timestamp='2011-08-07T14:19:21Z' uid='52797' user='hofoen' visible='true' version='2' lat='52.3874963' lon='9.7213541' />
+  <node id='-4' timestamp='2011-06-11T13:40:13Z' uid='89943' user='Bengatzer' visible='true' version='2' lat='52.387635' lon='9.7205223'>
+    <tag k='amenity' v='cafe' />
+    <tag k='name' v='Der MuffinMann' />
+    <tag k='opening_hours' v='Mo-Fr 08:00-18:00; Sa 10:00-18:00; Su 10:00-18:00' />
+    <tag k='smoking' v='no' />
+    <tag k='wheelchair' v='limited' />
+  </node>
+  <way id='-51' action='modify' visible='true'>
+    <nd ref='-38' />
+    <nd ref='-4' />
+    <tag k='highway' v='service' />
+  </way>
+  <way id='-50' action='modify' timestamp='2011-08-07T11:32:58Z' uid='52797' user='hofoen' visible='true'>
+    <nd ref='-38' />
+    <nd ref='-36' />
+    <nd ref='-34' />
+    <nd ref='-32' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='pedestrian' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='postal_code' v='30167' />
+  </way>
+  <way id='-48' timestamp='2011-08-07T14:18:36Z' uid='52797' user='hofoen' visible='true' version='7'>
+    <nd ref='-32' />
+    <nd ref='-30' />
+    <nd ref='-28' />
+    <nd ref='-26' />
+    <tag k='bicycle' v='yes' />
+    <tag k='highway' v='pedestrian' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='postal_code' v='30167' />
+  </way>
+  <way id='-46' timestamp='2009-05-28T21:16:16Z' uid='55521' user='Ebbe73' visible='true' version='5'>
+    <nd ref='-24' />
+    <nd ref='-22' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='postal_code' v='30167' />
+  </way>
+  <way id='-44' action='modify' timestamp='2011-08-07T11:32:58Z' uid='52797' user='hofoen' visible='true'>
+    <nd ref='-38' />
+    <nd ref='-24' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='postal_code' v='30167' />
+    <tag k='surface' v='cobblestone' />
+  </way>
+  <way id='-42' timestamp='2010-03-21T14:13:14Z' uid='42191' user='Jano John Akim Franke' visible='true' version='7'>
+    <nd ref='-18' />
+    <nd ref='-16' />
+    <nd ref='-22' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='oneway' v='yes' />
+    <tag k='postal_code' v='30167' />
+    <tag k='width' v='14' />
+  </way>
+  <way id='-40' action='modify' timestamp='2010-03-21T14:38:06Z' uid='42191' user='Jano John Akim Franke' visible='true'>
+    <nd ref='-18' />
+    <nd ref='-26' />
+    <tag k='highway' v='residential' />
+    <tag k='maxspeed' v='30' />
+    <tag k='name' v='An der Lutherkirche' />
+    <tag k='postal_code' v='30167' />
+  </way>
+</osm>

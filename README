@@ -1,0 +1,49 @@
+= Mobile Security & Privacy (MoSP) Simulator =
+
+by
+Distributed Computing & Security Group
+Leibniz Universität Hannover
+Germany
+
+http://www.dcsec.uni-hannover.de
+henne@dcsec.uni-hannover.de
+
+The MoSP simulator has been designed for research in the field of security 
+and privacy of modern mobile devices. It is meant for the evaluation of 
+mobile security and privacy issues as well as corresponding solutions. 
+
+
+== Contents ==
+
+ data				example and test maps
+ doc				code documentation (currently epydoc)
+ mosp				Python code of the MoSP simulator
+ mosp_examples		example simulations showing features of the simulator
+ mosp_tools			tools for map and simulator stuff
+ viewer				pyglet based simulation viewer
+
+
+== Dependencies ==
+
+ * SimPy 2.1+
+   http://simpy.sourceforge.net/
+   tested with versions 2.1, 2.2, 2.3
+ 
+ * epydoc for api doc generation
+ * pyglet for the sim_viewer
+ * libchamplain with python bindings for deprecated playerChamplain
+
+
+== How to start? ==
+
+ 1. cd mosp_examples
+    python random_wiggler.py &
+    cd ../viewer
+    python sim_viewer.py
+
+ 2. cat random_wiggler.py
+
+ 3. cd docs
+    ./gen_epydoc.sh
+    lynx epydoc/index.html
+

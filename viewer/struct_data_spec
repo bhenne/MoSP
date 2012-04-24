@@ -1,0 +1,99 @@
+typ (form)
+id
+coordinaten (je nach typ)
+farbe
+gefüllt/leer
+inhalt (z.B. bei text)
+größe
+
+\x00-->coords
+    lat                 double
+    lon                 double
+        
+    '!dd'
+
+\x01-->point
+    id                  int
+    lat                 double
+    lon                 double
+    radius              int
+    color(rgba)         4 x double
+    ttl (seconds)       double
+
+    '!iddi4dd'
+    
+\x02-->rectangle
+    id                  int
+    lat_bottom          double
+    lon_left            double
+    lat_top             double
+    lon_right           double
+    line_width          int
+    filled              bool
+    color(rgba)         4 x double
+    ttl (seconds)       double
+
+    '!i4di?4dd'
+
+\x03-->circle
+    id                  int
+    lat                 double
+    lon                 double
+    radius in m         int
+    filled              bool
+    color(rgba)         4 x double
+    ttl (seconds)       double
+
+    '!iddi?4dd'
+
+\x04-->triangle
+    id                  int
+    lat1                double
+    lon1                double
+    lat2                double
+    lon2                double
+    lat3                double
+    lon3                double
+    filled              bool
+    color(rgba)         4 x double
+    ttl (seconds)       double
+    
+    '!i2d2d2d?4dd'
+
+\x05-->text
+    id                  int
+    lat                 double
+    lon                 double
+    x-offset (meter)    int
+    y-offset (meter)    int
+    fontsize (points)   int
+    color(rgba)         4x double
+    lenght (chars)      int
+    ttl (seconds)       double
+
+    '!iddiii4did'
+
+\x06-->heatmap
+    lat                 double
+    lon                 double
+    radius              int
+    color               4x double
+
+    '!ddi4d'
+
+\x07-->direct-text
+    id                  int
+    x                   int
+    y                   int
+    fontsize (points)   int
+    color(rgba)         4x double
+    lenght (chars)      int
+    ttl (seconds)       double
+
+    '!iiii4did'
+
+\xFE--delete
+    (type of object to delete must be send first; see above; not in struct)
+    id                  int
+
+    '!i'

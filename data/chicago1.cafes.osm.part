@@ -1,0 +1,456 @@
+<node id="-1" lat="41.884212" lon="-87.632618" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="312 Chicago"/>
+</node>
+<node id="-4" lat="41.879783" lon="-87.629485" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="unknown -4"/>
+</node>
+<node id="-5" lat="41.88069" lon="-87.629768" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="unknown -5"/>
+</node>
+<node id="-6" lat="41.88196" lon="-87.6257" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="unknown -6"/>
+</node>
+<node id="-7" lat="41.88208" lon="-87.626703" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="unknown -7"/>
+</node>
+<node id="-8" lat="41.88238" lon="-87.624511" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="unknown -8"/>
+</node>
+<node id="-9" lat="41.884483" lon="-87.625315" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="unknown -9"/>
+</node>
+<node id="-10" lat="41.884651" lon="-87.628197" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="unknown -10"/>
+</node>
+<node id="-16" lat="41.881568" lon="-87.626193" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Ada&#39;s Famous Deli"/>
+</node>
+<node id="-17" lat="41.882195" lon="-87.635073" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Alonti Cafe"/>
+</node>
+<node id="-18" lat="41.883099" lon="-87.633448" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Alonti Cafe &amp; Catering"/>
+</node>
+<node id="-19" lat="41.876644" lon="-87.631468" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v=" &amp; Tea"/>
+</node>
+<node id="-20" lat="41.878165" lon="-87.629034" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v=" &amp; Tea"/>
+</node>
+<node id="-23" lat="41.884552" lon="-87.628444" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Argo Tea"/>
+</node>
+<node id="-26" lat="41.882186" lon="-87.629112" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Argo Tea Cafe"/>
+</node>
+<node id="-27" lat="41.876176" lon="-87.624367" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Artists&#39; Cafe"/>
+</node>
+<node id="-30" lat="41.883188" lon="-87.627855" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Atwood Café"/>
+</node>
+<node id="-33" lat="41.879965" lon="-87.627882" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="B&amp;B Restaurant and Lounge"/>
+</node>
+<node id="-34" lat="41.884791" lon="-87.624665" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v=" Beanery"/>
+</node>
+<node id="-36" lat="41.884595" lon="-87.62812" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Borders"/>
+</node>
+<node id="-38" lat="41.881429" lon="-87.632308" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Burrito Beach"/>
+</node>
+<node id="-42" lat="41.875815" lon="-87.626366" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Cafecito"/>
+</node>
+<node id="-43" lat="41.887749" lon="-87.624216" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Cafe Descartes"/>
+</node>
+<node id="-47" lat="41.882198" lon="-87.632821" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Caffè Baci"/>
+</node>
+<node id="-48" lat="41.88238" lon="-87.624511" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Caffe Baci"/>
+</node>
+<node id="-49" lat="41.886624" lon="-87.635021" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Caffe Baci"/>
+</node>
+<node id="-50" lat="41.886541" lon="-87.627246" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="caffecafe"/>
+</node>
+<node id="-51" lat="41.885178" lon="-87.622308" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Caffe Rom"/>
+</node>
+<node id="-52" lat="41.880889" lon="-87.635343" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Caffe Rom Hyatt Center"/>
+</node>
+<node id="-53" lat="41.878018" lon="-87.629526" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Cavanaugh&#39;s Bar &amp; Restaurant"/>
+</node>
+<node id="-54" lat="41.877709" lon="-87.632275" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Ceres Cafe"/>
+</node>
+<node id="-55" lat="41.883365" lon="-87.628176" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Chi BP LLC"/>
+</node>
+<node id="-59" lat="41.883669" lon="-87.625043" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Chicago Cultural Center"/>
+</node>
+<node id="-64" lat="41.88743" lon="-87.624806" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Comfort Suites Michigan Avenue"/>
+</node>
+<node id="-65" lat="41.87886" lon="-87.635837" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Corner Bakery Cafe"/>
+</node>
+<node id="-66" lat="41.879229" lon="-87.624438" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Corner Bakery Cafe"/>
+</node>
+<node id="-67" lat="41.880745" lon="-87.626297" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Corner Bakery Cafe"/>
+</node>
+<node id="-68" lat="41.883325" lon="-87.633603" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Corner Bakery Cafe"/>
+</node>
+<node id="-69" lat="41.88451" lon="-87.62968" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Corner Bakery Cafe"/>
+</node>
+<node id="-70" lat="41.888022" lon="-87.624797" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Corner Bakery Cafe"/>
+</node>
+<node id="-71" lat="41.880697" lon="-87.634909" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Cosi"/>
+</node>
+<node id="-72" lat="41.885913" lon="-87.631124" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Cosi"/>
+</node>
+<node id="-73" lat="41.876458" lon="-87.630863" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Crepes Cafe"/>
+</node>
+<node id="-74" lat="41.881939" lon="-87.635405" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Crumbs Bake Shop"/>
+</node>
+<node id="-75" lat="41.875853" lon="-87.629193" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Dunkin&#39; Donuts"/>
+</node>
+<node id="-76" lat="41.883313" lon="-87.633082" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Dunkin&#39; Donuts"/>
+</node>
+<node id="-79" lat="41.885003" lon="-87.635626" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Eppy&#39;s Cafe &amp; Deli"/>
+</node>
+<node id="-88" lat="41.886686" lon="-87.628371" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Great Street Restaurant and Bar"/>
+</node>
+<node id="-89" lat="41.876458" lon="-87.630863" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Haifa Cafe"/>
+</node>
+<node id="-90" lat="41.885262" lon="-87.633861" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Haifa Cafe"/>
+</node>
+<node id="-91" lat="41.880777" lon="-87.628616" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Hampton Inn - Majestic Chicago Theatre District"/>
+</node>
+<node id="-92" lat="41.883445" lon="-87.63351" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Hannah&#39;s"/>
+</node>
+<node id="-93" lat="41.886193" lon="-87.624389" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Hannah&#39;s Bretzel"/>
+</node>
+<node id="-94" lat="41.883429" lon="-87.625988" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Heaven on Seven"/>
+</node>
+<node id="-96" lat="41.869378" lon="-87.626876" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Hi Tea"/>
+</node>
+<node id="-98" lat="41.879323" lon="-87.631159" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v=" Hotel"/>
+</node>
+<node id="-107" lat="41.886289" lon="-87.623847" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Jaffa Bagels Inc"/>
+</node>
+<node id="-109" lat="41.879207" lon="-87.632731" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="JW Marriott Chicago"/>
+</node>
+<node id="-110" lat="41.877326" lon="-87.636609" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Kamehachi Cafe"/>
+</node>
+<node id="-114" lat="41.87853" lon="-87.626124" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Kramer&#39;s Health Food Shoppe"/>
+</node>
+<node id="-116" lat="41.881555" lon="-87.635308" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="La Quinta Inn &amp; Suites Chicago Downtown"/>
+</node>
+<node id="-118" lat="41.877717" lon="-87.630966" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Lavazza Co"/>
+</node>
+<node id="-119" lat="41.883006" lon="-87.628652" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Lavazza Co"/>
+</node>
+<node id="-121" lat="41.880368" lon="-87.626654" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Lockwood Restaurant"/>
+</node>
+<node id="-123" lat="41.882014" lon="-87.63013" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Madison Street Cafe"/>
+</node>
+<node id="-125" lat="41.882322" lon="-87.631054" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Maxim&#39;s Restaurant"/>
+</node>
+<node id="-127" lat="41.885628" lon="-87.625472" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="MDA City Apartments"/>
+</node>
+<node id="-130" lat="41.879851" lon="-87.626351" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Miller&#39;s Pub"/>
+</node>
+<node id="-131" lat="41.878067" lon="-87.63696" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="NYC Bagel Deli"/>
+</node>
+<node id="-132" lat="41.882751" lon="-87.626181" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Oasis Cafe"/>
+</node>
+<node id="-134" lat="41.878478" lon="-87.637043" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Panera Bread"/>
+</node>
+<node id="-135" lat="41.882422" lon="-87.624174" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Park Grill restaurant"/>
+</node>
+<node id="-136" lat="41.877665" lon="-87.636621" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Pazzo&#39;s @ 311"/>
+</node>
+<node id="-137" lat="41.885244" lon="-87.635491" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Perry &amp; Associates, LLC"/>
+</node>
+<node id="-138" lat="41.884739" lon="-87.629657" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Petterino&#39;s"/>
+</node>
+<node id="-140" lat="41.883117" lon="-87.625741" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Pittsfield Cafe Ltd"/>
+</node>
+<node id="-141" lat="41.877483" lon="-87.628453" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Plymouth Restaurant"/>
+</node>
+<node id="-142" lat="41.877331" lon="-87.633568" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Poag Mahones"/>
+</node>
+<node id="-145" lat="41.879279" lon="-87.635011" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Pret A Manger"/>
+</node>
+<node id="-146" lat="41.879091" lon="-87.63516" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Protein Bar - High Protein Drinks, Healthy Catering Chicago + Breakfast Catering"/>
+</node>
+<node id="-147" lat="41.879479" lon="-87.625526" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Rhapsody"/>
+</node>
+<node id="-148" lat="41.867827" lon="-87.63206" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Roosevelt Collection Centrum Properties"/>
+</node>
+<node id="-149" lat="41.882002" lon="-87.630125" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Rosebud Theatre District"/>
+</node>
+<node id="-151" lat="41.879452" lon="-87.625035" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Russian Tea Time Restaurant"/>
+</node>
+<node id="-153" lat="41.883782" lon="-87.633722" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Siam Rice"/>
+</node>
+<node id="-154" lat="41.887991" lon="-87.623423" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Sopraffina Marketcaffe"/>
+</node>
+<node id="-155" lat="41.886538" lon="-87.626136" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="South Water Kitchen"/>
+</node>
+<node id="-157" lat="41.877679" lon="-87.628762" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Standard Club"/>
+</node>
+<node id="-159" lat="41.867653" lon="-87.630728" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Starbucks"/>
+</node>
+<node id="-161" lat="41.874698" lon="-87.628938" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Starbucks"/>
+</node>
+<node id="-162" lat="41.877974" lon="-87.625387" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Starbucks"/>
+</node>
+<node id="-163" lat="41.878857" lon="-87.636494" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Starbucks"/>
+</node>
+<node id="-164" lat="41.879304" lon="-87.631001" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Starbucks"/>
+</node>
+<node id="-165" lat="41.879507" lon="-87.633966" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Starbucks"/>
+</node>
+<node id="-166" lat="41.879994" lon="-87.629335" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Starbucks"/>
+</node>
+<node id="-167" lat="41.88079" lon="-87.632144" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Starbucks"/>
+</node>
+<node id="-169" lat="41.881991" lon="-87.630015" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Starbucks"/>
+</node>
+<node id="-170" lat="41.884562" lon="-87.636877" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Starbucks"/>
+</node>
+<node id="-171" lat="41.885384" lon="-87.632683" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Starbucks"/>
+</node>
+<node id="-172" lat="41.886747" lon="-87.626974" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Starbucks"/>
+</node>
+<node id="-178" lat="41.886826" lon="-87.63016" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Stefanis Tuscany Cafe"/>
+</node>
+<node id="-180" lat="41.883539" lon="-87.626198" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Sugar Bliss Cake Boutique"/>
+</node>
+<node id="-181" lat="41.884341" lon="-87.636537" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Sushi Sai"/>
+</node>
+<node id="-182" lat="41.884639" lon="-87.623683" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Tavern at the Park"/>
+</node>
+<node id="-183" lat="41.88541" lon="-87.635577" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Taza"/>
+</node>
+<node id="-185" lat="41.879175" lon="-87.632688" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="The Florentine- BLT Restaurants"/>
+</node>
+<node id="-186" lat="41.880473" lon="-87.628841" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="The Grill Room"/>
+</node>
+<node id="-187" lat="41.881956" lon="-87.631986" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="The Marquette Inn"/>
+</node>
+<node id="-189" lat="41.882425" lon="-87.629714" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Trattoria # 10"/>
+</node>
+<node id="-190" lat="41.880758" lon="-87.625847" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Under 55 Cafe"/>
+</node>
+<node id="-192" lat="41.88033" lon="-87.63751" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Urban Kitchen"/>
+</node>
+<node id="-193" lat="41.878279" lon="-87.637041" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Venice Cafe"/>
+</node>
+<node id="-195" lat="41.884213" lon="-87.627385" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Walnut Room"/>
+</node>
+<node id="-199" lat="41.868788" lon="-87.624231" user="SailingBenH" uid="293534" visible="true" version="1" changeset="0" timestamp="2011-04-05T11:37:44Z">
+  <tag k="amenity" v="cafe"/>
+  <tag k="name" v="Yolk"/>
+</node>

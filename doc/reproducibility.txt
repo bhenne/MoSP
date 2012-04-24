@@ -1,0 +1,24 @@
+To generate reproducable simulation results, the programmer/user
+of a MoSP simulation has to adhere some basic rules.
+
+1) Always use reproducable random numbers and random selections
+   by using a simulation's base random number generator and initial seed. 
+   The generator can be used to generate numbers, to make choices,
+   or to seed other sub-ordinate random generators.
+   See random.pdf for random generators in the MoSP simulator.
+   Person._random is seeded by Simulation.random for example.
+
+2) Use Phython's built-in unordered dicts with caution.
+   "It is best to think of a dictionary as an unordered set of key: value pairs" [1]
+   "The only thing about dictionary ordering you can rely on is that the order 
+    will remain the same if there are no modifications to the dictionary; 
+    e.g., iterating over a dictionary twice without modifying it will result 
+    in the same sequence of keys. However, though the order of Python 
+    dictionaries is deterministic, it can be influenced by factors such 
+    as the order of insertions and removals, so equal dictionaries can 
+    end up with different orderings." [2]
+    Maybe always use sorted().
+
+
+[1] http://docs.python.org/tutorial/datastructures.html#dictionaries
+[2] http://stackoverflow.com/a/531669/1156548

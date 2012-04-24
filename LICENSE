@@ -1,0 +1,91 @@
+= Mobile Security & Privacy Simulaor =
+
+The Mobile Security & Privacy (MoSP) Simulator has been originated at the 
+Distributed Computing & Security Group at Leibniz Universitaet Hannover, 
+Germany. <http://www.dcsec.uni-hannover.de/>
+
+The MoSP simulator has been designed for research in the field of security 
+and privacy of modern mobile devices. It is meant for the evaluation of 
+mobile security and privacy issues as well as corresponding solutions. 
+
+The basic version has been built by Florian Ludwig and Philipp Tute. 
+Ongiong work has been done by Benjamin Henne and Philipp Tute.
+Any user is invited to use to simulator to build his own simulations. 
+We are pleased about any extension of the core features resulting from 
+new simulation requirements.
+
+Copyright (C) 2010-2012  Benjamin Henne <henne(at)dcsec.uni-hannover.de>,
+                         Florian Ludwig, Philipp Tute, Christian Szongott
+                         
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License 
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+
+== Libraries ==
+
+The Mobile Security & Privacy Simulator is based on the Simulation in Python (SimPy)
+version 2.3 or later. SimPy has been released under the GNU Lesser GPL (LGPL) license.
+
+
+== Re-used code ==
+Follwing parts of the MoSP code are based on foreign code. 
+Licenses are included here and in the corresponding modules.
+
+mosp/geo/osm based on code of Rory McCann as provided under
+             https://github.com/rory/python-osm/
+             which has been released under the GPLv3 license.
+             see http://www.gnu.org/licenses/gpl-3.0.html
+
+mosp/geo/utm based on Javascript code of Charles L. Taylor from
+             http://home.hiwaay.net/~taylorc/toolbox/geography/geoutm.html
+             The author allowed us to reuse his code.
+             
+  The documents, images, and other materials on the Chuck Taylor Web site are 
+  copyright © 1997-2003 by Charles L. Taylor, unless otherwise noted.
+  Visitors are permitted to download the materials located on the Chuck Taylor
+  Web site to their own systems, on a temporary basis, for the purpose of 
+  viewing them or, in the case of software applications, 
+  using them in accordance with their intended purpose.
+  Republishing or redistribution of any of the materials located on
+  the Chuck Taylor Web site requires permission from Charles L. Taylor. 
+  (http://home.hiwaay.net/~taylorc/about/copyright.html)
+
+mosp_tools/heatmap/ based on heatmap.py (http://www.jjguy.com/heatmap/) 
+                    based on gheat (http://code.google.com/p/gheat/)
+                    which is under the Expat/MIT license
+  
+  Copyright (c) 2007-2008 Chad Whitacre, modifications by B. Henne (2011)
+  Permission is hereby granted, free of charge, to any person obtaining
+  a copy of this software and associated documentation files (the "Software"),
+  to deal in the Software without restriction, including without limitation 
+  the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+  and/or sell copies of the Software, and to permit persons to whom the 
+  Software is furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included
+  in all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
+  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
+  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
+  DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
+  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR 
+  THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+viewer/lib/asynchttp from Downright Software LLC. (2001)
+                     is licensed under the provisions of the Python 
+                     Open Source License Agreement
+
+viewer/lib/tilenames based on Oliver White's code from 2007
+                     http://svn.openstreetmap.org/applications/routing/pyroute/tilenames.py
+                     which is public-domain
+

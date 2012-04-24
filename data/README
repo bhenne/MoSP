@@ -1,0 +1,74 @@
+= Demo maps = 
+
+OSM Map data (c) OpenStreetMap contributors, CC-BY-SA. 
+ OpenStreetMap: http://www.openstreetmap.org/
+ CC-BY-SA: http://creativecommons.org/licenses/by-sa/2.0/
+
+filename as stored in <projectdir>/data/
+#nodes is the number of road network nodes after loading osm
+ border is the number of border nodes as detected by the simulator
+memory is the memory consumption as shown by top command
+start time is time to start with existing(!) routes.bz2 file
+ +grid is start time with additional grid file
+notes may be self-explaining
+
+calculating routes.bz2 files took from 10s up to 24 hours (and more)
+using an Intel(R) Xeon(R) CPU X5355 @ 2.66GHz system with 16GB RAM
+
+
+file                            virt,res     start 
+name           #nodes (border)   memory  time/+grid   note
+-------------------------------------------------------------------------------------------
+chicago1         2562 ( 27)     235m, 49m  13s/7s     Chicago The Loop
+hannover0         199 (  0)     211m, 24m     <1s     Welfenschloss/Welfengarten, one amenity=cafe
+hannover1         635 (  8)     213m, 26m     <1s     RRZN/Conti-Campus+surrounding, one amenity=cafe
+hannover2         933 (  5)     221m, 34m   2s/1s     Linden-Nord, complete osm data
+hannover3        4427 (111)     291m,103m  30s/18s    Linden-Nord/Mitte+Calenberger Neustadt, only roads, some POI
+hannover4        7319 ( 11)     427m,239m 150s/46s    Mitte
+hannover5        8350 (140)     505m,318m    -/64s    Linden-Nord+Calenberger Neustadt+Nordstadt+Mitte
+hannover6       13897 (237)     895m,707m    -/197s   Linden-Nord/Mitte/Süd+Calenberger NeustadtNordstadt+Mitte+Südstadt+Ricklingen
+hannover7       21803 ( 20)    1769m,1.5g    -/492s   central districts 
+hannover8       34820 ( 18)    4140m,3.9g    -/1568s  complete Hannover, generalized (administrative boundaries) 
+kl0              2741 ( 64)     242m,55m     -/7s     somewhere in Kuala Lumpur (w/ 3 partitions)
+minimap0           12 (  0)     209m, 21m     <1s     circular road, one POI on the road
+minimap1           12 (  0)     209m, 21m     <1s     circular road, some POI
+minimap2           30 (  8)     209m, 21m     <1s     minimap1 plus out of bb nodes
+minimap3           22 (  0)     209m, 21m     <1s     circular road
+minimap4           26 (  0)     209m, 21m     <1s     two partitions (2 circular roads)
+
+
+- more maps -
+multimapN and multimapS are two maps for a partitioned map simulation. t.b.d.
+RoadWidthTest and WaySegmentTest are development test maps.
+
+
+== Generation/Extraction of maps ==
+
+chicago1
+ Chicago The Loop
+ osm closed way via josm --osm2poly.pl--> polygon file -> osmosis bounding polygon
+ bunzip2 planet-latest.osm.bz2 | $OSMOSISPATH --rx /dev/stdin --bounding-polygon file="chicago1.poly" completeWays=false --used-node --wx chicago1.osm
+
+hannover4
+ Hannover Stadtbezirk Mitte
+ OSM Relation 80107
+ http://osmrm.openstreetmap.de/gpx.jsp?relation=80107
+ GPX -> polygon file -> osmosis bounding polygon
+ cat /home/maps/niedersachsen.osm | /home/maps/osmosis-0.38/bin/osmosis --rx /dev/stdin --bounding-polygon file="hannover4.poly" completeWays=true --used-node --wx hannover4.osm
+ used MoSP Geo-Tool ro remove partitions < 12 nodes and connected others
+
+hannover7
+ Hannover central districts (Linden-*, Calenberger Neustadt, Nordstadt, Vahrenwald, List, Mitte, Südstadt, Ricklingen)
+ osm closed way via josm by connecting existing ways --osm2poly.pl--> polygon file -> osmosis bounding polygon
+ cat /home/maps/niedersachsen.osm | /home/maps/osmosis-0.38/bin/osmosis --rx /dev/stdin --bounding-polygon file="hannover7.poly" completeWays=true --used-node --wx hannover6.osm
+ used MoSP Geo-Tool ro remove partitions < 12 nodes and connected others
+
+hannover8
+ Hannover administrative boundary
+ OSM Relation 59418
+ http://ra.osmsurround.org/analyze.jsp?relationId=59418
+ GPX -> polygon file -> osmosis bounding polygon
+ bzcat /home/maps/niedersachsen.osm.bz2 | /home/maps/osmosis-0.38/bin/osmosis --rx /dev/stdin --bounding-polygon file="hannover8.poly" completeWays=true --used-node --wx hannover5.osm
+ used MoSP Geo-Tool ro remove partitions < 12 nodes and connected others
+ used MoSP Geo-Tool to generalize map with Douglas-Peucker tolerance of 10 meters
+

@@ -1,0 +1,16 @@
+MoSP core and sim_viewer can be used with virtualenv, example:
+
+ * setup virtualenv
+   wget https://raw.github.com/pypa/virtualenv/master/virtualenv.py
+   python2.7 virtualenv.py --no-site-packages mosp-py2.7-simpy2.3
+ * activate virtualenv
+   cd mosp-py2.7-simpy2.3
+   source bin/activate
+ * install SimPy
+   pip install http://dfn.dl.sourceforge.net/project/simpy/simpy/SimPy-2.3/SimPy-2.3.tar.gz
+ * install pyglet for sim_viewer
+   pip install pyglet
+ * install MoSP
+   git clone https://github.com/bhenne/MoSP.git mosp
+   # or: wget https://github.com/bhenne/MoSP/zipball/master; unzip master; rm master 
+
