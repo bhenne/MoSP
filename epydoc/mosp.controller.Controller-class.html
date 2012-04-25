@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>mosp.controller.Controller</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="mosp-module.html">Package&nbsp;mosp</a> ::
+        <a href="mosp.controller-module.html">Module&nbsp;controller</a> ::
+        Class&nbsp;Controller
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="mosp.controller.Controller-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Controller</h1><p class="nomargin-top"><span class="codelink"><a href="mosp.controller-pysrc.html#Controller">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_mosp_con" name="uml_class_diagram_for_mosp_con">
+<area shape="rect" id="node33" href="mosp.controller.Controller-class.html#__init__" title="Initialize connections and identifiy simulations." alt="" coords="17,39,281,57"/>
+<area shape="rect" id="node33" href="mosp.controller.Controller-class.html#connect_to" title="Connect to sim and exchange simulation information." alt="" coords="17,57,281,76"/>
+<area shape="rect" id="node33" href="mosp.controller.Controller-class.html#sims_byName" title="Get simulations by name." alt="" coords="17,76,281,95"/>
+<area shape="rect" id="node33" href="mosp.controller.Controller-class.html#sims_bySocket" title="Get simulations by socket." alt="" coords="17,95,281,113"/>
+<area shape="rect" id="node33" href="mosp.controller.Controller-class.html#send" title="Send a message to a socket." alt="" coords="17,113,281,132"/>
+<area shape="rect" id="node33" href="mosp.controller.Controller-class.html#receive" title="Receive the next message(&#45;blob) from a socket." alt="" coords="17,132,281,151"/>
+<area shape="rect" id="node33" href="mosp.controller.Controller-class.html#cut_msgs" title="Cut a message blob into seperate messages and messages into fields." alt="" coords="17,151,281,169"/>
+<area shape="rect" id="node33" href="mosp.controller.Controller-class.html#dispatch" title="Sort messages to the correct server." alt="" coords="17,169,281,188"/>
+<area shape="rect" id="node33" href="mosp.controller.Controller-class.html#put_to_sims" title="Put all collected data to simulations." alt="" coords="17,188,281,207"/>
+<area shape="rect" id="node33" href="mosp.controller.Controller-class.html#do_steps" title="Tell all simulations to do a number of steps." alt="" coords="17,207,281,225"/>
+<area shape="rect" id="node33" href="mosp.controller.Controller-class.html#get_from_sims" title="Get the next messages from all simulations that have data ready." alt="" coords="17,225,281,244"/>
+<area shape="rect" id="node33" href="mosp.controller.Controller-class.html#run" title="Run the simulations for a given number of ticks." alt="" coords="17,244,281,263"/>
+<area shape="rect" id="node33" href="mosp.controller.Controller-class.html#shutdown" title="End all simulations." alt="" coords="17,263,281,281"/>
+<area shape="rect" id="node1" href="mosp.controller.Controller-class.html" title="Controller to connect and coordinate simulations." alt="" coords="5,6,293,287"/>
+</map>
+  <img src="uml_class_diagram_for_mosp_con.png" alt='' usemap="#uml_class_diagram_for_mosp_con" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Controller to connect and coordinate simulations.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.controller.Controller-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">sims</span>)</span><br />
+      Initialize connections and identifiy simulations.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.controller-pysrc.html#Controller.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="connect_to"></a><span class="summary-sig-name">connect_to</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">sim</span>)</span><br />
+      Connect to sim and exchange simulation information.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.controller-pysrc.html#Controller.connect_to">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="sims_byName"></a><span class="summary-sig-name">sims_byName</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Get simulations by name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.controller-pysrc.html#Controller.sims_byName">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="sims_bySocket"></a><span class="summary-sig-name">sims_bySocket</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Get simulations by socket.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.controller-pysrc.html#Controller.sims_bySocket">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="send"></a><span class="summary-sig-name">send</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">socket</span>,
+        <span class="summary-sig-arg">msg</span>)</span><br />
+      Send a message to a socket.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.controller-pysrc.html#Controller.send">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="receive"></a><span class="summary-sig-name">receive</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">sock</span>)</span><br />
+      Receive the next message(-blob) from a socket.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.controller-pysrc.html#Controller.receive">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.controller.Controller-class.html#cut_msgs" class="summary-sig-name">cut_msgs</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">msgsblob</span>)</span><br />
+      Cut a message blob into seperate messages and messages into fields.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.controller-pysrc.html#Controller.cut_msgs">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.controller.Controller-class.html#dispatch" class="summary-sig-name">dispatch</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">msgs</span>,
+        <span class="summary-sig-arg">sender</span>)</span><br />
+      Sort messages to the correct server.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.controller-pysrc.html#Controller.dispatch">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.controller.Controller-class.html#put_to_sims" class="summary-sig-name">put_to_sims</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">byName</span>,
+        <span class="summary-sig-arg">bySocket</span>)</span><br />
+      Put all collected data to simulations.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.controller-pysrc.html#Controller.put_to_sims">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.controller.Controller-class.html#do_steps" class="summary-sig-name">do_steps</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">byName</span>,
+        <span class="summary-sig-arg">bySocket</span>,
+        <span class="summary-sig-arg">steps</span>=<span class="summary-sig-default">1</span>)</span><br />
+      Tell all simulations to do a number of steps.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.controller-pysrc.html#Controller.do_steps">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.controller.Controller-class.html#get_from_sims" class="summary-sig-name">get_from_sims</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">byName</span>,
+        <span class="summary-sig-arg">bySocket</span>)</span><br />
+      Get the next messages from all simulations that have data ready.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.controller-pysrc.html#Controller.get_from_sims">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.controller.Controller-class.html#run" class="summary-sig-name">run</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">until</span>)</span><br />
+      Run the simulations for a given number of ticks.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.controller-pysrc.html#Controller.run">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="shutdown"></a><span class="summary-sig-name">shutdown</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      End all simulations.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.controller-pysrc.html#Controller.shutdown">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">sims</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.controller-pysrc.html#Controller.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialize connections and identifiy simulations.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>sims</code></strong> - a list of all simulations that should be connected, represented 
+          by lists containing type, port.</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="cut_msgs"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">cut_msgs</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">msgsblob</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.controller-pysrc.html#Controller.cut_msgs">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Cut a message blob into seperate messages and messages into 
+  fields.</p>
+  <dl class="fields">
+  </dl>
+<div class="fields">      <p><strong>To Do:</strong>
+        make this more flexible, accept more message-types.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="dispatch"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">dispatch</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">msgs</span>,
+        <span class="sig-arg">sender</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.controller-pysrc.html#Controller.dispatch">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sort messages to the correct server.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>sender</code></strong> - sender of the messages, to return messages with invalid receiver 
+          to.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="put_to_sims"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">put_to_sims</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">byName</span>,
+        <span class="sig-arg">bySocket</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.controller-pysrc.html#Controller.put_to_sims">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Put all collected data to simulations.</p>
+  <p>This sends all messages, that were received since the last call to the
+  receiver.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>byName</code></strong> (dict with the names of simulations as keys and the according 
+          lists as items.) - all simulations that should be considered as receivers.</li>
+        <li><strong class="pname"><code>bySocket</code></strong> (dict with the sockets of simulations as keys and the according 
+          lists as items.) - all simulations that should be considered as receivers.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="do_steps"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">do_steps</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">byName</span>,
+        <span class="sig-arg">bySocket</span>,
+        <span class="sig-arg">steps</span>=<span class="sig-default">1</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.controller-pysrc.html#Controller.do_steps">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Tell all simulations to do a number of steps.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>byName</code></strong> (dict with the names of simulations as keys and the according 
+          lists as items.) - all simulations that should be considered as receivers.</li>
+        <li><strong class="pname"><code>bySocket</code></strong> (dict with the sockets of simulations as keys and the according 
+          lists as items.) - all simulations that should be considered as receivers.</li>
+        <li><strong class="pname"><code>steps</code></strong> - the number of steps that all simulations should do (default = 1).</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_from_sims"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_from_sims</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">byName</span>,
+        <span class="sig-arg">bySocket</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.controller-pysrc.html#Controller.get_from_sims">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get the next messages from all simulations that have data ready.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>byName</code></strong> (dict with the names of simulations as keys and the according 
+          lists as items.) - all simulations that should be considered as receivers.</li>
+        <li><strong class="pname"><code>bySocket</code></strong> (dict with the sockets of simulations as keys and the according 
+          lists as items.) - all simulations that should be considered as receivers.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="run"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">run</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">until</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.controller-pysrc.html#Controller.run">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Run the simulations for a given number of ticks.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>until</code></strong> - number of ticks to run all simulations for.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:27 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

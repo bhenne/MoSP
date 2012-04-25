@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="MoSP simulator : Simulation for Mobile Security &amp; Privacy Research" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Mobile Security &amp; Privacy (MoSP) Simulator</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+ 	  <img id="mosp_banner" src="images/mosp.png" />
+ 	  <a id="forkme_banner" href="https://github.com/bhenne/MoSP">Fork Me on GitHub</a>
+
+          <h1 id="project_title">MoSP Simulator</h1>
+          <h2 id="project_tagline">Simulation for Mobile Security &amp; Privacy Research</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/bhenne/MoSP/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/bhenne/MoSP/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>Mobile Security &amp; Privacy Simulator</h3>
+
+	<p>The Mobile Security &amp; Privacy (MoSP) Simulator is a simulator for the research in the field of security and privacy of modern mobile devices. It is designed for the evaluation of mobile security and privacy issues as well as corresponding solutions. The development of the simulator originated at the <a href="http://www.dcsec.uni-hannover.de">Distributed Computing &amp; Security Group</a> at the <a href="http://www.uni-hannover.de/en/">Leibniz Universität Hannover</a>, Germany.</p>
+
+	<p>Some features:<P>
+
+<ul>
+	<li>implemented using Python 2.7&nbsp;</li>
+	<li>based on&nbsp;<a href="http://simpy.sourceforge.net/" target="_blank" class="external-link" >SimPy 2.1</a> or later</li>
+	<li>uses geo-spatial data from the&nbsp;<a href="http://www.openstreetmap.org/" target="_blank" class="external-link" >OpenStreetMap</a>&nbsp;project&nbsp;
+		<ul>
+			<li>road network is extracted for movement simulation</li>
+			<li>roads may have a width from OSM data or by simulator defaults</li>
+			<li>border nodes (outside of bounding box) are detected and marked for special uses</li>
+			<li>point of interest from OSM data can be used to define locations<ul>
+				<li>people can move to or interact with this</li></ul></li>
+	</ul></li>
+	<li>pausing, random and routed movement of people
+		<ul><li>movement can be changed</li></ul></li>
+		<li>selecting people in definable distance</li>
+		<li>interact with single or groups of other people<ul>
+			<li>interaction can be simple as a zombie infection or complex - you implement it in python</li>
+			<li>actions can be started and stopped</li>
+			<li>communication also is an interaction</li>
+			<li>interaction also is &quot;Who is in my visible area?&quot; (visual perception)</li></ul></li>
+		<li>people can interact with any road node, maybe a cafe there, or simple pause walking</li>
+		<li>map visualization<ul>
+			<li>simulation viewer based on pyglet<ul>
+				<li>draw continuous movement of some thousand people</li>
+				<li>draw geometric primitives or text on demand/events</li></ul></li></ul></li>
+                       <li>deprecated simple viewer based on libchamplain<ul>
+			         <li>draw continuous movement of some hundred people</li></ul></li>
+		<li>more visualization<ul>
+			<li>tool for heatmap visualization</li>
+			<li>plotting needs external tools such as gnuplot</li></ul></li>
+		<li>More<ul>
+			<li><a href="http://bhenne.github.com/MoSP-Geo-Tool/">MoSP Geo Tool</a><ul>
+				<li>geo-spatial data tool for map generalization, connecting poi, partition removal</li></ul></li>
+			<li><a href="http://bhenne.github.com/MoSP-Siafu/">MoSP Siafu</a><ul>
+				<li>coupled indoor simulation using the extended <a href="http://siafusimulator.sourceforge.net/">Siafu</a> context simulator</li></ul></li>
+	</ul></li>
+</ul>
+
+<h3>Examples</h3>
+Different simulation examples are contained in the code at <a href="https://github.com/bhenne/MoSP/tree/master/mosp_examples">mosp_examples</a>.
+
+<h4>Videos</h4>
+See our <a href="http://www.youtube.com/user/DCSecUniHannover">example videos</a> at YouTube.
+
+<h3>Documentation</h3>
+See the <a href="epydoc/index.html">API documentation</a> generated via epydoc.
+
+<h3>Support or Contact</h3>
+
+<p>Feel free to contact the corresponding person <a href="https://github.com/bhenne" class="user-mention">@bhenne</a> at our Group.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">MoSP Simulator maintained by <a href="https://github.com/bhenne">bhenne</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

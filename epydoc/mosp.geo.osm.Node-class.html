@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>mosp.geo.osm.Node</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="mosp-module.html">Package&nbsp;mosp</a> ::
+        <a href="mosp.geo-module.html">Package&nbsp;geo</a> ::
+        <a href="mosp.geo.osm-module.html">Module&nbsp;osm</a> ::
+        Class&nbsp;Node
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="mosp.geo.osm.Node-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Node</h1><p class="nomargin-top"><span class="codelink"><a href="mosp.geo.osm-pysrc.html#Node">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_mosp_geo" name="uml_class_diagram_for_mosp_geo">
+<area shape="rect" id="node72" href="mosp.geo.osm.Node-class.html#lat" title="Returns the node&#39;s Latitude." alt="" coords="17,383,536,401"/>
+<area shape="rect" id="node72" href="mosp.geo.osm.Node-class.html#lon" title="Returns the nodes&#39;s Longitude." alt="" coords="17,401,536,420"/>
+<area shape="rect" id="node72" href="mosp.geo.osm.Node-class.html#x" title="Returns the node&#39;s x coordinate, it&#39;s UTM easting." alt="" coords="17,420,536,439"/>
+<area shape="rect" id="node72" href="mosp.geo.osm.Node-class.html#y" title="Returns the node&#39;s y coordinate, it&#39;s UTM northing." alt="" coords="17,439,536,457"/>
+<area shape="rect" id="node72" href="mosp.geo.osm.Node-class.html#z" title="Returns the node&#39;s UTM zone." alt="" coords="17,457,536,476"/>
+<area shape="rect" id="node72" href="mosp.geo.osm.Node-class.html#__init__" title="Initialize the geo&#45;model node." alt="" coords="17,479,536,497"/>
+<area shape="rect" id="node72" href="mosp.geo.osm.Node-class.html#getLat" title="Returns the node&#39;s Latitude." alt="" coords="17,497,536,516"/>
+<area shape="rect" id="node72" href="mosp.geo.osm.Node-class.html#getLon" title="Returns the nodes&#39;s Longitude." alt="" coords="17,516,536,535"/>
+<area shape="rect" id="node72" href="mosp.geo.osm.Node-class.html#setLat" title="Sets the node&#39;s Latitude and UTM coordinates." alt="" coords="17,535,536,553"/>
+<area shape="rect" id="node72" href="mosp.geo.osm.Node-class.html#setLon" title="Sets the node&#39;s Longitude and UTM coordinates." alt="" coords="17,553,536,572"/>
+<area shape="rect" id="node72" href="mosp.geo.osm.Node-class.html#getX" title="Returns the node&#39;s x coordinate, it&#39;s UTM easting." alt="" coords="17,572,536,591"/>
+<area shape="rect" id="node72" href="mosp.geo.osm.Node-class.html#getY" title="Returns the node&#39;s y coordinate, it&#39;s UTM northing." alt="" coords="17,591,536,609"/>
+<area shape="rect" id="node72" href="mosp.geo.osm.Node-class.html#getZone" title="Returns the node&#39;s UTM zone." alt="" coords="17,609,536,628"/>
+<area shape="rect" id="node72" href="mosp.geo.osm.Node-class.html#setX" title="Sets the node&#39;s x coordinate (UTM easting) and re&#45;calculates Lat/Lon." alt="" coords="17,628,536,647"/>
+<area shape="rect" id="node72" href="mosp.geo.osm.Node-class.html#setY" title="Sets the node&#39;s y coordinate (UTM northing) and re&#45;calculates Lat/Lon." alt="" coords="17,647,536,665"/>
+<area shape="rect" id="node72" href="mosp.geo.osm.Node-class.html#setZone" title="Sets the node&#39;s y coordinate (UTM northing) and re&#45;calculates Lat/Lon." alt="" coords="17,665,536,684"/>
+<area shape="rect" id="node72" href="mosp.geo.osm.Node-class.html#__repr__" title="String respresentation of RoutingNode." alt="" coords="17,684,536,703"/>
+<area shape="rect" id="node1" href="mosp.geo.osm.Node-class.html" title="A geo&#45;model node." alt="" coords="5,358,547,709"/>
+<area shape="rect" id="node73" href="mosp.routing.RoutingNode-class.html#id" title="RoutingNode id" alt="" coords="191,31,363,49"/>
+<area shape="rect" id="node73" href="mosp.routing.RoutingNode-class.html#n" title="list of sorted neighbor keys = mapping of route_next ids (0..254) to &#160;mosp &#160;nodes (any id)" alt="" coords="191,49,363,68"/>
+<area shape="rect" id="node73" href="mosp.routing.RoutingNode-class.html#neighbors" title="dict of neighbor RoutingNodes of this RoutingNode, keys=RoutingNode, &#160;values=its distance" alt="" coords="191,68,363,87"/>
+<area shape="rect" id="node73" href="mosp.routing.RoutingNode-class.html#todo" title="todo list for routing table calculation" alt="" coords="191,87,363,105"/>
+<area shape="rect" id="node73" href="mosp.routing.RoutingNode-class.html#ways" title="dict of ways the RoutingNode is connect with" alt="" coords="191,105,363,124"/>
+<area shape="rect" id="node73" href="mosp.routing.RoutingNode-class.html#worldobject" title="Stores a Location or other real world objects at this road network &#160;node/place, e.g used for act_at_node()" alt="" coords="191,124,363,143"/>
+<area shape="rect" id="node73" href="mosp.routing.RoutingNode-class.html#__cmp__" title="Compares two RoutingNodes by their id." alt="" coords="191,145,363,164"/>
+<area shape="rect" id="node73" href="mosp.routing.RoutingNode-class.html#cleanup" title="Clears RoutingNode&#39;s route_dist and neighbors" alt="" coords="191,164,363,183"/>
+<area shape="rect" id="node73" href="mosp.routing.RoutingNode-class.html#get_route" title="Returns the next RoutingNode on the route from this routingNode to &lt;node&gt;" alt="" coords="191,183,363,201"/>
+<area shape="rect" id="node73" href="mosp.routing.RoutingNode-class.html#get_route_dist" title="Returns the next RoutingNode and distance to it on the route from this &#160;routingNode to &lt;node&gt;" alt="" coords="191,201,363,220"/>
+<area shape="rect" id="node73" href="mosp.routing.RoutingNode-class.html#get_routes" title="Yields all distances from this RoutingNode to all nodes as 2&#45;tuples &lt;n, &#160;distance&gt;." alt="" coords="191,220,363,239"/>
+<area shape="rect" id="node73" href="mosp.routing.RoutingNode-class.html#on_visit" title="What has to be done when a Person visits this node in simulation?" alt="" coords="191,239,363,257"/>
+<area shape="rect" id="node73" href="mosp.routing.RoutingNode-class.html#set_route" title="Sets value of route_next (&lt;next&gt;) and route_dist (&lt;dist&gt;) for route from &#160;this RoutingNode to &lt;to&gt;" alt="" coords="191,257,363,276"/>
+<area shape="rect" id="node73" href="mosp.routing.RoutingNode-class.html#setup" title="Set up arrays route_next and route_dist with default values" alt="" coords="191,276,363,295"/>
+<area shape="rect" id="node73" href="mosp.routing.RoutingNode-class.html#setup2" title="Feed arrays route_next and route_dist with routing information to direct &#160;neighbors." alt="" coords="191,295,363,313"/>
+<area shape="rect" id="node73" href="mosp.routing.RoutingNode-class.html#update" title="Calculate some routing data for all RoutingNodes in self.todo." alt="" coords="191,313,363,332"/>
+<area shape="rect" id="node2" href="mosp.routing.RoutingNode-class.html" title="A routing node." alt="" coords="179,6,373,338"/>
+</map>
+  <img src="uml_class_diagram_for_mosp_geo.png" alt='' usemap="#uml_class_diagram_for_mosp_geo" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>A geo-model node.</p>
+
+<hr />
+<div class="fields">      <dl><dt>Authors:</dt>
+        <dd>
+          P. Tute,
+          Rory McCann
+        </dd>
+      </dl>
+</div><!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.geo.osm.Node-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">id</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">x</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">y</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">zone</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">lon</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">lat</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">tags</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Initialize the geo-model node.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.osm-pysrc.html#Node.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getLat"></a><span class="summary-sig-name">getLat</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns the node's Latitude.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.osm-pysrc.html#Node.getLat">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getLon"></a><span class="summary-sig-name">getLon</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns the nodes's Longitude.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.osm-pysrc.html#Node.getLon">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setLat"></a><span class="summary-sig-name">setLat</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lat</span>)</span><br />
+      Sets the node's Latitude and UTM coordinates.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.osm-pysrc.html#Node.setLat">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setLon"></a><span class="summary-sig-name">setLon</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lon</span>)</span><br />
+      Sets the node's Longitude and UTM coordinates.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.osm-pysrc.html#Node.setLon">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getX"></a><span class="summary-sig-name">getX</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns the node's x coordinate, it's UTM easting.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.osm-pysrc.html#Node.getX">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getY"></a><span class="summary-sig-name">getY</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns the node's y coordinate, it's UTM northing.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.osm-pysrc.html#Node.getY">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getZone"></a><span class="summary-sig-name">getZone</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns the node's UTM zone.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.osm-pysrc.html#Node.getZone">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setX"></a><span class="summary-sig-name">setX</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>)</span><br />
+      Sets the node's x coordinate (UTM easting) and re-calculates Lat/Lon.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.osm-pysrc.html#Node.setX">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setY"></a><span class="summary-sig-name">setY</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">y</span>)</span><br />
+      Sets the node's y coordinate (UTM northing) and re-calculates 
+      Lat/Lon.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.osm-pysrc.html#Node.setY">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setZone"></a><span class="summary-sig-name">setZone</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">z</span>)</span><br />
+      Sets the node's y coordinate (UTM northing) and re-calculates 
+      Lat/Lon.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.osm-pysrc.html#Node.setZone">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.geo.osm.Node-class.html#__repr__" class="summary-sig-name">__repr__</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      String respresentation of RoutingNode.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.osm-pysrc.html#Node.__repr__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="mosp.routing.RoutingNode-class.html">routing.RoutingNode</a></code></b>:
+      <code><a href="mosp.routing.RoutingNode-class.html#__cmp__">__cmp__</a></code>,
+      <code><a href="mosp.routing.RoutingNode-class.html#cleanup">cleanup</a></code>,
+      <code><a href="mosp.routing.RoutingNode-class.html#get_route">get_route</a></code>,
+      <code><a href="mosp.routing.RoutingNode-class.html#get_route_dist">get_route_dist</a></code>,
+      <code><a href="mosp.routing.RoutingNode-class.html#get_routes">get_routes</a></code>,
+      <code><a href="mosp.routing.RoutingNode-class.html#on_visit">on_visit</a></code>,
+      <code><a href="mosp.routing.RoutingNode-class.html#set_route">set_route</a></code>,
+      <code><a href="mosp.routing.RoutingNode-class.html#setup">setup</a></code>,
+      <code><a href="mosp.routing.RoutingNode-class.html#setup2">setup2</a></code>,
+      <code><a href="mosp.routing.RoutingNode-class.html#update">update</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="mosp.routing.RoutingNode-class.html">routing.RoutingNode</a></code></b>:
+      <code><a href="mosp.routing.RoutingNode-class.html#id">id</a></code>,
+      <code><a href="mosp.routing.RoutingNode-class.html#n">n</a></code>,
+      <code><a href="mosp.routing.RoutingNode-class.html#neighbors">neighbors</a></code>,
+      <code><a href="mosp.routing.RoutingNode-class.html#todo">todo</a></code>,
+      <code><a href="mosp.routing.RoutingNode-class.html#ways">ways</a></code>,
+      <code><a href="mosp.routing.RoutingNode-class.html#worldobject">worldobject</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="mosp.geo.osm.Node-class.html#lat" class="summary-name">lat</a><br />
+      Returns the node's Latitude.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="mosp.geo.osm.Node-class.html#lon" class="summary-name">lon</a><br />
+      Returns the nodes's Longitude.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="mosp.geo.osm.Node-class.html#x" class="summary-name">x</a><br />
+      Returns the node's x coordinate, it's UTM easting.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="mosp.geo.osm.Node-class.html#y" class="summary-name">y</a><br />
+      Returns the node's y coordinate, it's UTM northing.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="mosp.geo.osm.Node-class.html#z" class="summary-name">z</a><br />
+      Returns the node's UTM zone.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">id</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">x</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">y</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">zone</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">lon</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">lat</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">tags</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.geo.osm-pysrc.html#Node.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialize the geo-model node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>id</code></strong> - node id</li>
+        <li><strong class="pname"><code>x</code></strong> - UTM easting</li>
+        <li><strong class="pname"><code>y</code></strong> - UTM northing</li>
+        <li><strong class="pname"><code>zone</code></strong> - UTM zone</li>
+        <li><strong class="pname"><code>lon</code></strong> - WGS84 Longitude</li>
+        <li><strong class="pname"><code>lat</code></strong> - WGS84 Latitude</li>
+        <li><strong class="pname"><code>tags</code></strong> - OSM tags</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__repr__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__repr__</span>(<span class="sig-arg">self</span>)</span>
+    <br /><em class="fname">(Representation operator)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.geo.osm-pysrc.html#Node.__repr__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>String respresentation of RoutingNode.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__repr__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Property Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="lat"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">lat</h3>
+  <p>Returns the node's Latitude.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="mosp.geo.osm.Node-class.html#getLat" class="summary-sig-name">getLat</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Returns the node's Latitude.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="mosp.geo.osm.Node-class.html#setLat" class="summary-sig-name">setLat</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lat</span>)</span>
+        - Sets the node's Latitude and UTM coordinates.
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="lon"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">lon</h3>
+  <p>Returns the nodes's Longitude.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="mosp.geo.osm.Node-class.html#getLon" class="summary-sig-name">getLon</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Returns the nodes's Longitude.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="mosp.geo.osm.Node-class.html#setLon" class="summary-sig-name">setLon</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">lon</span>)</span>
+        - Sets the node's Longitude and UTM coordinates.
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="x"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">x</h3>
+  <p>Returns the node's x coordinate, it's UTM easting.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="mosp.geo.osm.Node-class.html#getX" class="summary-sig-name">getX</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Returns the node's x coordinate, it's UTM easting.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="mosp.geo.osm.Node-class.html#setX" class="summary-sig-name">setX</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>)</span>
+        - Sets the node's x coordinate (UTM easting) and re-calculates Lat/Lon.
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="y"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">y</h3>
+  <p>Returns the node's y coordinate, it's UTM northing.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="mosp.geo.osm.Node-class.html#getY" class="summary-sig-name">getY</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Returns the node's y coordinate, it's UTM northing.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="mosp.geo.osm.Node-class.html#setY" class="summary-sig-name">setY</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">y</span>)</span>
+        - Sets the node's y coordinate (UTM northing) and re-calculates 
+      Lat/Lon.
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="z"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">z</h3>
+  <p>Returns the node's UTM zone.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="mosp.geo.osm.Node-class.html#getZone" class="summary-sig-name">getZone</a>(<span class="summary-sig-arg">self</span>)</span>
+        - Returns the node's UTM zone.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="mosp.geo.osm.Node-class.html#setZone" class="summary-sig-name">setZone</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">z</span>)</span>
+        - Sets the node's y coordinate (UTM northing) and re-calculates 
+      Lat/Lon.
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:28 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

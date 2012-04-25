@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>mosp_examples.external_controlled_random_wiggler</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="mosp_examples-module.html">Package&nbsp;mosp_examples</a> ::
+        Module&nbsp;external_controlled_random_wiggler
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="mosp_examples.external_controlled_random_wiggler-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="mosp_examples.external_controlled_random_wiggler-module.html">Module mosp_examples.external_controlled_random_wiggler</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#!/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-docstring">""" External-controlled simulation example</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-docstring">    - random movement</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-docstring">    - output to visual player, which is executed as child process</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring">    - this simulation is steered by an external entity via TCP socket connection</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring">    - uses SimulationControlled</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-docstring">    - use mosp/controller.py for simple demo control</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-string">".."</tt><tt class="py-op">)</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">time</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">random</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package mosp=mosp-module.html"><a title="mosp" class="py-name" href="#" onclick="return doclink('link-0', 'mosp', 'link-0');">mosp</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module mosp.core=mosp.core-module.html"><a title="mosp.core" class="py-name" href="#" onclick="return doclink('link-1', 'core', 'link-1');">core</a></tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Class mosp.core.Person=mosp.core.Person-class.html"><a title="mosp.core.Person" class="py-name" href="#" onclick="return doclink('link-2', 'Person', 'link-2');">Person</a></tt><tt class="py-op">,</tt> <tt id="link-3" class="py-name" targets="Class mosp.core.Simulation=mosp.core.Simulation-class.html"><a title="mosp.core.Simulation" class="py-name" href="#" onclick="return doclink('link-3', 'Simulation', 'link-3');">Simulation</a></tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-4" class="py-name"><a title="mosp" class="py-name" href="#" onclick="return doclink('link-4', 'mosp', 'link-0');">mosp</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Module mosp.controller=mosp.controller-module.html"><a title="mosp.controller" class="py-name" href="#" onclick="return doclink('link-5', 'controller', 'link-5');">controller</a></tt> <tt class="py-keyword">import</tt> <tt id="link-6" class="py-name" targets="Class mosp.controller.SimulationControlled=mosp.controller.SimulationControlled-class.html"><a title="mosp.controller.SimulationControlled" class="py-name" href="#" onclick="return doclink('link-6', 'SimulationControlled', 'link-6');">SimulationControlled</a></tt><tt class="py-op">,</tt> <tt id="link-7" class="py-name" targets="Class mosp.controller.Ticker=mosp.controller.Ticker-class.html"><a title="mosp.controller.Ticker" class="py-name" href="#" onclick="return doclink('link-7', 'Ticker', 'link-7');">Ticker</a></tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-8" class="py-name"><a title="mosp" class="py-name" href="#" onclick="return doclink('link-8', 'mosp', 'link-0');">mosp</a></tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Package mosp.geo=mosp.geo-module.html"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-9', 'geo', 'link-9');">geo</a></tt> <tt class="py-keyword">import</tt> <tt id="link-10" class="py-name" targets="Module mosp.geo.osm=mosp.geo.osm-module.html"><a title="mosp.geo.osm" class="py-name" href="#" onclick="return doclink('link-10', 'osm', 'link-10');">osm</a></tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-11" class="py-name"><a title="mosp" class="py-name" href="#" onclick="return doclink('link-11', 'mosp', 'link-0');">mosp</a></tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Module mosp.locations=mosp.locations-module.html"><a title="mosp.locations" class="py-name" href="#" onclick="return doclink('link-12', 'locations', 'link-12');">locations</a></tt> <tt class="py-keyword">import</tt> <tt id="link-13" class="py-name" targets="Class mosp.locations.Cafe=mosp.locations.Cafe-class.html"><a title="mosp.locations.Cafe" class="py-name" href="#" onclick="return doclink('link-13', 'Cafe', 'link-13');">Cafe</a></tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-14" class="py-name"><a title="mosp" class="py-name" href="#" onclick="return doclink('link-14', 'mosp', 'link-0');">mosp</a></tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Package mosp.impl=mosp.impl-module.html"><a title="mosp.impl" class="py-name" href="#" onclick="return doclink('link-15', 'impl', 'link-15');">impl</a></tt> <tt class="py-keyword">import</tt> <tt id="link-16" class="py-name" targets="Module mosp.impl.movement=mosp.impl.movement-module.html"><a title="mosp.impl.movement" class="py-name" href="#" onclick="return doclink('link-16', 'movement', 'link-16');">movement</a></tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-17" class="py-name"><a title="mosp" class="py-name" href="#" onclick="return doclink('link-17', 'mosp', 'link-0');">mosp</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Module mosp.monitors=mosp.monitors-module.html"><a title="mosp.monitors" class="py-name" href="#" onclick="return doclink('link-18', 'monitors', 'link-18');">monitors</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt id="link-19" class="py-name" targets="Variable mosp_tools.slowcat.__author__=mosp_tools.slowcat-module.html#__author__,Variable viewer.lib.tilenames.__author__=viewer.lib.tilenames-module.html#__author__"><a title="mosp_tools.slowcat.__author__
+viewer.lib.tilenames.__author__" class="py-name" href="#" onclick="return doclink('link-19', '__author__', 'link-19');">__author__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"B. Henne, P. Tute"</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-name">__contact__</tt> <tt class="py-op">=</tt> <tt class="py-string">"henne@dcsec.uni-hannover.de"</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"><tt class="py-name">__copyright__</tt> <tt class="py-op">=</tt> <tt class="py-string">"(c) 2010-2012, DCSec, Leibniz Universitaet Hannover, Germany"</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"><tt id="link-20" class="py-name" targets="Variable viewer.lib.tilenames.__license__=viewer.lib.tilenames-module.html#__license__"><a title="viewer.lib.tilenames.__license__" class="py-name" href="#" onclick="return doclink('link-20', '__license__', 'link-20');">__license__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"GPLv3"</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"> </tt>
+<a name="RandomWiggler"></a><div id="RandomWiggler-def"><a name="L29"></a><tt class="py-lineno">29</tt> <a class="py-toggle" href="#" id="RandomWiggler-toggle" onclick="return toggle('RandomWiggler');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="mosp_examples.external_controlled_random_wiggler.RandomWiggler-class.html">RandomWiggler</a><tt class="py-op">(</tt><tt class="py-base-class">Person</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RandomWiggler-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="RandomWiggler-expanded"><a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">    <tt class="py-docstring">"""Implements a simple person doing only random movement on the map.</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"><tt class="py-docstring">    @author: P. Tute"""</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">    <tt id="link-21" class="py-name" targets="Method mosp.core.Person.next_target()=mosp.core.Person-class.html#next_target,Method mosp_examples.statemachine_wiggler.WorkWiggler.next_target()=mosp_examples.statemachine_wiggler.WorkWiggler-class.html#next_target"><a title="mosp.core.Person.next_target
+mosp_examples.statemachine_wiggler.WorkWiggler.next_target" class="py-name" href="#" onclick="return doclink('link-21', 'next_target', 'link-21');">next_target</a></tt> <tt class="py-op">=</tt> <tt id="link-22" class="py-name"><a title="mosp.impl.movement" class="py-name" href="#" onclick="return doclink('link-22', 'movement', 'link-16');">movement</a></tt><tt class="py-op">.</tt><tt id="link-23" class="py-name" targets="Function mosp.impl.movement.person_next_target_random()=mosp.impl.movement-module.html#person_next_target_random"><a title="mosp.impl.movement.person_next_target_random" class="py-name" href="#" onclick="return doclink('link-23', 'person_next_target_random', 'link-23');">person_next_target_random</a></tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">    <tt id="link-24" class="py-name" targets="Variable mosp_examples.external_controlled_random_wiggler.RandomWiggler.first_time=mosp_examples.external_controlled_random_wiggler.RandomWiggler-class.html#first_time"><a title="mosp_examples.external_controlled_random_wiggler.RandomWiggler.first_time" class="py-name" href="#" onclick="return doclink('link-24', 'first_time', 'link-24');">first_time</a></tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"> </tt>
+<a name="RandomWiggler.act_at_node"></a><div id="RandomWiggler.act_at_node-def"><a name="L35"></a><tt class="py-lineno">35</tt> <a class="py-toggle" href="#" id="RandomWiggler.act_at_node-toggle" onclick="return toggle('RandomWiggler.act_at_node');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp_examples.external_controlled_random_wiggler.RandomWiggler-class.html#act_at_node">act_at_node</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">node</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RandomWiggler.act_at_node-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="RandomWiggler.act_at_node-expanded"><a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">        <tt class="py-docstring">"""Implementation of act_at_node: remove person from sim and send it to another sim."""</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">        <tt class="py-name">worldobject</tt> <tt class="py-op">=</tt> <tt class="py-name">node</tt><tt class="py-op">.</tt><tt class="py-name">worldobject</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">worldobject</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">worldobject</tt><tt class="py-op">,</tt> <tt id="link-25" class="py-name"><a title="mosp.locations.Cafe" class="py-name" href="#" onclick="return doclink('link-25', 'Cafe', 'link-13');">Cafe</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="mosp_examples.external_controlled_random_wiggler.RandomWiggler.first_time" class="py-name" href="#" onclick="return doclink('link-26', 'first_time', 'link-24');">first_time</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">                    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name"><a title="mosp_examples.external_controlled_random_wiggler.RandomWiggler.first_time" class="py-name" href="#" onclick="return doclink('link-27', 'first_time', 'link-24');">first_time</a></tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">                    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Variable mosp.group.Message.sim=mosp.group.Message-class.html#sim"><a title="mosp.group.Message.sim" class="py-name" href="#" onclick="return doclink('link-28', 'sim', 'link-28');">sim</a></tt><tt class="py-op">.</tt><tt id="link-29" class="py-name" targets="Method mosp.core.Simulation.del_person()=mosp.core.Simulation-class.html#del_person"><a title="mosp.core.Simulation.del_person" class="py-name" href="#" onclick="return doclink('link-29', 'del_person', 'link-29');">del_person</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">                    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="mosp.group.Message.sim" class="py-name" href="#" onclick="return doclink('link-30', 'sim', 'link-28');">sim</a></tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Method mosp.controller.SimulationControlled.send_person()=mosp.controller.SimulationControlled-class.html#send_person"><a title="mosp.controller.SimulationControlled.send_person" class="py-name" href="#" onclick="return doclink('link-31', 'send_person', 'link-31');">send_person</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">node</tt><tt class="py-op">.</tt><tt class="py-name">id</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">                    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">last_node</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">next_node</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">                <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">                    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="mosp_examples.external_controlled_random_wiggler.RandomWiggler.first_time" class="py-name" href="#" onclick="return doclink('link-32', 'first_time', 'link-24');">first_time</a></tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+</div></div><a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"> </tt>
+<a name="main"></a><div id="main-def"><a name="L48"></a><tt class="py-lineno">48</tt> <a class="py-toggle" href="#" id="main-toggle" onclick="return toggle('main');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp_examples.external_controlled_random_wiggler-module.html#main">main</a><tt class="py-op">(</tt><tt class="py-param">get_nodes</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="main-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="main-expanded"><a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">    <tt class="py-docstring">"""Defines the simulation, map, monitors, persons."""</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">    <tt class="py-name">t</tt> <tt class="py-op">=</tt> <tt class="py-name">time</tt><tt class="py-op">.</tt><tt class="py-name">time</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">get_nodes</tt><tt class="py-op">:</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">            <tt class="py-name">name</tt> <tt class="py-op">=</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">            <tt class="py-name">port</tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">IndexError</tt><tt class="py-op">:</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-string">'No name or port number specified!'</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-string">'Usage: python external-controlled_random_wiggler.py NAME PORT'</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">            <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">        <tt class="py-name">s</tt> <tt class="py-op">=</tt> <tt id="link-33" class="py-name"><a title="mosp.controller.SimulationControlled" class="py-name" href="#" onclick="return doclink('link-33', 'SimulationControlled', 'link-6');">SimulationControlled</a></tt><tt class="py-op">(</tt><tt id="link-34" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-34', 'geo', 'link-9');">geo</a></tt><tt class="py-op">=</tt><tt id="link-35" class="py-name"><a title="mosp.geo.osm" class="py-name" href="#" onclick="return doclink('link-35', 'osm', 'link-10');">osm</a></tt><tt class="py-op">.</tt><tt id="link-36" class="py-name" targets="Class mosp.geo.osm.OSMModel=mosp.geo.osm.OSMModel-class.html"><a title="mosp.geo.osm.OSMModel" class="py-name" href="#" onclick="return doclink('link-36', 'OSMModel', 'link-36');">OSMModel</a></tt><tt class="py-op">(</tt><tt class="py-string">'../data/minimap0.osm'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">name</tt><tt class="py-op">=</tt><tt class="py-name">name</tt><tt class="py-op">,</tt> <tt class="py-name">host</tt><tt class="py-op">=</tt><tt class="py-string">'localhost'</tt><tt class="py-op">,</tt> <tt class="py-name">port</tt><tt class="py-op">=</tt><tt class="py-name">port</tt><tt class="py-op">,</tt> <tt class="py-name">rel_speed</tt><tt class="py-op">=</tt><tt class="py-number">40</tt><tt class="py-op">)</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-name">time</tt><tt class="py-op">.</tt><tt class="py-name">time</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">-</tt> <tt class="py-name">t</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">        <tt class="py-comment">#m = s.add_monitor(EmptyMonitor, 2)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">        <tt class="py-name">m</tt> <tt class="py-op">=</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name" targets="Method mosp.core.Simulation.add_monitor()=mosp.core.Simulation-class.html#add_monitor"><a title="mosp.core.Simulation.add_monitor" class="py-name" href="#" onclick="return doclink('link-37', 'add_monitor', 'link-37');">add_monitor</a></tt><tt class="py-op">(</tt><tt id="link-38" class="py-name" targets="Class mosp.monitors.SocketPlayerMonitor=mosp.monitors.SocketPlayerMonitor-class.html"><a title="mosp.monitors.SocketPlayerMonitor" class="py-name" href="#" onclick="return doclink('link-38', 'SocketPlayerMonitor', 'link-38');">SocketPlayerMonitor</a></tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">        <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name" targets="Method mosp.core.Simulation.add_persons()=mosp.core.Simulation-class.html#add_persons"><a title="mosp.core.Simulation.add_persons" class="py-name" href="#" onclick="return doclink('link-39', 'add_persons', 'link-39');">add_persons</a></tt><tt class="py-op">(</tt><tt id="link-40" class="py-name" targets="Class mosp_examples.external_controlled_random_wiggler.RandomWiggler=mosp_examples.external_controlled_random_wiggler.RandomWiggler-class.html,Class mosp_examples.random_wiggler.RandomWiggler=mosp_examples.random_wiggler.RandomWiggler-class.html,Class mosp_examples.roadwidth_wiggler.RandomWiggler=mosp_examples.roadwidth_wiggler.RandomWiggler-class.html,Class mosp_examples.statemachine_wiggler.RandomWiggler=mosp_examples.statemachine_wiggler.RandomWiggler-class.html"><a title="mosp_examples.external_controlled_random_wiggler.RandomWiggler
+mosp_examples.random_wiggler.RandomWiggler
+mosp_examples.roadwidth_wiggler.RandomWiggler
+mosp_examples.statemachine_wiggler.RandomWiggler" class="py-name" href="#" onclick="return doclink('link-40', 'RandomWiggler', 'link-40');">RandomWiggler</a></tt><tt class="py-op">,</tt> <tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-name">monitor</tt><tt class="py-op">=</tt><tt class="py-name">m</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">p</tt> <tt class="py-keyword">in</tt> <tt class="py-op">[</tt><tt class="py-name">node</tt> <tt class="py-keyword">for</tt> <tt class="py-name">node</tt> <tt class="py-keyword">in</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-41', 'geo', 'link-9');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">way_nodes</tt> <tt class="py-keyword">if</tt> <tt class="py-string">"amenity"</tt> <tt class="py-keyword">in</tt> <tt class="py-name">node</tt><tt class="py-op">.</tt><tt class="py-name">tags</tt> <tt class="py-keyword">and</tt> <tt class="py-name">node</tt><tt class="py-op">.</tt><tt class="py-name">tags</tt><tt class="py-op">[</tt><tt class="py-string">"amenity"</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-string">"cafe"</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">            <tt class="py-name">c</tt> <tt class="py-op">=</tt> <tt id="link-42" class="py-name"><a title="mosp.locations.Cafe" class="py-name" href="#" onclick="return doclink('link-42', 'Cafe', 'link-13');">Cafe</a></tt><tt class="py-op">(</tt><tt class="py-name">p</tt><tt class="py-op">.</tt><tt class="py-name">tags</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">s</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line">            <tt class="py-name">p</tt><tt class="py-op">.</tt><tt class="py-name">worldobject</tt> <tt class="py-op">=</tt> <tt class="py-name">c</tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">            <tt class="py-name">s</tt><tt class="py-op">.</tt><tt class="py-name">activate</tt><tt class="py-op">(</tt><tt class="py-name">c</tt><tt class="py-op">,</tt> <tt class="py-name">c</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name" targets="Method mosp.locations.Location.serve()=mosp.locations.Location-class.html#serve"><a title="mosp.locations.Location.serve" class="py-name" href="#" onclick="return doclink('link-43', 'serve', 'link-43');">serve</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">        <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name" targets="Method mosp.controller.Controller.run()=mosp.controller.Controller-class.html#run,Method mosp.controller.SimulationControlled.run()=mosp.controller.SimulationControlled-class.html#run,Method mosp.core.Simulation.run()=mosp.core.Simulation-class.html#run,Method mosp_examples.statemachine_wiggler.SocketPlayerClock.run()=mosp_examples.statemachine_wiggler.SocketPlayerClock-class.html#run"><a title="mosp.controller.Controller.run
+mosp.controller.SimulationControlled.run
+mosp.core.Simulation.run
+mosp_examples.statemachine_wiggler.SocketPlayerClock.run" class="py-name" href="#" onclick="return doclink('link-44', 'run', 'link-44');">run</a></tt><tt class="py-op">(</tt><tt class="py-name">until</tt><tt class="py-op">=</tt><tt class="py-number">1000000</tt><tt class="py-op">,</tt> <tt class="py-name">real_time</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">monitor</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line">        <tt class="py-name">s</tt> <tt class="py-op">=</tt> <tt id="link-45" class="py-name"><a title="mosp.core.Simulation" class="py-name" href="#" onclick="return doclink('link-45', 'Simulation', 'link-3');">Simulation</a></tt><tt class="py-op">(</tt><tt id="link-46" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-46', 'geo', 'link-9');">geo</a></tt><tt class="py-op">=</tt><tt id="link-47" class="py-name"><a title="mosp.geo.osm" class="py-name" href="#" onclick="return doclink('link-47', 'osm', 'link-10');">osm</a></tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="mosp.geo.osm.OSMModel" class="py-name" href="#" onclick="return doclink('link-48', 'OSMModel', 'link-36');">OSMModel</a></tt><tt class="py-op">(</tt><tt class="py-string">'../data/minimap0.osm'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">rel_speed</tt><tt class="py-op">=</tt><tt class="py-number">40</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">p</tt> <tt class="py-keyword">in</tt> <tt class="py-op">[</tt><tt class="py-name">node</tt> <tt class="py-keyword">for</tt> <tt class="py-name">node</tt> <tt class="py-keyword">in</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-49', 'geo', 'link-9');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">way_nodes</tt> <tt class="py-keyword">if</tt> <tt class="py-string">"amenity"</tt> <tt class="py-keyword">in</tt> <tt class="py-name">node</tt><tt class="py-op">.</tt><tt class="py-name">tags</tt> <tt class="py-keyword">and</tt> <tt class="py-name">node</tt><tt class="py-op">.</tt><tt class="py-name">tags</tt><tt class="py-op">[</tt><tt class="py-string">"amenity"</tt><tt class="py-op">]</tt> <tt class="py-op">==</tt> <tt class="py-string">"cafe"</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-name">p</tt><tt class="py-op">.</tt><tt class="py-name">id</tt><tt class="py-op">,</tt> <tt class="py-name">p</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name" targets="Variable mosp.geo.osm.Node.lat=mosp.geo.osm.Node-class.html#lat"><a title="mosp.geo.osm.Node.lat" class="py-name" href="#" onclick="return doclink('link-50', 'lat', 'link-50');">lat</a></tt><tt class="py-op">,</tt> <tt class="py-name">p</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name" targets="Variable mosp.geo.osm.Node.lon=mosp.geo.osm.Node-class.html#lon"><a title="mosp.geo.osm.Node.lon" class="py-name" href="#" onclick="return doclink('link-51', 'lon', 'link-51');">lon</a></tt><tt class="py-op">,</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-52" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-52', 'geo', 'link-9');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">map_nodeid_osmnodeid</tt><tt class="py-op">[</tt><tt class="py-name">p</tt><tt class="py-op">.</tt><tt class="py-name">id</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line"> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line"> </tt>
+<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">'__main__'</tt><tt class="py-op">:</tt> </tt>
+<a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-string">'nodes'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt><tt class="py-op">:</tt> </tt>
+<a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line">        <tt id="link-53" class="py-name" targets="Method mosp.gui.playerChamplain.Player.main()=mosp.gui.playerChamplain.Player-class.html#main,Function mosp_examples.BTvirus_wiggler.main()=mosp_examples.BTvirus_wiggler-module.html#main,Function mosp_examples.action_wiggler.main()=mosp_examples.action_wiggler-module.html#main,Function mosp_examples.exit_wiggler.main()=mosp_examples.exit_wiggler-module.html#main,Function mosp_examples.external_controlled_random_wiggler.main()=mosp_examples.external_controlled_random_wiggler-module.html#main,Function mosp_examples.message_example.main()=mosp_examples.message_example-module.html#main,Function mosp_examples.passivate_wiggler.main()=mosp_examples.passivate_wiggler-module.html#main,Function mosp_examples.pause_wiggler.main()=mosp_examples.pause_wiggler-module.html#main,Function mosp_examples.poi_act_wiggler.main()=mosp_examples.poi_act_wiggler-module.html#main,Function mosp_examples.poi_wiggler.main()=mosp_examples.poi_wiggler-module.html#main,Function mosp_examples.random_wiggler.main()=mosp_examples.random_wiggler-module.html#main,Function mosp_examples.roadwidth_wiggler.main()=mosp_examples.roadwidth_wiggler-module.html#main,Function mosp_examples.routing_wiggler.main()=mosp_examples.routing_wiggler-module.html#main,Function mosp_examples.socketplayer_demo_wiggler.main()=mosp_examples.socketplayer_demo_wiggler-module.html#main,Function mosp_examples.statemachine_wiggler.main()=mosp_examples.statemachine_wiggler-module.html#main,Function mosp_examples.zombie_wiggler.main()=mosp_examples.zombie_wiggler-module.html#main,Function mosp_tools.analyze_map.main()=mosp_tools.analyze_map-module.html#main,Method mosp_tools.node_finder.Finder.main()=mosp_tools.node_finder.Finder-class.html#main,Function mosp_tools.node_finder.main()=mosp_tools.node_finder-module.html#main,Function mosp_tools.profile_wiggler.main()=mosp_tools.profile_wiggler-module.html#main"><a title="mosp.gui.playerChamplain.Player.main
+mosp_examples.BTvirus_wiggler.main
+mosp_examples.action_wiggler.main
+mosp_examples.exit_wiggler.main
+mosp_examples.external_controlled_random_wiggler.main
+mosp_examples.message_example.main
+mosp_examples.passivate_wiggler.main
+mosp_examples.pause_wiggler.main
+mosp_examples.poi_act_wiggler.main
+mosp_examples.poi_wiggler.main
+mosp_examples.random_wiggler.main
+mosp_examples.roadwidth_wiggler.main
+mosp_examples.routing_wiggler.main
+mosp_examples.socketplayer_demo_wiggler.main
+mosp_examples.statemachine_wiggler.main
+mosp_examples.zombie_wiggler.main
+mosp_tools.analyze_map.main
+mosp_tools.node_finder.Finder.main
+mosp_tools.node_finder.main
+mosp_tools.profile_wiggler.main" class="py-name" href="#" onclick="return doclink('link-53', 'main', 'link-53');">main</a></tt><tt class="py-op">(</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L79"></a><tt class="py-lineno">79</tt>  <tt class="py-line">        <tt id="link-54" class="py-name"><a title="mosp.gui.playerChamplain.Player.main
+mosp_examples.BTvirus_wiggler.main
+mosp_examples.action_wiggler.main
+mosp_examples.exit_wiggler.main
+mosp_examples.external_controlled_random_wiggler.main
+mosp_examples.message_example.main
+mosp_examples.passivate_wiggler.main
+mosp_examples.pause_wiggler.main
+mosp_examples.poi_act_wiggler.main
+mosp_examples.poi_wiggler.main
+mosp_examples.random_wiggler.main
+mosp_examples.roadwidth_wiggler.main
+mosp_examples.routing_wiggler.main
+mosp_examples.socketplayer_demo_wiggler.main
+mosp_examples.statemachine_wiggler.main
+mosp_examples.zombie_wiggler.main
+mosp_tools.analyze_map.main
+mosp_tools.node_finder.Finder.main
+mosp_tools.node_finder.main
+mosp_tools.profile_wiggler.main" class="py-name" href="#" onclick="return doclink('link-54', 'main', 'link-53');">main</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:35 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

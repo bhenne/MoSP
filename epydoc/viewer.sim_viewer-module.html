@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>viewer.sim_viewer</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="viewer-module.html">Package&nbsp;viewer</a> ::
+        Module&nbsp;sim_viewer
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="viewer.sim_viewer-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module sim_viewer</h1><p class="nomargin-top"><span class="codelink"><a href="viewer.sim_viewer-pysrc.html">source&nbsp;code</a></span></p>
+<p>A viewer for the MoSP simulator.</p>
+  <p>It uses a socket to receive geometric objects from the simulation and 
+  draws these onto a layer of OpenStreetMap-map-tiles.</p>
+
+<hr />
+<div class="fields">      <strong>To Do:</strong>
+      <ul class="nomargin-top">
+        <li>
+        draw triangles!!!
+        </li>
+        <li>
+        Zoom fit to BBox (Hmm...maybe trial and error is possible...might be 
+    tricky...)
+        </li>
+        <li>
+        Zoom to double click position (double clicks should be easy, accurate 
+    centering on coordinates is not supportet right now...could be hard)
+        </li>
+      </ul>
+      <p><strong>Author:</strong>
+        P. Tute
+      </p>
+      <p><strong>Contact:</strong>
+        henne@dcsec.uni-hannover.de
+      </p>
+      <p><strong>Copyright:</strong>
+        (c) 2011-2012, DCSec, Leibniz Universitaet Hannover, Germany
+      </p>
+      <p><strong>License:</strong>
+        GPLv3
+      </p>
+</div><!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.sim_viewer.SimViewer-class.html" class="summary-name">SimViewer</a><br />
+      A tool for displaying mosp-simulations.
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__maintainer__"></a><span class="summary-name">__maintainer__</span> = <code title="'B. Henne'"><code class="variable-quote">'</code><code class="variable-string">B. Henne</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.sim_viewer-module.html#TILE_SIZE" class="summary-name">TILE_SIZE</a> = <code title="256">256</code><br />
+      The size of one OSM-tile in pixels.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYBOARD_SCROLL_VALUE"></a><span class="summary-name">KEYBOARD_SCROLL_VALUE</span> = <code title="50">50</code><br />
+      Scrolling by keyboard will move the camera by this many pixels.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.sim_viewer-module.html#MESSAGE_TYPES" class="summary-name">MESSAGE_TYPES</a> = <code title="{'\x00': 'coords',
+ '\x01': 'point',
+ '\x02': 'rectangle',
+ '\x03': 'circle',
+ '\x04': 'triangle',
+ '\x05': 'text',
+ '\x06': 'heatmap',
+ '\x07': 'direct-text',
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">\x00</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">coords</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\x01</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">point</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\x02</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">r</code><code class="variable-ellipsis">...</code></code><br />
+      Supported message types for lookup after receiving an identifier.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.sim_viewer-module.html#MESSAGE_SIZE" class="summary-name">MESSAGE_SIZE</a> = <code title="{'\x00': 16,
+ '\x01': 64,
+ '\x02': 81,
+ '\x03': 65,
+ '\x04': 93,
+ '\x05': 76,
+ '\x06': 52,
+ '\x07': 60,
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">\x00</code><code class="variable-quote">'</code><code class="variable-op">: </code>16<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\x01</code><code class="variable-quote">'</code><code class="variable-op">: </code>64<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\x02</code><code class="variable-quote">'</code><code class="variable-op">: </code>81<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\x03</code><code class="variable-quote">'</code><code class="variable-op">: </code>65<code class="variable-ellipsis">...</code></code><br />
+      The precalculated size of commonly used structs.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.sim_viewer-module.html#ID_TYPE_PREFIX" class="summary-name">ID_TYPE_PREFIX</a> = <code title="{'\x00': 0,
+ '\x01': 0,
+ '\x02': 100000,
+ '\x03': 200000,
+ '\x04': 300000,
+ '\x05': 0}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">\x00</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\x01</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\x02</code><code class="variable-quote">'</code><code class="variable-op">: </code>100000<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\x03</code><code class="variable-quote">'</code><code class="variable-ellipsis">...</code></code><br />
+      These values will be added to the IDs of the respecting object.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.sim_viewer-module.html#PIXEL_DISTANCE" class="summary-name">PIXEL_DISTANCE</a> = <code title="{0: 1.40625,
+ 1: 0.703125,
+ 2: 0.3515625,
+ 3: 0.17578125,
+ 4: 0.087890625,
+ 5: 0.0439453125,
+ 6: 0.02197265625,
+ 7: 0.010986328125,
+..."><code class="variable-group">{</code>0<code class="variable-op">: </code>1.40625<code class="variable-op">, </code>1<code class="variable-op">: </code>0.703125<code class="variable-op">, </code>2<code class="variable-op">: </code>0.3515625<code class="variable-op">, </code>3<code class="variable-op">: </code>0.<code class="variable-ellipsis">...</code></code><br />
+      precalculate lat/lon distance when moving one pixel for each 
+      zoom-level
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'viewer'"><code class="variable-quote">'</code><code class="variable-string">viewer</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="i"></a><span class="summary-name">i</span> = <code title="18">18</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="left"></a><span class="summary-name">left</span> = <code title="-180.0">-180.0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="right"></a><span class="summary-name">right</span> = <code title="-179.998626709">-179.998626709</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-VariablesDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="TILE_SIZE"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">TILE_SIZE</h3>
+  <p>The size of one OSM-tile in pixels. This is constant as long as OSM 
+  does not change.</p>
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+256
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="MESSAGE_TYPES"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">MESSAGE_TYPES</h3>
+  <p>Supported message types for lookup after receiving an identifier.</p>
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">\x00</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">coords</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x01</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">point</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x02</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">rectangle</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x03</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">circle</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x04</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">triangle</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x05</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">text</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x06</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">heatmap</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x07</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">direct-text</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="MESSAGE_SIZE"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">MESSAGE_SIZE</h3>
+  <p>The precalculated size of commonly used structs.</p>
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">\x00</code><code class="variable-quote">'</code><code class="variable-op">: </code>16<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x01</code><code class="variable-quote">'</code><code class="variable-op">: </code>64<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x02</code><code class="variable-quote">'</code><code class="variable-op">: </code>81<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x03</code><code class="variable-quote">'</code><code class="variable-op">: </code>65<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x04</code><code class="variable-quote">'</code><code class="variable-op">: </code>93<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x05</code><code class="variable-quote">'</code><code class="variable-op">: </code>76<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x06</code><code class="variable-quote">'</code><code class="variable-op">: </code>52<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x07</code><code class="variable-quote">'</code><code class="variable-op">: </code>60<code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="ID_TYPE_PREFIX"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">ID_TYPE_PREFIX</h3>
+  <p>These values will be added to the IDs of the respecting object. This 
+  is necessary to be able to differentiate between them after they are 
+  mixed together for faster calculations.</p>
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">\x00</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x01</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x02</code><code class="variable-quote">'</code><code class="variable-op">: </code>100000<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x03</code><code class="variable-quote">'</code><code class="variable-op">: </code>200000<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x04</code><code class="variable-quote">'</code><code class="variable-op">: </code>300000<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">\x05</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="PIXEL_DISTANCE"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">PIXEL_DISTANCE</h3>
+  <p>precalculate lat/lon distance when moving one pixel for each 
+  zoom-level</p>
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code>0<code class="variable-op">: </code>1.40625<code class="variable-op">,</code>
+ 1<code class="variable-op">: </code>0.703125<code class="variable-op">,</code>
+ 2<code class="variable-op">: </code>0.3515625<code class="variable-op">,</code>
+ 3<code class="variable-op">: </code>0.17578125<code class="variable-op">,</code>
+ 4<code class="variable-op">: </code>0.087890625<code class="variable-op">,</code>
+ 5<code class="variable-op">: </code>0.0439453125<code class="variable-op">,</code>
+ 6<code class="variable-op">: </code>0.02197265625<code class="variable-op">,</code>
+ 7<code class="variable-op">: </code>0.010986328125<code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:26 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

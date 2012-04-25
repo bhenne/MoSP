@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>mosp.geo.utm</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="mosp-module.html">Package&nbsp;mosp</a> ::
+        <a href="mosp.geo-module.html">Package&nbsp;geo</a> ::
+        Module&nbsp;utm
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="mosp.geo.utm-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module utm</h1><p class="nomargin-top"><span class="codelink"><a href="mosp.geo.utm-pysrc.html">source&nbsp;code</a></span></p>
+<p>Working with UTM and Lat/Long coordinates</p>
+  <p>Based on 
+  http://home.hiwaay.net/~taylorc/toolbox/geography/geoutm.html</p>
+
+<hr />
+<div class="fields">      <p><strong>Author:</strong>
+        P. Tute, C. Taylor
+      </p>
+      <p><strong>Contact:</strong>
+        henne@dcsec.uni-hannover.de
+      </p>
+      <p><strong>Copyright:</strong>
+        (c) 1997-2003 C. Taylor, 2010-2011, DCSec, Leibniz Universitaet 
+        Hannover, Germany
+      </p>
+      <p><strong>License:</strong>
+        The Python code is based on Javascript code of Charles L. Taylor 
+        from
+        http://home.hiwaay.net/~taylorc/toolbox/geography/geoutm.html
+        The author allowed us to reuse his code.
+        Original license:
+        The documents, images, and other materials on the Chuck Taylor 
+        Web site are copyright (c) 1997-2003 by C. Taylor, unless otherwise
+        noted. 
+        Visitors are permitted to download the materials located on the 
+        Chuck Taylor
+        Web site to their own systems, on a temporary basis, for the 
+        purpose of viewing 
+        them or, in the case of software applications, using them in 
+        accordance with 
+        their intended purpose. 
+        Republishing or redistribution of any of the materials located on 
+        the Chuck Taylor 
+        Web site requires permission from C. Taylor. MoSP has been granted 
+        to use the code.
+      </p>
+</div><!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="long_to_zone"></a><span class="summary-sig-name">long_to_zone</span>(<span class="summary-sig-arg">lon</span>)</span><br />
+      Calculates the current UTM-zone for a given longitude.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.utm-pysrc.html#long_to_zone">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="rad_to_deg"></a><span class="summary-sig-name">rad_to_deg</span>(<span class="summary-sig-arg">rad</span>)</span><br />
+      Converts radians to degrees.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.utm-pysrc.html#rad_to_deg">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="deg_to_rad"></a><span class="summary-sig-name">deg_to_rad</span>(<span class="summary-sig-arg">deg</span>)</span><br />
+      Converts degrees to radians.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.utm-pysrc.html#deg_to_rad">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="UTMCentralMeridian"></a><span class="summary-sig-name">UTMCentralMeridian</span>(<span class="summary-sig-arg">zone</span>)</span><br />
+      Calculates the central meridian for the given UTM-zone.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.utm-pysrc.html#UTMCentralMeridian">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.geo.utm-module.html#ArcLengthOfMeridian" class="summary-sig-name">ArcLengthOfMeridian</a>(<span class="summary-sig-arg">phi</span>)</span><br />
+      Computes the ellipsoidal distance from the equator to a point at a 
+      given latitude.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.utm-pysrc.html#ArcLengthOfMeridian">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.geo.utm-module.html#MapLatLonToXY" class="summary-sig-name">MapLatLonToXY</a>(<span class="summary-sig-arg">phi</span>,
+        <span class="summary-sig-arg">lambd</span>,
+        <span class="summary-sig-arg">lambd0</span>,
+        <span class="summary-sig-arg">xy</span>)</span><br />
+      Converts a latitude/longitude pair to x and y coordinates in the 
+      Transverse Mercator projection.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.utm-pysrc.html#MapLatLonToXY">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="latlong_to_utm"></a><span class="summary-sig-name">latlong_to_utm</span>(<span class="summary-sig-arg">lon</span>,
+        <span class="summary-sig-arg">lat</span>,
+        <span class="summary-sig-arg">zone</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Converts a latitude/longitude pair to x and y coordinates in the 
+      Universal Transverse Mercator projection.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.utm-pysrc.html#latlong_to_utm">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.geo.utm-module.html#FootpointLatitude" class="summary-sig-name">FootpointLatitude</a>(<span class="summary-sig-arg">y</span>)</span><br />
+      Computes the footpoint latitude for use in converting transverse 
+      Mercator coordinates to ellipsoidal coordinates.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.utm-pysrc.html#FootpointLatitude">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.geo.utm-module.html#MapXYToLatLon" class="summary-sig-name">MapXYToLatLon</a>(<span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">lambda0</span>)</span><br />
+      Converts x and y coordinates in the Transverse Mercator projection to
+      a latitude/longitude pair.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.utm-pysrc.html#MapXYToLatLon">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="utm_to_latlong"></a><span class="summary-sig-name">utm_to_latlong</span>(<span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">zone</span>,
+        <span class="summary-sig-arg">southhemi</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Converts x and y coordinates in the Universal Transverse Mercator 
+      projection to a latitude/longitude pair.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.geo.utm-pysrc.html#utm_to_latlong">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__maintainer__"></a><span class="summary-name">__maintainer__</span> = <code title="'B. Henne'"><code class="variable-quote">'</code><code class="variable-string">B. Henne</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="UTMScaleFactor"></a><span class="summary-name">UTMScaleFactor</span> = <code title="0.9996">0.9996</code><br />
+      Ellipsoid model constant
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="sm_a"></a><span class="summary-name">sm_a</span> = <code title="6378137.0">6378137.0</code><br />
+      Ellipsoid model constant: Semi-major axis a
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="sm_b"></a><span class="summary-name">sm_b</span> = <code title="6356752.314">6356752.314</code><br />
+      Ellipsoid model constant: Semi-major axis b
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="sm_EccSquared"></a><span class="summary-name">sm_EccSquared</span> = <code title="0.00669437999013">0.00669437999013</code><br />
+      Ellipsoid model constant
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'mosp.geo'"><code class="variable-quote">'</code><code class="variable-string">mosp.geo</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="ArcLengthOfMeridian"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">ArcLengthOfMeridian</span>(<span class="sig-arg">phi</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.geo.utm-pysrc.html#ArcLengthOfMeridian">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Computes the ellipsoidal distance from the equator to a point at a 
+  given latitude.</p>
+  <p>Reference: Hoffmann-Wellenhof, B., Lichtenegger, H., and Collins, J., 
+  GPS: Theory and Practice, 3rd ed.  New York: Springer-Verlag Wien, 
+  1994.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="MapLatLonToXY"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">MapLatLonToXY</span>(<span class="sig-arg">phi</span>,
+        <span class="sig-arg">lambd</span>,
+        <span class="sig-arg">lambd0</span>,
+        <span class="sig-arg">xy</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.geo.utm-pysrc.html#MapLatLonToXY">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts a latitude/longitude pair to x and y coordinates in the 
+  Transverse Mercator projection.  Note that Transverse Mercator is not the
+  same as UTM a scale factor is required to convert between them.</p>
+  <p>Reference: Hoffmann-Wellenhof, B., Lichtenegger, H., and Collins, J., 
+  GPS: Theory and Practice, 3rd ed.  New York: Springer-Verlag Wien, 
+  1994.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="FootpointLatitude"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">FootpointLatitude</span>(<span class="sig-arg">y</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.geo.utm-pysrc.html#FootpointLatitude">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Computes the footpoint latitude for use in converting transverse 
+  Mercator coordinates to ellipsoidal coordinates.</p>
+  <p>Reference: Hoffmann-Wellenhof, B., Lichtenegger, H., and Collins, J., 
+  GPS: Theory and Practice, 3rd ed.  New York: Springer-Verlag Wien, 
+  1994.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="MapXYToLatLon"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">MapXYToLatLon</span>(<span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">lambda0</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.geo.utm-pysrc.html#MapXYToLatLon">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts x and y coordinates in the Transverse Mercator projection to 
+  a latitude/longitude pair.  Note that Transverse Mercator is not the same
+  as UTM a scale factor is required to convert between them.</p>
+  <p>Reference: Hoffmann-Wellenhof, B., Lichtenegger, H., and Collins, J., 
+  GPS: Theory and Practice, 3rd ed.  New York: Springer-Verlag Wien, 
+  1994.</p>
+  <p>Remarks: The local variables Nf, nuf2, tf, and tf2 serve the same 
+  purpose as N, nu2, t, and t2 in MapLatLonToXY, but they are computed with
+  respect sto the footpoint latitude phif.</p>
+  <p>x1frac, x2frac, x2poly, x3poly, etc. are to enhance readability and to
+  optimize computations.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:26 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

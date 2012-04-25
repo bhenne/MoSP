@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>mosp_tools.heatmap.heatmap.Heatmap</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="mosp_tools-module.html">Package&nbsp;mosp_tools</a> ::
+        <a href="mosp_tools.heatmap-module.html">Package&nbsp;heatmap</a> ::
+        <a href="mosp_tools.heatmap.heatmap-module.html">Module&nbsp;heatmap</a> ::
+        Class&nbsp;Heatmap
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="mosp_tools.heatmap.heatmap.Heatmap-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Heatmap</h1><p class="nomargin-top"><span class="codelink"><a href="mosp_tools.heatmap.heatmap-pysrc.html#Heatmap">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_mosp_too" name="uml_class_diagram_for_mosp_too">
+<area shape="rect" id="node249" href="mosp_tools.heatmap.heatmap.Heatmap-class.html#mapfile" title="filename of underlay map from osm export" alt="" coords="17,31,596,49"/>
+<area shape="rect" id="node249" href="mosp_tools.heatmap.heatmap.Heatmap-class.html#minlon" title="min longitude from osm png export" alt="" coords="17,49,596,68"/>
+<area shape="rect" id="node249" href="mosp_tools.heatmap.heatmap.Heatmap-class.html#maxlon" title="max longitude from osm png export" alt="" coords="17,68,596,87"/>
+<area shape="rect" id="node249" href="mosp_tools.heatmap.heatmap.Heatmap-class.html#minlat" title="min latitude from osm png export" alt="" coords="17,87,596,105"/>
+<area shape="rect" id="node249" href="mosp_tools.heatmap.heatmap.Heatmap-class.html#maxlat" title="max latitude from osm png export" alt="" coords="17,105,596,124"/>
+<area shape="rect" id="node249" href="mosp_tools.heatmap.heatmap.Heatmap-class.html#__init__" title="Initialize the heatmap generation object." alt="" coords="17,127,596,145"/>
+<area shape="rect" id="node249" href="mosp_tools.heatmap.heatmap.Heatmap-class.html#generate" title="Generates the heapmap PNG image files." alt="" coords="17,145,596,164"/>
+<area shape="rect" id="node249" href="mosp_tools.heatmap.heatmap.Heatmap-class.html#mencode_video" title="[Bad Video Quality] Encodes a set of image files to a video file using &#160;mencoder." alt="" coords="17,164,596,183"/>
+<area shape="rect" id="node1" href="mosp_tools.heatmap.heatmap.Heatmap-class.html" title="A generator for heatmap images based on simulation log data." alt="" coords="5,6,608,189"/>
+</map>
+  <img src="uml_class_diagram_for_mosp_too.png" alt='' usemap="#uml_class_diagram_for_mosp_too" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>A generator for heatmap images based on simulation log data.</p>
+
+<hr />
+<div class="fields">      <p><strong>Author:</strong>
+        B. Henne
+      </p>
+</div><!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp_tools.heatmap.heatmap.Heatmap-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mapfilename</span>,
+        <span class="summary-sig-arg">minlon</span>,
+        <span class="summary-sig-arg">maxlon</span>,
+        <span class="summary-sig-arg">minlat</span>,
+        <span class="summary-sig-arg">maxlat</span>,
+        <span class="summary-sig-arg">dotsize</span>=<span class="summary-sig-default">30</span>)</span><br />
+      Initialize the heatmap generation object.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp_tools.heatmap.heatmap-pysrc.html#Heatmap.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp_tools.heatmap.heatmap.Heatmap-class.html#_colorize" class="summary-sig-name" onclick="show_private();">_colorize</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">img</span>,
+        <span class="summary-sig-arg">colors</span>,
+        <span class="summary-sig-arg">opacity</span>)</span><br />
+      Use the colorscheme selected to color the image densities.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp_tools.heatmap.heatmap-pysrc.html#Heatmap._colorize">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__dotImage"></a><span class="summary-sig-name">__dotImage</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">size</span>)</span><br />
+      Returns a image of the dot that is used for drawing heatmap.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp_tools.heatmap.heatmap-pysrc.html#Heatmap.__dotImage">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__translate"></a><span class="summary-sig-name">__translate</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">xy</span>)</span><br />
+      Translates x,y coordinates into pixel offsets of a map.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp_tools.heatmap.heatmap-pysrc.html#Heatmap.__translate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp_tools.heatmap.heatmap.Heatmap-class.html#generate" class="summary-sig-name">generate</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">logfilename</span>,
+        <span class="summary-sig-arg">delimiter</span>,
+        <span class="summary-sig-arg">t</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">t_start</span>,
+        <span class="summary-sig-arg">t_end</span>,
+        <span class="summary-sig-arg">step</span>,
+        <span class="summary-sig-arg">reset_dotlayer_every_step</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Generates the heapmap PNG image files.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp_tools.heatmap.heatmap-pysrc.html#Heatmap.generate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp_tools.heatmap.heatmap.Heatmap-class.html#mencode_video" class="summary-sig-name">mencode_video</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">location</span>,
+        <span class="summary-sig-arg">files</span>,
+        <span class="summary-sig-arg">filetype</span>,
+        <span class="summary-sig-arg">videofile</span>)</span><br />
+      [Bad Video Quality] Encodes a set of image files to a video file 
+      using mencoder.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp_tools.heatmap.heatmap-pysrc.html#Heatmap.mencode_video">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="mapfile"></a><span class="summary-name">mapfile</span><br />
+      filename of underlay map from osm export
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="minlon"></a><span class="summary-name">minlon</span><br />
+      min longitude from osm png export
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="maxlon"></a><span class="summary-name">maxlon</span><br />
+      max longitude from osm png export
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="minlat"></a><span class="summary-name">minlat</span><br />
+      min latitude from osm png export
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="maxlat"></a><span class="summary-name">maxlat</span><br />
+      max latitude from osm png export
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mapfilename</span>,
+        <span class="sig-arg">minlon</span>,
+        <span class="sig-arg">maxlon</span>,
+        <span class="sig-arg">minlat</span>,
+        <span class="sig-arg">maxlat</span>,
+        <span class="sig-arg">dotsize</span>=<span class="sig-default">30</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp_tools.heatmap.heatmap-pysrc.html#Heatmap.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialize the heatmap generation object.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_colorize"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_colorize</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">img</span>,
+        <span class="sig-arg">colors</span>,
+        <span class="sig-arg">opacity</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp_tools.heatmap.heatmap-pysrc.html#Heatmap._colorize">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Use the colorscheme selected to color the image densities.</p>
+  <p>heatmap.py v1.0 20091004. from http://www.jjguy.com/heatmap/</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="generate"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">generate</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">logfilename</span>,
+        <span class="sig-arg">delimiter</span>,
+        <span class="sig-arg">t</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">t_start</span>,
+        <span class="sig-arg">t_end</span>,
+        <span class="sig-arg">step</span>,
+        <span class="sig-arg">reset_dotlayer_every_step</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp_tools.heatmap.heatmap-pysrc.html#Heatmap.generate">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Generates the heapmap PNG image files.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>logfilename</code></strong> - name of csv-formated log file</li>
+        <li><strong class="pname"><code>delimiter</code></strong> - delimiter between columns in csv log file</li>
+        <li><strong class="pname"><code>t</code></strong> - number of log file's column containing time</li>
+        <li><strong class="pname"><code>x</code></strong> - number of log file's column containing x-value</li>
+        <li><strong class="pname"><code>y</code></strong> - number of log file's column containing y-value</li>
+        <li><strong class="pname"><code>t_start</code></strong> - start of output time interval</li>
+        <li><strong class="pname"><code>t_end</code></strong> - end of output time interval</li>
+        <li><strong class="pname"><code>step</code></strong> - size/length of a log accumulation step</li>
+        <li><strong class="pname"><code>reset_dotlayer_every_step</code></strong> - draw second heatmap over first one etc. or clear for each image</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="mencode_video"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">mencode_video</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">location</span>,
+        <span class="sig-arg">files</span>,
+        <span class="sig-arg">filetype</span>,
+        <span class="sig-arg">videofile</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp_tools.heatmap.heatmap-pysrc.html#Heatmap.mencode_video">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>[Bad Video Quality] Encodes a set of image files to a video file using
+  mencoder.</p>
+  <p>Better use:</p>
+  <ol start="1">
+    <li>
+      mencoder mf://PNG/heatmap1*.png -mf type=png:w=780:h=600:fps=30 -o 
+      /dev/null -ovc x264 -x264encopts 
+      pass=1:bitrate=1200:bframes=1:me=umh:partitions=all:trellis=1:qp_step=4:qcomp=0.7:direct_pred=auto:keyint=300
+      -vf crop=768:576:0:0
+    </li>
+    <li>
+      mencoder mf://PNG/heatmap1*.png -mf type=png:w=780:h=600:fps=30 -o 
+      heatmap1.avi -ovc x264 -x264encopts 
+      pass=2:bitrate=1200:bframes=1:me=umh:partitions=all:trellis=1:qp_step=4:qcomp=0.7:direct_pred=auto:keyint=300
+      -vf crop=768:576:0:0
+    </li>
+  </ol>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:32 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

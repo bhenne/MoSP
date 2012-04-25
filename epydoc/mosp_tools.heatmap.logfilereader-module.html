@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>mosp_tools.heatmap.logfilereader</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="mosp_tools-module.html">Package&nbsp;mosp_tools</a> ::
+        <a href="mosp_tools.heatmap-module.html">Package&nbsp;heatmap</a> ::
+        Module&nbsp;logfilereader
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="mosp_tools.heatmap.logfilereader-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module logfilereader</h1><p class="nomargin-top"><span class="codelink"><a href="mosp_tools.heatmap.logfilereader-pysrc.html">source&nbsp;code</a></span></p>
+<p>Helper funtions to read log files</p>
+
+<hr />
+<div class="fields">      <p><strong>Author:</strong>
+        B. Henne
+      </p>
+      <p><strong>Contact:</strong>
+        henne@dcsec.uni-hannover.de
+      </p>
+      <p><strong>Copyright:</strong>
+        (c) 2011, DCSec, Leibniz Universitaet Hannover, Germany
+      </p>
+      <p><strong>License:</strong>
+        GPLv3
+      </p>
+</div><!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp_tools.heatmap.logfilereader-module.html#read_simple" class="summary-sig-name">read_simple</a>(<span class="summary-sig-arg">filename</span>,
+        <span class="summary-sig-arg">delimiter</span>,
+        <span class="summary-sig-arg">t</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>)</span><br />
+      Reads complete CSV log file with time, x-value and y-value and return
+      only this.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp_tools.heatmap.logfilereader-pysrc.html#read_simple">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp_tools.heatmap.logfilereader-module.html#read" class="summary-sig-name">read</a>(<span class="summary-sig-arg">filename</span>,
+        <span class="summary-sig-arg">delimiter</span>,
+        <span class="summary-sig-arg">t</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">t_start</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">t_end</span>=<span class="summary-sig-default">9223372036854775807</span>,
+        <span class="summary-sig-arg">empty</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>)</span><br />
+      Reads CSV log file with time, x-value and y-value for specified time 
+      interval.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp_tools.heatmap.logfilereader-pysrc.html#read">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp_tools.heatmap.logfilereader-module.html#accumulated_read" class="summary-sig-name">accumulated_read</a>(<span class="summary-sig-arg">filename</span>,
+        <span class="summary-sig-arg">delimiter</span>,
+        <span class="summary-sig-arg">t</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">t_start</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">t_end</span>=<span class="summary-sig-default">9223372036854775807</span>,
+        <span class="summary-sig-arg">step</span>=<span class="summary-sig-default">10</span>)</span><br />
+      Reads CSV file as read(), but accumulates return values in step size 
+      packets.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp_tools.heatmap.logfilereader-pysrc.html#accumulated_read">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'mosp_tools.heatmap'"><code class="variable-quote">'</code><code class="variable-string">mosp_tools.heatmap</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="read_simple"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">read_simple</span>(<span class="sig-arg">filename</span>,
+        <span class="sig-arg">delimiter</span>,
+        <span class="sig-arg">t</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp_tools.heatmap.logfilereader-pysrc.html#read_simple">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Reads complete CSV log file with time, x-value and y-value and return 
+  only this.</p>
+  <dl class="fields">
+  </dl>
+<div class="fields">      <p><strong>Author:</strong>
+        B. Henne
+      </p>
+</div></td></tr></table>
+</div>
+<a name="read"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">read</span>(<span class="sig-arg">filename</span>,
+        <span class="sig-arg">delimiter</span>,
+        <span class="sig-arg">t</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">t_start</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">t_end</span>=<span class="sig-default">9223372036854775807</span>,
+        <span class="sig-arg">empty</span>=<span class="sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp_tools.heatmap.logfilereader-pysrc.html#read">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Reads CSV log file with time, x-value and y-value for specified time 
+  interval. Return values for all t_start &lt; t &lt; t_end.</p>
+  <p>Times with no log entries are filled with value of empty. Returns 
+  iterable pair of time and list of coordinates</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>filename</code></strong> - name of csv file</li>
+        <li><strong class="pname"><code>delimiter</code></strong> - delimiter between columns in csv file</li>
+        <li><strong class="pname"><code>t</code></strong> - number of column containing time</li>
+        <li><strong class="pname"><code>x</code></strong> - number of column containing x-value</li>
+        <li><strong class="pname"><code>y</code></strong> - number of column containing y-value</li>
+        <li><strong class="pname"><code>t_start</code></strong> - start of output time interval</li>
+        <li><strong class="pname"><code>t_end</code></strong> - end of output time interval</li>
+        <li><strong class="pname"><code>empty</code></strong> - value yielded if no log entry exists for a time, default is empty
+          list, maybe use None</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Author:</strong>
+        B. Henne
+      </p>
+</div></td></tr></table>
+</div>
+<a name="accumulated_read"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">accumulated_read</span>(<span class="sig-arg">filename</span>,
+        <span class="sig-arg">delimiter</span>,
+        <span class="sig-arg">t</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">t_start</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">t_end</span>=<span class="sig-default">9223372036854775807</span>,
+        <span class="sig-arg">step</span>=<span class="sig-default">10</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp_tools.heatmap.logfilereader-pysrc.html#accumulated_read">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Reads CSV file as read(), but accumulates return values in step size 
+  packets.</p>
+  <dl class="fields">
+  </dl>
+<div class="fields">      <p><strong>Author:</strong>
+        B. Henne
+      </p>
+</div></td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:26 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

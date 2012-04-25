@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>mosp.geo.utm</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="mosp-module.html">Package&nbsp;mosp</a> ::
+        <a href="mosp.geo-module.html">Package&nbsp;geo</a> ::
+        Module&nbsp;utm
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="mosp.geo.utm-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="mosp.geo.utm-module.html">Module mosp.geo.utm</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># -*- coding: utf-8 -*-</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">"""Working with UTM and Lat/Long coordinates</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">Based on http://home.hiwaay.net/~taylorc/toolbox/geography/geoutm.html</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">math</tt> <tt class="py-keyword">import</tt> <tt class="py-name">sin</tt><tt class="py-op">,</tt> <tt class="py-name">cos</tt><tt class="py-op">,</tt> <tt class="py-name">sqrt</tt><tt class="py-op">,</tt> <tt class="py-name">tan</tt><tt class="py-op">,</tt> <tt id="link-0" class="py-name" targets="Variable viewer.lib.tilenames.pi=viewer.lib.tilenames-module.html#pi"><a title="viewer.lib.tilenames.pi" class="py-name" href="#" onclick="return doclink('link-0', 'pi', 'link-0');">pi</a></tt><tt class="py-op">,</tt> <tt class="py-name">floor</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt id="link-1" class="py-name" targets="Variable mosp_tools.slowcat.__author__=mosp_tools.slowcat-module.html#__author__,Variable viewer.lib.tilenames.__author__=viewer.lib.tilenames-module.html#__author__"><a title="mosp_tools.slowcat.__author__
+viewer.lib.tilenames.__author__" class="py-name" href="#" onclick="return doclink('link-1', '__author__', 'link-1');">__author__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"P. Tute, C. Taylor"</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable mosp.geo.utils.__maintainer__=mosp.geo.utils-module.html#__maintainer__,Variable mosp.geo.utm.__maintainer__=mosp.geo.utm-module.html#__maintainer__,Variable mosp.group.__maintainer__=mosp.group-module.html#__maintainer__,Variable mosp.routing.__maintainer__=mosp.routing-module.html#__maintainer__,Variable mosp.test.test_collide.__maintainer__=mosp.test.test_collide-module.html#__maintainer__,Variable mosp.test.test_routing.__maintainer__=mosp.test.test_routing-module.html#__maintainer__,Variable mosp.test.test_utm.__maintainer__=mosp.test.test_utm-module.html#__maintainer__,Variable mosp_examples.message_example.__maintainer__=mosp_examples.message_example-module.html#__maintainer__,Variable mosp_examples.random_wiggler.__maintainer__=mosp_examples.random_wiggler-module.html#__maintainer__,Variable mosp_examples.routing_wiggler.__maintainer__=mosp_examples.routing_wiggler-module.html#__maintainer__,Variable mosp_examples.socketplayer_demo_wiggler.__maintainer__=mosp_examples.socketplayer_demo_wiggler-module.html#__maintainer__,Variable mosp_examples.zombie_wiggler.__maintainer__=mosp_examples.zombie_wiggler-module.html#__maintainer__,Variable viewer.lib.calculations.__maintainer__=viewer.lib.calculations-module.html#__maintainer__,Variable viewer.lib.tileloader.__maintainer__=viewer.lib.tileloader-module.html#__maintainer__,Variable viewer.sim_viewer.__maintainer__=viewer.sim_viewer-module.html#__maintainer__"><a title="mosp.geo.utils.__maintainer__
+mosp.geo.utm.__maintainer__
+mosp.group.__maintainer__
+mosp.routing.__maintainer__
+mosp.test.test_collide.__maintainer__
+mosp.test.test_routing.__maintainer__
+mosp.test.test_utm.__maintainer__
+mosp_examples.message_example.__maintainer__
+mosp_examples.random_wiggler.__maintainer__
+mosp_examples.routing_wiggler.__maintainer__
+mosp_examples.socketplayer_demo_wiggler.__maintainer__
+mosp_examples.zombie_wiggler.__maintainer__
+viewer.lib.calculations.__maintainer__
+viewer.lib.tileloader.__maintainer__
+viewer.sim_viewer.__maintainer__" class="py-name" href="#" onclick="return doclink('link-2', '__maintainer__', 'link-2');">__maintainer__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"B. Henne"</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-name">__contact__</tt> <tt class="py-op">=</tt> <tt class="py-string">"henne@dcsec.uni-hannover.de"</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-name">__copyright__</tt> <tt class="py-op">=</tt> <tt class="py-string">"(c) 1997-2003 C. Taylor, 2010-2011, DCSec, Leibniz Universitaet Hannover, Germany"</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt id="link-3" class="py-name" targets="Variable viewer.lib.tilenames.__license__=viewer.lib.tilenames-module.html#__license__"><a title="viewer.lib.tilenames.__license__" class="py-name" href="#" onclick="return doclink('link-3', '__license__', 'link-3');">__license__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"""</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-string">The Python code is based on Javascript code of Charles L. Taylor from</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-string">http://home.hiwaay.net/~taylorc/toolbox/geography/geoutm.html</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-string">The author allowed us to reuse his code.</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-string">Original license:</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-string">The documents, images, and other materials on the Chuck Taylor </tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-string">Web site are copyright (c) 1997-2003 by C. Taylor, unless otherwise noted. </tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-string">Visitors are permitted to download the materials located on the Chuck Taylor</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-string">Web site to their own systems, on a temporary basis, for the purpose of viewing </tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-string">them or, in the case of software applications, using them in accordance with </tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-string">their intended purpose. </tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-string">Republishing or redistribution of any of the materials located on the Chuck Taylor </tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-string">Web site requires permission from C. Taylor. MoSP has been granted to use the code."""</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-comment"># Ellipsoid model constants (actual values here are for WGS84)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt id="link-4" class="py-name" targets="Variable mosp.geo.utm.UTMScaleFactor=mosp.geo.utm-module.html#UTMScaleFactor"><a title="mosp.geo.utm.UTMScaleFactor" class="py-name" href="#" onclick="return doclink('link-4', 'UTMScaleFactor', 'link-4');">UTMScaleFactor</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0.9996</tt>             <tt class="py-comment">#: Ellipsoid model constant</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt id="link-5" class="py-name" targets="Variable mosp.geo.utm.sm_a=mosp.geo.utm-module.html#sm_a"><a title="mosp.geo.utm.sm_a" class="py-name" href="#" onclick="return doclink('link-5', 'sm_a', 'link-5');">sm_a</a></tt> <tt class="py-op">=</tt> <tt class="py-number">6378137.0</tt>                    <tt class="py-comment">#: Ellipsoid model constant: Semi-major axis a</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt id="link-6" class="py-name" targets="Variable mosp.geo.utm.sm_b=mosp.geo.utm-module.html#sm_b"><a title="mosp.geo.utm.sm_b" class="py-name" href="#" onclick="return doclink('link-6', 'sm_b', 'link-6');">sm_b</a></tt> <tt class="py-op">=</tt> <tt class="py-number">6356752.314</tt>                  <tt class="py-comment">#: Ellipsoid model constant: Semi-major axis b</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt id="link-7" class="py-name" targets="Variable mosp.geo.utm.sm_EccSquared=mosp.geo.utm-module.html#sm_EccSquared"><a title="mosp.geo.utm.sm_EccSquared" class="py-name" href="#" onclick="return doclink('link-7', 'sm_EccSquared', 'link-7');">sm_EccSquared</a></tt> <tt class="py-op">=</tt> <tt class="py-number">6.69437999013e-03</tt>   <tt class="py-comment">#: Ellipsoid model constant</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"> </tt>
+<a name="long_to_zone"></a><div id="long_to_zone-def"><a name="L36"></a><tt class="py-lineno"> 36</tt> <a class="py-toggle" href="#" id="long_to_zone-toggle" onclick="return toggle('long_to_zone');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.geo.utm-module.html#long_to_zone">long_to_zone</a><tt class="py-op">(</tt><tt class="py-param">lon</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="long_to_zone-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="long_to_zone-expanded"><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">    <tt class="py-docstring">"""Calculates the current UTM-zone for a given longitude."""</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">floor</tt><tt class="py-op">(</tt><tt class="py-op">(</tt><tt id="link-8" class="py-name" targets="Variable mosp.geo.osm.Node.lon=mosp.geo.osm.Node-class.html#lon"><a title="mosp.geo.osm.Node.lon" class="py-name" href="#" onclick="return doclink('link-8', 'lon', 'link-8');">lon</a></tt> <tt class="py-op">+</tt> <tt class="py-number">180.0</tt><tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt class="py-number">6</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt> </tt>
+</div><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"> </tt>
+<a name="rad_to_deg"></a><div id="rad_to_deg-def"><a name="L41"></a><tt class="py-lineno"> 41</tt> <a class="py-toggle" href="#" id="rad_to_deg-toggle" onclick="return toggle('rad_to_deg');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.geo.utm-module.html#rad_to_deg">rad_to_deg</a><tt class="py-op">(</tt><tt class="py-param">rad</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="rad_to_deg-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="rad_to_deg-expanded"><a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">    <tt class="py-docstring">"""Converts radians to degrees."""</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-name">rad</tt> <tt class="py-op">/</tt> <tt id="link-9" class="py-name"><a title="viewer.lib.tilenames.pi" class="py-name" href="#" onclick="return doclink('link-9', 'pi', 'link-0');">pi</a></tt> <tt class="py-op">*</tt> <tt class="py-number">180.0</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"> </tt>
+<a name="deg_to_rad"></a><div id="deg_to_rad-def"><a name="L46"></a><tt class="py-lineno"> 46</tt> <a class="py-toggle" href="#" id="deg_to_rad-toggle" onclick="return toggle('deg_to_rad');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.geo.utm-module.html#deg_to_rad">deg_to_rad</a><tt class="py-op">(</tt><tt class="py-param">deg</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="deg_to_rad-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="deg_to_rad-expanded"><a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">    <tt class="py-docstring">"""Converts degrees to radians."""</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-name">deg</tt> <tt class="py-op">/</tt> <tt class="py-number">180.0</tt> <tt class="py-op">*</tt> <tt id="link-10" class="py-name"><a title="viewer.lib.tilenames.pi" class="py-name" href="#" onclick="return doclink('link-10', 'pi', 'link-0');">pi</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"> </tt>
+<a name="UTMCentralMeridian"></a><div id="UTMCentralMeridian-def"><a name="L51"></a><tt class="py-lineno"> 51</tt> <a class="py-toggle" href="#" id="UTMCentralMeridian-toggle" onclick="return toggle('UTMCentralMeridian');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.geo.utm-module.html#UTMCentralMeridian">UTMCentralMeridian</a><tt class="py-op">(</tt><tt class="py-param">zone</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="UTMCentralMeridian-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="UTMCentralMeridian-expanded"><a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">    <tt class="py-docstring">"""Calculates the central meridian for the given UTM-zone."""</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-11" class="py-name" targets="Function mosp.geo.utm.deg_to_rad()=mosp.geo.utm-module.html#deg_to_rad"><a title="mosp.geo.utm.deg_to_rad" class="py-name" href="#" onclick="return doclink('link-11', 'deg_to_rad', 'link-11');">deg_to_rad</a></tt><tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-number">183.0</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">zone</tt> <tt class="py-op">*</tt> <tt class="py-number">6.0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"> </tt>
+<a name="ArcLengthOfMeridian"></a><div id="ArcLengthOfMeridian-def"><a name="L56"></a><tt class="py-lineno"> 56</tt> <a class="py-toggle" href="#" id="ArcLengthOfMeridian-toggle" onclick="return toggle('ArcLengthOfMeridian');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.geo.utm-module.html#ArcLengthOfMeridian">ArcLengthOfMeridian</a><tt class="py-op">(</tt><tt class="py-param">phi</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ArcLengthOfMeridian-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ArcLengthOfMeridian-expanded"><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">    <tt class="py-docstring">"""Computes the ellipsoidal distance from the equator to a point at a</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">       given latitude.</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">       Reference: Hoffmann-Wellenhof, B., Lichtenegger, H., and Collins, J.,</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">       GPS: Theory and Practice, 3rd ed.  New York: Springer-Verlag Wien, 1994."""</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate n </tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt class="py-name">n</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt id="link-12" class="py-name"><a title="mosp.geo.utm.sm_a" class="py-name" href="#" onclick="return doclink('link-12', 'sm_a', 'link-5');">sm_a</a></tt> <tt class="py-op">-</tt> <tt id="link-13" class="py-name"><a title="mosp.geo.utm.sm_b" class="py-name" href="#" onclick="return doclink('link-13', 'sm_b', 'link-6');">sm_b</a></tt><tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt class="py-op">(</tt><tt id="link-14" class="py-name"><a title="mosp.geo.utm.sm_a" class="py-name" href="#" onclick="return doclink('link-14', 'sm_a', 'link-5');">sm_a</a></tt> <tt class="py-op">+</tt> <tt id="link-15" class="py-name"><a title="mosp.geo.utm.sm_b" class="py-name" href="#" onclick="return doclink('link-15', 'sm_b', 'link-6');">sm_b</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate alpha </tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">    <tt class="py-name">alpha</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-op">(</tt><tt id="link-16" class="py-name"><a title="mosp.geo.utm.sm_a" class="py-name" href="#" onclick="return doclink('link-16', 'sm_a', 'link-5');">sm_a</a></tt> <tt class="py-op">+</tt> <tt id="link-17" class="py-name"><a title="mosp.geo.utm.sm_b" class="py-name" href="#" onclick="return doclink('link-17', 'sm_b', 'link-6');">sm_b</a></tt><tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt class="py-number">2.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-number">1.0</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt> <tt class="py-op">/</tt> <tt class="py-number">4.0</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">4.0</tt> <tt class="py-op">/</tt> <tt class="py-number">64.0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate beta </tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">    <tt class="py-name">beta</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-number">3.0</tt> <tt class="py-op">*</tt> <tt class="py-name">n</tt> <tt class="py-op">/</tt> <tt class="py-number">2.0</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">9.0</tt> <tt class="py-op">*</tt> <tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">3.0</tt> <tt class="py-op">/</tt> <tt class="py-number">16.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-number">3.0</tt> <tt class="py-op">*</tt> <tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">5.0</tt> <tt class="py-op">/</tt> <tt class="py-number">32.0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate gamma </tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">    <tt class="py-name">gamma</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-number">15.0</tt> <tt class="py-op">*</tt> <tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt> <tt class="py-op">/</tt> <tt class="py-number">16.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-number">15.0</tt> <tt class="py-op">*</tt> <tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">4.0</tt> <tt class="py-op">/</tt> <tt class="py-number">32.0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate delta </tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">    <tt class="py-name">delta</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-number">35.0</tt> <tt class="py-op">*</tt> <tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">3.0</tt> <tt class="py-op">/</tt> <tt class="py-number">48.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">105.0</tt> <tt class="py-op">*</tt> <tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">5.0</tt> <tt class="py-op">/</tt> <tt class="py-number">256.0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate epsilon </tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">    <tt class="py-name">epsilon</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-number">315.0</tt> <tt class="py-op">*</tt> <tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">4.0</tt> <tt class="py-op">/</tt> <tt class="py-number">512.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">    <tt class="py-comment"># Now calculate the sum of the series and return </tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">alpha</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-name">phi</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">beta</tt> <tt class="py-op">*</tt> <tt class="py-name">sin</tt><tt class="py-op">(</tt><tt class="py-number">2.0</tt> <tt class="py-op">*</tt> <tt class="py-name">phi</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">gamma</tt> <tt class="py-op">*</tt> <tt class="py-name">sin</tt><tt class="py-op">(</tt><tt class="py-number">4.0</tt> <tt class="py-op">*</tt> <tt class="py-name">phi</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">delta</tt> <tt class="py-op">*</tt> <tt class="py-name">sin</tt><tt class="py-op">(</tt><tt class="py-number">6.0</tt> <tt class="py-op">*</tt> <tt class="py-name">phi</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">epsilon</tt> <tt class="py-op">*</tt> <tt class="py-name">sin</tt><tt class="py-op">(</tt><tt class="py-number">8.0</tt> <tt class="py-op">*</tt> <tt class="py-name">phi</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">result</tt> </tt>
+</div><a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"> </tt>
+<a name="MapLatLonToXY"></a><div id="MapLatLonToXY-def"><a name="L95"></a><tt class="py-lineno"> 95</tt> <a class="py-toggle" href="#" id="MapLatLonToXY-toggle" onclick="return toggle('MapLatLonToXY');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.geo.utm-module.html#MapLatLonToXY">MapLatLonToXY</a><tt class="py-op">(</tt><tt class="py-param">phi</tt><tt class="py-op">,</tt> <tt class="py-param">lambd</tt><tt class="py-op">,</tt> <tt class="py-param">lambd0</tt><tt class="py-op">,</tt> <tt class="py-param">xy</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MapLatLonToXY-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="MapLatLonToXY-expanded"><a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">    <tt class="py-docstring">"""Converts a latitude/longitude pair to x and y coordinates in the</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-docstring">       Transverse Mercator projection.  Note that Transverse Mercator is not</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-docstring">       the same as UTM a scale factor is required to convert between them.</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring">       Reference: Hoffmann-Wellenhof, B., Lichtenegger, H., and Collins, J.,</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">       GPS: Theory and Practice, 3rd ed.  New York: Springer-Verlag Wien, 1994."""</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate ep2 </tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">    <tt class="py-name">ep2</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt id="link-18" class="py-name"><a title="mosp.geo.utm.sm_a" class="py-name" href="#" onclick="return doclink('link-18', 'sm_a', 'link-5');">sm_a</a></tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt> <tt class="py-op">-</tt> <tt id="link-19" class="py-name"><a title="mosp.geo.utm.sm_b" class="py-name" href="#" onclick="return doclink('link-19', 'sm_b', 'link-6');">sm_b</a></tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt><tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt id="link-20" class="py-name"><a title="mosp.geo.utm.sm_b" class="py-name" href="#" onclick="return doclink('link-20', 'sm_b', 'link-6');">sm_b</a></tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate nu2 </tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">    <tt class="py-name">nu2</tt> <tt class="py-op">=</tt> <tt class="py-name">ep2</tt> <tt class="py-op">*</tt> <tt class="py-name">cos</tt><tt class="py-op">(</tt><tt class="py-name">phi</tt><tt class="py-op">)</tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate N </tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">    <tt class="py-name">N</tt> <tt class="py-op">=</tt> <tt id="link-21" class="py-name"><a title="mosp.geo.utm.sm_a" class="py-name" href="#" onclick="return doclink('link-21', 'sm_a', 'link-5');">sm_a</a></tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt> <tt class="py-op">/</tt> <tt class="py-op">(</tt><tt id="link-22" class="py-name"><a title="mosp.geo.utm.sm_b" class="py-name" href="#" onclick="return doclink('link-22', 'sm_b', 'link-6');">sm_b</a></tt> <tt class="py-op">*</tt> <tt class="py-name">sqrt</tt><tt class="py-op">(</tt><tt class="py-number">1</tt> <tt class="py-op">+</tt> <tt class="py-name">nu2</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate t </tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">    <tt class="py-name">t</tt> <tt class="py-op">=</tt> <tt class="py-name">tan</tt><tt class="py-op">(</tt><tt class="py-name">phi</tt><tt class="py-op">)</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">    <tt class="py-name">t2</tt> <tt class="py-op">=</tt> <tt class="py-name">t</tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate l </tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">    <tt class="py-name">l</tt> <tt class="py-op">=</tt> <tt class="py-name">lambd</tt> <tt class="py-op">-</tt> <tt class="py-name">lambd0</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate coefficients for l**n in the equations below</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">    <tt class="py-comment">#  so a normal human being can read the expressions for easting</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">    <tt class="py-comment">#  and northing</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">    <tt class="py-comment">#  -- l**1 and l**2 have coefficients of 1.0 </tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">    <tt class="py-name">l3coef</tt> <tt class="py-op">=</tt> <tt class="py-number">1.0</tt> <tt class="py-op">-</tt> <tt class="py-name">t2</tt> <tt class="py-op">+</tt> <tt class="py-name">nu2</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">    <tt class="py-name">l4coef</tt> <tt class="py-op">=</tt> <tt class="py-number">5.0</tt> <tt class="py-op">-</tt> <tt class="py-name">t2</tt> <tt class="py-op">+</tt> <tt class="py-number">9</tt> <tt class="py-op">*</tt> <tt class="py-name">nu2</tt> <tt class="py-op">+</tt> <tt class="py-number">4.0</tt> <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-name">nu2</tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">    <tt class="py-name">l5coef</tt> <tt class="py-op">=</tt> <tt class="py-number">5.0</tt> <tt class="py-op">-</tt> <tt class="py-number">18.0</tt> <tt class="py-op">*</tt> <tt class="py-name">t2</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">t2</tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-number">14.0</tt> <tt class="py-op">*</tt> <tt class="py-name">nu2</tt> <tt class="py-op">-</tt> <tt class="py-number">58.0</tt> <tt class="py-op">*</tt> <tt class="py-name">t2</tt> <tt class="py-op">*</tt> <tt class="py-name">nu2</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">    <tt class="py-name">l6coef</tt> <tt class="py-op">=</tt> <tt class="py-number">61.0</tt> <tt class="py-op">-</tt> <tt class="py-number">58.0</tt> <tt class="py-op">*</tt> <tt class="py-name">t2</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">t2</tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-number">270.0</tt> <tt class="py-op">*</tt> <tt class="py-name">nu2</tt> <tt class="py-op">-</tt> <tt class="py-number">330.0</tt> <tt class="py-op">*</tt> <tt class="py-name">t2</tt> <tt class="py-op">*</tt> <tt class="py-name">nu2</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">    <tt class="py-name">l7coef</tt> <tt class="py-op">=</tt> <tt class="py-number">61.0</tt> <tt class="py-op">-</tt> <tt class="py-number">479.0</tt> <tt class="py-op">*</tt> <tt class="py-name">t2</tt> <tt class="py-op">+</tt> <tt class="py-number">179.0</tt> <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-name">t2</tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt><tt class="py-op">)</tt> <tt class="py-op">-</tt> <tt class="py-op">(</tt><tt class="py-name">t2</tt><tt class="py-op">**</tt><tt class="py-number">3.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">    <tt class="py-name">l8coef</tt> <tt class="py-op">=</tt> <tt class="py-number">1385.0</tt> <tt class="py-op">-</tt> <tt class="py-number">3111.0</tt> <tt class="py-op">*</tt> <tt class="py-name">t2</tt> <tt class="py-op">+</tt> <tt class="py-number">543.0</tt> <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-name">t2</tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt><tt class="py-op">)</tt> <tt class="py-op">-</tt> <tt class="py-op">(</tt><tt class="py-name">t2</tt><tt class="py-op">**</tt><tt class="py-number">3.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">    <tt class="py-comment"># Calculate easting (x) </tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">    <tt class="py-name">xy</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">N</tt> <tt class="py-op">*</tt> <tt class="py-name">cos</tt><tt class="py-op">(</tt><tt class="py-name">phi</tt><tt class="py-op">)</tt> <tt class="py-op">*</tt> <tt class="py-name">l</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">N</tt> <tt class="py-op">/</tt> <tt class="py-number">6.0</tt> <tt class="py-op">*</tt> <tt class="py-name">cos</tt><tt class="py-op">(</tt><tt class="py-name">phi</tt><tt class="py-op">)</tt><tt class="py-op">**</tt><tt class="py-number">3.0</tt> <tt class="py-op">*</tt> <tt class="py-name">l3coef</tt> <tt class="py-op">*</tt> <tt class="py-name">l</tt><tt class="py-op">**</tt><tt class="py-number">3.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">N</tt> <tt class="py-op">/</tt> <tt class="py-number">120.0</tt> <tt class="py-op">*</tt> <tt class="py-name">cos</tt><tt class="py-op">(</tt><tt class="py-name">phi</tt><tt class="py-op">)</tt><tt class="py-op">**</tt><tt class="py-number">5.0</tt> <tt class="py-op">*</tt> <tt class="py-name">l5coef</tt> <tt class="py-op">*</tt> <tt class="py-name">l</tt><tt class="py-op">**</tt><tt class="py-number">5.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">N</tt> <tt class="py-op">/</tt> <tt class="py-number">5040.0</tt> <tt class="py-op">*</tt> <tt class="py-name">cos</tt><tt class="py-op">(</tt><tt class="py-name">phi</tt><tt class="py-op">)</tt><tt class="py-op">**</tt><tt class="py-number">7.0</tt> <tt class="py-op">*</tt> <tt class="py-name">l7coef</tt> <tt class="py-op">*</tt> <tt class="py-name">l</tt><tt class="py-op">**</tt><tt class="py-number">7.0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">    <tt class="py-comment"># Calculate northing (y) </tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">    <tt class="py-name">xy</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt id="link-23" class="py-name" targets="Function mosp.geo.utm.ArcLengthOfMeridian()=mosp.geo.utm-module.html#ArcLengthOfMeridian"><a title="mosp.geo.utm.ArcLengthOfMeridian" class="py-name" href="#" onclick="return doclink('link-23', 'ArcLengthOfMeridian', 'link-23');">ArcLengthOfMeridian</a></tt><tt class="py-op">(</tt><tt class="py-name">phi</tt><tt class="py-op">)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">t</tt> <tt class="py-op">/</tt> <tt class="py-number">2.0</tt> <tt class="py-op">*</tt> <tt class="py-name">N</tt> <tt class="py-op">*</tt> <tt class="py-name">cos</tt><tt class="py-op">(</tt><tt class="py-name">phi</tt><tt class="py-op">)</tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt> <tt class="py-op">*</tt> <tt class="py-name">l</tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">t</tt> <tt class="py-op">/</tt> <tt class="py-number">24.0</tt> <tt class="py-op">*</tt> <tt class="py-name">N</tt> <tt class="py-op">*</tt> <tt class="py-name">cos</tt><tt class="py-op">(</tt><tt class="py-name">phi</tt><tt class="py-op">)</tt><tt class="py-op">**</tt><tt class="py-number">4.0</tt> <tt class="py-op">*</tt> <tt class="py-name">l4coef</tt> <tt class="py-op">*</tt> <tt class="py-name">l</tt><tt class="py-op">**</tt><tt class="py-number">4.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">t</tt> <tt class="py-op">/</tt> <tt class="py-number">720.0</tt> <tt class="py-op">*</tt> <tt class="py-name">N</tt> <tt class="py-op">*</tt> <tt class="py-name">cos</tt><tt class="py-op">(</tt><tt class="py-name">phi</tt><tt class="py-op">)</tt><tt class="py-op">**</tt><tt class="py-number">6.0</tt> <tt class="py-op">*</tt> <tt class="py-name">l6coef</tt> <tt class="py-op">*</tt> <tt class="py-name">l</tt><tt class="py-op">**</tt><tt class="py-number">6.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">t</tt> <tt class="py-op">/</tt> <tt class="py-number">40320.0</tt> <tt class="py-op">*</tt> <tt class="py-name">N</tt> <tt class="py-op">*</tt> <tt class="py-name">cos</tt><tt class="py-op">(</tt><tt class="py-name">phi</tt><tt class="py-op">)</tt><tt class="py-op">**</tt><tt class="py-number">8.0</tt> <tt class="py-op">*</tt> <tt class="py-name">l8coef</tt> <tt class="py-op">*</tt> <tt class="py-name">l</tt><tt class="py-op">**</tt><tt class="py-number">8.0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> </tt>
+</div><a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"> </tt>
+<a name="latlong_to_utm"></a><div id="latlong_to_utm-def"><a name="L150"></a><tt class="py-lineno">150</tt> <a class="py-toggle" href="#" id="latlong_to_utm-toggle" onclick="return toggle('latlong_to_utm');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.geo.utm-module.html#latlong_to_utm">latlong_to_utm</a><tt class="py-op">(</tt><tt class="py-param">lon</tt><tt class="py-op">,</tt> <tt class="py-param">lat</tt><tt class="py-op">,</tt> <tt class="py-param">zone</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="latlong_to_utm-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="latlong_to_utm-expanded"><a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">    <tt class="py-docstring">"""Converts a latitude/longitude pair to x and y coordinates in the</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line"><tt class="py-docstring">       Universal Transverse Mercator projection."""</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">     </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">zone</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">        <tt class="py-name">zone</tt> <tt class="py-op">=</tt> <tt id="link-24" class="py-name" targets="Function mosp.geo.utm.long_to_zone()=mosp.geo.utm-module.html#long_to_zone"><a title="mosp.geo.utm.long_to_zone" class="py-name" href="#" onclick="return doclink('link-24', 'long_to_zone', 'link-24');">long_to_zone</a></tt><tt class="py-op">(</tt><tt id="link-25" class="py-name"><a title="mosp.geo.osm.Node.lon" class="py-name" href="#" onclick="return doclink('link-25', 'lon', 'link-8');">lon</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">    <tt class="py-name">xy</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">    <tt id="link-26" class="py-name" targets="Function mosp.geo.utm.MapLatLonToXY()=mosp.geo.utm-module.html#MapLatLonToXY"><a title="mosp.geo.utm.MapLatLonToXY" class="py-name" href="#" onclick="return doclink('link-26', 'MapLatLonToXY', 'link-26');">MapLatLonToXY</a></tt><tt class="py-op">(</tt><tt id="link-27" class="py-name"><a title="mosp.geo.utm.deg_to_rad" class="py-name" href="#" onclick="return doclink('link-27', 'deg_to_rad', 'link-11');">deg_to_rad</a></tt><tt class="py-op">(</tt><tt id="link-28" class="py-name" targets="Variable mosp.geo.osm.Node.lat=mosp.geo.osm.Node-class.html#lat"><a title="mosp.geo.osm.Node.lat" class="py-name" href="#" onclick="return doclink('link-28', 'lat', 'link-28');">lat</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-29" class="py-name"><a title="mosp.geo.utm.deg_to_rad" class="py-name" href="#" onclick="return doclink('link-29', 'deg_to_rad', 'link-11');">deg_to_rad</a></tt><tt class="py-op">(</tt><tt id="link-30" class="py-name"><a title="mosp.geo.osm.Node.lon" class="py-name" href="#" onclick="return doclink('link-30', 'lon', 'link-8');">lon</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-31" class="py-name" targets="Function mosp.geo.utm.UTMCentralMeridian()=mosp.geo.utm-module.html#UTMCentralMeridian"><a title="mosp.geo.utm.UTMCentralMeridian" class="py-name" href="#" onclick="return doclink('link-31', 'UTMCentralMeridian', 'link-31');">UTMCentralMeridian</a></tt><tt class="py-op">(</tt><tt class="py-name">zone</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">xy</tt><tt class="py-op">)</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">     </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">    <tt class="py-name">xy</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">xy</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-op">*</tt> <tt id="link-32" class="py-name"><a title="mosp.geo.utm.UTMScaleFactor" class="py-name" href="#" onclick="return doclink('link-32', 'UTMScaleFactor', 'link-4');">UTMScaleFactor</a></tt> <tt class="py-op">+</tt> <tt class="py-number">500000.0</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">    <tt class="py-name">xy</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">xy</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">*</tt> <tt id="link-33" class="py-name"><a title="mosp.geo.utm.UTMScaleFactor" class="py-name" href="#" onclick="return doclink('link-33', 'UTMScaleFactor', 'link-4');">UTMScaleFactor</a></tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">     </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">xy</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">&lt;</tt> <tt class="py-number">0.0</tt><tt class="py-op">:</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">        <tt class="py-name">xy</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">xy</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-number">10000000.0</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-op">[</tt><tt class="py-name">round</tt><tt class="py-op">(</tt><tt class="py-name">coord</tt><tt class="py-op">,</tt> <tt class="py-number">2</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">coord</tt> <tt class="py-keyword">in</tt> <tt class="py-name">xy</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"> </tt>
+<a name="FootpointLatitude"></a><div id="FootpointLatitude-def"><a name="L169"></a><tt class="py-lineno">169</tt> <a class="py-toggle" href="#" id="FootpointLatitude-toggle" onclick="return toggle('FootpointLatitude');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.geo.utm-module.html#FootpointLatitude">FootpointLatitude</a><tt class="py-op">(</tt><tt class="py-param">y</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="FootpointLatitude-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="FootpointLatitude-expanded"><a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">    <tt class="py-docstring">"""Computes the footpoint latitude for use in converting transverse</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"><tt class="py-docstring">       Mercator coordinates to ellipsoidal coordinates.</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line"><tt class="py-docstring">       Reference: Hoffmann-Wellenhof, B., Lichtenegger, H., and Collins, J.,</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line"><tt class="py-docstring">       GPS: Theory and Practice, 3rd ed.  New York: Springer-Verlag Wien, 1994."""</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate n (Eq. 10.18) </tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">    <tt class="py-name">n</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt id="link-34" class="py-name"><a title="mosp.geo.utm.sm_a" class="py-name" href="#" onclick="return doclink('link-34', 'sm_a', 'link-5');">sm_a</a></tt> <tt class="py-op">-</tt> <tt id="link-35" class="py-name"><a title="mosp.geo.utm.sm_b" class="py-name" href="#" onclick="return doclink('link-35', 'sm_b', 'link-6');">sm_b</a></tt><tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt class="py-op">(</tt><tt id="link-36" class="py-name"><a title="mosp.geo.utm.sm_a" class="py-name" href="#" onclick="return doclink('link-36', 'sm_a', 'link-5');">sm_a</a></tt> <tt class="py-op">+</tt> <tt id="link-37" class="py-name"><a title="mosp.geo.utm.sm_b" class="py-name" href="#" onclick="return doclink('link-37', 'sm_b', 'link-6');">sm_b</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate alpha_ (Eq. 10.22) </tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">    <tt class="py-comment"># (Same as alpha in Eq. 10.17) </tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">    <tt class="py-name">alpha_</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-op">(</tt><tt id="link-38" class="py-name"><a title="mosp.geo.utm.sm_a" class="py-name" href="#" onclick="return doclink('link-38', 'sm_a', 'link-5');">sm_a</a></tt> <tt class="py-op">+</tt> <tt id="link-39" class="py-name"><a title="mosp.geo.utm.sm_b" class="py-name" href="#" onclick="return doclink('link-39', 'sm_b', 'link-6');">sm_b</a></tt><tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt class="py-number">2.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">        <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt> <tt class="py-op">/</tt> <tt class="py-number">4</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">4.0</tt> <tt class="py-op">/</tt> <tt class="py-number">64</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line"> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate y_ (Eq. 10.23) </tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">    <tt class="py-name">y_</tt> <tt class="py-op">=</tt> <tt id="link-40" class="py-name" targets="Variable mosp.core.Person.y=mosp.core.Person-class.html#y,Variable mosp.geo.osm.Node.y=mosp.geo.osm.Node-class.html#y"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-40', 'y', 'link-40');">y</a></tt> <tt class="py-op">/</tt> <tt class="py-name">alpha_</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line"> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate beta_ (Eq. 10.22) </tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">    <tt class="py-name">beta_</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-number">3.0</tt> <tt class="py-op">*</tt> <tt class="py-name">n</tt> <tt class="py-op">/</tt> <tt class="py-number">2.0</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-number">27.0</tt> <tt class="py-op">*</tt> <tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">3.0</tt> <tt class="py-op">/</tt> <tt class="py-number">32.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-number">269.0</tt> <tt class="py-op">*</tt> <tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">5.0</tt> <tt class="py-op">/</tt> <tt class="py-number">512.0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line"> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate gamma_ (Eq. 10.22) </tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">    <tt class="py-name">gamma_</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-number">21.0</tt> <tt class="py-op">*</tt> <tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt> <tt class="py-op">/</tt> <tt class="py-number">16.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-number">55.0</tt> <tt class="py-op">*</tt> <tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">4.0</tt> <tt class="py-op">/</tt> <tt class="py-number">32.0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line"> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate delta_ (Eq. 10.22) </tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">    <tt class="py-name">delta_</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-number">151.0</tt> <tt class="py-op">*</tt> <tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">3.0</tt> <tt class="py-op">/</tt> <tt class="py-number">96.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-number">417.0</tt> <tt class="py-op">*</tt> <tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">5.0</tt> <tt class="py-op">/</tt> <tt class="py-number">128.0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line"> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate epsilon_ (Eq. 10.22) </tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">    <tt class="py-name">epsilon_</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-number">1097.0</tt> <tt class="py-op">*</tt> <tt class="py-name">n</tt><tt class="py-op">**</tt><tt class="py-number">4.0</tt> <tt class="py-op">/</tt> <tt class="py-number">512.0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line"> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">    <tt class="py-comment"># Now calculate the sum of the series (Eq. 10.21) </tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">    <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">y_</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">beta_</tt> <tt class="py-op">*</tt> <tt class="py-name">sin</tt><tt class="py-op">(</tt><tt class="py-number">2.0</tt> <tt class="py-op">*</tt> <tt class="py-name">y_</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">gamma_</tt> <tt class="py-op">*</tt> <tt class="py-name">sin</tt><tt class="py-op">(</tt><tt class="py-number">4.0</tt> <tt class="py-op">*</tt> <tt class="py-name">y_</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">delta_</tt> <tt class="py-op">*</tt> <tt class="py-name">sin</tt><tt class="py-op">(</tt><tt class="py-number">6.0</tt> <tt class="py-op">*</tt> <tt class="py-name">y_</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">epsilon_</tt> <tt class="py-op">*</tt> <tt class="py-name">sin</tt><tt class="py-op">(</tt><tt class="py-number">8.0</tt> <tt class="py-op">*</tt> <tt class="py-name">y_</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">result</tt> </tt>
+</div><a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line"> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line"> </tt>
+<a name="MapXYToLatLon"></a><div id="MapXYToLatLon-def"><a name="L211"></a><tt class="py-lineno">211</tt> <a class="py-toggle" href="#" id="MapXYToLatLon-toggle" onclick="return toggle('MapXYToLatLon');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.geo.utm-module.html#MapXYToLatLon">MapXYToLatLon</a><tt class="py-op">(</tt><tt class="py-param">x</tt><tt class="py-op">,</tt> <tt class="py-param">y</tt><tt class="py-op">,</tt> <tt class="py-param">lambda0</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MapXYToLatLon-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="MapXYToLatLon-expanded"><a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">    <tt class="py-docstring">"""Converts x and y coordinates in the Transverse Mercator projection to</tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line"><tt class="py-docstring">       a latitude/longitude pair.  Note that Transverse Mercator is not</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line"><tt class="py-docstring">       the same as UTM a scale factor is required to convert between them.</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line"><tt class="py-docstring">       Reference: Hoffmann-Wellenhof, B., Lichtenegger, H., and Collins, J.,</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line"><tt class="py-docstring">       GPS: Theory and Practice, 3rd ed.  New York: Springer-Verlag Wien, 1994.</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line"><tt class="py-docstring">       Remarks:</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line"><tt class="py-docstring">       The local variables Nf, nuf2, tf, and tf2 serve the same purpose as</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line"><tt class="py-docstring">       N, nu2, t, and t2 in MapLatLonToXY, but they are computed with respect</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line"><tt class="py-docstring">       sto the footpoint latitude phif.</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line"><tt class="py-docstring">       x1frac, x2frac, x2poly, x3poly, etc. are to enhance readability and</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"><tt class="py-docstring">       to optimize computations."""</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line"> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">    <tt class="py-name">philambda</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line"> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line">    <tt class="py-comment"># Get the value of phif, the footpoint latitude. </tt> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">    <tt class="py-name">phif</tt> <tt class="py-op">=</tt> <tt id="link-41" class="py-name" targets="Function mosp.geo.utm.FootpointLatitude()=mosp.geo.utm-module.html#FootpointLatitude"><a title="mosp.geo.utm.FootpointLatitude" class="py-name" href="#" onclick="return doclink('link-41', 'FootpointLatitude', 'link-41');">FootpointLatitude</a></tt><tt class="py-op">(</tt><tt id="link-42" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-42', 'y', 'link-40');">y</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line"> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate ep2 </tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">    <tt class="py-name">ep2</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-op">(</tt><tt id="link-43" class="py-name"><a title="mosp.geo.utm.sm_a" class="py-name" href="#" onclick="return doclink('link-43', 'sm_a', 'link-5');">sm_a</a></tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt> <tt class="py-op">-</tt> <tt id="link-44" class="py-name"><a title="mosp.geo.utm.sm_b" class="py-name" href="#" onclick="return doclink('link-44', 'sm_b', 'link-6');">sm_b</a></tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">          <tt class="py-op">/</tt> <tt id="link-45" class="py-name"><a title="mosp.geo.utm.sm_b" class="py-name" href="#" onclick="return doclink('link-45', 'sm_b', 'link-6');">sm_b</a></tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line"> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate cos (phif) </tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line">    <tt class="py-name">cf</tt> <tt class="py-op">=</tt> <tt class="py-name">cos</tt><tt class="py-op">(</tt><tt class="py-name">phif</tt><tt class="py-op">)</tt> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line"> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate nuf2 </tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line">    <tt class="py-name">nuf2</tt> <tt class="py-op">=</tt> <tt class="py-name">ep2</tt> <tt class="py-op">*</tt> <tt class="py-name">cf</tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line"> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate Nf and initialize Nfpow </tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line">    <tt class="py-name">Nf</tt> <tt class="py-op">=</tt> <tt id="link-46" class="py-name"><a title="mosp.geo.utm.sm_a" class="py-name" href="#" onclick="return doclink('link-46', 'sm_a', 'link-5');">sm_a</a></tt><tt class="py-op">**</tt><tt class="py-number">2.0</tt> <tt class="py-op">/</tt> <tt class="py-op">(</tt><tt id="link-47" class="py-name"><a title="mosp.geo.utm.sm_b" class="py-name" href="#" onclick="return doclink('link-47', 'sm_b', 'link-6');">sm_b</a></tt> <tt class="py-op">*</tt> <tt class="py-name">sqrt</tt><tt class="py-op">(</tt><tt class="py-number">1</tt> <tt class="py-op">+</tt> <tt class="py-name">nuf2</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">    <tt class="py-name">Nfpow</tt> <tt class="py-op">=</tt> <tt class="py-name">Nf</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line"> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate tf </tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line">    <tt class="py-name">tf</tt> <tt class="py-op">=</tt> <tt class="py-name">tan</tt><tt class="py-op">(</tt><tt class="py-name">phif</tt><tt class="py-op">)</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line">    <tt class="py-name">tf2</tt> <tt class="py-op">=</tt> <tt class="py-name">tf</tt><tt class="py-op">**</tt><tt class="py-number">2</tt> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line">    <tt class="py-name">tf4</tt> <tt class="py-op">=</tt> <tt class="py-name">tf2</tt><tt class="py-op">**</tt><tt class="py-number">2</tt> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line"> </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate fractional coefficients for x**n in the equations</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line">    <tt class="py-comment"># below to simplify the expressions for latitude and longitude. </tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line">    <tt class="py-name">x1frac</tt> <tt class="py-op">=</tt> <tt class="py-number">1.0</tt> <tt class="py-op">/</tt> <tt class="py-op">(</tt><tt class="py-name">Nfpow</tt> <tt class="py-op">*</tt> <tt class="py-name">cf</tt><tt class="py-op">)</tt> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line"> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line">    <tt class="py-name">Nfpow</tt> <tt class="py-op">*=</tt> <tt class="py-name">Nf</tt>   <tt class="py-comment"># now equals Nf**2) </tt> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">    <tt class="py-name">x2frac</tt> <tt class="py-op">=</tt> <tt class="py-name">tf</tt> <tt class="py-op">/</tt> <tt class="py-op">(</tt><tt class="py-number">2.0</tt> <tt class="py-op">*</tt> <tt class="py-name">Nfpow</tt><tt class="py-op">)</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line"> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line">    <tt class="py-name">Nfpow</tt> <tt class="py-op">*=</tt> <tt class="py-name">Nf</tt>   <tt class="py-comment"># now equals Nf**3) </tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line">    <tt class="py-name">x3frac</tt> <tt class="py-op">=</tt> <tt class="py-number">1.0</tt> <tt class="py-op">/</tt> <tt class="py-op">(</tt><tt class="py-number">6.0</tt> <tt class="py-op">*</tt> <tt class="py-name">Nfpow</tt> <tt class="py-op">*</tt> <tt class="py-name">cf</tt><tt class="py-op">)</tt> </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line"> </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line">    <tt class="py-name">Nfpow</tt> <tt class="py-op">*=</tt> <tt class="py-name">Nf</tt>   <tt class="py-comment"># now equals Nf**4) </tt> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line">    <tt class="py-name">x4frac</tt> <tt class="py-op">=</tt> <tt class="py-name">tf</tt> <tt class="py-op">/</tt> <tt class="py-op">(</tt><tt class="py-number">24.0</tt> <tt class="py-op">*</tt> <tt class="py-name">Nfpow</tt><tt class="py-op">)</tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line"> </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line">    <tt class="py-name">Nfpow</tt> <tt class="py-op">*=</tt> <tt class="py-name">Nf</tt>   <tt class="py-comment"># now equals Nf**5) </tt> </tt>
+<a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line">    <tt class="py-name">x5frac</tt> <tt class="py-op">=</tt> <tt class="py-number">1.0</tt> <tt class="py-op">/</tt> <tt class="py-op">(</tt><tt class="py-number">120.0</tt> <tt class="py-op">*</tt> <tt class="py-name">Nfpow</tt> <tt class="py-op">*</tt> <tt class="py-name">cf</tt><tt class="py-op">)</tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line"> </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line">    <tt class="py-name">Nfpow</tt> <tt class="py-op">*=</tt> <tt class="py-name">Nf</tt>   <tt class="py-comment"># now equals Nf**6) </tt> </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line">    <tt class="py-name">x6frac</tt> <tt class="py-op">=</tt> <tt class="py-name">tf</tt> <tt class="py-op">/</tt> <tt class="py-op">(</tt><tt class="py-number">720.0</tt> <tt class="py-op">*</tt> <tt class="py-name">Nfpow</tt><tt class="py-op">)</tt> </tt>
+<a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line"> </tt>
+<a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line">    <tt class="py-name">Nfpow</tt> <tt class="py-op">*=</tt> <tt class="py-name">Nf</tt>   <tt class="py-comment"># now equals Nf**7) </tt> </tt>
+<a name="L271"></a><tt class="py-lineno">271</tt>  <tt class="py-line">    <tt class="py-name">x7frac</tt> <tt class="py-op">=</tt> <tt class="py-number">1.0</tt> <tt class="py-op">/</tt> <tt class="py-op">(</tt><tt class="py-number">5040.0</tt> <tt class="py-op">*</tt> <tt class="py-name">Nfpow</tt> <tt class="py-op">*</tt> <tt class="py-name">cf</tt><tt class="py-op">)</tt> </tt>
+<a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line"> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line">    <tt class="py-name">Nfpow</tt> <tt class="py-op">*=</tt> <tt class="py-name">Nf</tt>   <tt class="py-comment"># now equals Nf**8) </tt> </tt>
+<a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line">    <tt class="py-name">x8frac</tt> <tt class="py-op">=</tt> <tt class="py-name">tf</tt> <tt class="py-op">/</tt> <tt class="py-op">(</tt><tt class="py-number">40320.0</tt> <tt class="py-op">*</tt> <tt class="py-name">Nfpow</tt><tt class="py-op">)</tt> </tt>
+<a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line"> </tt>
+<a name="L276"></a><tt class="py-lineno">276</tt>  <tt class="py-line">    <tt class="py-comment"># Precalculate polynomial coefficients for x**n.</tt> </tt>
+<a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line">    <tt class="py-comment">#  -- x**1 does not have a polynomial coefficient. </tt> </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line">    <tt class="py-name">x2poly</tt> <tt class="py-op">=</tt> <tt class="py-op">-</tt><tt class="py-number">1.0</tt> <tt class="py-op">-</tt> <tt class="py-name">nuf2</tt> </tt>
+<a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line"> </tt>
+<a name="L280"></a><tt class="py-lineno">280</tt>  <tt class="py-line">    <tt class="py-name">x3poly</tt> <tt class="py-op">=</tt> <tt class="py-op">-</tt><tt class="py-number">1.0</tt> <tt class="py-op">-</tt> <tt class="py-number">2</tt> <tt class="py-op">*</tt> <tt class="py-name">tf2</tt> <tt class="py-op">-</tt> <tt class="py-name">nuf2</tt> </tt>
+<a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line"> </tt>
+<a name="L282"></a><tt class="py-lineno">282</tt>  <tt class="py-line">    <tt class="py-name">x4poly</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-number">5.0</tt> <tt class="py-op">+</tt> <tt class="py-number">3.0</tt> <tt class="py-op">*</tt> <tt class="py-name">tf2</tt> <tt class="py-op">+</tt> <tt class="py-number">6.0</tt> <tt class="py-op">*</tt> <tt class="py-name">nuf2</tt> <tt class="py-op">-</tt> <tt class="py-number">6.0</tt> <tt class="py-op">*</tt> <tt class="py-name">tf2</tt> <tt class="py-op">*</tt> <tt class="py-name">nuf2</tt> </tt>
+<a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line">        <tt class="py-op">-</tt> <tt class="py-number">3.0</tt> <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-name">nuf2</tt> <tt class="py-op">*</tt><tt class="py-name">nuf2</tt><tt class="py-op">)</tt> <tt class="py-op">-</tt> <tt class="py-number">9.0</tt> <tt class="py-op">*</tt> <tt class="py-name">tf2</tt> <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-name">nuf2</tt> <tt class="py-op">*</tt> <tt class="py-name">nuf2</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line"> </tt>
+<a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line">    <tt class="py-name">x5poly</tt> <tt class="py-op">=</tt> <tt class="py-number">5.0</tt> <tt class="py-op">+</tt> <tt class="py-number">28.0</tt> <tt class="py-op">*</tt> <tt class="py-name">tf2</tt> <tt class="py-op">+</tt> <tt class="py-number">24.0</tt> <tt class="py-op">*</tt> <tt class="py-name">tf4</tt> <tt class="py-op">+</tt> <tt class="py-number">6.0</tt> <tt class="py-op">*</tt> <tt class="py-name">nuf2</tt> <tt class="py-op">+</tt> <tt class="py-number">8.0</tt> <tt class="py-op">*</tt> <tt class="py-name">tf2</tt> <tt class="py-op">*</tt> <tt class="py-name">nuf2</tt> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line"> </tt>
+<a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line">    <tt class="py-name">x6poly</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-op">-</tt><tt class="py-number">61.0</tt> <tt class="py-op">-</tt> <tt class="py-number">90.0</tt> <tt class="py-op">*</tt> <tt class="py-name">tf2</tt> <tt class="py-op">-</tt> <tt class="py-number">45.0</tt> <tt class="py-op">*</tt> <tt class="py-name">tf4</tt> <tt class="py-op">-</tt> <tt class="py-number">107.0</tt> <tt class="py-op">*</tt> <tt class="py-name">nuf2</tt> </tt>
+<a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-number">162.0</tt> <tt class="py-op">*</tt> <tt class="py-name">tf2</tt> <tt class="py-op">*</tt> <tt class="py-name">nuf2</tt><tt class="py-op">)</tt> </tt>
+<a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line"> </tt>
+<a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line">    <tt class="py-name">x7poly</tt> <tt class="py-op">=</tt> <tt class="py-op">-</tt><tt class="py-number">61.0</tt> <tt class="py-op">-</tt> <tt class="py-number">662.0</tt> <tt class="py-op">*</tt> <tt class="py-name">tf2</tt> <tt class="py-op">-</tt> <tt class="py-number">1320.0</tt> <tt class="py-op">*</tt> <tt class="py-name">tf4</tt> <tt class="py-op">-</tt> <tt class="py-number">720.0</tt> <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-name">tf4</tt> <tt class="py-op">*</tt> <tt class="py-name">tf2</tt><tt class="py-op">)</tt> </tt>
+<a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line"> </tt>
+<a name="L292"></a><tt class="py-lineno">292</tt>  <tt class="py-line">    <tt class="py-name">x8poly</tt> <tt class="py-op">=</tt> <tt class="py-number">1385.0</tt> <tt class="py-op">+</tt> <tt class="py-number">3633.0</tt> <tt class="py-op">*</tt> <tt class="py-name">tf2</tt> <tt class="py-op">+</tt> <tt class="py-number">4095.0</tt> <tt class="py-op">*</tt> <tt class="py-name">tf4</tt> <tt class="py-op">+</tt> <tt class="py-number">1575</tt> <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-name">tf4</tt> <tt class="py-op">*</tt> <tt class="py-name">tf2</tt><tt class="py-op">)</tt> </tt>
+<a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line"> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line">    <tt class="py-comment"># Calculate latitude </tt> </tt>
+<a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line">    <tt class="py-name">philambda</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">phif</tt> <tt class="py-op">+</tt> <tt class="py-name">x2frac</tt> <tt class="py-op">*</tt> <tt class="py-name">x2poly</tt> <tt class="py-op">*</tt> <tt id="link-48" class="py-name" targets="Variable mosp.core.Person.x=mosp.core.Person-class.html#x,Variable mosp.geo.osm.Node.x=mosp.geo.osm.Node-class.html#x"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-48', 'x', 'link-48');">x</a></tt><tt class="py-op">**</tt><tt class="py-number">2</tt> </tt>
+<a name="L296"></a><tt class="py-lineno">296</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-name">x4frac</tt> <tt class="py-op">*</tt> <tt class="py-name">x4poly</tt> <tt class="py-op">*</tt> <tt id="link-49" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-49', 'x', 'link-48');">x</a></tt><tt class="py-op">**</tt><tt class="py-number">4.0</tt> </tt>
+<a name="L297"></a><tt class="py-lineno">297</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-name">x6frac</tt> <tt class="py-op">*</tt> <tt class="py-name">x6poly</tt> <tt class="py-op">*</tt> <tt id="link-50" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-50', 'x', 'link-48');">x</a></tt><tt class="py-op">**</tt><tt class="py-number">6.0</tt> </tt>
+<a name="L298"></a><tt class="py-lineno">298</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-name">x8frac</tt> <tt class="py-op">*</tt> <tt class="py-name">x8poly</tt> <tt class="py-op">*</tt> <tt id="link-51" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-51', 'x', 'link-48');">x</a></tt><tt class="py-op">**</tt><tt class="py-number">8.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L299"></a><tt class="py-lineno">299</tt>  <tt class="py-line"> </tt>
+<a name="L300"></a><tt class="py-lineno">300</tt>  <tt class="py-line">    <tt class="py-comment"># Calculate longitude </tt> </tt>
+<a name="L301"></a><tt class="py-lineno">301</tt>  <tt class="py-line">    <tt class="py-name">philambda</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">lambda0</tt> <tt class="py-op">+</tt> <tt class="py-name">x1frac</tt> <tt class="py-op">*</tt> <tt id="link-52" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-52', 'x', 'link-48');">x</a></tt> </tt>
+<a name="L302"></a><tt class="py-lineno">302</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-name">x3frac</tt> <tt class="py-op">*</tt> <tt class="py-name">x3poly</tt> <tt class="py-op">*</tt> <tt id="link-53" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-53', 'x', 'link-48');">x</a></tt><tt class="py-op">**</tt><tt class="py-number">3.0</tt> </tt>
+<a name="L303"></a><tt class="py-lineno">303</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-name">x5frac</tt> <tt class="py-op">*</tt> <tt class="py-name">x5poly</tt> <tt class="py-op">*</tt> <tt id="link-54" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-54', 'x', 'link-48');">x</a></tt><tt class="py-op">**</tt><tt class="py-number">5.0</tt> </tt>
+<a name="L304"></a><tt class="py-lineno">304</tt>  <tt class="py-line">        <tt class="py-op">+</tt> <tt class="py-name">x7frac</tt> <tt class="py-op">*</tt> <tt class="py-name">x7poly</tt> <tt class="py-op">*</tt> <tt id="link-55" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-55', 'x', 'link-48');">x</a></tt><tt class="py-op">**</tt><tt class="py-number">7.0</tt><tt class="py-op">)</tt> </tt>
+<a name="L305"></a><tt class="py-lineno">305</tt>  <tt class="py-line"> </tt>
+<a name="L306"></a><tt class="py-lineno">306</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">philambda</tt> </tt>
+</div><a name="L307"></a><tt class="py-lineno">307</tt>  <tt class="py-line"> </tt>
+<a name="L308"></a><tt class="py-lineno">308</tt>  <tt class="py-line"> </tt>
+<a name="utm_to_latlong"></a><div id="utm_to_latlong-def"><a name="L309"></a><tt class="py-lineno">309</tt> <a class="py-toggle" href="#" id="utm_to_latlong-toggle" onclick="return toggle('utm_to_latlong');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.geo.utm-module.html#utm_to_latlong">utm_to_latlong</a><tt class="py-op">(</tt><tt class="py-param">x</tt><tt class="py-op">,</tt> <tt class="py-param">y</tt><tt class="py-op">,</tt> <tt class="py-param">zone</tt><tt class="py-op">,</tt> <tt class="py-param">southhemi</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="utm_to_latlong-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="utm_to_latlong-expanded"><a name="L310"></a><tt class="py-lineno">310</tt>  <tt class="py-line">    <tt class="py-docstring">"""Converts x and y coordinates in the Universal Transverse Mercator</tt> </tt>
+<a name="L311"></a><tt class="py-lineno">311</tt>  <tt class="py-line"><tt class="py-docstring">       projection to a latitude/longitude pair."""</tt> </tt>
+<a name="L312"></a><tt class="py-lineno">312</tt>  <tt class="py-line"> </tt>
+<a name="L313"></a><tt class="py-lineno">313</tt>  <tt class="py-line">    <tt id="link-56" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-56', 'x', 'link-48');">x</a></tt> <tt class="py-op">-=</tt> <tt class="py-number">500000.0</tt> </tt>
+<a name="L314"></a><tt class="py-lineno">314</tt>  <tt class="py-line">    <tt id="link-57" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-57', 'x', 'link-48');">x</a></tt> <tt class="py-op">/=</tt> <tt id="link-58" class="py-name"><a title="mosp.geo.utm.UTMScaleFactor" class="py-name" href="#" onclick="return doclink('link-58', 'UTMScaleFactor', 'link-4');">UTMScaleFactor</a></tt> </tt>
+<a name="L315"></a><tt class="py-lineno">315</tt>  <tt class="py-line"> </tt>
+<a name="L316"></a><tt class="py-lineno">316</tt>  <tt class="py-line">    <tt class="py-comment"># If in southern hemisphere, adjust y accordingly. </tt> </tt>
+<a name="L317"></a><tt class="py-lineno">317</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">southhemi</tt><tt class="py-op">:</tt> </tt>
+<a name="L318"></a><tt class="py-lineno">318</tt>  <tt class="py-line">        <tt id="link-59" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-59', 'y', 'link-40');">y</a></tt> <tt class="py-op">-=</tt> <tt class="py-number">10000000.0</tt> </tt>
+<a name="L319"></a><tt class="py-lineno">319</tt>  <tt class="py-line"> </tt>
+<a name="L320"></a><tt class="py-lineno">320</tt>  <tt class="py-line">    <tt id="link-60" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-60', 'y', 'link-40');">y</a></tt> <tt class="py-op">/=</tt> <tt id="link-61" class="py-name"><a title="mosp.geo.utm.UTMScaleFactor" class="py-name" href="#" onclick="return doclink('link-61', 'UTMScaleFactor', 'link-4');">UTMScaleFactor</a></tt> </tt>
+<a name="L321"></a><tt class="py-lineno">321</tt>  <tt class="py-line">     </tt>
+<a name="L322"></a><tt class="py-lineno">322</tt>  <tt class="py-line">    <tt class="py-name">cmeridian</tt> <tt class="py-op">=</tt> <tt id="link-62" class="py-name"><a title="mosp.geo.utm.UTMCentralMeridian" class="py-name" href="#" onclick="return doclink('link-62', 'UTMCentralMeridian', 'link-31');">UTMCentralMeridian</a></tt><tt class="py-op">(</tt><tt class="py-name">zone</tt><tt class="py-op">)</tt> </tt>
+<a name="L323"></a><tt class="py-lineno">323</tt>  <tt class="py-line">     </tt>
+<a name="L324"></a><tt class="py-lineno">324</tt>  <tt class="py-line">    <tt class="py-name">lat_lon</tt> <tt class="py-op">=</tt> <tt id="link-63" class="py-name" targets="Function mosp.geo.utm.MapXYToLatLon()=mosp.geo.utm-module.html#MapXYToLatLon"><a title="mosp.geo.utm.MapXYToLatLon" class="py-name" href="#" onclick="return doclink('link-63', 'MapXYToLatLon', 'link-63');">MapXYToLatLon</a></tt><tt class="py-op">(</tt><tt id="link-64" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-64', 'x', 'link-48');">x</a></tt><tt class="py-op">,</tt> <tt id="link-65" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-65', 'y', 'link-40');">y</a></tt><tt class="py-op">,</tt> <tt class="py-name">cmeridian</tt><tt class="py-op">)</tt> </tt>
+<a name="L325"></a><tt class="py-lineno">325</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">list</tt><tt class="py-op">(</tt><tt class="py-name">reversed</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt id="link-66" class="py-name" targets="Function mosp.geo.utm.rad_to_deg()=mosp.geo.utm-module.html#rad_to_deg"><a title="mosp.geo.utm.rad_to_deg" class="py-name" href="#" onclick="return doclink('link-66', 'rad_to_deg', 'link-66');">rad_to_deg</a></tt><tt class="py-op">(</tt><tt id="link-67" class="py-name" targets="Variable viewer.sim_viewer.i=viewer.sim_viewer-module.html#i"><a title="viewer.sim_viewer.i" class="py-name" href="#" onclick="return doclink('link-67', 'i', 'link-67');">i</a></tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt id="link-68" class="py-name"><a title="viewer.sim_viewer.i" class="py-name" href="#" onclick="return doclink('link-68', 'i', 'link-67');">i</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">lat_lon</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L326"></a><tt class="py-lineno">326</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:35 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

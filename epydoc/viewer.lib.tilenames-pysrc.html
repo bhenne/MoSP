@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>viewer.lib.tilenames</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="viewer-module.html">Package&nbsp;viewer</a> ::
+        <a href="viewer.lib-module.html">Package&nbsp;lib</a> ::
+        Module&nbsp;tilenames
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="viewer.lib.tilenames-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="viewer.lib.tilenames-module.html">Module viewer.lib.tilenames</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-docstring">"""Translates between lat/long and the slippy-map tile numbering scheme</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-docstring">http://wiki.openstreetmap.org/index.php/Slippy_map_tilenames</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring">@author: Oliver White</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring">@date: 2007</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-docstring">@license: This file is public-domain.</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable mosp_tools.slowcat.__author__=mosp_tools.slowcat-module.html#__author__,Variable viewer.lib.tilenames.__author__=viewer.lib.tilenames-module.html#__author__"><a title="mosp_tools.slowcat.__author__
+viewer.lib.tilenames.__author__" class="py-name" href="#" onclick="return doclink('link-0', '__author__', 'link-0');">__author__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"Oliver White"</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-name">__copyright__</tt> <tt class="py-op">=</tt> <tt class="py-string">"(c) 2007, Oliver White"</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt id="link-1" class="py-name" targets="Variable viewer.lib.tilenames.__license__=viewer.lib.tilenames-module.html#__license__"><a title="viewer.lib.tilenames.__license__" class="py-name" href="#" onclick="return doclink('link-1', '__license__', 'link-1');">__license__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"This file is public-domain."</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">math</tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"> </tt>
+<a name="numTiles"></a><div id="numTiles-def"><a name="L18"></a><tt class="py-lineno">18</tt> <a class="py-toggle" href="#" id="numTiles-toggle" onclick="return toggle('numTiles');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="viewer.lib.tilenames-module.html#numTiles">numTiles</a><tt class="py-op">(</tt><tt class="py-param">z</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="numTiles-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="numTiles-expanded"><a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt><tt class="py-op">(</tt><tt class="py-name">pow</tt><tt class="py-op">(</tt><tt class="py-number">2</tt><tt class="py-op">,</tt> <tt id="link-2" class="py-name" targets="Variable mosp.geo.osm.Node.z=mosp.geo.osm.Node-class.html#z"><a title="mosp.geo.osm.Node.z" class="py-name" href="#" onclick="return doclink('link-2', 'z', 'link-2');">z</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"> </tt>
+<a name="sec"></a><div id="sec-def"><a name="L21"></a><tt class="py-lineno">21</tt> <a class="py-toggle" href="#" id="sec-toggle" onclick="return toggle('sec');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="viewer.lib.tilenames-module.html#sec">sec</a><tt class="py-op">(</tt><tt class="py-param">x</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="sec-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="sec-expanded"><a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt><tt class="py-op">(</tt><tt class="py-number">1</tt> <tt class="py-op">/</tt> <tt class="py-name">cos</tt><tt class="py-op">(</tt><tt id="link-3" class="py-name" targets="Variable mosp.core.Person.x=mosp.core.Person-class.html#x,Variable mosp.geo.osm.Node.x=mosp.geo.osm.Node-class.html#x"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-3', 'x', 'link-3');">x</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"> </tt>
+<a name="latlon2relativeXY"></a><div id="latlon2relativeXY-def"><a name="L24"></a><tt class="py-lineno">24</tt> <a class="py-toggle" href="#" id="latlon2relativeXY-toggle" onclick="return toggle('latlon2relativeXY');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="viewer.lib.tilenames-module.html#latlon2relativeXY">latlon2relativeXY</a><tt class="py-op">(</tt><tt class="py-param">lat</tt><tt class="py-op">,</tt> <tt class="py-param">lon</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="latlon2relativeXY-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="latlon2relativeXY-expanded"><a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">    <tt id="link-4" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-4', 'x', 'link-3');">x</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt id="link-5" class="py-name" targets="Variable mosp.geo.osm.Node.lon=mosp.geo.osm.Node-class.html#lon"><a title="mosp.geo.osm.Node.lon" class="py-name" href="#" onclick="return doclink('link-5', 'lon', 'link-5');">lon</a></tt> <tt class="py-op">+</tt> <tt class="py-number">180</tt><tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt class="py-number">360</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">    <tt id="link-6" class="py-name" targets="Variable mosp.core.Person.y=mosp.core.Person-class.html#y,Variable mosp.geo.osm.Node.y=mosp.geo.osm.Node-class.html#y"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-6', 'y', 'link-6');">y</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt> <tt class="py-op">-</tt> <tt class="py-name">log</tt><tt class="py-op">(</tt><tt class="py-name">tan</tt><tt class="py-op">(</tt><tt class="py-name">radians</tt><tt class="py-op">(</tt><tt id="link-7" class="py-name" targets="Variable mosp.geo.osm.Node.lat=mosp.geo.osm.Node-class.html#lat"><a title="mosp.geo.osm.Node.lat" class="py-name" href="#" onclick="return doclink('link-7', 'lat', 'link-7');">lat</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt id="link-8" class="py-name" targets="Function viewer.lib.tilenames.sec()=viewer.lib.tilenames-module.html#sec"><a title="viewer.lib.tilenames.sec" class="py-name" href="#" onclick="return doclink('link-8', 'sec', 'link-8');">sec</a></tt><tt class="py-op">(</tt><tt class="py-name">radians</tt><tt class="py-op">(</tt><tt id="link-9" class="py-name"><a title="mosp.geo.osm.Node.lat" class="py-name" href="#" onclick="return doclink('link-9', 'lat', 'link-7');">lat</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt id="link-10" class="py-name" targets="Variable viewer.lib.tilenames.pi=viewer.lib.tilenames-module.html#pi"><a title="viewer.lib.tilenames.pi" class="py-name" href="#" onclick="return doclink('link-10', 'pi', 'link-10');">pi</a></tt><tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt class="py-number">2</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt><tt class="py-op">(</tt><tt id="link-11" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-11', 'x', 'link-3');">x</a></tt><tt class="py-op">,</tt> <tt id="link-12" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-12', 'y', 'link-6');">y</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"> </tt>
+<a name="latlon2xy"></a><div id="latlon2xy-def"><a name="L29"></a><tt class="py-lineno">29</tt> <a class="py-toggle" href="#" id="latlon2xy-toggle" onclick="return toggle('latlon2xy');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="viewer.lib.tilenames-module.html#latlon2xy">latlon2xy</a><tt class="py-op">(</tt><tt class="py-param">lat</tt><tt class="py-op">,</tt> <tt class="py-param">lon</tt><tt class="py-op">,</tt> <tt class="py-param">z</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="latlon2xy-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="latlon2xy-expanded"><a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">    <tt class="py-name">n</tt> <tt class="py-op">=</tt> <tt id="link-13" class="py-name" targets="Function viewer.lib.tilenames.numTiles()=viewer.lib.tilenames-module.html#numTiles"><a title="viewer.lib.tilenames.numTiles" class="py-name" href="#" onclick="return doclink('link-13', 'numTiles', 'link-13');">numTiles</a></tt><tt class="py-op">(</tt><tt id="link-14" class="py-name"><a title="mosp.geo.osm.Node.z" class="py-name" href="#" onclick="return doclink('link-14', 'z', 'link-2');">z</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">    <tt id="link-15" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-15', 'x', 'link-3');">x</a></tt><tt class="py-op">,</tt> <tt id="link-16" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-16', 'y', 'link-6');">y</a></tt> <tt class="py-op">=</tt> <tt id="link-17" class="py-name" targets="Function viewer.lib.tilenames.latlon2relativeXY()=viewer.lib.tilenames-module.html#latlon2relativeXY"><a title="viewer.lib.tilenames.latlon2relativeXY" class="py-name" href="#" onclick="return doclink('link-17', 'latlon2relativeXY', 'link-17');">latlon2relativeXY</a></tt><tt class="py-op">(</tt><tt id="link-18" class="py-name"><a title="mosp.geo.osm.Node.lat" class="py-name" href="#" onclick="return doclink('link-18', 'lat', 'link-7');">lat</a></tt><tt class="py-op">,</tt> <tt id="link-19" class="py-name"><a title="mosp.geo.osm.Node.lon" class="py-name" href="#" onclick="return doclink('link-19', 'lon', 'link-5');">lon</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt><tt class="py-op">(</tt><tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">n</tt> <tt class="py-op">*</tt> <tt id="link-20" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-20', 'x', 'link-3');">x</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">n</tt> <tt class="py-op">*</tt> <tt id="link-21" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-21', 'y', 'link-6');">y</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">   </tt>
+<a name="tileXY"></a><div id="tileXY-def"><a name="L34"></a><tt class="py-lineno">34</tt> <a class="py-toggle" href="#" id="tileXY-toggle" onclick="return toggle('tileXY');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="viewer.lib.tilenames-module.html#tileXY">tileXY</a><tt class="py-op">(</tt><tt class="py-param">lat</tt><tt class="py-op">,</tt> <tt class="py-param">lon</tt><tt class="py-op">,</tt> <tt class="py-param">z</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="tileXY-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="tileXY-expanded"><a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">    <tt id="link-22" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-22', 'x', 'link-3');">x</a></tt><tt class="py-op">,</tt> <tt id="link-23" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-23', 'y', 'link-6');">y</a></tt> <tt class="py-op">=</tt> <tt id="link-24" class="py-name" targets="Function viewer.lib.tilenames.latlon2xy()=viewer.lib.tilenames-module.html#latlon2xy"><a title="viewer.lib.tilenames.latlon2xy" class="py-name" href="#" onclick="return doclink('link-24', 'latlon2xy', 'link-24');">latlon2xy</a></tt><tt class="py-op">(</tt><tt id="link-25" class="py-name"><a title="mosp.geo.osm.Node.lat" class="py-name" href="#" onclick="return doclink('link-25', 'lat', 'link-7');">lat</a></tt><tt class="py-op">,</tt> <tt id="link-26" class="py-name"><a title="mosp.geo.osm.Node.lon" class="py-name" href="#" onclick="return doclink('link-26', 'lon', 'link-5');">lon</a></tt><tt class="py-op">,</tt> <tt id="link-27" class="py-name"><a title="mosp.geo.osm.Node.z" class="py-name" href="#" onclick="return doclink('link-27', 'z', 'link-2');">z</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt><tt class="py-op">(</tt><tt class="py-name">int</tt><tt class="py-op">(</tt><tt id="link-28" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-28', 'x', 'link-3');">x</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt id="link-29" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-29', 'y', 'link-6');">y</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"> </tt>
+<a name="xy2latlon"></a><div id="xy2latlon-def"><a name="L38"></a><tt class="py-lineno">38</tt> <a class="py-toggle" href="#" id="xy2latlon-toggle" onclick="return toggle('xy2latlon');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="viewer.lib.tilenames-module.html#xy2latlon">xy2latlon</a><tt class="py-op">(</tt><tt class="py-param">x</tt><tt class="py-op">,</tt> <tt class="py-param">y</tt><tt class="py-op">,</tt> <tt class="py-param">z</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="xy2latlon-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="xy2latlon-expanded"><a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">    <tt class="py-name">n</tt> <tt class="py-op">=</tt> <tt id="link-30" class="py-name"><a title="viewer.lib.tilenames.numTiles" class="py-name" href="#" onclick="return doclink('link-30', 'numTiles', 'link-13');">numTiles</a></tt><tt class="py-op">(</tt><tt id="link-31" class="py-name"><a title="mosp.geo.osm.Node.z" class="py-name" href="#" onclick="return doclink('link-31', 'z', 'link-2');">z</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">    <tt class="py-name">relY</tt> <tt class="py-op">=</tt> <tt id="link-32" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-32', 'y', 'link-6');">y</a></tt> <tt class="py-op">/</tt> <tt class="py-name">n</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">    <tt id="link-33" class="py-name"><a title="mosp.geo.osm.Node.lat" class="py-name" href="#" onclick="return doclink('link-33', 'lat', 'link-7');">lat</a></tt> <tt class="py-op">=</tt> <tt id="link-34" class="py-name" targets="Function viewer.lib.tilenames.mercatorToLat()=viewer.lib.tilenames-module.html#mercatorToLat"><a title="viewer.lib.tilenames.mercatorToLat" class="py-name" href="#" onclick="return doclink('link-34', 'mercatorToLat', 'link-34');">mercatorToLat</a></tt><tt class="py-op">(</tt><tt id="link-35" class="py-name"><a title="viewer.lib.tilenames.pi" class="py-name" href="#" onclick="return doclink('link-35', 'pi', 'link-10');">pi</a></tt> <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt> <tt class="py-op">-</tt> <tt class="py-number">2</tt> <tt class="py-op">*</tt> <tt class="py-name">relY</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">    <tt id="link-36" class="py-name"><a title="mosp.geo.osm.Node.lon" class="py-name" href="#" onclick="return doclink('link-36', 'lon', 'link-5');">lon</a></tt> <tt class="py-op">=</tt> <tt class="py-op">-</tt><tt class="py-number">180.0</tt> <tt class="py-op">+</tt> <tt class="py-number">360.0</tt> <tt class="py-op">*</tt> <tt id="link-37" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-37', 'x', 'link-3');">x</a></tt> <tt class="py-op">/</tt> <tt class="py-name">n</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt><tt class="py-op">(</tt><tt id="link-38" class="py-name"><a title="mosp.geo.osm.Node.lat" class="py-name" href="#" onclick="return doclink('link-38', 'lat', 'link-7');">lat</a></tt><tt class="py-op">,</tt> <tt id="link-39" class="py-name"><a title="mosp.geo.osm.Node.lon" class="py-name" href="#" onclick="return doclink('link-39', 'lon', 'link-5');">lon</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">   </tt>
+<a name="latEdges"></a><div id="latEdges-def"><a name="L45"></a><tt class="py-lineno">45</tt> <a class="py-toggle" href="#" id="latEdges-toggle" onclick="return toggle('latEdges');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="viewer.lib.tilenames-module.html#latEdges">latEdges</a><tt class="py-op">(</tt><tt class="py-param">y</tt><tt class="py-op">,</tt> <tt class="py-param">z</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="latEdges-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="latEdges-expanded"><a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">    <tt class="py-name">n</tt> <tt class="py-op">=</tt> <tt id="link-40" class="py-name"><a title="viewer.lib.tilenames.numTiles" class="py-name" href="#" onclick="return doclink('link-40', 'numTiles', 'link-13');">numTiles</a></tt><tt class="py-op">(</tt><tt id="link-41" class="py-name"><a title="mosp.geo.osm.Node.z" class="py-name" href="#" onclick="return doclink('link-41', 'z', 'link-2');">z</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">    <tt class="py-name">unit</tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> <tt class="py-op">/</tt> <tt class="py-name">n</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">    <tt class="py-name">relY1</tt> <tt class="py-op">=</tt> <tt id="link-42" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-42', 'y', 'link-6');">y</a></tt> <tt class="py-op">*</tt> <tt class="py-name">unit</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">    <tt class="py-name">relY2</tt> <tt class="py-op">=</tt> <tt class="py-name">relY1</tt> <tt class="py-op">+</tt> <tt class="py-name">unit</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">    <tt class="py-name">lat1</tt> <tt class="py-op">=</tt> <tt id="link-43" class="py-name"><a title="viewer.lib.tilenames.mercatorToLat" class="py-name" href="#" onclick="return doclink('link-43', 'mercatorToLat', 'link-34');">mercatorToLat</a></tt><tt class="py-op">(</tt><tt id="link-44" class="py-name"><a title="viewer.lib.tilenames.pi" class="py-name" href="#" onclick="return doclink('link-44', 'pi', 'link-10');">pi</a></tt> <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt> <tt class="py-op">-</tt> <tt class="py-number">2</tt> <tt class="py-op">*</tt> <tt class="py-name">relY1</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">    <tt class="py-name">lat2</tt> <tt class="py-op">=</tt> <tt id="link-45" class="py-name"><a title="viewer.lib.tilenames.mercatorToLat" class="py-name" href="#" onclick="return doclink('link-45', 'mercatorToLat', 'link-34');">mercatorToLat</a></tt><tt class="py-op">(</tt><tt id="link-46" class="py-name"><a title="viewer.lib.tilenames.pi" class="py-name" href="#" onclick="return doclink('link-46', 'pi', 'link-10');">pi</a></tt> <tt class="py-op">*</tt> <tt class="py-op">(</tt><tt class="py-number">1</tt> <tt class="py-op">-</tt> <tt class="py-number">2</tt> <tt class="py-op">*</tt> <tt class="py-name">relY2</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt><tt class="py-op">(</tt><tt class="py-name">lat1</tt><tt class="py-op">,</tt> <tt class="py-name">lat2</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"> </tt>
+<a name="lonEdges"></a><div id="lonEdges-def"><a name="L54"></a><tt class="py-lineno">54</tt> <a class="py-toggle" href="#" id="lonEdges-toggle" onclick="return toggle('lonEdges');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="viewer.lib.tilenames-module.html#lonEdges">lonEdges</a><tt class="py-op">(</tt><tt class="py-param">x</tt><tt class="py-op">,</tt> <tt class="py-param">z</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="lonEdges-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="lonEdges-expanded"><a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">    <tt class="py-name">n</tt> <tt class="py-op">=</tt> <tt id="link-47" class="py-name"><a title="viewer.lib.tilenames.numTiles" class="py-name" href="#" onclick="return doclink('link-47', 'numTiles', 'link-13');">numTiles</a></tt><tt class="py-op">(</tt><tt id="link-48" class="py-name"><a title="mosp.geo.osm.Node.z" class="py-name" href="#" onclick="return doclink('link-48', 'z', 'link-2');">z</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">    <tt class="py-name">unit</tt> <tt class="py-op">=</tt> <tt class="py-number">360</tt> <tt class="py-op">/</tt> <tt class="py-name">n</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">    <tt class="py-name">lon1</tt> <tt class="py-op">=</tt> <tt class="py-op">-</tt><tt class="py-number">180</tt> <tt class="py-op">+</tt> <tt id="link-49" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-49', 'x', 'link-3');">x</a></tt> <tt class="py-op">*</tt> <tt class="py-name">unit</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">    <tt class="py-name">lon2</tt> <tt class="py-op">=</tt> <tt class="py-name">lon1</tt> <tt class="py-op">+</tt> <tt class="py-name">unit</tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt><tt class="py-op">(</tt><tt class="py-name">lon1</tt><tt class="py-op">,</tt> <tt class="py-name">lon2</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">   </tt>
+<a name="tileEdges"></a><div id="tileEdges-def"><a name="L61"></a><tt class="py-lineno">61</tt> <a class="py-toggle" href="#" id="tileEdges-toggle" onclick="return toggle('tileEdges');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="viewer.lib.tilenames-module.html#tileEdges">tileEdges</a><tt class="py-op">(</tt><tt class="py-param">x</tt><tt class="py-op">,</tt> <tt class="py-param">y</tt><tt class="py-op">,</tt> <tt class="py-param">z</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="tileEdges-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="tileEdges-expanded"><a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">    <tt class="py-name">lat1</tt><tt class="py-op">,</tt> <tt class="py-name">lat2</tt> <tt class="py-op">=</tt> <tt id="link-50" class="py-name" targets="Function viewer.lib.tilenames.latEdges()=viewer.lib.tilenames-module.html#latEdges"><a title="viewer.lib.tilenames.latEdges" class="py-name" href="#" onclick="return doclink('link-50', 'latEdges', 'link-50');">latEdges</a></tt><tt class="py-op">(</tt><tt id="link-51" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-51', 'y', 'link-6');">y</a></tt><tt class="py-op">,</tt> <tt id="link-52" class="py-name"><a title="mosp.geo.osm.Node.z" class="py-name" href="#" onclick="return doclink('link-52', 'z', 'link-2');">z</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">    <tt class="py-name">lon1</tt><tt class="py-op">,</tt> <tt class="py-name">lon2</tt> <tt class="py-op">=</tt> <tt id="link-53" class="py-name" targets="Function viewer.lib.tilenames.lonEdges()=viewer.lib.tilenames-module.html#lonEdges"><a title="viewer.lib.tilenames.lonEdges" class="py-name" href="#" onclick="return doclink('link-53', 'lonEdges', 'link-53');">lonEdges</a></tt><tt class="py-op">(</tt><tt id="link-54" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-54', 'x', 'link-3');">x</a></tt><tt class="py-op">,</tt> <tt id="link-55" class="py-name"><a title="mosp.geo.osm.Node.z" class="py-name" href="#" onclick="return doclink('link-55', 'z', 'link-2');">z</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt><tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-name">lat2</tt><tt class="py-op">,</tt> <tt class="py-name">lon1</tt><tt class="py-op">,</tt> <tt class="py-name">lat1</tt><tt class="py-op">,</tt> <tt class="py-name">lon2</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-comment"># S,W,N,E</tt> </tt>
+</div><a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line"> </tt>
+<a name="mercatorToLat"></a><div id="mercatorToLat-def"><a name="L66"></a><tt class="py-lineno">66</tt> <a class="py-toggle" href="#" id="mercatorToLat-toggle" onclick="return toggle('mercatorToLat');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="viewer.lib.tilenames-module.html#mercatorToLat">mercatorToLat</a><tt class="py-op">(</tt><tt class="py-param">mercatorY</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="mercatorToLat-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="mercatorToLat-expanded"><a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt><tt class="py-op">(</tt><tt class="py-name">degrees</tt><tt class="py-op">(</tt><tt class="py-name">atan</tt><tt class="py-op">(</tt><tt class="py-name">sinh</tt><tt class="py-op">(</tt><tt class="py-name">mercatorY</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line"> </tt>
+<a name="tileSizePixels"></a><div id="tileSizePixels-def"><a name="L69"></a><tt class="py-lineno">69</tt> <a class="py-toggle" href="#" id="tileSizePixels-toggle" onclick="return toggle('tileSizePixels');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="viewer.lib.tilenames-module.html#tileSizePixels">tileSizePixels</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="tileSizePixels-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="tileSizePixels-expanded"><a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt><tt class="py-op">(</tt><tt class="py-number">256</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line"> </tt>
+<a name="tileLayerExt"></a><div id="tileLayerExt-def"><a name="L72"></a><tt class="py-lineno">72</tt> <a class="py-toggle" href="#" id="tileLayerExt-toggle" onclick="return toggle('tileLayerExt');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="viewer.lib.tilenames-module.html#tileLayerExt">tileLayerExt</a><tt class="py-op">(</tt><tt class="py-param">layer</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="tileLayerExt-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="tileLayerExt-expanded"><a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">layer</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-string">'oam'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt><tt class="py-op">(</tt><tt class="py-string">'jpg'</tt><tt class="py-op">)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt><tt class="py-op">(</tt><tt class="py-string">'png'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line"> </tt>
+<a name="tileLayerBase"></a><div id="tileLayerBase-def"><a name="L77"></a><tt class="py-lineno">77</tt> <a class="py-toggle" href="#" id="tileLayerBase-toggle" onclick="return toggle('tileLayerBase');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="viewer.lib.tilenames-module.html#tileLayerBase">tileLayerBase</a><tt class="py-op">(</tt><tt class="py-param">layer</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="tileLayerBase-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="tileLayerBase-expanded"><a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line">    <tt class="py-name">layers</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-string">"tah"</tt><tt class="py-op">:</tt> <tt class="py-string">"http://cassini.toolserver.org:8080/http://a.tile.openstreetmap.org/+http://toolserver.org/~cmarqu/hill/"</tt><tt class="py-op">,</tt> </tt>
+<a name="L79"></a><tt class="py-lineno">79</tt>  <tt class="py-line">              <tt class="py-comment">#"tah": "http://tah.openstreetmap.org/Tiles/tile/",</tt> </tt>
+<a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line">              <tt class="py-string">"oam"</tt><tt class="py-op">:</tt> <tt class="py-string">"http://oam1.hypercube.telascience.org/tiles/1.0.0/openaerialmap-900913/"</tt><tt class="py-op">,</tt> </tt>
+<a name="L81"></a><tt class="py-lineno">81</tt>  <tt class="py-line">              <tt class="py-string">"mapnik"</tt><tt class="py-op">:</tt> <tt class="py-string">"http://tile.openstreetmap.org/mapnik/"</tt> </tt>
+<a name="L82"></a><tt class="py-lineno">82</tt>  <tt class="py-line">    <tt class="py-op">}</tt> </tt>
+<a name="L83"></a><tt class="py-lineno">83</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt><tt class="py-op">(</tt><tt class="py-name">layers</tt><tt class="py-op">[</tt><tt class="py-name">layer</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L84"></a><tt class="py-lineno">84</tt>  <tt class="py-line">   </tt>
+<a name="tileURL"></a><div id="tileURL-def"><a name="L85"></a><tt class="py-lineno">85</tt> <a class="py-toggle" href="#" id="tileURL-toggle" onclick="return toggle('tileURL');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="viewer.lib.tilenames-module.html#tileURL">tileURL</a><tt class="py-op">(</tt><tt class="py-param">x</tt><tt class="py-op">,</tt> <tt class="py-param">y</tt><tt class="py-op">,</tt> <tt class="py-param">z</tt><tt class="py-op">,</tt> <tt class="py-param">layer</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="tileURL-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="tileURL-expanded"><a name="L86"></a><tt class="py-lineno">86</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-string">"%s%d/%d/%d.%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-56" class="py-name" targets="Function viewer.lib.tilenames.tileLayerBase()=viewer.lib.tilenames-module.html#tileLayerBase"><a title="viewer.lib.tilenames.tileLayerBase" class="py-name" href="#" onclick="return doclink('link-56', 'tileLayerBase', 'link-56');">tileLayerBase</a></tt><tt class="py-op">(</tt><tt class="py-name">layer</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-57" class="py-name"><a title="mosp.geo.osm.Node.z" class="py-name" href="#" onclick="return doclink('link-57', 'z', 'link-2');">z</a></tt><tt class="py-op">,</tt> <tt id="link-58" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-58', 'x', 'link-3');">x</a></tt><tt class="py-op">,</tt> <tt id="link-59" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-59', 'y', 'link-6');">y</a></tt><tt class="py-op">,</tt> <tt id="link-60" class="py-name" targets="Function viewer.lib.tilenames.tileLayerExt()=viewer.lib.tilenames-module.html#tileLayerExt"><a title="viewer.lib.tilenames.tileLayerExt" class="py-name" href="#" onclick="return doclink('link-60', 'tileLayerExt', 'link-60');">tileLayerExt</a></tt><tt class="py-op">(</tt><tt class="py-name">layer</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L87"></a><tt class="py-lineno">87</tt>  <tt class="py-line"> </tt>
+<a name="L88"></a><tt class="py-lineno">88</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">"__main__"</tt><tt class="py-op">:</tt> </tt>
+<a name="L89"></a><tt class="py-lineno">89</tt>  <tt class="py-line">  <tt class="py-keyword">for</tt> <tt id="link-61" class="py-name"><a title="mosp.geo.osm.Node.z" class="py-name" href="#" onclick="return doclink('link-61', 'z', 'link-2');">z</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-number">18</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L90"></a><tt class="py-lineno">90</tt>  <tt class="py-line">    <tt id="link-62" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-62', 'x', 'link-3');">x</a></tt><tt class="py-op">,</tt><tt id="link-63" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-63', 'y', 'link-6');">y</a></tt> <tt class="py-op">=</tt> <tt id="link-64" class="py-name" targets="Function viewer.lib.tilenames.tileXY()=viewer.lib.tilenames-module.html#tileXY"><a title="viewer.lib.tilenames.tileXY" class="py-name" href="#" onclick="return doclink('link-64', 'tileXY', 'link-64');">tileXY</a></tt><tt class="py-op">(</tt><tt class="py-number">52.37930</tt><tt class="py-op">,</tt> <tt class="py-number">9.72310</tt><tt class="py-op">,</tt> <tt id="link-65" class="py-name"><a title="mosp.geo.osm.Node.z" class="py-name" href="#" onclick="return doclink('link-65', 'z', 'link-2');">z</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno">91</tt>  <tt class="py-line">     </tt>
+<a name="L92"></a><tt class="py-lineno">92</tt>  <tt class="py-line">    <tt class="py-name">s</tt><tt class="py-op">,</tt><tt class="py-name">w</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">,</tt><tt id="link-66" class="py-name" targets="Variable viewer.lib.tilenames.e=viewer.lib.tilenames-module.html#e"><a title="viewer.lib.tilenames.e" class="py-name" href="#" onclick="return doclink('link-66', 'e', 'link-66');">e</a></tt> <tt class="py-op">=</tt> <tt id="link-67" class="py-name" targets="Function viewer.lib.tilenames.tileEdges()=viewer.lib.tilenames-module.html#tileEdges"><a title="viewer.lib.tilenames.tileEdges" class="py-name" href="#" onclick="return doclink('link-67', 'tileEdges', 'link-67');">tileEdges</a></tt><tt class="py-op">(</tt><tt id="link-68" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-68', 'x', 'link-3');">x</a></tt><tt class="py-op">,</tt><tt id="link-69" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-69', 'y', 'link-6');">y</a></tt><tt class="py-op">,</tt><tt id="link-70" class="py-name"><a title="mosp.geo.osm.Node.z" class="py-name" href="#" onclick="return doclink('link-70', 'z', 'link-2');">z</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L93"></a><tt class="py-lineno">93</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">"%d: %d,%d --&gt; %1.3f :: %1.3f, %1.3f :: %1.3f"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-71" class="py-name"><a title="mosp.geo.osm.Node.z" class="py-name" href="#" onclick="return doclink('link-71', 'z', 'link-2');">z</a></tt><tt class="py-op">,</tt><tt id="link-72" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-72', 'x', 'link-3');">x</a></tt><tt class="py-op">,</tt><tt id="link-73" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-73', 'y', 'link-6');">y</a></tt><tt class="py-op">,</tt><tt class="py-name">s</tt><tt class="py-op">,</tt><tt class="py-name">n</tt><tt class="py-op">,</tt><tt class="py-name">w</tt><tt class="py-op">,</tt><tt id="link-74" class="py-name"><a title="viewer.lib.tilenames.e" class="py-name" href="#" onclick="return doclink('link-74', 'e', 'link-66');">e</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno">94</tt>  <tt class="py-line">    <tt class="py-comment">#print "&lt;img src='%s'&gt;&lt;br&gt;" % tileURL(x,y,z)</tt> </tt>
+<a name="L95"></a><tt class="py-lineno">95</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:34 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

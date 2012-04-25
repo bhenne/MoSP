@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>mosp_examples.socketplayer_demo_wiggler</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="mosp_examples-module.html">Package&nbsp;mosp_examples</a> ::
+        Module&nbsp;socketplayer_demo_wiggler
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="mosp_examples.socketplayer_demo_wiggler-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="mosp_examples.socketplayer_demo_wiggler-module.html">Module mosp_examples.socketplayer_demo_wiggler</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">""" A simple demo of the SocketPlayerMonitor demo.</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">    - creating the player</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">    - drawing objects</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">    - drawing objects with limited lifetime</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">    - removing objects</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-string">".."</tt><tt class="py-op">)</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">time</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">random</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">struct</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package mosp=mosp-module.html"><a title="mosp" class="py-name" href="#" onclick="return doclink('link-0', 'mosp', 'link-0');">mosp</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module mosp.core=mosp.core-module.html"><a title="mosp.core" class="py-name" href="#" onclick="return doclink('link-1', 'core', 'link-1');">core</a></tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Class mosp.core.Simulation=mosp.core.Simulation-class.html"><a title="mosp.core.Simulation" class="py-name" href="#" onclick="return doclink('link-2', 'Simulation', 'link-2');">Simulation</a></tt><tt class="py-op">,</tt> <tt id="link-3" class="py-name" targets="Class mosp.core.Person=mosp.core.Person-class.html"><a title="mosp.core.Person" class="py-name" href="#" onclick="return doclink('link-3', 'Person', 'link-3');">Person</a></tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-4" class="py-name"><a title="mosp" class="py-name" href="#" onclick="return doclink('link-4', 'mosp', 'link-0');">mosp</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Package mosp.geo=mosp.geo-module.html"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-5', 'geo', 'link-5');">geo</a></tt> <tt class="py-keyword">import</tt> <tt id="link-6" class="py-name" targets="Module mosp.geo.osm=mosp.geo.osm-module.html"><a title="mosp.geo.osm" class="py-name" href="#" onclick="return doclink('link-6', 'osm', 'link-6');">osm</a></tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-7" class="py-name"><a title="mosp" class="py-name" href="#" onclick="return doclink('link-7', 'mosp', 'link-0');">mosp</a></tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Package mosp.impl=mosp.impl-module.html"><a title="mosp.impl" class="py-name" href="#" onclick="return doclink('link-8', 'impl', 'link-8');">impl</a></tt> <tt class="py-keyword">import</tt> <tt id="link-9" class="py-name" targets="Module mosp.impl.movement=mosp.impl.movement-module.html"><a title="mosp.impl.movement" class="py-name" href="#" onclick="return doclink('link-9', 'movement', 'link-9');">movement</a></tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-10" class="py-name"><a title="mosp" class="py-name" href="#" onclick="return doclink('link-10', 'mosp', 'link-0');">mosp</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Module mosp.monitors=mosp.monitors-module.html"><a title="mosp.monitors" class="py-name" href="#" onclick="return doclink('link-11', 'monitors', 'link-11');">monitors</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt id="link-12" class="py-name" targets="Variable mosp_tools.slowcat.__author__=mosp_tools.slowcat-module.html#__author__,Variable viewer.lib.tilenames.__author__=viewer.lib.tilenames-module.html#__author__"><a title="mosp_tools.slowcat.__author__
+viewer.lib.tilenames.__author__" class="py-name" href="#" onclick="return doclink('link-12', '__author__', 'link-12');">__author__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"P. Tute"</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt id="link-13" class="py-name" targets="Variable mosp.geo.utils.__maintainer__=mosp.geo.utils-module.html#__maintainer__,Variable mosp.geo.utm.__maintainer__=mosp.geo.utm-module.html#__maintainer__,Variable mosp.group.__maintainer__=mosp.group-module.html#__maintainer__,Variable mosp.routing.__maintainer__=mosp.routing-module.html#__maintainer__,Variable mosp.test.test_collide.__maintainer__=mosp.test.test_collide-module.html#__maintainer__,Variable mosp.test.test_routing.__maintainer__=mosp.test.test_routing-module.html#__maintainer__,Variable mosp.test.test_utm.__maintainer__=mosp.test.test_utm-module.html#__maintainer__,Variable mosp_examples.message_example.__maintainer__=mosp_examples.message_example-module.html#__maintainer__,Variable mosp_examples.random_wiggler.__maintainer__=mosp_examples.random_wiggler-module.html#__maintainer__,Variable mosp_examples.routing_wiggler.__maintainer__=mosp_examples.routing_wiggler-module.html#__maintainer__,Variable mosp_examples.socketplayer_demo_wiggler.__maintainer__=mosp_examples.socketplayer_demo_wiggler-module.html#__maintainer__,Variable mosp_examples.zombie_wiggler.__maintainer__=mosp_examples.zombie_wiggler-module.html#__maintainer__,Variable viewer.lib.calculations.__maintainer__=viewer.lib.calculations-module.html#__maintainer__,Variable viewer.lib.tileloader.__maintainer__=viewer.lib.tileloader-module.html#__maintainer__,Variable viewer.sim_viewer.__maintainer__=viewer.sim_viewer-module.html#__maintainer__"><a title="mosp.geo.utils.__maintainer__
+mosp.geo.utm.__maintainer__
+mosp.group.__maintainer__
+mosp.routing.__maintainer__
+mosp.test.test_collide.__maintainer__
+mosp.test.test_routing.__maintainer__
+mosp.test.test_utm.__maintainer__
+mosp_examples.message_example.__maintainer__
+mosp_examples.random_wiggler.__maintainer__
+mosp_examples.routing_wiggler.__maintainer__
+mosp_examples.socketplayer_demo_wiggler.__maintainer__
+mosp_examples.zombie_wiggler.__maintainer__
+viewer.lib.calculations.__maintainer__
+viewer.lib.tileloader.__maintainer__
+viewer.sim_viewer.__maintainer__" class="py-name" href="#" onclick="return doclink('link-13', '__maintainer__', 'link-13');">__maintainer__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"B. Henne"</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-name">__contact__</tt> <tt class="py-op">=</tt> <tt class="py-string">"henne@dcsec.uni-hannover.de"</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-name">__copyright__</tt> <tt class="py-op">=</tt> <tt class="py-string">"(c) 2011, DCSec, Leibniz Universitaet Hannover, Germany"</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt id="link-14" class="py-name" targets="Variable viewer.lib.tilenames.__license__=viewer.lib.tilenames-module.html#__license__"><a title="viewer.lib.tilenames.__license__" class="py-name" href="#" onclick="return doclink('link-14', '__license__', 'link-14');">__license__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"GPLv3"</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"> </tt>
+<a name="SocketPlayerDemoWiggler"></a><div id="SocketPlayerDemoWiggler-def"><a name="L28"></a><tt class="py-lineno"> 28</tt> <a class="py-toggle" href="#" id="SocketPlayerDemoWiggler-toggle" onclick="return toggle('SocketPlayerDemoWiggler');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="mosp_examples.socketplayer_demo_wiggler.SocketPlayerDemoWiggler-class.html">SocketPlayerDemoWiggler</a><tt class="py-op">(</tt><tt class="py-base-class">Person</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SocketPlayerDemoWiggler-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SocketPlayerDemoWiggler-expanded"><a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">    <tt class="py-docstring">"""Implements a simple person doing only random movement on the map.</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">    @author: P. Tute"""</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">    <tt id="link-15" class="py-name" targets="Method mosp.core.Person.next_target()=mosp.core.Person-class.html#next_target,Method mosp_examples.statemachine_wiggler.WorkWiggler.next_target()=mosp_examples.statemachine_wiggler.WorkWiggler-class.html#next_target"><a title="mosp.core.Person.next_target
+mosp_examples.statemachine_wiggler.WorkWiggler.next_target" class="py-name" href="#" onclick="return doclink('link-15', 'next_target', 'link-15');">next_target</a></tt> <tt class="py-op">=</tt> <tt id="link-16" class="py-name"><a title="mosp.impl.movement" class="py-name" href="#" onclick="return doclink('link-16', 'movement', 'link-9');">movement</a></tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Function mosp.impl.movement.person_next_target_random()=mosp.impl.movement-module.html#person_next_target_random"><a title="mosp.impl.movement.person_next_target_random" class="py-name" href="#" onclick="return doclink('link-17', 'person_next_target_random', 'link-17');">person_next_target_random</a></tt> </tt>
+</div><a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"> </tt>
+<a name="main"></a><div id="main-def"><a name="L34"></a><tt class="py-lineno"> 34</tt> <a class="py-toggle" href="#" id="main-toggle" onclick="return toggle('main');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp_examples.socketplayer_demo_wiggler-module.html#main">main</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="main-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="main-expanded"><a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">    <tt class="py-docstring">"""Defines the simulation, map, monitors, persons."""</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">    <tt class="py-comment"># setup works just like every other Simulation</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">    <tt class="py-name">s</tt> <tt class="py-op">=</tt> <tt id="link-18" class="py-name"><a title="mosp.core.Simulation" class="py-name" href="#" onclick="return doclink('link-18', 'Simulation', 'link-2');">Simulation</a></tt><tt class="py-op">(</tt><tt id="link-19" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-19', 'geo', 'link-5');">geo</a></tt><tt class="py-op">=</tt><tt id="link-20" class="py-name"><a title="mosp.geo.osm" class="py-name" href="#" onclick="return doclink('link-20', 'osm', 'link-6');">osm</a></tt><tt class="py-op">.</tt><tt id="link-21" class="py-name" targets="Class mosp.geo.osm.OSMModel=mosp.geo.osm.OSMModel-class.html"><a title="mosp.geo.osm.OSMModel" class="py-name" href="#" onclick="return doclink('link-21', 'OSMModel', 'link-21');">OSMModel</a></tt><tt class="py-op">(</tt><tt class="py-string">'../data/minimap4.osm'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">rel_speed</tt><tt class="py-op">=</tt><tt class="py-number">40</tt><tt class="py-op">)</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">    <tt class="py-comment"># add a SocketPlayerMonitor...after this the monitor will wait until an connection was established</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">    <tt class="py-name">m</tt> <tt class="py-op">=</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Method mosp.core.Simulation.add_monitor()=mosp.core.Simulation-class.html#add_monitor"><a title="mosp.core.Simulation.add_monitor" class="py-name" href="#" onclick="return doclink('link-22', 'add_monitor', 'link-22');">add_monitor</a></tt><tt class="py-op">(</tt><tt id="link-23" class="py-name" targets="Class mosp.monitors.SocketPlayerMonitor=mosp.monitors.SocketPlayerMonitor-class.html"><a title="mosp.monitors.SocketPlayerMonitor" class="py-name" href="#" onclick="return doclink('link-23', 'SocketPlayerMonitor', 'link-23');">SocketPlayerMonitor</a></tt><tt class="py-op">,</tt> <tt class="py-number">2</tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">    <tt class="py-comment"># the player will draw a bounding box (as specified by the map)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">    <tt class="py-comment"># it is basically a simple rectangle with the id 0</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">    <tt class="py-comment"># to prevent this from happening set before the simulation starts</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">    <tt class="py-comment"># m.draw_bb = False</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">    <tt class="py-comment"># persons in a simulation will be send to the player automatically by the monitor</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">    <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Method mosp.core.Simulation.add_persons()=mosp.core.Simulation-class.html#add_persons"><a title="mosp.core.Simulation.add_persons" class="py-name" href="#" onclick="return doclink('link-24', 'add_persons', 'link-24');">add_persons</a></tt><tt class="py-op">(</tt><tt id="link-25" class="py-name" targets="Class mosp_examples.socketplayer_demo_wiggler.SocketPlayerDemoWiggler=mosp_examples.socketplayer_demo_wiggler.SocketPlayerDemoWiggler-class.html"><a title="mosp_examples.socketplayer_demo_wiggler.SocketPlayerDemoWiggler" class="py-name" href="#" onclick="return doclink('link-25', 'SocketPlayerDemoWiggler', 'link-25');">SocketPlayerDemoWiggler</a></tt><tt class="py-op">,</tt> <tt class="py-number">10</tt><tt class="py-op">,</tt> <tt class="py-name">monitor</tt><tt class="py-op">=</tt><tt class="py-name">m</tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">    <tt class="py-comment"># the player automatically centers on the middle of the bounding box</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">    <tt class="py-comment"># should you not want this, you can center it on other coordinates using</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">    <tt class="py-name">m</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Method mosp.monitors.EmptyMonitor.center_on_lat_lon()=mosp.monitors.EmptyMonitor-class.html#center_on_lat_lon,Method mosp.monitors.SocketPlayerMonitor.center_on_lat_lon()=mosp.monitors.SocketPlayerMonitor-class.html#center_on_lat_lon"><a title="mosp.monitors.EmptyMonitor.center_on_lat_lon
+mosp.monitors.SocketPlayerMonitor.center_on_lat_lon" class="py-name" href="#" onclick="return doclink('link-26', 'center_on_lat_lon', 'link-26');">center_on_lat_lon</a></tt><tt class="py-op">(</tt><tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-27', 'geo', 'link-5');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">bounds</tt><tt class="py-op">[</tt><tt class="py-string">'minlat'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-28', 'geo', 'link-5');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">bounds</tt><tt class="py-op">[</tt><tt class="py-string">'minlon'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">    <tt class="py-comment"># please note that in the current version there is a slight inaccuracy in the way the map is drawn</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">    <tt class="py-comment"># this means that the player will not center exactly on the specified coordinates</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">    <tt class="py-comment"># when the player is running, geometric objects can be drawn using the monitors draw methods</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">    <tt class="py-comment"># </tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">    <tt class="py-comment"># in this example a circle will be drawn, other objects might need different arguments but work just the same</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">    <tt class="py-comment"># these arguments are necessary for almost all drawings:</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">    <tt class="py-comment">#   id is a unique identifier. When trying to draw two objects with the same id, the older one will be replaced.</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">    <tt class="py-comment">#      This mechanism can be used to update an object.</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">    <tt class="py-comment">#      Note: IDs also determines the order in which objects are drawn. This might be important when objects are overlapping.</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt class="py-comment">#   color is allways a 4-tuple of values in the range [0,1] representing RGBA-color, or a string with the name of a color</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">    <tt class="py-comment">#   ttl is available with most drawable objects. It represents a time in seconds, after which the object will be removed from the player.</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">    <tt class="py-comment">#      This might for example be used to signal an event to the viewer</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">    <tt class="py-comment">#      A ttl of 0 means this object will exist until simulation ends or it is deleted otherwise (default)</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">    <tt class="py-name">m</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name" targets="Method mosp.monitors.EmptyMonitor.draw_circle()=mosp.monitors.EmptyMonitor-class.html#draw_circle,Method mosp.monitors.SocketPlayerMonitor.draw_circle()=mosp.monitors.SocketPlayerMonitor-class.html#draw_circle"><a title="mosp.monitors.EmptyMonitor.draw_circle
+mosp.monitors.SocketPlayerMonitor.draw_circle" class="py-name" href="#" onclick="return doclink('link-29', 'draw_circle', 'link-29');">draw_circle</a></tt><tt class="py-op">(</tt><tt class="py-name">id</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">center_lat</tt><tt class="py-op">=</tt><tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-30', 'geo', 'link-5');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">bounds</tt><tt class="py-op">[</tt><tt class="py-string">'minlat'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">center_lon</tt><tt class="py-op">=</tt><tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-31', 'geo', 'link-5');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">bounds</tt><tt class="py-op">[</tt><tt class="py-string">'minlon'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">radius</tt><tt class="py-op">=</tt><tt class="py-number">50</tt><tt class="py-op">,</tt> <tt class="py-name">filled</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">color</tt><tt class="py-op">=</tt><tt class="py-op">(</tt><tt class="py-number">1.0</tt><tt class="py-op">,</tt> <tt class="py-number">0.6</tt><tt class="py-op">,</tt> <tt class="py-number">0.4</tt><tt class="py-op">,</tt> <tt class="py-number">1.0</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">ttl</tt><tt class="py-op">=</tt><tt class="py-number">10</tt><tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt class="py-name">m</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="mosp.monitors.EmptyMonitor.draw_circle
+mosp.monitors.SocketPlayerMonitor.draw_circle" class="py-name" href="#" onclick="return doclink('link-32', 'draw_circle', 'link-29');">draw_circle</a></tt><tt class="py-op">(</tt><tt class="py-name">id</tt><tt class="py-op">=</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-name">center_lat</tt><tt class="py-op">=</tt><tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-33', 'geo', 'link-5');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">bounds</tt><tt class="py-op">[</tt><tt class="py-string">'minlat'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">center_lon</tt><tt class="py-op">=</tt><tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-34', 'geo', 'link-5');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">bounds</tt><tt class="py-op">[</tt><tt class="py-string">'minlon'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">radius</tt><tt class="py-op">=</tt><tt class="py-number">25</tt><tt class="py-op">,</tt> <tt class="py-name">filled</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">color</tt><tt class="py-op">=</tt><tt class="py-string">'spring-spring-yellow'</tt><tt class="py-op">,</tt> <tt class="py-name">ttl</tt><tt class="py-op">=</tt><tt class="py-number">10</tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">    <tt class="py-comment"># after every object drawn this way, the player will be told to redraw everything</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">    <tt class="py-comment"># this is not very fast when sending many objects at once</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">    <tt class="py-comment"># to send many objects at once you should use the monitors socket directly</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">    <tt class="py-op">(</tt><tt class="py-name">r</tt><tt class="py-op">,</tt> <tt class="py-name">g</tt><tt class="py-op">,</tt> <tt class="py-name">b</tt><tt class="py-op">,</tt> <tt class="py-name">a</tt><tt class="py-op">)</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-number">1.0</tt><tt class="py-op">,</tt> <tt class="py-number">1.0</tt><tt class="py-op">,</tt> <tt class="py-number">0.5</tt><tt class="py-op">,</tt> <tt class="py-number">0.5</tt><tt class="py-op">)</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">    <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">struct</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">m</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name" targets="Variable mosp.monitors.SocketPlayerMonitor.FORMATS=mosp.monitors.SocketPlayerMonitor-class.html#FORMATS"><a title="mosp.monitors.SocketPlayerMonitor.FORMATS" class="py-name" href="#" onclick="return doclink('link-35', 'FORMATS', 'link-35');">FORMATS</a></tt><tt class="py-op">[</tt><tt class="py-string">'point'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">                       <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-comment"># id</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">                       <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-36', 'geo', 'link-5');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">bounds</tt><tt class="py-op">[</tt><tt class="py-string">'minlat'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-37', 'geo', 'link-5');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">bounds</tt><tt class="py-op">[</tt><tt class="py-string">'minlon'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">                       <tt class="py-number">3</tt><tt class="py-op">,</tt> <tt class="py-comment"># radius</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">                       <tt class="py-name">r</tt><tt class="py-op">,</tt> <tt class="py-name">g</tt><tt class="py-op">,</tt> <tt class="py-name">b</tt><tt class="py-op">,</tt> <tt class="py-name">a</tt><tt class="py-op">,</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">                       <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">    <tt class="py-name">m</tt><tt class="py-op">.</tt><tt class="py-name">conn</tt><tt class="py-op">.</tt><tt id="link-38" class="py-name" targets="Method mosp.controller.Controller.send()=mosp.controller.Controller-class.html#send,Method mosp.core.Person.send()=mosp.core.Person-class.html#send"><a title="mosp.controller.Controller.send
+mosp.core.Person.send" class="py-name" href="#" onclick="return doclink('link-38', 'send', 'link-38');">send</a></tt><tt class="py-op">(</tt><tt class="py-name">m</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name" targets="Variable mosp.monitors.SocketPlayerMonitor.MESSAGES=mosp.monitors.SocketPlayerMonitor-class.html#MESSAGES"><a title="mosp.monitors.SocketPlayerMonitor.MESSAGES" class="py-name" href="#" onclick="return doclink('link-39', 'MESSAGES', 'link-39');">MESSAGES</a></tt><tt class="py-op">[</tt><tt class="py-string">'point'</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-name">data</tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">    <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">struct</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">m</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name"><a title="mosp.monitors.SocketPlayerMonitor.FORMATS" class="py-name" href="#" onclick="return doclink('link-40', 'FORMATS', 'link-35');">FORMATS</a></tt><tt class="py-op">[</tt><tt class="py-string">'point'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">                       <tt class="py-number">1</tt><tt class="py-op">,</tt> <tt class="py-comment"># id</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">                       <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-41', 'geo', 'link-5');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">bounds</tt><tt class="py-op">[</tt><tt class="py-string">'maxlat'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-42', 'geo', 'link-5');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">bounds</tt><tt class="py-op">[</tt><tt class="py-string">'minlon'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">                       <tt class="py-number">6</tt><tt class="py-op">,</tt> <tt class="py-comment"># radius</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">                       <tt class="py-name">r</tt><tt class="py-op">,</tt> <tt class="py-name">g</tt><tt class="py-op">,</tt> <tt class="py-name">b</tt><tt class="py-op">,</tt> <tt class="py-name">a</tt><tt class="py-op">,</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">                       <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">    <tt class="py-name">m</tt><tt class="py-op">.</tt><tt class="py-name">conn</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="mosp.controller.Controller.send
+mosp.core.Person.send" class="py-name" href="#" onclick="return doclink('link-43', 'send', 'link-38');">send</a></tt><tt class="py-op">(</tt><tt class="py-name">m</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="mosp.monitors.SocketPlayerMonitor.MESSAGES" class="py-name" href="#" onclick="return doclink('link-44', 'MESSAGES', 'link-39');">MESSAGES</a></tt><tt class="py-op">[</tt><tt class="py-string">'point'</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-name">data</tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">    <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">struct</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-name">m</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name"><a title="mosp.monitors.SocketPlayerMonitor.FORMATS" class="py-name" href="#" onclick="return doclink('link-45', 'FORMATS', 'link-35');">FORMATS</a></tt><tt class="py-op">[</tt><tt class="py-string">'point'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">                       <tt class="py-number">2</tt><tt class="py-op">,</tt> <tt class="py-comment"># id</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">                       <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-46', 'geo', 'link-5');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">bounds</tt><tt class="py-op">[</tt><tt class="py-string">'maxlat'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-47', 'geo', 'link-5');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">bounds</tt><tt class="py-op">[</tt><tt class="py-string">'maxlon'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">                       <tt class="py-number">10</tt><tt class="py-op">,</tt> <tt class="py-comment"># radius</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">                       <tt class="py-name">r</tt><tt class="py-op">,</tt> <tt class="py-name">g</tt><tt class="py-op">,</tt> <tt class="py-name">b</tt><tt class="py-op">,</tt> <tt class="py-name">a</tt><tt class="py-op">,</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">                       <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">    <tt class="py-name">m</tt><tt class="py-op">.</tt><tt class="py-name">conn</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="mosp.controller.Controller.send
+mosp.core.Person.send" class="py-name" href="#" onclick="return doclink('link-48', 'send', 'link-38');">send</a></tt><tt class="py-op">(</tt><tt class="py-name">m</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name"><a title="mosp.monitors.SocketPlayerMonitor.MESSAGES" class="py-name" href="#" onclick="return doclink('link-49', 'MESSAGES', 'link-39');">MESSAGES</a></tt><tt class="py-op">[</tt><tt class="py-string">'point'</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-name">data</tt><tt class="py-op">)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">    <tt class="py-comment"># finish by telling the player to draw. This is not necessary but ensures that changes will be drawn instantly</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">    <tt class="py-name">m</tt><tt class="py-op">.</tt><tt class="py-name">conn</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name"><a title="mosp.controller.Controller.send
+mosp.core.Person.send" class="py-name" href="#" onclick="return doclink('link-50', 'send', 'link-38');">send</a></tt><tt class="py-op">(</tt><tt class="py-name">m</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name"><a title="mosp.monitors.SocketPlayerMonitor.MESSAGES" class="py-name" href="#" onclick="return doclink('link-51', 'MESSAGES', 'link-39');">MESSAGES</a></tt><tt class="py-op">[</tt><tt class="py-string">'draw'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">    <tt class="py-comment"># objects that do not have ttl &gt; 0 will remain in the player until they are removed, replaced or until the simulation ends</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">    <tt class="py-comment"># deleting an object can be done by calling SocketPlayerMonitor.remove_object()</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">    <tt class="py-name">m</tt><tt class="py-op">.</tt><tt id="link-52" class="py-name"><a title="mosp.monitors.EmptyMonitor.draw_circle
+mosp.monitors.SocketPlayerMonitor.draw_circle" class="py-name" href="#" onclick="return doclink('link-52', 'draw_circle', 'link-29');">draw_circle</a></tt><tt class="py-op">(</tt><tt class="py-number">2</tt><tt class="py-op">,</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-53" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-53', 'geo', 'link-5');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">bounds</tt><tt class="py-op">[</tt><tt class="py-string">'maxlat'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-54', 'geo', 'link-5');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">bounds</tt><tt class="py-op">[</tt><tt class="py-string">'minlon'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-number">50</tt><tt class="py-op">,</tt> <tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-number">1.0</tt><tt class="py-op">,</tt> <tt class="py-number">1.0</tt><tt class="py-op">,</tt> <tt class="py-number">1.0</tt><tt class="py-op">,</tt> <tt class="py-number">1.0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">    <tt class="py-name">m</tt><tt class="py-op">.</tt><tt id="link-55" class="py-name" targets="Method mosp.monitors.EmptyMonitor.remove_object()=mosp.monitors.EmptyMonitor-class.html#remove_object,Method mosp.monitors.SocketPlayerMonitor.remove_object()=mosp.monitors.SocketPlayerMonitor-class.html#remove_object"><a title="mosp.monitors.EmptyMonitor.remove_object
+mosp.monitors.SocketPlayerMonitor.remove_object" class="py-name" href="#" onclick="return doclink('link-55', 'remove_object', 'link-55');">remove_object</a></tt><tt class="py-op">(</tt><tt class="py-name">type</tt><tt class="py-op">=</tt><tt class="py-string">'circle'</tt><tt class="py-op">,</tt> <tt class="py-name">id</tt><tt class="py-op">=</tt><tt class="py-number">2</tt><tt class="py-op">)</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">    <tt class="py-comment"># since we removed the circle before the simulation even starts, it will not appear at all</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">    <tt class="py-comment"># the player can create a heatmap while a simulation is running</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">    <tt class="py-comment"># this is achieved by drawing points in a more performant manner</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">    <tt class="py-comment"># as a trade-off these 'blips' can not be removed</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">    <tt class="py-name">m</tt><tt class="py-op">.</tt><tt id="link-56" class="py-name" targets="Method mosp.monitors.SocketPlayerMonitor.add_heatmap_blip()=mosp.monitors.SocketPlayerMonitor-class.html#add_heatmap_blip"><a title="mosp.monitors.SocketPlayerMonitor.add_heatmap_blip" class="py-name" href="#" onclick="return doclink('link-56', 'add_heatmap_blip', 'link-56');">add_heatmap_blip</a></tt><tt class="py-op">(</tt><tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-57" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-57', 'geo', 'link-5');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">bounds</tt><tt class="py-op">[</tt><tt class="py-string">'minlat'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-58', 'geo', 'link-5');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">bounds</tt><tt class="py-op">[</tt><tt class="py-string">'maxlon'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-number">10</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-number">1.0</tt><tt class="py-op">,</tt> <tt class="py-number">0.0</tt><tt class="py-op">,</tt> <tt class="py-number">0.0</tt><tt class="py-op">,</tt> <tt class="py-number">0.2</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">    <tt class="py-comment"># using real_time=True is highly recommended...</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">    <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-59" class="py-name" targets="Method mosp.controller.Controller.run()=mosp.controller.Controller-class.html#run,Method mosp.controller.SimulationControlled.run()=mosp.controller.SimulationControlled-class.html#run,Method mosp.core.Simulation.run()=mosp.core.Simulation-class.html#run,Method mosp_examples.statemachine_wiggler.SocketPlayerClock.run()=mosp_examples.statemachine_wiggler.SocketPlayerClock-class.html#run"><a title="mosp.controller.Controller.run
+mosp.controller.SimulationControlled.run
+mosp.core.Simulation.run
+mosp_examples.statemachine_wiggler.SocketPlayerClock.run" class="py-name" href="#" onclick="return doclink('link-59', 'run', 'link-59');">run</a></tt><tt class="py-op">(</tt><tt class="py-name">until</tt><tt class="py-op">=</tt><tt class="py-number">500</tt><tt class="py-op">,</tt> <tt class="py-name">real_time</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">monitor</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">    <tt class="py-comment"># after the simulation has ended, you may restart it and tell the player to reconnect</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">'__main__'</tt><tt class="py-op">:</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">    <tt id="link-60" class="py-name" targets="Method mosp.gui.playerChamplain.Player.main()=mosp.gui.playerChamplain.Player-class.html#main,Function mosp_examples.BTvirus_wiggler.main()=mosp_examples.BTvirus_wiggler-module.html#main,Function mosp_examples.action_wiggler.main()=mosp_examples.action_wiggler-module.html#main,Function mosp_examples.exit_wiggler.main()=mosp_examples.exit_wiggler-module.html#main,Function mosp_examples.external_controlled_random_wiggler.main()=mosp_examples.external_controlled_random_wiggler-module.html#main,Function mosp_examples.message_example.main()=mosp_examples.message_example-module.html#main,Function mosp_examples.passivate_wiggler.main()=mosp_examples.passivate_wiggler-module.html#main,Function mosp_examples.pause_wiggler.main()=mosp_examples.pause_wiggler-module.html#main,Function mosp_examples.poi_act_wiggler.main()=mosp_examples.poi_act_wiggler-module.html#main,Function mosp_examples.poi_wiggler.main()=mosp_examples.poi_wiggler-module.html#main,Function mosp_examples.random_wiggler.main()=mosp_examples.random_wiggler-module.html#main,Function mosp_examples.roadwidth_wiggler.main()=mosp_examples.roadwidth_wiggler-module.html#main,Function mosp_examples.routing_wiggler.main()=mosp_examples.routing_wiggler-module.html#main,Function mosp_examples.socketplayer_demo_wiggler.main()=mosp_examples.socketplayer_demo_wiggler-module.html#main,Function mosp_examples.statemachine_wiggler.main()=mosp_examples.statemachine_wiggler-module.html#main,Function mosp_examples.zombie_wiggler.main()=mosp_examples.zombie_wiggler-module.html#main,Function mosp_tools.analyze_map.main()=mosp_tools.analyze_map-module.html#main,Method mosp_tools.node_finder.Finder.main()=mosp_tools.node_finder.Finder-class.html#main,Function mosp_tools.node_finder.main()=mosp_tools.node_finder-module.html#main,Function mosp_tools.profile_wiggler.main()=mosp_tools.profile_wiggler-module.html#main"><a title="mosp.gui.playerChamplain.Player.main
+mosp_examples.BTvirus_wiggler.main
+mosp_examples.action_wiggler.main
+mosp_examples.exit_wiggler.main
+mosp_examples.external_controlled_random_wiggler.main
+mosp_examples.message_example.main
+mosp_examples.passivate_wiggler.main
+mosp_examples.pause_wiggler.main
+mosp_examples.poi_act_wiggler.main
+mosp_examples.poi_wiggler.main
+mosp_examples.random_wiggler.main
+mosp_examples.roadwidth_wiggler.main
+mosp_examples.routing_wiggler.main
+mosp_examples.socketplayer_demo_wiggler.main
+mosp_examples.statemachine_wiggler.main
+mosp_examples.zombie_wiggler.main
+mosp_tools.analyze_map.main
+mosp_tools.node_finder.Finder.main
+mosp_tools.node_finder.main
+mosp_tools.profile_wiggler.main" class="py-name" href="#" onclick="return doclink('link-60', 'main', 'link-60');">main</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:36 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

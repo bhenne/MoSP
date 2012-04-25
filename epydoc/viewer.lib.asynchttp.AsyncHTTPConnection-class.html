@@ -1,0 +1,1198 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>viewer.lib.asynchttp.AsyncHTTPConnection</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="viewer-module.html">Package&nbsp;viewer</a> ::
+        <a href="viewer.lib-module.html">Package&nbsp;lib</a> ::
+        <a href="viewer.lib.asynchttp-module.html">Module&nbsp;asynchttp</a> ::
+        Class&nbsp;AsyncHTTPConnection
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class AsyncHTTPConnection</h1><p class="nomargin-top"><span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection">source&nbsp;code</a></span></p>
+<center>
+  <div class="private"><center>  <map id="uml_class_diagram_for_viewer_l" name="uml_class_diagram_for_viewer_l">
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPResponse-class.html" title="This class attempts to mimic HTTPResponse from httplib." alt="" coords="71,772,368,791"/>
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#default_port" title="viewer.lib.asynchttp.AsyncHTTPConnection.default_port" alt="" coords="71,791,368,809"/>
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#auto_open" title="viewer.lib.asynchttp.AsyncHTTPConnection.auto_open" alt="" coords="71,809,368,828"/>
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#debuglevel" title="hash(x)" alt="" coords="71,828,368,847"/>
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#__init__" title="viewer.lib.asynchttp.AsyncHTTPConnection.__init__" alt="" coords="71,849,368,868"/>
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#set_debuglevel" title="viewer.lib.asynchttp.AsyncHTTPConnection.set_debuglevel" alt="" coords="71,868,368,887"/>
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#connect" title="Connect to the host and port specified in __init__." alt="" coords="71,887,368,905"/>
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#close" title="Close the connection to the HTTP server." alt="" coords="71,905,368,924"/>
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#send_entity" title="Send `str&#39; to the server." alt="" coords="71,924,368,943"/>
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#putrequest" title="Send a request to the server." alt="" coords="71,943,368,961"/>
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#putheader" title="Send a request header line to the server." alt="" coords="71,961,368,980"/>
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#endheaders" title="Indicate that the last header line has been sent to the server." alt="" coords="71,980,368,999"/>
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#request" title="Send a complete request to the server." alt="" coords="71,999,368,1017"/>
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#getresponse" title="Get the response from the server." alt="" coords="71,1017,368,1036"/>
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#handle_connect" title="Notification from asyncore that we are connected" alt="" coords="71,1036,368,1055"/>
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#handle_close" title="Notification from asyncore that the server has closed its end of the &#160;connection." alt="" coords="71,1055,368,1073"/>
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#handle_read" title="viewer.lib.asynchttp.AsyncHTTPConnection.handle_read" alt="" coords="71,1073,368,1092"/>
+<area shape="rect" id="node262" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#handle_response" title="This is an abstract function, the &#160;user MUST overload it" alt="" coords="71,1111,368,1129"/>
+<area shape="rect" id="node1" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html" title="viewer.lib.asynchttp.AsyncHTTPConnection" alt="" coords="59,747,379,1135"/>
+<area shape="rect" id="node4" href="viewer.lib.asynchttp.__test_AsyncHTTPConnection-class.html" title="viewer.lib.asynchttp.__test_AsyncHTTPConnection" alt="" coords="5,1155,221,1194"/>
+<area shape="rect" id="node5" href="viewer.lib.tileloader.TileLoader-class.html" title="This class uses asynchttp to download OSM&#45;tiles in an asynchronous manner." alt="" coords="251,1155,403,1194"/>
+<area shape="rect" id="node263" href="javascript:void(0);" title="asynchat.async_chat.ac_in_buffer_size" alt="" coords="115,476,325,495"/>
+<area shape="rect" id="node263" href="javascript:void(0);" title="asynchat.async_chat.ac_out_buffer_size" alt="" coords="115,495,325,513"/>
+<area shape="rect" id="node263" href="javascript:void(0);" title="asynchat.async_chat.found_terminator" alt="" coords="115,516,325,535"/>
+<area shape="rect" id="node263" href="javascript:void(0);" title="Set the input delimiter." alt="" coords="115,535,325,553"/>
+<area shape="rect" id="node263" href="javascript:void(0);" title="asynchat.async_chat.get_terminator" alt="" coords="115,553,325,572"/>
+<area shape="rect" id="node263" href="javascript:void(0);" title="asynchat.async_chat.handle_write" alt="" coords="115,572,325,591"/>
+<area shape="rect" id="node263" href="javascript:void(0);" title="asynchat.async_chat.push" alt="" coords="115,591,325,609"/>
+<area shape="rect" id="node263" href="javascript:void(0);" title="asynchat.async_chat.push_with_producer" alt="" coords="115,609,325,628"/>
+<area shape="rect" id="node263" href="javascript:void(0);" title="predicate for inclusion in the readable for select()" alt="" coords="115,628,325,647"/>
+<area shape="rect" id="node263" href="javascript:void(0);" title="predicate for inclusion in the writable for select()" alt="" coords="115,647,325,665"/>
+<area shape="rect" id="node263" href="javascript:void(0);" title="automatically close this channel once the outgoing queue is empty" alt="" coords="115,665,325,684"/>
+<area shape="rect" id="node263" href="javascript:void(0);" title="asynchat.async_chat.initiate_send" alt="" coords="115,684,325,703"/>
+<area shape="rect" id="node263" href="javascript:void(0);" title="asynchat.async_chat.discard_buffers" alt="" coords="115,703,325,721"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="This is an abstract class." alt="" coords="103,451,337,727"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.debug" alt="" coords="116,31,324,49"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.connected" alt="" coords="116,49,324,68"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.accepting" alt="" coords="116,68,324,87"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.closing" alt="" coords="116,87,324,105"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="hash(x)" alt="" coords="116,105,324,124"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.ignore_log_types" alt="" coords="116,124,324,143"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.__repr__" alt="" coords="116,145,324,164"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.__str__" alt="" coords="116,164,324,183"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.add_channel" alt="" coords="116,183,324,201"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.del_channel" alt="" coords="116,201,324,220"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.create_socket" alt="" coords="116,220,324,239"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.set_socket" alt="" coords="116,239,324,257"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.set_reuse_addr" alt="" coords="116,257,324,276"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.listen" alt="" coords="116,276,324,295"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.bind" alt="" coords="116,295,324,313"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.accept" alt="" coords="116,313,324,332"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.send" alt="" coords="116,332,324,351"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.recv" alt="" coords="116,351,324,369"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.__getattr__" alt="" coords="116,369,324,388"/>
+<area shape="rect" id="node264" href="javascript:void(0);" title="asyncore.dispatcher.handle_accept" alt="" coords="116,407,324,425"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="asyncore.dispatcher" alt="" coords="104,6,336,431"/>
+</map>
+  <img src="uml_class_diagram_for_viewer_l.png" alt='' usemap="#uml_class_diagram_for_viewer_l" ismap="ismap" class="graph-without-title" />
+</center></div>
+  <div class="public" style="display:none"><center>  <map id="uml_class_diagram_for_viewer_l_2" name="uml_class_diagram_for_viewer_l_2">
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPResponse-class.html" title="This class attempts to mimic HTTPResponse from httplib." alt="" coords="17,772,315,791"/>
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#default_port" title="viewer.lib.asynchttp.AsyncHTTPConnection.default_port" alt="" coords="17,791,315,809"/>
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#auto_open" title="viewer.lib.asynchttp.AsyncHTTPConnection.auto_open" alt="" coords="17,809,315,828"/>
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#debuglevel" title="hash(x)" alt="" coords="17,828,315,847"/>
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#__init__" title="viewer.lib.asynchttp.AsyncHTTPConnection.__init__" alt="" coords="17,849,315,868"/>
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#set_debuglevel" title="viewer.lib.asynchttp.AsyncHTTPConnection.set_debuglevel" alt="" coords="17,868,315,887"/>
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#connect" title="Connect to the host and port specified in __init__." alt="" coords="17,887,315,905"/>
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#close" title="Close the connection to the HTTP server." alt="" coords="17,905,315,924"/>
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#send_entity" title="Send `str&#39; to the server." alt="" coords="17,924,315,943"/>
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#putrequest" title="Send a request to the server." alt="" coords="17,943,315,961"/>
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#putheader" title="Send a request header line to the server." alt="" coords="17,961,315,980"/>
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#endheaders" title="Indicate that the last header line has been sent to the server." alt="" coords="17,980,315,999"/>
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#request" title="Send a complete request to the server." alt="" coords="17,999,315,1017"/>
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#getresponse" title="Get the response from the server." alt="" coords="17,1017,315,1036"/>
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#handle_connect" title="Notification from asyncore that we are connected" alt="" coords="17,1036,315,1055"/>
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#handle_close" title="Notification from asyncore that the server has closed its end of the &#160;connection." alt="" coords="17,1055,315,1073"/>
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#handle_read" title="viewer.lib.asynchttp.AsyncHTTPConnection.handle_read" alt="" coords="17,1073,315,1092"/>
+<area shape="rect" id="node267" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#handle_response" title="This is an abstract function, the &#160;user MUST overload it" alt="" coords="17,1111,315,1129"/>
+<area shape="rect" id="node1" href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html" title="viewer.lib.asynchttp.AsyncHTTPConnection" alt="" coords="5,747,325,1135"/>
+<area shape="rect" id="node4" href="viewer.lib.tileloader.TileLoader-class.html" title="This class uses asynchttp to download OSM&#45;tiles in an asynchronous manner." alt="" coords="91,1155,243,1194"/>
+<area shape="rect" id="node268" href="javascript:void(0);" title="asynchat.async_chat.ac_in_buffer_size" alt="" coords="61,476,272,495"/>
+<area shape="rect" id="node268" href="javascript:void(0);" title="asynchat.async_chat.ac_out_buffer_size" alt="" coords="61,495,272,513"/>
+<area shape="rect" id="node268" href="javascript:void(0);" title="asynchat.async_chat.found_terminator" alt="" coords="61,516,272,535"/>
+<area shape="rect" id="node268" href="javascript:void(0);" title="Set the input delimiter." alt="" coords="61,535,272,553"/>
+<area shape="rect" id="node268" href="javascript:void(0);" title="asynchat.async_chat.get_terminator" alt="" coords="61,553,272,572"/>
+<area shape="rect" id="node268" href="javascript:void(0);" title="asynchat.async_chat.handle_write" alt="" coords="61,572,272,591"/>
+<area shape="rect" id="node268" href="javascript:void(0);" title="asynchat.async_chat.push" alt="" coords="61,591,272,609"/>
+<area shape="rect" id="node268" href="javascript:void(0);" title="asynchat.async_chat.push_with_producer" alt="" coords="61,609,272,628"/>
+<area shape="rect" id="node268" href="javascript:void(0);" title="predicate for inclusion in the readable for select()" alt="" coords="61,628,272,647"/>
+<area shape="rect" id="node268" href="javascript:void(0);" title="predicate for inclusion in the writable for select()" alt="" coords="61,647,272,665"/>
+<area shape="rect" id="node268" href="javascript:void(0);" title="automatically close this channel once the outgoing queue is empty" alt="" coords="61,665,272,684"/>
+<area shape="rect" id="node268" href="javascript:void(0);" title="asynchat.async_chat.initiate_send" alt="" coords="61,684,272,703"/>
+<area shape="rect" id="node268" href="javascript:void(0);" title="asynchat.async_chat.discard_buffers" alt="" coords="61,703,272,721"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="This is an abstract class." alt="" coords="49,451,284,727"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.debug" alt="" coords="63,31,271,49"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.connected" alt="" coords="63,49,271,68"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.accepting" alt="" coords="63,68,271,87"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.closing" alt="" coords="63,87,271,105"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="hash(x)" alt="" coords="63,105,271,124"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.ignore_log_types" alt="" coords="63,124,271,143"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.__repr__" alt="" coords="63,145,271,164"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.__str__" alt="" coords="63,164,271,183"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.add_channel" alt="" coords="63,183,271,201"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.del_channel" alt="" coords="63,201,271,220"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.create_socket" alt="" coords="63,220,271,239"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.set_socket" alt="" coords="63,239,271,257"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.set_reuse_addr" alt="" coords="63,257,271,276"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.listen" alt="" coords="63,276,271,295"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.bind" alt="" coords="63,295,271,313"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.accept" alt="" coords="63,313,271,332"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.send" alt="" coords="63,332,271,351"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.recv" alt="" coords="63,351,271,369"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.__getattr__" alt="" coords="63,369,271,388"/>
+<area shape="rect" id="node269" href="javascript:void(0);" title="asyncore.dispatcher.handle_accept" alt="" coords="63,407,271,425"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="asyncore.dispatcher" alt="" coords="51,6,283,431"/>
+</map>
+  <img src="uml_class_diagram_for_viewer_l_2.png" alt='' usemap="#uml_class_diagram_for_viewer_l_2" ismap="ismap" class="graph-without-title" />
+</center></div>
+</center>
+<hr />
+<!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Nested Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-NestedClasses"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.lib.asynchttp.AsyncHTTPResponse-class.html" class="summary-name">response_class</a><br />
+      This class attempts to mimic HTTPResponse from httplib.
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">host</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">port</span>=<span class="summary-sig-default">None</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_set_hostport"></a><span class="summary-sig-name">_set_hostport</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">host</span>,
+        <span class="summary-sig-arg">port</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection._set_hostport">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_debuglevel"></a><span class="summary-sig-name">set_debuglevel</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">level</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.set_debuglevel">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#connect" class="summary-sig-name">connect</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Connect to the host and port specified in __init__.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.connect">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#close" class="summary-sig-name">close</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Close the connection to the HTTP server.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.close">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#send_entity" class="summary-sig-name">send_entity</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">str</span>)</span><br />
+      Send `str' to the server.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.send_entity">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#putrequest" class="summary-sig-name">putrequest</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">method</span>,
+        <span class="summary-sig-arg">url</span>)</span><br />
+      Send a request to the server.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.putrequest">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#putheader" class="summary-sig-name">putheader</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">header</span>,
+        <span class="summary-sig-arg">value</span>)</span><br />
+      Send a request header line to the server.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.putheader">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#endheaders" class="summary-sig-name">endheaders</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Indicate that the last header line has been sent to the server.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.endheaders">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="request"></a><span class="summary-sig-name">request</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">method</span>,
+        <span class="summary-sig-arg">url</span>,
+        <span class="summary-sig-arg">body</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">headers</span>=<span class="summary-sig-default"><code class="variable-group">{</code><code class="variable-group">}</code></span>)</span><br />
+      Send a complete request to the server.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.request">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_send_request"></a><span class="summary-sig-name">_send_request</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">method</span>,
+        <span class="summary-sig-arg">url</span>,
+        <span class="summary-sig-arg">body</span>,
+        <span class="summary-sig-arg">headers</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection._send_request">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#getresponse" class="summary-sig-name">getresponse</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Get the response from the server.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.getresponse">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#handle_connect" class="summary-sig-name">handle_connect</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Notification from asyncore that we are connected</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.handle_connect">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#handle_close" class="summary-sig-name">handle_close</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Notification from asyncore that the server has closed its end of the 
+      connection.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.handle_close">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#handle_read" class="summary-sig-name">handle_read</a>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.handle_read">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#handle_error" class="summary-sig-name">handle_error</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Overload asyncore's exception handling</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.handle_error">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#collect_incoming_data" class="summary-sig-name">collect_incoming_data</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">data</span>)</span><br />
+      asynchat calls this with data as it comes in</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.collect_incoming_data">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_no_action"></a><span class="summary-sig-name">_no_action</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      overload asynchat.found_terminator This function will only be called 
+      when someone is badly confused</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection._no_action">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_header_data"></a><span class="summary-sig-name">_header_data</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      overload asynchat.found_terminator for _STATE_ACCEPTING_HEADERS We 
+      assume that we have hit the blank line terminator after the HTTP 
+      response headers.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection._header_data">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_body_data"></a><span class="summary-sig-name">_body_data</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      overload asynchat.found_terminator for _STATE_REQUESTING_BODY We 
+      assume that we have the full body text</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection._body_data">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_chunk_size"></a><span class="summary-sig-name">_get_chunk_size</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Assume that chunkbuffer contains some text, begining with a line 
+      containing the chunk size in hex.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection._get_chunk_size">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html#_chunk_start_data" class="summary-sig-name" onclick="show_private();">_chunk_start_data</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      overload asynchat.found_terminator for...</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection._chunk_start_data">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_chunk_body_data"></a><span class="summary-sig-name">_chunk_body_data</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      overload asynchat.found_terminator for _STATE_CHUNK_BODY</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection._chunk_body_data">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_chunk_residue_data"></a><span class="summary-sig-name">_chunk_residue_data</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      overload asynchat.found_terminator for _STATE_CHUNK_RESIDUE</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection._chunk_residue_data">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="handle_response"></a><span class="summary-sig-name">handle_response</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      This is an abstract function, the  user MUST overload it</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.handle_response">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__set_state"></a><span class="summary-sig-name">__set_state</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">next_state</span>)</span><br />
+      Change state be setting _found_terminator</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.__set_state">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>asynchat.async_chat</code></b>:
+      <code>close_when_done</code>,
+      <code>discard_buffers</code>,
+      <code>found_terminator</code>,
+      <code>get_terminator</code>,
+      <code>handle_write</code>,
+      <code>initiate_send</code>,
+      <code>push</code>,
+      <code>push_with_producer</code>,
+      <code>readable</code>,
+      <code>set_terminator</code>,
+      <code>writable</code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>asynchat.async_chat</code></b> (private):
+      <code>_collect_incoming_data</code>,
+      <code>_get_data</code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>asyncore.dispatcher</code></b>:
+      <code>__getattr__</code>,
+      <code>__repr__</code>,
+      <code>__str__</code>,
+      <code>accept</code>,
+      <code>add_channel</code>,
+      <code>bind</code>,
+      <code>create_socket</code>,
+      <code>del_channel</code>,
+      <code>handle_accept</code>,
+      <code>handle_connect_event</code>,
+      <code>handle_expt</code>,
+      <code>handle_expt_event</code>,
+      <code>handle_read_event</code>,
+      <code>handle_write_event</code>,
+      <code>listen</code>,
+      <code>log</code>,
+      <code>log_info</code>,
+      <code>recv</code>,
+      <code>send</code>,
+      <code>set_reuse_addr</code>,
+      <code>set_socket</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_http_vsn"></a><span class="summary-name">_http_vsn</span> = <code title="11">11</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_http_vsn_str"></a><span class="summary-name">_http_vsn_str</span> = <code title="'HTTP/1.1'"><code class="variable-quote">'</code><code class="variable-string">HTTP/1.1</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="default_port"></a><span class="summary-name">default_port</span> = <code title="80">80</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="auto_open"></a><span class="summary-name">auto_open</span> = <code title="1">1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="debuglevel"></a><span class="summary-name">debuglevel</span> = <code title="0">0</code><br />
+      hash(x)
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>asynchat.async_chat</code></b>:
+      <code>ac_in_buffer_size</code>,
+      <code>ac_out_buffer_size</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>asyncore.dispatcher</code></b>:
+      <code>accepting</code>,
+      <code>addr</code>,
+      <code>closing</code>,
+      <code>connected</code>,
+      <code>debug</code>,
+      <code>ignore_log_types</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">host</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">port</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        asyncore.dispatcher.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="connect"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">connect</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.connect">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Connect to the host and port specified in __init__. Add ourselves to 
+  thhe asyncore polling group</p>
+  <dl class="fields">
+    <dt>Overrides:
+        asyncore.dispatcher.connect
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="close"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">close</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.close">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Close the connection to the HTTP server. And remove ourselves from the
+  asyncore polling group</p>
+  <dl class="fields">
+    <dt>Overrides:
+        asyncore.dispatcher.close
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="send_entity"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">send_entity</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">str</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.send_entity">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Send `str' to the server. Actually, we  just append str to the block 
+  of text to  be sent to the server when getresponse is called.</p>
+  <p>Note:  the name was changed from httplib's 'HTTPConnection.send()' 
+  because it conflicts with asynchat</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="putrequest"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">putrequest</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">method</span>,
+        <span class="sig-arg">url</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.putrequest">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Send a request to the server.</p>
+  <p>`method' specifies an HTTP request method, e.g. 'GET'. `url' specifies
+  the object being requested, e.g. '/index.html'.</p>
+  <p>This function actually only starts accumulating the request: nothing 
+  gets sent to the server until getresponse() is called.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="putheader"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">putheader</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">header</span>,
+        <span class="sig-arg">value</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.putheader">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Send a request header line to the server.</p>
+  <p>For example: h.putheader('Accept', 'text/html') We don't actually send
+  the header here, we stick it in a dictionary, to be sent when 
+  getresponse() is called.  If you call putheader() with a duplicate key, 
+  it will wipe out the existing entry.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="endheaders"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">endheaders</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.endheaders">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Indicate that the last header line has been sent to the server. 
+  Actually, we just copy the header dictionary into the request stream to 
+  be sent when getresponse() is called.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="getresponse"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getresponse</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.getresponse">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get the response from the server. This  actually starts the process of
+  sending the request to the server.  The response will be delivered in 
+  handle_response</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="handle_connect"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">handle_connect</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.handle_connect">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Notification from asyncore that we are connected</p>
+  <dl class="fields">
+    <dt>Overrides:
+        asyncore.dispatcher.handle_connect
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="handle_close"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">handle_close</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.handle_close">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Notification from asyncore that the server has closed its end of the 
+  connection. If auto_open is TRUE, we will attempt to reopen the 
+  connection.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        asyncore.dispatcher.handle_close
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="handle_read"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">handle_read</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.handle_read">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        asyncore.dispatcher.handle_read
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="handle_error"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">handle_error</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.handle_error">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Overload asyncore's exception handling</p>
+  <dl class="fields">
+    <dt>Overrides:
+        asyncore.dispatcher.handle_error
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="collect_incoming_data"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">collect_incoming_data</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">data</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection.collect_incoming_data">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>asynchat calls this with data as it comes in</p>
+  <dl class="fields">
+    <dt>Overrides:
+        asynchat.async_chat.collect_incoming_data
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_chunk_start_data"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_chunk_start_data</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html#AsyncHTTPConnection._chunk_start_data">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+
+        overload asynchat.found_terminator for
+        _STATE_CHUNKED_START
+        Assumes we got a hit on terminator '
+'
+        
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:32 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

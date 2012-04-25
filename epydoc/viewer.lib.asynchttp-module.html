@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>viewer.lib.asynchttp</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="viewer-module.html">Package&nbsp;viewer</a> ::
+        <a href="viewer.lib-module.html">Package&nbsp;lib</a> ::
+        Module&nbsp;asynchttp
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="viewer.lib.asynchttp-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module asynchttp</h1><p class="nomargin-top"><span class="codelink"><a href="viewer.lib.asynchttp-pysrc.html">source&nbsp;code</a></span></p>
+<p>Asynchronous HTTP/1.1 client library</p>
+  <p>This module is an attempt to combine the best features of httplib with
+  the scalability of asynchat.</p>
+  <p>I have pasted as much code as I could from httplib (Python 2.0) 
+  because it is a well written and widely used interface. This may be a 
+  mistake, because the behavior of AsynchHTTPConnection os quite different 
+  from that of httplib.HTTPConnection</p>
+
+<hr />
+<div class="fields">      <p><strong>Version:</strong>
+        0.20
+      </p>
+      <p><strong>Author:</strong>
+        Downright Software LLC
+        http://www.downright.com
+      </p>
+      <p><strong>Contact:</strong>
+        Doug Fort &lt;dougfort@downright.com&gt;
+        Senior Meat Manager
+        Downright Software LLC
+        http://www.dougfort.com
+      </p>
+      <p><strong>Copyright:</strong>
+        Copyright (c) 2001 Downright Software LLC. All Rights Reserved.
+        
+        Distributed and Licensed under the provisions of the Python Open 
+        Source License
+        Agreement which is included by reference. (See 'Front Matter' in 
+        the latest
+        Python documentation)
+        
+        WARRANTIES
+        YOU UNDERSTAND AND AGREE THAT: 
+        
+        a. YOUR USE OF THE PACKAGE IS AT YOUR SOLE RISK.  THE PACKAGE IS 
+        PROVIDED ON 
+        AN 'AS IS' AND 'AS AVAILABLE' BASIS.  DOWNRIGHT EXPRESSLY DISCLAIMS
+        ALL 
+        WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT 
+        NOT LIMITED
+        TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+        PARTICULAR PURPOSE
+        AND NON-INFRINGEMENT.
+        
+        b. DOWNRIGHT MAKES NO WARRANTY THAT (1) THE PACKAGE WILL MEET YOUR 
+        REQUIREMENTS, (2) THE PACKAGE WILL BE UNINTERRUPTED, TIMELY, 
+        SECURE, OR 
+        ERROR-FREE, (3) THE RESULTS THAT MAY BE OBTAINED FROM THE USE OF 
+        THE PACKAGE 
+        WILL BE ACCURATE OR RELIABLE, (4) THE OTHER MATERIAL PURCHASED OR 
+        OBTAINED BY 
+        YOU THROUGH THE PACKAGE WILL MEET YOUR EXPECTATIONS,, AND (5) ANY 
+        ERRORS IN 
+        THE PACKAGE WILL BE CORRECTED.
+        
+        c. ANY MATERIALS DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE 
+        OF THE 
+        PACKAGE IS DONE AT YOUR OWN DISCRETION AND RISK AND THAT YOU WILL 
+        BE SOLELY 
+        RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR LOSS OF DATA 
+        THAT 
+        RESULTS FROM THE DOWNLOAD OF ANY SUCH MATERIAL.
+        
+        d. NO ADVICE OR INFORMATION, WHETHER ORAL OR WRITTEN, OBTAINED BY 
+        YOU FROM 
+        DOWNRIGHT OR THROUGH OR FROM THE PACKAGE SHALL CREATE ANY WARRANTY 
+        NOT 
+        EXPRESSLY STATED IN THE TOS.
+        
+        LIMITATION OF LIABILITY
+        YOU EXPRESSLY UNDERSTAND AND AGREE THAT DOWNRIGHT SHALL NOT BE 
+        LIABLE FOR ANY 
+        DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY 
+        DAMAGES, 
+        INCLUDING BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS, 
+        GOODWILL, USE, 
+        DATA OR OTHER INTANGIBLE LOSSES (EVEN IF DOWNRIGHT HAS BEEN ADVISED
+        OF SUCH 
+        DAMAGES), RESULTING FROM: 
+        (1) THE USE OR THE INABILITY TO USE THE PACKAGE; 
+        (2) THE COST OF PROCUREMENT OF SUBSTITUTE GOODS AND SERVICES 
+        RESULTING FROM 
+        ANY GOODS, DATA, INFORMATION OR SERVICES PURCHASED OR OBTAINED OR 
+        MESSAGES 
+        RECEIVED OR TRANSACTIONS ENTERED INTO THROUGH OR FROM THE PACKAGE; 
+        (3) UNAUTHORIZED ACCESS TO OR ALTERATION OF YOUR TRANSMISSIONS OR 
+        DATA; 
+        (4) STATEMENTS OF CONDUCT OF ANY THIRD PARTY ON THE PACKAGE; OR 
+        (5) ANY OTHER MATTER RELATING TO THE PACKAGE.
+      </p>
+</div><!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.lib.asynchttp.AsyncHTTPResponse-class.html" class="summary-name">AsyncHTTPResponse</a><br />
+      This class attempts to mimic HTTPResponse from httplib.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.lib.asynchttp.AsyncHTTPConnection-class.html" class="summary-name">AsyncHTTPConnection</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.lib.asynchttp.AsyncHTTPException-class.html" class="summary-name">AsyncHTTPException</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.lib.asynchttp.NotConnected-class.html" class="summary-name">NotConnected</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.lib.asynchttp.UnknownProtocol-class.html" class="summary-name">UnknownProtocol</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.lib.asynchttp.UnknownTransferEncoding-class.html" class="summary-name">UnknownTransferEncoding</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.lib.asynchttp.BadStatusLine-class.html" class="summary-name">BadStatusLine</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.lib.asynchttp.ImproperConnectionState-class.html" class="summary-name">ImproperConnectionState</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.lib.asynchttp.RequestNotReady-class.html" class="summary-name">RequestNotReady</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.lib.asynchttp.ResponseNotReady-class.html" class="summary-name">ResponseNotReady</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.lib.asynchttp.HandleResponse-class.html" class="summary-name">HandleResponse</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.lib.asynchttp.UnexpectedData-class.html" class="summary-name">UnexpectedData</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.lib.asynchttp.UnexpectedTerminator-class.html" class="summary-name">UnexpectedTerminator</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.lib.asynchttp.InvalidChunk-class.html" class="summary-name">InvalidChunk</a>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="viewer.lib.asynchttp.__test_AsyncHTTPConnection-class.html" class="summary-name" onclick="show_private();">__test_AsyncHTTPConnection</a>
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="HTTP_PORT"></a><span class="summary-name">HTTP_PORT</span> = <code title="80">80</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="HTTPS_PORT"></a><span class="summary-name">HTTPS_PORT</span> = <code title="443">443</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_CHUNK_REQUEST_SIZE"></a><span class="summary-name">_CHUNK_REQUEST_SIZE</span> = <code title="8192">8192</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_STATE_IDLE"></a><span class="summary-name">_STATE_IDLE</span> = <code title="'asynchttp._STATE_IDLE'"><code class="variable-quote">'</code><code class="variable-string">asynchttp._STATE_IDLE</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_STATE_CONNECTING"></a><span class="summary-name">_STATE_CONNECTING</span> = <code title="'asynchttp._STATE_CONNECTING'"><code class="variable-quote">'</code><code class="variable-string">asynchttp._STATE_CONNECTING</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_STATE_ACTIVE"></a><span class="summary-name">_STATE_ACTIVE</span> = <code title="'asynchttp._STATE_ACTIVE'"><code class="variable-quote">'</code><code class="variable-string">asynchttp._STATE_ACTIVE</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_STATE_ACCEPTING_HEADERS"></a><span class="summary-name">_STATE_ACCEPTING_HEADERS</span> = <code title="'asynchttp._STATE_ACCEPTING_HEADERS'"><code class="variable-quote">'</code><code class="variable-string">asynchttp._STATE_ACCEPTING_HEADERS</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_STATE_REQUESTING_BODY"></a><span class="summary-name">_STATE_REQUESTING_BODY</span> = <code title="'asynchttp._STATE_REQUESTING_BODY'"><code class="variable-quote">'</code><code class="variable-string">asynchttp._STATE_REQUESTING_BODY</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_STATE_CHUNK_START"></a><span class="summary-name">_STATE_CHUNK_START</span> = <code title="'asynchttp._STATE_CHUNK_START'"><code class="variable-quote">'</code><code class="variable-string">asynchttp._STATE_CHUNK_START</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_STATE_CHUNK_BODY"></a><span class="summary-name">_STATE_CHUNK_BODY</span> = <code title="'asynchttp._STATE_CHUNK_BODY'"><code class="variable-quote">'</code><code class="variable-string">asynchttp._STATE_CHUNK_BODY</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_STATE_CHUNK_RESIDUE"></a><span class="summary-name">_STATE_CHUNK_RESIDUE</span> = <code title="'asynchttp._STATE_CHUNK_RESIDUE'"><code class="variable-quote">'</code><code class="variable-string">asynchttp._STATE_CHUNK_RESIDUE</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'viewer.lib'"><code class="variable-quote">'</code><code class="variable-string">viewer.lib</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:26 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

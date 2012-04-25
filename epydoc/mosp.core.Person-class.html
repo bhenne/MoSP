@@ -1,0 +1,1633 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>mosp.core.Person</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="mosp-module.html">Package&nbsp;mosp</a> ::
+        <a href="mosp.core-module.html">Module&nbsp;core</a> ::
+        Class&nbsp;Person
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="mosp.core.Person-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Person</h1><p class="nomargin-top"><span class="codelink"><a href="mosp.core-pysrc.html#Person">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_mosp_cor_2" name="uml_class_diagram_for_mosp_cor_2">
+<area shape="rect" id="node45" href="javascript:void(0);" title="Multi &#45; functional test for reneging for &#39;request&#39; and &#39;get&#39;: (1)If res of type Resource: &#160;&#160;&#160;&#160;Tests whether resource res was acquired when proces reactivated." alt="" coords="2867,167,3272,185"/>
+<area shape="rect" id="node45" href="javascript:void(0);" title="SimPy.Lib.Process.active" alt="" coords="2867,185,3272,204"/>
+<area shape="rect" id="node45" href="javascript:void(0);" title="Application function to cancel all event notices for this Process &#160;instance;(should be all event notices for the _generator_)." alt="" coords="2867,204,3272,223"/>
+<area shape="rect" id="node45" href="javascript:void(0);" title="Application function to interrupt active processes" alt="" coords="2867,223,3272,241"/>
+<area shape="rect" id="node45" href="javascript:void(0);" title="Application function for an interrupt victim to get out of &#39;interrupted&#39; &#160;state." alt="" coords="2867,241,3272,260"/>
+<area shape="rect" id="node45" href="javascript:void(0);" title="SimPy.Lib.Process.interrupted" alt="" coords="2867,260,3272,279"/>
+<area shape="rect" id="node45" href="javascript:void(0);" title="SimPy.Lib.Process.passive" alt="" coords="2867,279,3272,297"/>
+<area shape="rect" id="node45" href="javascript:void(0);" title="SimPy.Lib.Process.queuing" alt="" coords="2867,297,3272,316"/>
+<area shape="rect" id="node45" href="javascript:void(0);" title="Activates PEM of this Process." alt="" coords="2867,316,3272,335"/>
+<area shape="rect" id="node45" href="javascript:void(0);" title="Test for reneging for &#39;yield put ." alt="" coords="2867,335,3272,353"/>
+<area shape="rect" id="node45" href="javascript:void(0);" title="SimPy.Lib.Process.terminated" alt="" coords="2867,353,3272,372"/>
+<area shape="rect" id="node1" href="javascript:void(0);" title="Superclass of classes which may use generator functions" alt="" coords="2855,134,3284,378"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#current_coords" title="returns current coordinates of Person" alt="" coords="2748,423,3061,441"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#current_way" title="current way the Person is assigned to, used for collision" alt="" coords="2748,441,3061,460"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#dest_node" title="final node of current routed walk" alt="" coords="2748,460,3061,479"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#last_coord" title="coordinates where current walking starts = coordinates of last_node plus &#160;offset" alt="" coords="2748,479,3061,497"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#last_node" title="node where current walking starts" alt="" coords="2748,497,3061,516"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#need_next_target" title="if True, self.next_target() will be called and this will be set to False" alt="" coords="2748,516,3061,535"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#next_node" title="node where current walking stops, next node to walk to" alt="" coords="2748,535,3061,553"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#p_agenttype" title="mosp.core.Person.p_agenttype" alt="" coords="2748,553,3061,572"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#p_color" title="property color id: marker color of Person &#45; DEPRECATED, use color_rgba &#160;instead" alt="" coords="2748,572,3061,591"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#p_color_rgba" title="property color: marker color of Person as RGBA 4&#45;tuple" alt="" coords="2748,591,3061,609"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#p_id" title="property id: unique id of the Person" alt="" coords="2748,609,3061,628"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#p_speed" title="property speed: movement speed of the Person." alt="" coords="2748,628,3061,647"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#passivate" title="if true, Person is passivated on next round of go()" alt="" coords="2748,647,3061,665"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#y" title="Should not be used." alt="" coords="2748,684,3061,703"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#__getstate__" title="Returns Person information for pickling using the pickle module." alt="" coords="2748,705,3061,724"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#__init__" title="Initializes the Person." alt="" coords="2748,724,3061,743"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#act_at_node" title="Actions of the person when arriving at a node." alt="" coords="2748,743,3061,761"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#call_stop_actions" title="Sets stop_all_actions und interrupts." alt="" coords="2748,761,3061,780"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#collide_circle" title="Checks if this person collides with the given circle." alt="" coords="2748,780,3061,799"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#collide_rectangle" title="Checks if this person collides with the given rectangle." alt="" coords="2748,799,3061,817"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#current_coords_impl" title="Calculates the current position from remaining time using last_coord and &#160;target_coord to implement road width" alt="" coords="2748,817,3061,836"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#get_near" title="Returns Persons near this Person." alt="" coords="2748,836,3061,855"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#get_properties" title="Return all the person&#39;s properties (variables and properties p_*) as a &#160;dictionary." alt="" coords="2748,855,3061,873"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#get_random_way_node" title="Returns a random way_node from sim.way_nodes." alt="" coords="2748,873,3061,892"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#get_speed" title="property speed: movement speed of the Person." alt="" coords="2748,892,3061,911"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#go" title="The main&#45;loop of every person." alt="" coords="2748,911,3061,929"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#handle_interrupts" title="Find out, what caused an interrupt and act accordingly." alt="" coords="2748,929,3061,948"/>
+<area shape="rect" id="node44" href="mosp.core.Person-class.html#think" title="Think about what to do next." alt="" coords="2748,967,3061,985"/>
+<area shape="rect" id="node12" href="mosp.core.Person-class.html" title="A basic simulated Person." alt="" coords="2736,398,3072,991"/>
+<area shape="rect" id="node2" href="mosp_examples.zombie_wiggler.ZombieWiggler-class.html" title="Implements a zombie person doing random movement infecting others." alt="" coords="5,1011,323,1050"/>
+<area shape="rect" id="node3" href="mosp_examples.passivate_wiggler.PassivateWiggler-class.html" title="Random moving person, when arriving at an cafe road node being passivated." alt="" coords="352,1011,696,1050"/>
+<area shape="rect" id="node4" href="mosp_examples.poi_wiggler.PoiWiggler-class.html" title="Implements a moving person, moving to somewhere and POI alternatively." alt="" coords="725,1011,992,1050"/>
+<area shape="rect" id="node5" href="mosp_examples.action_wiggler.StopActionsWiggler-class.html" title="Implements a zombie stopping its actions at tick 1000." alt="" coords="1021,1011,1357,1050"/>
+<area shape="rect" id="node46" href="javascript:void(0);" title="hash(x)" alt="" coords="3012,31,3125,49"/>
+<area shape="rect" id="node46" href="javascript:void(0);" title="repr(x)" alt="" coords="3012,52,3125,71"/>
+<area shape="rect" id="node46" href="javascript:void(0);" title="str(x)" alt="" coords="3012,71,3125,89"/>
+<area shape="rect" id="node46" href="javascript:void(0);" title="SimPy.Lister.Lister.attrnames" alt="" coords="3012,89,3125,108"/>
+<area shape="rect" id="node6" href="javascript:void(0);" title="SimPy.Lister.Lister" alt="" coords="3000,6,3136,114"/>
+<area shape="rect" id="node7" href="mosp_examples.statemachine_wiggler.WorkWiggler-class.html" title="The WorkWiggler wakes up between 6 and 8 o&#39;clock and goes to work." alt="" coords="1387,1011,1728,1050"/>
+<area shape="rect" id="node8" href="mosp_examples.statemachine_wiggler.DrunkWiggler-class.html" title="The DrunkWiggler wakes up between 8 and 10 o&#39;clock and goes to work, then drinking ..." alt="" coords="1385,1070,1729,1109"/>
+<area shape="rect" id="node47" href="mosp.collide.Point-class.html#collide_polygon" title="Checks if this point collides with the given polygon." alt="" coords="2667,251,2815,269"/>
+<area shape="rect" id="node47" href="mosp.collide.Point-class.html#get_points" title="Yields the coordinates (x, y) of the point." alt="" coords="2667,269,2815,288"/>
+<area shape="rect" id="node9" href="mosp.collide.Point-class.html" title="A collidable point." alt="" coords="2655,218,2825,294"/>
+<area shape="rect" id="node10" href="mosp_examples.poi_act_wiggler.PoiActWiggler-class.html" title="Implements a zombie person with random movement, infection, action stopping." alt="" coords="1757,1011,2069,1050"/>
+<area shape="rect" id="node11" href="mosp_examples.external_controlled_random_wiggler.RandomWiggler-class.html" title="Implements a simple person doing only random movement on the map." alt="" coords="2099,1011,2539,1050"/>
+<area shape="rect" id="node13" href="mosp_examples.BTvirus_wiggler.BTVirusWiggler-class.html" title="Models a random movement BT&#45;virus infection" alt="" coords="2568,1011,2891,1050"/>
+<area shape="rect" id="node14" href="mosp_examples.random_wiggler.RandomWiggler-class.html" title="Implements a simple person doing only random movement on the map." alt="" coords="2920,1011,3243,1050"/>
+<area shape="rect" id="node15" href="mosp_examples.socketplayer_demo_wiggler.SocketPlayerDemoWiggler-class.html" title="Implements a simple person doing only random movement on the map." alt="" coords="3272,1011,3728,1050"/>
+<area shape="rect" id="node16" href="mosp_examples.pause_wiggler.PauseWiggler-class.html" title="Implements a person with random movement pausing at any node." alt="" coords="3757,1011,4061,1050"/>
+<area shape="rect" id="node17" href="mosp_examples.statemachine_wiggler.RandomWiggler-class.html" title="Implements a person doing random movement the whole day." alt="" coords="4091,1011,4448,1050"/>
+<area shape="rect" id="node18" href="mosp_examples.message_example.MsgRandomWiggler-class.html" title="Implements a simple person doing only random movement on the map, sending and receiving some messages." alt="" coords="4477,1011,4843,1050"/>
+<area shape="rect" id="node19" href="mosp_examples.exit_wiggler.ExitWiggler-class.html" title="Demo wiggler for acting at border nodes / at exits." alt="" coords="4872,1011,5147,1050"/>
+<area shape="rect" id="node20" href="mosp_examples.roadwidth_wiggler.RandomWiggler-class.html" title="Implements a simple person doing only random movement on the map." alt="" coords="5176,1011,5512,1050"/>
+<area shape="rect" id="node21" href="mosp_examples.routing_wiggler.RoutingShowcaseWiggler-class.html" title="Person for routing demonstration." alt="" coords="5541,1011,5917,1050"/>
+</map>
+  <img src="uml_class_diagram_for_mosp_cor_2.png" alt='' usemap="#uml_class_diagram_for_mosp_cor_2" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>A basic simulated Person.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__getstate__"></a><span class="summary-sig-name">__getstate__</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns Person information for pickling using the pickle module.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.__getstate__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.core.Person-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">id</span>,
+        <span class="summary-sig-arg">sim</span>,
+        <span class="summary-sig-arg">random</span>,
+        <span class="summary-sig-arg">speed</span>=<span class="summary-sig-default">1.4</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Initializes the Person.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_get_classname"></a><span class="summary-sig-name">_get_classname</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person._get_classname">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.core.Person-class.html#act_at_node" class="summary-sig-name">act_at_node</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">node</span>)</span><br />
+      Actions of the person when arriving at a node.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.act_at_node">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="call_stop_actions"></a><span class="summary-sig-name">call_stop_actions</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Sets stop_all_actions und interrupts.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.call_stop_actions">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.core.Person-class.html#collide_circle" class="summary-sig-name">collide_circle</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">radius</span>)</span><br />
+      Checks if this person collides with the given circle.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.collide_circle">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.core.Person-class.html#collide_rectangle" class="summary-sig-name">collide_rectangle</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x_min</span>,
+        <span class="summary-sig-arg">y_min</span>,
+        <span class="summary-sig-arg">x_max</span>,
+        <span class="summary-sig-arg">y_max</span>)</span><br />
+      Checks if this person collides with the given rectangle.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.collide_rectangle">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="current_coords_impl"></a><span class="summary-sig-name">current_coords_impl</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Calculates the current position from remaining time using last_coord 
+      and target_coord to implement road width</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.current_coords_impl">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">mosp.group.PersonGroup</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.core.Person-class.html#get_near" class="summary-sig-name">get_near</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">dist</span>,
+        <span class="summary-sig-arg">self_included</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Returns Persons near this Person.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.get_near">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_properties"></a><span class="summary-sig-name">get_properties</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Return all the person's properties (variables and properties p_*) as 
+      a dictionary.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.get_properties">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.core.Person-class.html#get_random_way_node" class="summary-sig-name">get_random_way_node</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">include_exits</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Returns a random way_node from sim.way_nodes.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.get_random_way_node">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_speed"></a><span class="summary-sig-name">get_speed</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      property speed: movement speed of the Person.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.get_speed">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.core.Person-class.html#go" class="summary-sig-name">go</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      The main-loop of every person.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.go">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.core.Person-class.html#handle_interrupts" class="summary-sig-name">handle_interrupts</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Find out, what caused an interrupt and act accordingly.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.handle_interrupts">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.core.Person-class.html#next_target" class="summary-sig-name">next_target</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Finds a new target to move to.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.next_target">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.core.Person-class.html#next_target_coord" class="summary-sig-name">next_target_coord</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Calculates new target coordinates based on next_node coordinates plus
+      orthogonal to road offset defined by self.road_orthogonal_offset.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.next_target_coord">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.core.Person-class.html#pause_movement" class="summary-sig-name">pause_movement</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">duration</span>,
+        <span class="summary-sig-arg">location_offset_xy</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">deactivateActions</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Stops movement of person.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.pause_movement">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="reactivate"></a><span class="summary-sig-name">reactivate</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">at</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">undefined</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">delay</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">undefined</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">prior</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Reactivates passivated person and optionally restarts stopped 
+      actions.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.reactivate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.core.Person-class.html#readd_actions" class="summary-sig-name">readd_actions</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Do things, when person is readded via Simulation.readd().</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.readd_actions">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.core.Person-class.html#receive" class="summary-sig-name">receive</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">message</span>,
+        <span class="summary-sig-arg">sender</span>)</span><br />
+      Receive a message and handle it.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.receive">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="restart_actions"></a><span class="summary-sig-name">restart_actions</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Restarts all actions that where stopped via stop_actions.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.restart_actions">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.core.Person-class.html#send" class="summary-sig-name">send</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">receiver</span>,
+        <span class="summary-sig-arg">message</span>,
+        <span class="summary-sig-arg">earliest_arrival</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">interrupt</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Send a message to another Person.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.send">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_speed"></a><span class="summary-sig-name">set_speed</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">speed</span>)</span><br />
+      Sets movement speed of the Person.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.set_speed">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="start_action"></a><span class="summary-sig-name">start_action</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">action</span>)</span><br />
+      Start an action.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.start_action">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="stop_action"></a><span class="summary-sig-name">stop_action</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">action</span>)</span><br />
+      Stop an action.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.stop_action">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.core.Person-class.html#stop_actions" class="summary-sig-name">stop_actions</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">removal</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Stop all actions of the Person.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.stop_actions">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.core.Person-class.html#think" class="summary-sig-name">think</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Think about what to do next.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#Person.think">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>SimPy.Lib.Process</code></b>:
+      <code>acquired</code>,
+      <code>active</code>,
+      <code>cancel</code>,
+      <code>interrupt</code>,
+      <code>interruptReset</code>,
+      <code>interrupted</code>,
+      <code>passive</code>,
+      <code>queuing</code>,
+      <code>start</code>,
+      <code>stored</code>,
+      <code>terminated</code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>SimPy.Lib.Process</code></b> (private):
+      <code>_hold</code>,
+      <code>_passivate</code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>SimPy.Lister.Lister</code></b>:
+      <code>__repr__</code>,
+      <code>__str__</code>,
+      <code>attrnames</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="mosp.collide.Point-class.html">collide.Point</a></code></b>:
+      <code><a href="mosp.collide.Point-class.html#collide_polygon">collide_polygon</a></code>,
+      <code><a href="mosp.collide.Point-class.html#get_points">get_points</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>SimPy.Lister.Lister</code></b>:
+      <code>indent</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_actions"></a><span class="summary-name">_actions</span><br />
+      stores all actions of the Person
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_duration"></a><span class="summary-name">_duration</span><br />
+      time to next round of go()
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_location_offset"></a><span class="summary-name">_location_offset</span><br />
+      used by pause_movement as input for random offset to current position
+      while pausing
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_messages"></a><span class="summary-name">_messages</span><br />
+      stores callback messages of the Person - calling back must still be 
+      implemented (todo)
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_p_speed"></a><span class="summary-name">_p_speed</span><br />
+      speed of Person
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_random"></a><span class="summary-name">_random</span><br />
+      random object of the Person
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_start_time"></a><span class="summary-name">_start_time</span><br />
+      the tick when this person started the current walk from last to 
+      target node
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_stopped_actions"></a><span class="summary-name">_stopped_actions</span><br />
+      stores stopped actions
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_stopped_actions_for_removal"></a><span class="summary-name">_stopped_actions_for_removal</span><br />
+      stores actions that were stopped when removing the person from the 
+      simulation
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="current_coords"></a><span class="summary-name">current_coords</span><br />
+      returns current coordinates of Person
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="current_way"></a><span class="summary-name">current_way</span><br />
+      current way the Person is assigned to, used for collision
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="dest_node"></a><span class="summary-name">dest_node</span><br />
+      final node of current routed walk
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="last_coord"></a><span class="summary-name">last_coord</span><br />
+      coordinates where current walking starts = coordinates of last_node 
+      plus offset
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="last_node"></a><span class="summary-name">last_node</span><br />
+      node where current walking starts
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="need_next_target"></a><span class="summary-name">need_next_target</span><br />
+      if True, self.next_target() will be called and this will be set to 
+      False
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="next_node"></a><span class="summary-name">next_node</span><br />
+      node where current walking stops, next node to walk to
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="p_color"></a><span class="summary-name">p_color</span><br />
+      property color id: marker color of Person - DEPRECATED, use 
+      color_rgba instead
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="p_color_rgba"></a><span class="summary-name">p_color_rgba</span><br />
+      property color: marker color of Person as RGBA 4-tuple
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="p_id"></a><span class="summary-name">p_id</span><br />
+      property id: unique id of the Person
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="passivate"></a><span class="summary-name">passivate</span><br />
+      if true, Person is passivated on next round of go()
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="passivate_with_stop_actions"></a><span class="summary-name">passivate_with_stop_actions</span><br />
+      if True, the Person's actions are stopped when Person is passivated
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="remove_from_sim"></a><span class="summary-name">remove_from_sim</span><br />
+      if True: Person's event loop will be broken on next round of go() to 
+      remove Person from simulation
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="road_orthogonal_offset"></a><span class="summary-name">road_orthogonal_offset</span><br />
+      walking offset from midline for road width implementation - 2-tuple -
+      see next_target_coord
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="start_node"></a><span class="summary-name">start_node</span><br />
+      start node of current routed walk
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="stop_all_actions"></a><span class="summary-name">stop_all_actions</span><br />
+      if true: all Person's actions are stopped on next round of go()
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="target_coord"></a><span class="summary-name">target_coord</span><br />
+      coordinates where current walking stops = coordinates of next_node 
+      plus offset
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="mosp.core.Person-class.html#p_agenttype" class="summary-name">p_agenttype</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="mosp.core.Person-class.html#p_speed" class="summary-name">p_speed</a><br />
+      property speed: movement speed of the Person.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="mosp.core.Person-class.html#x" class="summary-name">x</a><br />
+      Should not be used.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="mosp.core.Person-class.html#y" class="summary-name">y</a><br />
+      Should not be used.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">id</span>,
+        <span class="sig-arg">sim</span>,
+        <span class="sig-arg">random</span>,
+        <span class="sig-arg">speed</span>=<span class="sig-default">1.4</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.core-pysrc.html#Person.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initializes the Person.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>id</code></strong> - unique id of a person</li>
+        <li><strong class="pname"><code>sim</code></strong> - reference to superordinate mosp.core.Simulation</li>
+        <li><strong class="pname"><code>random</code></strong> - random object for Person -  use superordinate 
+          mosp.core.Simulation.random</li>
+        <li><strong class="pname"><code>speed</code></strong> - basic walking speed of person in meter/tick</li>
+        <li><strong class="pname"><code>kwargs</code></strong> - additonal keyword arguments intended for inheriting classes</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+<div class="fields">      <dl><dt>Authors:</dt>
+        <dd>
+          F. Ludwig,
+          P. Tute,
+          B. Henne
+        </dd>
+      </dl>
+</div></td></tr></table>
+</div>
+<a name="act_at_node"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">act_at_node</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.core-pysrc.html#Person.act_at_node">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Actions of the person when arriving at a node. To be overwritten with 
+  an implementation.</p>
+  <p>This method is executes when the Person arrives at a node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> - is the next_node the Person arrives at</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="collide_circle"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">collide_circle</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">radius</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.core-pysrc.html#Person.collide_circle">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Checks if this person collides with the given circle. Overwrites 
+  point.collide_circle for performance optimization: call current_coords 
+  only once per x-y-pair</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="mosp.collide.Point-class.html#collide_circle">collide.Point.collide_circle</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="collide_rectangle"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">collide_rectangle</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">x_min</span>,
+        <span class="sig-arg">y_min</span>,
+        <span class="sig-arg">x_max</span>,
+        <span class="sig-arg">y_max</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.core-pysrc.html#Person.collide_rectangle">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Checks if this person collides with the given rectangle. Overwrites 
+  point.collide_rectangle for performance optimization: call current_coords
+  only once per x-y-pair</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="mosp.collide.Point-class.html#collide_rectangle">collide.Point.collide_rectangle</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_near"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_near</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">dist</span>,
+        <span class="sig-arg">self_included</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.core-pysrc.html#Person.get_near">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns Persons near this Person.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>dist</code></strong> - lookup radius</li>
+        <li><strong class="pname"><code>self_included</code></strong> - if True, this Person itself is included in resulting PersonGroup</li>
+    </ul></dd>
+    <dt>Returns: mosp.group.PersonGroup</dt>
+        <dd>PersonGroup containing all Persons in distance</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_random_way_node"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_random_way_node</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">include_exits</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.core-pysrc.html#Person.get_random_way_node">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a random way_node from sim.way_nodes.</p>
+  <p>Formerly known as get_random_node(). Todo: push to geo model at 
+  mosp.geo!</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>include_exits</code></strong> - if True, also nodes marked as border nodes are regarded</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="go"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">go</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.core-pysrc.html#Person.go">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The main-loop of every person.</p>
+  <p>The way a person behaves can be modified by implementing own versions 
+  of Person.handle_interrupts Person.think, Person.receive and 
+  Person.next_target.</p>
+  <dl class="fields">
+  </dl>
+<div class="fields">      <p><strong>Author:</strong>
+        P. Tute
+      </p>
+</div></td></tr></table>
+</div>
+<a name="handle_interrupts"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">handle_interrupts</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.core-pysrc.html#Person.handle_interrupts">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Find out, what caused an interrupt and act accordingly.</p>
+  <p>This method is called whenever a person is interrupted. This is the 
+  place to implement own reactions to interrupts. Calling methods that were
+  send via a send() call is done BEFORE this method is called. Handling 
+  pause, stop, removal and change of movement speed is done automatically 
+  AFTER this method is called. Removing the corresponding flag (setting it 
+  to False) in this method allows for handling these things on your 
+  own.</p>
+  <dl class="fields">
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        This method does nothing per default. Implement it to react to 
+        interrupts. If you do not want or need to react to interrupts, 
+        ignore this method.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="next_target"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">next_target</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.core-pysrc.html#Person.next_target">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Finds a new target to move to. Sets next_node, maybe dest_node. Must 
+  be overwritten with an implementation.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="next_target_coord"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">next_target_coord</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.core-pysrc.html#Person.next_target_coord">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculates new target coordinates based on next_node coordinates plus 
+  orthogonal to road offset defined by self.road_orthogonal_offset. 
+  Examples of different values for self.road_orthogonal_offset:</p>
+  <ul>
+    <li>
+      [0,0]: No road width
+    </li>
+    <li>
+      [0,5]: random offset 0-5m to the right of the road in movement 
+      direction. Walking on a two way single lane road, walking in the 
+      right side.
+    </li>
+    <li>
+      [3,5]: random offset 3-5m to the right of the road in movement 
+      direction. Walking on the right sidewalk, road width 3m, sidewalk 
+      width 2m.
+    </li>
+    <li>
+      [-2,2]: random offset of 0-2m to the left and the right of the way. 
+      Walking on both 2m width lanes, the own and the opposite direction's 
+      lane in both directions Same as walking on a 6m width street in both 
+      directions, no distinct lanes.
+    </li>
+  </ul>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="pause_movement"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">pause_movement</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">duration</span>,
+        <span class="sig-arg">location_offset_xy</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">deactivateActions</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.core-pysrc.html#Person.pause_movement">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Stops movement of person. Currently only works with passivating at 
+  next_node. Currently cannot be used to stop on a way like after 
+  infect!</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>duration</code></strong> - pause duration</li>
+        <li><strong class="pname"><code>location_offset_xy</code></strong> - optional random offset to be added to current location when 
+          stopping.</li>
+        <li><strong class="pname"><code>deactivateActions</code></strong> - deactive actions while pausing?</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="readd_actions"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">readd_actions</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.core-pysrc.html#Person.readd_actions">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Do things, when person is readded via Simulation.readd().</p>
+  <p>This does nothing by default. It could be implemented by a simulation,
+  if needed.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="receive"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">receive</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">message</span>,
+        <span class="sig-arg">sender</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.core-pysrc.html#Person.receive">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Receive a message and handle it.</p>
+  <p>Removal from the message queue and earliest arrival time are handled 
+  automatically.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>message</code></strong> - a message from the persons message queue.</li>
+        <li><strong class="pname"><code>sender</code></strong> - the sender of the message.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>True if the message should be removed from the queue, False else.
+          It will then be delivered again in the next cycle.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="send"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">send</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">receiver</span>,
+        <span class="sig-arg">message</span>,
+        <span class="sig-arg">earliest_arrival</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">interrupt</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.core-pysrc.html#Person.send">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Send a message to another Person.</p>
+  <p>Person.receive() must be implemented for anything to actually happen. 
+  Without implementation of that method, messages will simply be removed at
+  earliest_arrival. Messages are received, whenever the receiver wakes up, 
+  before interrupts are handled or think() is called.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>receiver</code></strong> (mosp.Person or group.PersonGroup) - a Person to receive the message</li>
+        <li><strong class="pname"><code>message</code></strong> - any type of message to be delivered. Implement Person.receive() 
+          accordingly.</li>
+        <li><strong class="pname"><code>earliest_arrival</code></strong> - the earliest tick to receive the message. Default is the next 
+          tick (self.sim.now() + 1).</li>
+        <li><strong class="pname"><code>interrupt</code></strong> - interrupt the receiver, after this message was queued.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="stop_actions"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">stop_actions</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">removal</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.core-pysrc.html#Person.stop_actions">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Stop all actions of the Person.</p>
+  <p>For all actions if the Person: call stop and store as stopped 
+  action</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>removal</code></strong> - used to signal removal of the person. Actions are then stored in 
+          seperate list.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="think"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">think</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.core-pysrc.html#Person.think">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Think about what to do next.</p>
+  <p>This method can include all logic of the person (what to do, where to 
+  go etc.). Decisions could be made by using flags for example. This is 
+  where a new self.dest_node and self.start_node should be set if 
+  necessary. self.next_node should not be set here. This should be done in 
+  self.next_target.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>time until next wakeup (int, ticks), returning a negative number 
+          or 0 will cause self.go() to find a time</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        This method provides only the most basic functionality. Overwrite 
+        (and if necessary call) it to implement own behaviour.
+      </p>
+</div></td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Property Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="p_agenttype"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">p_agenttype</h3>
+  
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="mosp.core.Person-class.html#_get_classname" class="summary-sig-name" onclick="show_private();">_get_classname</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="p_speed"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">p_speed</h3>
+  <p>property speed: movement speed of the Person.</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="mosp.core.Person-class.html#get_speed" class="summary-sig-name">get_speed</a>(<span class="summary-sig-arg">self</span>)</span>
+        - property speed: movement speed of the Person.
+    </dd>
+    <dt>Set Method:</dt>
+    <dd class="value"><span class="summary-sig"><a href="mosp.core.Person-class.html#set_speed" class="summary-sig-name">set_speed</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">speed</span>)</span>
+        - Sets movement speed of the Person.
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="x"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">x</h3>
+  <p>Should not be used. In most cases x and y are needed the same time. So
+  properties x and y duplicate the number of calls of current_coords().</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><i>unreachable</i>.x(<span class="summary-sig-arg">self</span>)</span>
+        - Should not be used.
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="y"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">y</h3>
+  <p>Should not be used. In most cases x and y are needed the same time. So
+  properties x and y duplicate the number of calls of current_coords().</p>
+  <dl class="fields">
+    <dt>Get Method:</dt>
+    <dd class="value"><span class="summary-sig"><i>unreachable</i>.y(<span class="summary-sig-arg">self</span>)</span>
+        - Should not be used.
+    </dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:28 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

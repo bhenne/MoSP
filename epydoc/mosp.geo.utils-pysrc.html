@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>mosp.geo.utils</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="mosp-module.html">Package&nbsp;mosp</a> ::
+        <a href="mosp.geo-module.html">Package&nbsp;geo</a> ::
+        Module&nbsp;utils
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="mosp.geo.utils-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="mosp.geo.utils-module.html">Module mosp.geo.utils</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment"># -*- coding: utf-8 -*-</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-docstring">"""Utils"""</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">math</tt> <tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Variable viewer.lib.tilenames.pi=viewer.lib.tilenames-module.html#pi"><a title="viewer.lib.tilenames.pi" class="py-name" href="#" onclick="return doclink('link-0', 'pi', 'link-0');">pi</a></tt><tt class="py-op">,</tt> <tt class="py-name">sqrt</tt><tt class="py-op">,</tt> <tt class="py-name">atan2</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt id="link-1" class="py-name" targets="Variable mosp_tools.slowcat.__author__=mosp_tools.slowcat-module.html#__author__,Variable viewer.lib.tilenames.__author__=viewer.lib.tilenames-module.html#__author__"><a title="mosp_tools.slowcat.__author__
+viewer.lib.tilenames.__author__" class="py-name" href="#" onclick="return doclink('link-1', '__author__', 'link-1');">__author__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"F. Ludwig, B. Henne"</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable mosp.geo.utils.__maintainer__=mosp.geo.utils-module.html#__maintainer__,Variable mosp.geo.utm.__maintainer__=mosp.geo.utm-module.html#__maintainer__,Variable mosp.group.__maintainer__=mosp.group-module.html#__maintainer__,Variable mosp.routing.__maintainer__=mosp.routing-module.html#__maintainer__,Variable mosp.test.test_collide.__maintainer__=mosp.test.test_collide-module.html#__maintainer__,Variable mosp.test.test_routing.__maintainer__=mosp.test.test_routing-module.html#__maintainer__,Variable mosp.test.test_utm.__maintainer__=mosp.test.test_utm-module.html#__maintainer__,Variable mosp_examples.message_example.__maintainer__=mosp_examples.message_example-module.html#__maintainer__,Variable mosp_examples.random_wiggler.__maintainer__=mosp_examples.random_wiggler-module.html#__maintainer__,Variable mosp_examples.routing_wiggler.__maintainer__=mosp_examples.routing_wiggler-module.html#__maintainer__,Variable mosp_examples.socketplayer_demo_wiggler.__maintainer__=mosp_examples.socketplayer_demo_wiggler-module.html#__maintainer__,Variable mosp_examples.zombie_wiggler.__maintainer__=mosp_examples.zombie_wiggler-module.html#__maintainer__,Variable viewer.lib.calculations.__maintainer__=viewer.lib.calculations-module.html#__maintainer__,Variable viewer.lib.tileloader.__maintainer__=viewer.lib.tileloader-module.html#__maintainer__,Variable viewer.sim_viewer.__maintainer__=viewer.sim_viewer-module.html#__maintainer__"><a title="mosp.geo.utils.__maintainer__
+mosp.geo.utm.__maintainer__
+mosp.group.__maintainer__
+mosp.routing.__maintainer__
+mosp.test.test_collide.__maintainer__
+mosp.test.test_routing.__maintainer__
+mosp.test.test_utm.__maintainer__
+mosp_examples.message_example.__maintainer__
+mosp_examples.random_wiggler.__maintainer__
+mosp_examples.routing_wiggler.__maintainer__
+mosp_examples.socketplayer_demo_wiggler.__maintainer__
+mosp_examples.zombie_wiggler.__maintainer__
+viewer.lib.calculations.__maintainer__
+viewer.lib.tileloader.__maintainer__
+viewer.sim_viewer.__maintainer__" class="py-name" href="#" onclick="return doclink('link-2', '__maintainer__', 'link-2');">__maintainer__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"B. Henne"</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-name">__contact__</tt> <tt class="py-op">=</tt> <tt class="py-string">"henne@dcsec.uni-hannover.de"</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-name">__copyright__</tt> <tt class="py-op">=</tt> <tt class="py-string">"(c) 2010, DCSec, Leibniz Universitaet Hannover, Germany"</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt id="link-3" class="py-name" targets="Variable viewer.lib.tilenames.__license__=viewer.lib.tilenames-module.html#__license__"><a title="viewer.lib.tilenames.__license__" class="py-name" href="#" onclick="return doclink('link-3', '__license__', 'link-3');">__license__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"GPLv3"</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"> </tt>
+<a name="distance"></a><div id="distance-def"><a name="L13"></a><tt class="py-lineno">13</tt> <a class="py-toggle" href="#" id="distance-toggle" onclick="return toggle('distance');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.geo.utils-module.html#distance">distance</a><tt class="py-op">(</tt><tt class="py-param">node1</tt><tt class="py-op">,</tt> <tt class="py-param">node2</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="distance-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="distance-expanded"><a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">    <tt class="py-docstring">"""Euclidean distance of two nodes given by the Pythagorean formula.</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-docstring">    @author: F. Ludwig"""</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">    <tt id="link-4" class="py-name" targets="Variable mosp.core.Person.x=mosp.core.Person-class.html#x,Variable mosp.geo.osm.Node.x=mosp.geo.osm.Node-class.html#x"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-4', 'x', 'link-4');">x</a></tt> <tt class="py-op">=</tt> <tt class="py-name">node1</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-5', 'x', 'link-4');">x</a></tt> <tt class="py-op">-</tt> <tt class="py-name">node2</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-6', 'x', 'link-4');">x</a></tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">    <tt id="link-7" class="py-name" targets="Variable mosp.core.Person.y=mosp.core.Person-class.html#y,Variable mosp.geo.osm.Node.y=mosp.geo.osm.Node-class.html#y"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-7', 'y', 'link-7');">y</a></tt> <tt class="py-op">=</tt> <tt class="py-name">node1</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-8', 'y', 'link-7');">y</a></tt> <tt class="py-op">-</tt> <tt class="py-name">node2</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-9', 'y', 'link-7');">y</a></tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">sqrt</tt><tt class="py-op">(</tt><tt id="link-10" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-10', 'x', 'link-4');">x</a></tt><tt class="py-op">**</tt><tt class="py-number">2</tt> <tt class="py-op">+</tt> <tt id="link-11" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-11', 'y', 'link-7');">y</a></tt><tt class="py-op">**</tt><tt class="py-number">2</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"> </tt>
+<a name="atan2Deg"></a><div id="atan2Deg-def"><a name="L20"></a><tt class="py-lineno">20</tt> <a class="py-toggle" href="#" id="atan2Deg-toggle" onclick="return toggle('atan2Deg');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.geo.utils-module.html#atan2Deg">atan2Deg</a><tt class="py-op">(</tt><tt class="py-param">x</tt><tt class="py-op">,</tt> <tt class="py-param">y</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="atan2Deg-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="atan2Deg-expanded"><a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">    <tt class="py-docstring">"""Returns the atan2(y, x) in degrees"""</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-name">atan2</tt><tt class="py-op">(</tt><tt id="link-12" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-12', 'y', 'link-7');">y</a></tt><tt class="py-op">,</tt> <tt id="link-13" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-13', 'x', 'link-4');">x</a></tt><tt class="py-op">)</tt> <tt class="py-op">/</tt> <tt class="py-op">(</tt><tt class="py-number">2</tt><tt class="py-op">*</tt><tt id="link-14" class="py-name"><a title="viewer.lib.tilenames.pi" class="py-name" href="#" onclick="return doclink('link-14', 'pi', 'link-0');">pi</a></tt><tt class="py-op">)</tt> <tt class="py-op">*</tt> <tt class="py-number">360</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"> </tt>
+<a name="angleToXAxis"></a><div id="angleToXAxis-def"><a name="L24"></a><tt class="py-lineno">24</tt> <a class="py-toggle" href="#" id="angleToXAxis-toggle" onclick="return toggle('angleToXAxis');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.geo.utils-module.html#angleToXAxis">angleToXAxis</a><tt class="py-op">(</tt><tt class="py-param">x</tt><tt class="py-op">,</tt> <tt class="py-param">y</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="angleToXAxis-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="angleToXAxis-expanded"><a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">    <tt class="py-docstring">"""Returns the angle in degrees between the x-axis and the line through origin and point (x,y)"""</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-15" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-15', 'y', 'link-7');">y</a></tt> <tt class="py-op">&gt;=</tt> <tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-16" class="py-name" targets="Function mosp.geo.utils.atan2Deg()=mosp.geo.utils-module.html#atan2Deg"><a title="mosp.geo.utils.atan2Deg" class="py-name" href="#" onclick="return doclink('link-16', 'atan2Deg', 'link-16');">atan2Deg</a></tt><tt class="py-op">(</tt><tt id="link-17" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-17', 'x', 'link-4');">x</a></tt><tt class="py-op">,</tt><tt id="link-18" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-18', 'y', 'link-7');">y</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-number">360</tt><tt class="py-op">+</tt><tt id="link-19" class="py-name"><a title="mosp.geo.utils.atan2Deg" class="py-name" href="#" onclick="return doclink('link-19', 'atan2Deg', 'link-16');">atan2Deg</a></tt><tt class="py-op">(</tt><tt id="link-20" class="py-name"><a title="mosp.core.Person.x
+mosp.geo.osm.Node.x" class="py-name" href="#" onclick="return doclink('link-20', 'x', 'link-4');">x</a></tt><tt class="py-op">,</tt><tt id="link-21" class="py-name"><a title="mosp.core.Person.y
+mosp.geo.osm.Node.y" class="py-name" href="#" onclick="return doclink('link-21', 'y', 'link-7');">y</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">     </tt>
+<a name="inDistance"></a><div id="inDistance-def"><a name="L31"></a><tt class="py-lineno">31</tt> <a class="py-toggle" href="#" id="inDistance-toggle" onclick="return toggle('inDistance');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.geo.utils-module.html#inDistance">inDistance</a><tt class="py-op">(</tt><tt class="py-param">x1</tt><tt class="py-op">,</tt> <tt class="py-param">y1</tt><tt class="py-op">,</tt> <tt class="py-param">x2</tt><tt class="py-op">,</tt> <tt class="py-param">y2</tt><tt class="py-op">,</tt> <tt class="py-param">distance</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="inDistance-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="inDistance-expanded"><a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">    <tt class="py-docstring">"""Returns, whether point (x1,y1) and point (x2,y2) are in a distance lower or equal distance"""</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">round</tt><tt class="py-op">(</tt><tt class="py-name">sqrt</tt><tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-name">x2</tt><tt class="py-op">-</tt><tt class="py-name">x1</tt><tt class="py-op">)</tt><tt class="py-op">**</tt><tt class="py-number">2</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">y2</tt><tt class="py-op">-</tt><tt class="py-name">y1</tt><tt class="py-op">)</tt><tt class="py-op">**</tt><tt class="py-number">2</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">&lt;=</tt> <tt id="link-22" class="py-name" targets="Function mosp.geo.osm.distance()=mosp.geo.osm-module.html#distance,Function mosp.geo.utils.distance()=mosp.geo.utils-module.html#distance"><a title="mosp.geo.osm.distance
+mosp.geo.utils.distance" class="py-name" href="#" onclick="return doclink('link-22', 'distance', 'link-22');">distance</a></tt> </tt>
+</div><a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"> </tt>
+<a name="pointInSector"></a><div id="pointInSector-def"><a name="L35"></a><tt class="py-lineno">35</tt> <a class="py-toggle" href="#" id="pointInSector-toggle" onclick="return toggle('pointInSector');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.geo.utils-module.html#pointInSector">pointInSector</a><tt class="py-op">(</tt><tt class="py-param">pointX</tt><tt class="py-op">,</tt> <tt class="py-param">pointY</tt><tt class="py-op">,</tt> <tt class="py-param">originX</tt><tt class="py-op">,</tt> <tt class="py-param">originY</tt><tt class="py-op">,</tt> <tt class="py-param">radius</tt><tt class="py-op">,</tt> <tt class="py-param">centralAngle</tt><tt class="py-op">,</tt> <tt class="py-param">direction</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="pointInSector-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="pointInSector-expanded"><a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">    <tt class="py-docstring">"""Returns whether a point (x,y) is in a sector of a circle with given coordinates (x,y), radius, angle and direction"""</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">    <tt class="py-name">translatX</tt> <tt class="py-op">=</tt> <tt class="py-name">pointX</tt> <tt class="py-op">-</tt> <tt class="py-name">originX</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">    <tt class="py-name">translatY</tt> <tt class="py-op">=</tt> <tt class="py-name">pointY</tt> <tt class="py-op">-</tt> <tt class="py-name">originY</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">     </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">    <tt class="py-comment"># is point in radius?</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt id="link-23" class="py-name" targets="Function mosp.geo.utils.inDistance()=mosp.geo.utils-module.html#inDistance"><a title="mosp.geo.utils.inDistance" class="py-name" href="#" onclick="return doclink('link-23', 'inDistance', 'link-23');">inDistance</a></tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">translatX</tt><tt class="py-op">,</tt> <tt class="py-name">translatY</tt><tt class="py-op">,</tt> <tt class="py-name">radius</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">False</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">     </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">    <tt class="py-comment"># is central angle greater or equal 360&#176; (full view)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">centralAngle</tt> <tt class="py-op">&gt;=</tt> <tt class="py-number">360</tt><tt class="py-op">:</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">     </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">    <tt class="py-comment"># define borders and angles of sector, turn all angles to positive values</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">     </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">    <tt class="py-comment"># positive direction 0&#176; - 360&#176;, defined for -360&#176; &lt; sectorDirection &lt; infinity</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">    <tt class="py-name">dir</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">direction</tt><tt class="py-op">+</tt><tt class="py-number">360</tt><tt class="py-op">)</tt> <tt class="py-op">%</tt> <tt class="py-number">360</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">    <tt class="py-comment">## right border: -180&#176; &lt;= sRightBorder &lt;= 180&#176;</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">    <tt class="py-name">rightBorder</tt> <tt class="py-op">=</tt> <tt class="py-name">dir</tt> <tt class="py-op">-</tt> <tt class="py-op">(</tt><tt class="py-name">centralAngle</tt> <tt class="py-op">/</tt> <tt class="py-number">2</tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">    <tt class="py-comment"># left border:  0&#176; &lt;= sLeftBorder &lt;= 540&#176;</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">    <tt class="py-name">leftBorder</tt> <tt class="py-op">=</tt> <tt class="py-name">dir</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">centralAngle</tt> <tt class="py-op">/</tt> <tt class="py-number">2</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">    <tt class="py-comment"># angle from x-axis to vector to point, 0&#176; &lt;= pointAngle &lt; 360&#176;</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">    <tt class="py-name">pointAngle</tt> <tt class="py-op">=</tt> <tt id="link-24" class="py-name" targets="Function mosp.geo.utils.angleToXAxis()=mosp.geo.utils-module.html#angleToXAxis"><a title="mosp.geo.utils.angleToXAxis" class="py-name" href="#" onclick="return doclink('link-24', 'angleToXAxis', 'link-24');">angleToXAxis</a></tt><tt class="py-op">(</tt><tt class="py-name">translatX</tt><tt class="py-op">,</tt> <tt class="py-name">translatY</tt><tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">     </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">    <tt class="py-comment"># rotate angles to fit sector's right border to x-axis</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">    <tt class="py-name">leftBorder</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">leftBorder</tt> <tt class="py-op">-</tt> <tt class="py-name">rightBorder</tt><tt class="py-op">+</tt><tt class="py-number">360</tt><tt class="py-op">)</tt> <tt class="py-op">%</tt> <tt class="py-number">360</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">    <tt class="py-name">pointAngle</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-name">pointAngle</tt> <tt class="py-op">-</tt> <tt class="py-name">rightBorder</tt><tt class="py-op">+</tt><tt class="py-number">360</tt><tt class="py-op">)</tt> <tt class="py-op">%</tt> <tt class="py-number">360</tt><tt class="py-op">;</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">     </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line">    <tt class="py-comment"># is point in or outside sector borders</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">pointAngle</tt> <tt class="py-op">&lt;=</tt> <tt class="py-name">leftBorder</tt><tt class="py-op">:</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">False</tt> </tt>
+</div><a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:36 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

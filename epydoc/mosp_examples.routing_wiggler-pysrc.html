@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>mosp_examples.routing_wiggler</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="mosp_examples-module.html">Package&nbsp;mosp_examples</a> ::
+        Module&nbsp;routing_wiggler
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="mosp_examples.routing_wiggler-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="mosp_examples.routing_wiggler-module.html">Module mosp_examples.routing_wiggler</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#!/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-docstring">"""Routing example for new go method: routed movement</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-docstring">    - routed movement (currently still shortest-path)</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-docstring">    - 50% chance to use random movement after destination was reached</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring">    - 25% chance to get back to routed movement after node was reached</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring">    - showing routing destinations as markers</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-docstring">    - output to socket player</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-string">".."</tt><tt class="py-op">)</tt>  </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">struct</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package mosp=mosp-module.html"><a title="mosp" class="py-name" href="#" onclick="return doclink('link-0', 'mosp', 'link-0');">mosp</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module mosp.core=mosp.core-module.html"><a title="mosp.core" class="py-name" href="#" onclick="return doclink('link-1', 'core', 'link-1');">core</a></tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Class mosp.core.Simulation=mosp.core.Simulation-class.html"><a title="mosp.core.Simulation" class="py-name" href="#" onclick="return doclink('link-2', 'Simulation', 'link-2');">Simulation</a></tt><tt class="py-op">,</tt> <tt id="link-3" class="py-name" targets="Class mosp.core.Person=mosp.core.Person-class.html"><a title="mosp.core.Person" class="py-name" href="#" onclick="return doclink('link-3', 'Person', 'link-3');">Person</a></tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-4" class="py-name"><a title="mosp" class="py-name" href="#" onclick="return doclink('link-4', 'mosp', 'link-0');">mosp</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Package mosp.geo=mosp.geo-module.html"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-5', 'geo', 'link-5');">geo</a></tt> <tt class="py-keyword">import</tt> <tt id="link-6" class="py-name" targets="Module mosp.geo.osm=mosp.geo.osm-module.html"><a title="mosp.geo.osm" class="py-name" href="#" onclick="return doclink('link-6', 'osm', 'link-6');">osm</a></tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-7" class="py-name"><a title="mosp" class="py-name" href="#" onclick="return doclink('link-7', 'mosp', 'link-0');">mosp</a></tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Package mosp.impl=mosp.impl-module.html"><a title="mosp.impl" class="py-name" href="#" onclick="return doclink('link-8', 'impl', 'link-8');">impl</a></tt> <tt class="py-keyword">import</tt> <tt id="link-9" class="py-name" targets="Module mosp.impl.movement=mosp.impl.movement-module.html"><a title="mosp.impl.movement" class="py-name" href="#" onclick="return doclink('link-9', 'movement', 'link-9');">movement</a></tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-10" class="py-name"><a title="mosp" class="py-name" href="#" onclick="return doclink('link-10', 'mosp', 'link-0');">mosp</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Module mosp.monitors=mosp.monitors-module.html"><a title="mosp.monitors" class="py-name" href="#" onclick="return doclink('link-11', 'monitors', 'link-11');">monitors</a></tt> <tt class="py-keyword">import</tt> <tt id="link-12" class="py-name" targets="Class mosp.monitors.SocketPlayerMonitor=mosp.monitors.SocketPlayerMonitor-class.html"><a title="mosp.monitors.SocketPlayerMonitor" class="py-name" href="#" onclick="return doclink('link-12', 'SocketPlayerMonitor', 'link-12');">SocketPlayerMonitor</a></tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt id="link-13" class="py-name" targets="Variable mosp_tools.slowcat.__author__=mosp_tools.slowcat-module.html#__author__,Variable viewer.lib.tilenames.__author__=viewer.lib.tilenames-module.html#__author__"><a title="mosp_tools.slowcat.__author__
+viewer.lib.tilenames.__author__" class="py-name" href="#" onclick="return doclink('link-13', '__author__', 'link-13');">__author__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"P. Tute"</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt id="link-14" class="py-name" targets="Variable mosp.geo.utils.__maintainer__=mosp.geo.utils-module.html#__maintainer__,Variable mosp.geo.utm.__maintainer__=mosp.geo.utm-module.html#__maintainer__,Variable mosp.group.__maintainer__=mosp.group-module.html#__maintainer__,Variable mosp.routing.__maintainer__=mosp.routing-module.html#__maintainer__,Variable mosp.test.test_collide.__maintainer__=mosp.test.test_collide-module.html#__maintainer__,Variable mosp.test.test_routing.__maintainer__=mosp.test.test_routing-module.html#__maintainer__,Variable mosp.test.test_utm.__maintainer__=mosp.test.test_utm-module.html#__maintainer__,Variable mosp_examples.message_example.__maintainer__=mosp_examples.message_example-module.html#__maintainer__,Variable mosp_examples.random_wiggler.__maintainer__=mosp_examples.random_wiggler-module.html#__maintainer__,Variable mosp_examples.routing_wiggler.__maintainer__=mosp_examples.routing_wiggler-module.html#__maintainer__,Variable mosp_examples.socketplayer_demo_wiggler.__maintainer__=mosp_examples.socketplayer_demo_wiggler-module.html#__maintainer__,Variable mosp_examples.zombie_wiggler.__maintainer__=mosp_examples.zombie_wiggler-module.html#__maintainer__,Variable viewer.lib.calculations.__maintainer__=viewer.lib.calculations-module.html#__maintainer__,Variable viewer.lib.tileloader.__maintainer__=viewer.lib.tileloader-module.html#__maintainer__,Variable viewer.sim_viewer.__maintainer__=viewer.sim_viewer-module.html#__maintainer__"><a title="mosp.geo.utils.__maintainer__
+mosp.geo.utm.__maintainer__
+mosp.group.__maintainer__
+mosp.routing.__maintainer__
+mosp.test.test_collide.__maintainer__
+mosp.test.test_routing.__maintainer__
+mosp.test.test_utm.__maintainer__
+mosp_examples.message_example.__maintainer__
+mosp_examples.random_wiggler.__maintainer__
+mosp_examples.routing_wiggler.__maintainer__
+mosp_examples.socketplayer_demo_wiggler.__maintainer__
+mosp_examples.zombie_wiggler.__maintainer__
+viewer.lib.calculations.__maintainer__
+viewer.lib.tileloader.__maintainer__
+viewer.sim_viewer.__maintainer__" class="py-name" href="#" onclick="return doclink('link-14', '__maintainer__', 'link-14');">__maintainer__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"B. Henne"</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-name">__contact__</tt> <tt class="py-op">=</tt> <tt class="py-string">"henne@dcsec.uni-hannover.de"</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-name">__copyright__</tt> <tt class="py-op">=</tt> <tt class="py-string">"(c) 2010-2012, DCSec, Leibniz Universitaet Hannover, Germany"</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"><tt id="link-15" class="py-name" targets="Variable viewer.lib.tilenames.__license__=viewer.lib.tilenames-module.html#__license__"><a title="viewer.lib.tilenames.__license__" class="py-name" href="#" onclick="return doclink('link-15', '__license__', 'link-15');">__license__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"GPLv3"</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"><tt id="link-16" class="py-name" targets="Variable mosp_examples.poi_wiggler.COLOR=mosp_examples.poi_wiggler-module.html#COLOR,Variable mosp_examples.routing_wiggler.COLOR=mosp_examples.routing_wiggler-module.html#COLOR"><a title="mosp_examples.poi_wiggler.COLOR
+mosp_examples.routing_wiggler.COLOR" class="py-name" href="#" onclick="return doclink('link-16', 'COLOR', 'link-16');">COLOR</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-number">0</tt><tt class="py-op">:</tt> <tt class="py-op">[</tt><tt class="py-number">1.0</tt><tt class="py-op">,</tt> <tt class="py-number">0.0</tt><tt class="py-op">,</tt> <tt class="py-number">0.0</tt><tt class="py-op">,</tt> <tt class="py-number">1.0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">         <tt class="py-number">1</tt><tt class="py-op">:</tt> <tt class="py-op">[</tt><tt class="py-number">0.0</tt><tt class="py-op">,</tt> <tt class="py-number">1.0</tt><tt class="py-op">,</tt> <tt class="py-number">0.0</tt><tt class="py-op">,</tt> <tt class="py-number">1.0</tt><tt class="py-op">]</tt><tt class="py-op">}</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"> </tt>
+<a name="RoutingShowcaseWiggler"></a><div id="RoutingShowcaseWiggler-def"><a name="L31"></a><tt class="py-lineno">31</tt> <a class="py-toggle" href="#" id="RoutingShowcaseWiggler-toggle" onclick="return toggle('RoutingShowcaseWiggler');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="mosp_examples.routing_wiggler.RoutingShowcaseWiggler-class.html">RoutingShowcaseWiggler</a><tt class="py-op">(</tt><tt class="py-base-class">Person</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RoutingShowcaseWiggler-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="RoutingShowcaseWiggler-expanded"><a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">    <tt class="py-docstring">"""Person for routing demonstration.</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"><tt class="py-docstring">    If person arrives at its destination, next destination </tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-docstring">    is randomly selected and user routed to it.</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-docstring">    With a 50% chance the person will then switch to random movement.</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-docstring">    It switches back with 25% probability.</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-docstring">    @author: P. Tute"""</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">     </tt>
+<a name="RoutingShowcaseWiggler.__init__"></a><div id="RoutingShowcaseWiggler.__init__-def"><a name="L40"></a><tt class="py-lineno">40</tt> <a class="py-toggle" href="#" id="RoutingShowcaseWiggler.__init__-toggle" onclick="return toggle('RoutingShowcaseWiggler.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp_examples.routing_wiggler.RoutingShowcaseWiggler-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RoutingShowcaseWiggler.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="RoutingShowcaseWiggler.__init__-expanded"><a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">        <tt class="py-docstring">"""Init the RoutingShowcaseWiggler person."""</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">        <tt id="link-17" class="py-name"><a title="mosp.core.Person" class="py-name" href="#" onclick="return doclink('link-17', 'Person', 'link-3');">Person</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Method mosp.collide.Line.__init__()=mosp.collide.Line-class.html#__init__,Method mosp.collide.Point.__init__()=mosp.collide.Point-class.html#__init__,Method mosp.collide.Rectangle.__init__()=mosp.collide.Rectangle-class.html#__init__,Method mosp.collide.World.__init__()=mosp.collide.World-class.html#__init__,Method mosp.collide.WorldPart.__init__()=mosp.collide.WorldPart-class.html#__init__,Method mosp.controller.Controller.__init__()=mosp.controller.Controller-class.html#__init__,Method mosp.controller.SimulationControlled.__init__()=mosp.controller.SimulationControlled-class.html#__init__,Method mosp.core.Person.__init__()=mosp.core.Person-class.html#__init__,Method mosp.core.Simulation.__init__()=mosp.core.Simulation-class.html#__init__,Method mosp.geo.osm.Node.__init__()=mosp.geo.osm.Node-class.html#__init__,Method mosp.geo.osm.NodePlaceHolder.__init__()=mosp.geo.osm.NodePlaceHolder-class.html#__init__,Method mosp.geo.osm.OSMModel.__init__()=mosp.geo.osm.OSMModel-class.html#__init__,Method mosp.geo.osm.OSMXMLFileParser.__init__()=mosp.geo.osm.OSMXMLFileParser-class.html#__init__,Method mosp.geo.osm.Way.__init__()=mosp.geo.osm.Way-class.html#__init__,Method mosp.geo.osm.WaySegment.__init__()=mosp.geo.osm.WaySegment-class.html#__init__,Method mosp.group.Call.__init__()=mosp.group.Call-class.html#__init__,Method mosp.group.CallGroup.__init__()=mosp.group.CallGroup-class.html#__init__,Method mosp.group.Message.__init__()=mosp.group.Message-class.html#__init__,Method mosp.gui.gimp_palette.gimp_palette.GimpPalette.__init__()=mosp.gui.gimp_palette.gimp_palette.GimpPalette-class.html#__init__,Method mosp.gui.playerChamplain.AnimatedMarker.__init__()=mosp.gui.playerChamplain.AnimatedMarker-class.html#__init__,Method mosp.gui.playerChamplain.Player.__init__()=mosp.gui.playerChamplain.Player-class.html#__init__,Method mosp.locations.Cafe.__init__()=mosp.locations.Cafe-class.html#__init__,Method mosp.locations.Exit.__init__()=mosp.locations.Exit-class.html#__init__,Method mosp.locations.Location.__init__()=mosp.locations.Location-class.html#__init__,Method mosp.locations.LocationClosedException.__init__()=mosp.locations.LocationClosedException-class.html#__init__,Method mosp.monitors.ChildprocessPlayerChamplainMonitor.__init__()=mosp.monitors.ChildprocessPlayerChamplainMonitor-class.html#__init__,Method mosp.monitors.EmptyMonitor.__init__()=mosp.monitors.EmptyMonitor-class.html#__init__,Method mosp.monitors.NoSimulationMonitorDefinedException.__init__()=mosp.monitors.NoSimulationMonitorDefinedException-class.html#__init__,Method mosp.monitors.RecordFilePlayerMonitor.__init__()=mosp.monitors.RecordFilePlayerMonitor-class.html#__init__,Method mosp.monitors.SocketPlayerMonitor.__init__()=mosp.monitors.SocketPlayerMonitor-class.html#__init__,Method mosp.routing.RoutingNode.__init__()=mosp.routing.RoutingNode-class.html#__init__,Method mosp_examples.BTvirus_wiggler.BTVirusWiggler.__init__()=mosp_examples.BTvirus_wiggler.BTVirusWiggler-class.html#__init__,Method mosp_examples.action_wiggler.StopActionsWiggler.__init__()=mosp_examples.action_wiggler.StopActionsWiggler-class.html#__init__,Method mosp_examples.exit_wiggler.WigglerExit.__init__()=mosp_examples.exit_wiggler.WigglerExit-class.html#__init__,Method mosp_examples.passivate_wiggler.Alarm.__init__()=mosp_examples.passivate_wiggler.Alarm-class.html#__init__,Method mosp_examples.poi_act_wiggler.PoiActWiggler.__init__()=mosp_examples.poi_act_wiggler.PoiActWiggler-class.html#__init__,Method mosp_examples.poi_wiggler.PoiWiggler.__init__()=mosp_examples.poi_wiggler.PoiWiggler-class.html#__init__,Method mosp_examples.routing_wiggler.RoutingShowcaseWiggler.__init__()=mosp_examples.routing_wiggler.RoutingShowcaseWiggler-class.html#__init__,Method mosp_examples.statemachine_wiggler.DrunkWiggler.__init__()=mosp_examples.statemachine_wiggler.DrunkWiggler-class.html#__init__,Method mosp_examples.statemachine_wiggler.SocketPlayerClock.__init__()=mosp_examples.statemachine_wiggler.SocketPlayerClock-class.html#__init__,Method mosp_examples.statemachine_wiggler.WorkWiggler.__init__()=mosp_examples.statemachine_wiggler.WorkWiggler-class.html#__init__,Method mosp_examples.zombie_wiggler.ZombieWiggler.__init__()=mosp_examples.zombie_wiggler.ZombieWiggler-class.html#__init__,Method mosp_tools.heatmap.heatmap.Heatmap.__init__()=mosp_tools.heatmap.heatmap.Heatmap-class.html#__init__,Method mosp_tools.node_finder.AnimatedMarker.__init__()=mosp_tools.node_finder.AnimatedMarker-class.html#__init__,Method viewer.lib.asynchttp.AsyncHTTPConnection.__init__()=viewer.lib.asynchttp.AsyncHTTPConnection-class.html#__init__,Method viewer.lib.asynchttp.AsyncHTTPException.__init__()=viewer.lib.asynchttp.AsyncHTTPException-class.html#__init__,Method viewer.lib.asynchttp.AsyncHTTPResponse.__init__()=viewer.lib.asynchttp.AsyncHTTPResponse-class.html#__init__,Method viewer.lib.asynchttp.__test_AsyncHTTPConnection.__init__()=viewer.lib.asynchttp.__test_AsyncHTTPConnection-class.html#__init__,Method viewer.lib.tileloader.TileLoader.__init__()=viewer.lib.tileloader.TileLoader-class.html#__init__,Method viewer.sim_viewer.SimViewer.__init__()=viewer.sim_viewer.SimViewer-class.html#__init__"><a title="mosp.collide.Line.__init__
+mosp.collide.Point.__init__
+mosp.collide.Rectangle.__init__
+mosp.collide.World.__init__
+mosp.collide.WorldPart.__init__
+mosp.controller.Controller.__init__
+mosp.controller.SimulationControlled.__init__
+mosp.core.Person.__init__
+mosp.core.Simulation.__init__
+mosp.geo.osm.Node.__init__
+mosp.geo.osm.NodePlaceHolder.__init__
+mosp.geo.osm.OSMModel.__init__
+mosp.geo.osm.OSMXMLFileParser.__init__
+mosp.geo.osm.Way.__init__
+mosp.geo.osm.WaySegment.__init__
+mosp.group.Call.__init__
+mosp.group.CallGroup.__init__
+mosp.group.Message.__init__
+mosp.gui.gimp_palette.gimp_palette.GimpPalette.__init__
+mosp.gui.playerChamplain.AnimatedMarker.__init__
+mosp.gui.playerChamplain.Player.__init__
+mosp.locations.Cafe.__init__
+mosp.locations.Exit.__init__
+mosp.locations.Location.__init__
+mosp.locations.LocationClosedException.__init__
+mosp.monitors.ChildprocessPlayerChamplainMonitor.__init__
+mosp.monitors.EmptyMonitor.__init__
+mosp.monitors.NoSimulationMonitorDefinedException.__init__
+mosp.monitors.RecordFilePlayerMonitor.__init__
+mosp.monitors.SocketPlayerMonitor.__init__
+mosp.routing.RoutingNode.__init__
+mosp_examples.BTvirus_wiggler.BTVirusWiggler.__init__
+mosp_examples.action_wiggler.StopActionsWiggler.__init__
+mosp_examples.exit_wiggler.WigglerExit.__init__
+mosp_examples.passivate_wiggler.Alarm.__init__
+mosp_examples.poi_act_wiggler.PoiActWiggler.__init__
+mosp_examples.poi_wiggler.PoiWiggler.__init__
+mosp_examples.routing_wiggler.RoutingShowcaseWiggler.__init__
+mosp_examples.statemachine_wiggler.DrunkWiggler.__init__
+mosp_examples.statemachine_wiggler.SocketPlayerClock.__init__
+mosp_examples.statemachine_wiggler.WorkWiggler.__init__
+mosp_examples.zombie_wiggler.ZombieWiggler.__init__
+mosp_tools.heatmap.heatmap.Heatmap.__init__
+mosp_tools.node_finder.AnimatedMarker.__init__
+viewer.lib.asynchttp.AsyncHTTPConnection.__init__
+viewer.lib.asynchttp.AsyncHTTPException.__init__
+viewer.lib.asynchttp.AsyncHTTPResponse.__init__
+viewer.lib.asynchttp.__test_AsyncHTTPConnection.__init__
+viewer.lib.tileloader.TileLoader.__init__
+viewer.sim_viewer.SimViewer.__init__" class="py-name" href="#" onclick="return doclink('link-18', '__init__', 'link-18');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">args</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dest_node</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">next_node</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">p_color_rgba</tt> <tt class="py-op">=</tt> <tt id="link-19" class="py-name"><a title="mosp_examples.poi_wiggler.COLOR
+mosp_examples.routing_wiggler.COLOR" class="py-name" href="#" onclick="return doclink('link-19', 'COLOR', 'link-16');">COLOR</a></tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">p_id</tt><tt class="py-op">]</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">routed</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Method mosp.core.Person.next_target()=mosp.core.Person-class.html#next_target,Method mosp_examples.statemachine_wiggler.WorkWiggler.next_target()=mosp_examples.statemachine_wiggler.WorkWiggler-class.html#next_target"><a title="mosp.core.Person.next_target
+mosp_examples.statemachine_wiggler.WorkWiggler.next_target" class="py-name" href="#" onclick="return doclink('link-20', 'next_target', 'link-20');">next_target</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name" targets="Method mosp_examples.poi_wiggler.PoiWiggler.next_target_routed()=mosp_examples.poi_wiggler.PoiWiggler-class.html#next_target_routed,Method mosp_examples.routing_wiggler.RoutingShowcaseWiggler.next_target_routed()=mosp_examples.routing_wiggler.RoutingShowcaseWiggler-class.html#next_target_routed"><a title="mosp_examples.poi_wiggler.PoiWiggler.next_target_routed
+mosp_examples.routing_wiggler.RoutingShowcaseWiggler.next_target_routed" class="py-name" href="#" onclick="return doclink('link-21', 'next_target_routed', 'link-21');">next_target_routed</a></tt> </tt>
+</div><a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"> </tt>
+<a name="RoutingShowcaseWiggler.think"></a><div id="RoutingShowcaseWiggler.think-def"><a name="L48"></a><tt class="py-lineno">48</tt> <a class="py-toggle" href="#" id="RoutingShowcaseWiggler.think-toggle" onclick="return toggle('RoutingShowcaseWiggler.think');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp_examples.routing_wiggler.RoutingShowcaseWiggler-class.html#think">think</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RoutingShowcaseWiggler.think-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="RoutingShowcaseWiggler.think-expanded"><a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">        <tt class="py-docstring">"""Find next destination, change movement and/or check if next_node was reached."""</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">next_node</tt> <tt class="py-op">==</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dest_node</tt> <tt class="py-keyword">and</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">routed</tt><tt class="py-op">:</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">start_node</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dest_node</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dest_node</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_random</tt><tt class="py-op">.</tt><tt class="py-name">choice</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-name">n</tt> <tt class="py-keyword">for</tt> <tt class="py-name">n</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Variable mosp.group.Message.sim=mosp.group.Message-class.html#sim"><a title="mosp.group.Message.sim" class="py-name" href="#" onclick="return doclink('link-22', 'sim', 'link-22');">sim</a></tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-23', 'geo', 'link-5');">geo</a></tt><tt class="py-op">.</tt><tt class="py-name">way_nodes</tt> <tt class="py-keyword">if</tt> <tt class="py-string">"border"</tt> <tt class="py-keyword">not</tt> <tt class="py-keyword">in</tt> <tt class="py-name">n</tt><tt class="py-op">.</tt><tt class="py-name">tags</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">            <tt class="py-name">color</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">p_color_rgba</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-op">[</tt><tt class="py-number">0.5</tt><tt class="py-op">]</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name"><a title="mosp.group.Message.sim" class="py-name" href="#" onclick="return doclink('link-24', 'sim', 'link-22');">sim</a></tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="mosp.monitors" class="py-name" href="#" onclick="return doclink('link-25', 'monitors', 'link-11');">monitors</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Method mosp.monitors.EmptyMonitor.draw_point()=mosp.monitors.EmptyMonitor-class.html#draw_point,Method mosp.monitors.SocketPlayerMonitor.draw_point()=mosp.monitors.SocketPlayerMonitor-class.html#draw_point"><a title="mosp.monitors.EmptyMonitor.draw_point
+mosp.monitors.SocketPlayerMonitor.draw_point" class="py-name" href="#" onclick="return doclink('link-26', 'draw_point', 'link-26');">draw_point</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">p_id</tt> <tt class="py-op">+</tt> <tt class="py-number">100</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dest_node</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Variable mosp.geo.osm.Node.lat=mosp.geo.osm.Node-class.html#lat"><a title="mosp.geo.osm.Node.lat" class="py-name" href="#" onclick="return doclink('link-27', 'lat', 'link-27');">lat</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dest_node</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Variable mosp.geo.osm.Node.lon=mosp.geo.osm.Node-class.html#lon"><a title="mosp.geo.osm.Node.lon" class="py-name" href="#" onclick="return doclink('link-28', 'lon', 'link-28');">lon</a></tt><tt class="py-op">,</tt> <tt class="py-number">5</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">p_color_rgba</tt><tt class="py-op">,</tt> <tt class="py-name">ttl</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_random</tt><tt class="py-op">.</tt><tt class="py-name">random</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">&lt;</tt> <tt class="py-number">0.5</tt><tt class="py-op">:</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">routed</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">p_color_rgba</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> <tt class="py-op">+=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="mosp.core.Person.next_target
+mosp_examples.statemachine_wiggler.WorkWiggler.next_target" class="py-name" href="#" onclick="return doclink('link-29', 'next_target', 'link-20');">next_target</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Method mosp_examples.routing_wiggler.RoutingShowcaseWiggler.next_target_random()=mosp_examples.routing_wiggler.RoutingShowcaseWiggler-class.html#next_target_random"><a title="mosp_examples.routing_wiggler.RoutingShowcaseWiggler.next_target_random" class="py-name" href="#" onclick="return doclink('link-30', 'next_target_random', 'link-30');">next_target_random</a></tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name"><a title="mosp.group.Message.sim" class="py-name" href="#" onclick="return doclink('link-31', 'sim', 'link-22');">sim</a></tt><tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="mosp.monitors" class="py-name" href="#" onclick="return doclink('link-32', 'monitors', 'link-11');">monitors</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Method mosp.monitors.EmptyMonitor.remove_object()=mosp.monitors.EmptyMonitor-class.html#remove_object,Method mosp.monitors.SocketPlayerMonitor.remove_object()=mosp.monitors.SocketPlayerMonitor-class.html#remove_object"><a title="mosp.monitors.EmptyMonitor.remove_object
+mosp.monitors.SocketPlayerMonitor.remove_object" class="py-name" href="#" onclick="return doclink('link-33', 'remove_object', 'link-33');">remove_object</a></tt><tt class="py-op">(</tt><tt class="py-string">'point'</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">p_id</tt> <tt class="py-op">+</tt> <tt class="py-number">100</tt><tt class="py-op">)</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">routed</tt><tt class="py-op">:</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_random</tt><tt class="py-op">.</tt><tt class="py-name">random</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">&lt;</tt> <tt class="py-number">0.25</tt><tt class="py-op">:</tt>  </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">p_color_rgba</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> <tt class="py-op">-=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">routed</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="mosp.core.Person.next_target
+mosp_examples.statemachine_wiggler.WorkWiggler.next_target" class="py-name" href="#" onclick="return doclink('link-34', 'next_target', 'link-20');">next_target</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name"><a title="mosp_examples.poi_wiggler.PoiWiggler.next_target_routed
+mosp_examples.routing_wiggler.RoutingShowcaseWiggler.next_target_routed" class="py-name" href="#" onclick="return doclink('link-35', 'next_target_routed', 'link-21');">next_target_routed</a></tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="mosp.group.Message.sim" class="py-name" href="#" onclick="return doclink('link-36', 'sim', 'link-22');">sim</a></tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="mosp.monitors" class="py-name" href="#" onclick="return doclink('link-37', 'monitors', 'link-11');">monitors</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-38" class="py-name"><a title="mosp.monitors.EmptyMonitor.draw_point
+mosp.monitors.SocketPlayerMonitor.draw_point" class="py-name" href="#" onclick="return doclink('link-38', 'draw_point', 'link-26');">draw_point</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">p_id</tt> <tt class="py-op">+</tt> <tt class="py-number">100</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dest_node</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name"><a title="mosp.geo.osm.Node.lat" class="py-name" href="#" onclick="return doclink('link-39', 'lat', 'link-27');">lat</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dest_node</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name"><a title="mosp.geo.osm.Node.lon" class="py-name" href="#" onclick="return doclink('link-40', 'lon', 'link-28');">lon</a></tt><tt class="py-op">,</tt> <tt class="py-number">5</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">p_color_rgba</tt><tt class="py-op">,</tt> <tt class="py-name">ttl</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">need_next_target</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+</div><a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line"> </tt>
+<a name="RoutingShowcaseWiggler.next_target_random"></a><div id="RoutingShowcaseWiggler.next_target_random-def"><a name="L68"></a><tt class="py-lineno">68</tt> <a class="py-toggle" href="#" id="RoutingShowcaseWiggler.next_target_random-toggle" onclick="return toggle('RoutingShowcaseWiggler.next_target_random');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp_examples.routing_wiggler.RoutingShowcaseWiggler-class.html#next_target_random">next_target_random</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RoutingShowcaseWiggler.next_target_random-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="RoutingShowcaseWiggler.next_target_random-expanded"><a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">        <tt class="py-docstring">"""Wrapper for random movement.</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line"><tt class="py-docstring">        This is necessary to be able to exchange routing methods.</tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line">        <tt id="link-41" class="py-name"><a title="mosp.impl.movement" class="py-name" href="#" onclick="return doclink('link-41', 'movement', 'link-9');">movement</a></tt><tt class="py-op">.</tt><tt id="link-42" class="py-name" targets="Function mosp.impl.movement.person_next_target_random()=mosp.impl.movement-module.html#person_next_target_random"><a title="mosp.impl.movement.person_next_target_random" class="py-name" href="#" onclick="return doclink('link-42', 'person_next_target_random', 'link-42');">person_next_target_random</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line"> </tt>
+<a name="RoutingShowcaseWiggler.next_target_routed"></a><div id="RoutingShowcaseWiggler.next_target_routed-def"><a name="L75"></a><tt class="py-lineno">75</tt> <a class="py-toggle" href="#" id="RoutingShowcaseWiggler.next_target_routed-toggle" onclick="return toggle('RoutingShowcaseWiggler.next_target_routed');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp_examples.routing_wiggler.RoutingShowcaseWiggler-class.html#next_target_routed">next_target_routed</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RoutingShowcaseWiggler.next_target_routed-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="RoutingShowcaseWiggler.next_target_routed-expanded"><a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line">        <tt class="py-docstring">"""Find a new next_node to move to.</tt> </tt>
+<a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line"><tt class="py-docstring">        Person gets routed to it."""</tt> </tt>
+<a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">last_node</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">next_node</tt> </tt>
+<a name="L79"></a><tt class="py-lineno">79</tt>  <tt class="py-line">        <tt class="py-name">next</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">last_node</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name" targets="Method mosp.routing.RoutingNode.get_route()=mosp.routing.RoutingNode-class.html#get_route"><a title="mosp.routing.RoutingNode.get_route" class="py-name" href="#" onclick="return doclink('link-43', 'get_route', 'link-43');">get_route</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dest_node</tt><tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">next</tt><tt class="py-op">:</tt> </tt>
+<a name="L81"></a><tt class="py-lineno">81</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">dest_node</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">next_node</tt> </tt>
+<a name="L82"></a><tt class="py-lineno">82</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L83"></a><tt class="py-lineno">83</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">next_node</tt> <tt class="py-op">=</tt> <tt class="py-name">next</tt> </tt>
+</div></div><a name="L84"></a><tt class="py-lineno">84</tt>  <tt class="py-line"> </tt>
+<a name="L85"></a><tt class="py-lineno">85</tt>  <tt class="py-line"> </tt>
+<a name="main"></a><div id="main-def"><a name="L86"></a><tt class="py-lineno">86</tt> <a class="py-toggle" href="#" id="main-toggle" onclick="return toggle('main');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp_examples.routing_wiggler-module.html#main">main</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="main-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="main-expanded"><a name="L87"></a><tt class="py-lineno">87</tt>  <tt class="py-line">    <tt class="py-docstring">"""Defines the simulation, map, monitors, persons."""</tt> </tt>
+<a name="L88"></a><tt class="py-lineno">88</tt>  <tt class="py-line">    <tt class="py-name">s</tt> <tt class="py-op">=</tt> <tt id="link-44" class="py-name"><a title="mosp.core.Simulation" class="py-name" href="#" onclick="return doclink('link-44', 'Simulation', 'link-2');">Simulation</a></tt><tt class="py-op">(</tt><tt id="link-45" class="py-name"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-45', 'geo', 'link-5');">geo</a></tt><tt class="py-op">=</tt><tt id="link-46" class="py-name"><a title="mosp.geo.osm" class="py-name" href="#" onclick="return doclink('link-46', 'osm', 'link-6');">osm</a></tt><tt class="py-op">.</tt><tt id="link-47" class="py-name" targets="Class mosp.geo.osm.OSMModel=mosp.geo.osm.OSMModel-class.html"><a title="mosp.geo.osm.OSMModel" class="py-name" href="#" onclick="return doclink('link-47', 'OSMModel', 'link-47');">OSMModel</a></tt><tt class="py-op">(</tt><tt class="py-string">'../data/hannover1.osm'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">rel_speed</tt><tt class="py-op">=</tt><tt class="py-number">40</tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno">89</tt>  <tt class="py-line">    <tt class="py-name">m</tt> <tt class="py-op">=</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name" targets="Method mosp.core.Simulation.add_monitor()=mosp.core.Simulation-class.html#add_monitor"><a title="mosp.core.Simulation.add_monitor" class="py-name" href="#" onclick="return doclink('link-48', 'add_monitor', 'link-48');">add_monitor</a></tt><tt class="py-op">(</tt><tt id="link-49" class="py-name"><a title="mosp.monitors.SocketPlayerMonitor" class="py-name" href="#" onclick="return doclink('link-49', 'SocketPlayerMonitor', 'link-12');">SocketPlayerMonitor</a></tt><tt class="py-op">,</tt> <tt class="py-number">2</tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno">90</tt>  <tt class="py-line">    <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name" targets="Method mosp.core.Simulation.add_persons()=mosp.core.Simulation-class.html#add_persons"><a title="mosp.core.Simulation.add_persons" class="py-name" href="#" onclick="return doclink('link-50', 'add_persons', 'link-50');">add_persons</a></tt><tt class="py-op">(</tt><tt id="link-51" class="py-name" targets="Class mosp_examples.routing_wiggler.RoutingShowcaseWiggler=mosp_examples.routing_wiggler.RoutingShowcaseWiggler-class.html"><a title="mosp_examples.routing_wiggler.RoutingShowcaseWiggler" class="py-name" href="#" onclick="return doclink('link-51', 'RoutingShowcaseWiggler', 'link-51');">RoutingShowcaseWiggler</a></tt><tt class="py-op">,</tt> <tt class="py-number">2</tt><tt class="py-op">,</tt> <tt class="py-name">monitor</tt><tt class="py-op">=</tt><tt class="py-name">m</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno">91</tt>  <tt class="py-line">    <tt class="py-name">s</tt><tt class="py-op">.</tt><tt id="link-52" class="py-name" targets="Method mosp.controller.Controller.run()=mosp.controller.Controller-class.html#run,Method mosp.controller.SimulationControlled.run()=mosp.controller.SimulationControlled-class.html#run,Method mosp.core.Simulation.run()=mosp.core.Simulation-class.html#run,Method mosp_examples.statemachine_wiggler.SocketPlayerClock.run()=mosp_examples.statemachine_wiggler.SocketPlayerClock-class.html#run"><a title="mosp.controller.Controller.run
+mosp.controller.SimulationControlled.run
+mosp.core.Simulation.run
+mosp_examples.statemachine_wiggler.SocketPlayerClock.run" class="py-name" href="#" onclick="return doclink('link-52', 'run', 'link-52');">run</a></tt><tt class="py-op">(</tt><tt class="py-name">until</tt><tt class="py-op">=</tt><tt class="py-number">10000</tt><tt class="py-op">,</tt> <tt class="py-name">real_time</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L92"></a><tt class="py-lineno">92</tt>  <tt class="py-line"> </tt>
+<a name="L93"></a><tt class="py-lineno">93</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">'__main__'</tt><tt class="py-op">:</tt> </tt>
+<a name="L94"></a><tt class="py-lineno">94</tt>  <tt class="py-line">    <tt id="link-53" class="py-name" targets="Method mosp.gui.playerChamplain.Player.main()=mosp.gui.playerChamplain.Player-class.html#main,Function mosp_examples.BTvirus_wiggler.main()=mosp_examples.BTvirus_wiggler-module.html#main,Function mosp_examples.action_wiggler.main()=mosp_examples.action_wiggler-module.html#main,Function mosp_examples.exit_wiggler.main()=mosp_examples.exit_wiggler-module.html#main,Function mosp_examples.external_controlled_random_wiggler.main()=mosp_examples.external_controlled_random_wiggler-module.html#main,Function mosp_examples.message_example.main()=mosp_examples.message_example-module.html#main,Function mosp_examples.passivate_wiggler.main()=mosp_examples.passivate_wiggler-module.html#main,Function mosp_examples.pause_wiggler.main()=mosp_examples.pause_wiggler-module.html#main,Function mosp_examples.poi_act_wiggler.main()=mosp_examples.poi_act_wiggler-module.html#main,Function mosp_examples.poi_wiggler.main()=mosp_examples.poi_wiggler-module.html#main,Function mosp_examples.random_wiggler.main()=mosp_examples.random_wiggler-module.html#main,Function mosp_examples.roadwidth_wiggler.main()=mosp_examples.roadwidth_wiggler-module.html#main,Function mosp_examples.routing_wiggler.main()=mosp_examples.routing_wiggler-module.html#main,Function mosp_examples.socketplayer_demo_wiggler.main()=mosp_examples.socketplayer_demo_wiggler-module.html#main,Function mosp_examples.statemachine_wiggler.main()=mosp_examples.statemachine_wiggler-module.html#main,Function mosp_examples.zombie_wiggler.main()=mosp_examples.zombie_wiggler-module.html#main,Function mosp_tools.analyze_map.main()=mosp_tools.analyze_map-module.html#main,Method mosp_tools.node_finder.Finder.main()=mosp_tools.node_finder.Finder-class.html#main,Function mosp_tools.node_finder.main()=mosp_tools.node_finder-module.html#main,Function mosp_tools.profile_wiggler.main()=mosp_tools.profile_wiggler-module.html#main"><a title="mosp.gui.playerChamplain.Player.main
+mosp_examples.BTvirus_wiggler.main
+mosp_examples.action_wiggler.main
+mosp_examples.exit_wiggler.main
+mosp_examples.external_controlled_random_wiggler.main
+mosp_examples.message_example.main
+mosp_examples.passivate_wiggler.main
+mosp_examples.pause_wiggler.main
+mosp_examples.poi_act_wiggler.main
+mosp_examples.poi_wiggler.main
+mosp_examples.random_wiggler.main
+mosp_examples.roadwidth_wiggler.main
+mosp_examples.routing_wiggler.main
+mosp_examples.socketplayer_demo_wiggler.main
+mosp_examples.statemachine_wiggler.main
+mosp_examples.zombie_wiggler.main
+mosp_tools.analyze_map.main
+mosp_tools.node_finder.Finder.main
+mosp_tools.node_finder.main
+mosp_tools.profile_wiggler.main" class="py-name" href="#" onclick="return doclink('link-53', 'main', 'link-53');">main</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L95"></a><tt class="py-lineno">95</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:34 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

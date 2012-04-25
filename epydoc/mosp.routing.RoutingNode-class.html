@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>mosp.routing.RoutingNode</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="mosp-module.html">Package&nbsp;mosp</a> ::
+        <a href="mosp.routing-module.html">Module&nbsp;routing</a> ::
+        Class&nbsp;RoutingNode
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="mosp.routing.RoutingNode-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class RoutingNode</h1><p class="nomargin-top"><span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_mosp_rou" name="uml_class_diagram_for_mosp_rou">
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#id" title="RoutingNode id" alt="" coords="17,31,189,49"/>
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#n" title="list of sorted neighbor keys = mapping of route_next ids (0..254) to &#160;mosp &#160;nodes (any id)" alt="" coords="17,49,189,68"/>
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#neighbors" title="dict of neighbor RoutingNodes of this RoutingNode, keys=RoutingNode, &#160;values=its distance" alt="" coords="17,68,189,87"/>
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#todo" title="todo list for routing table calculation" alt="" coords="17,87,189,105"/>
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#ways" title="dict of ways the RoutingNode is connect with" alt="" coords="17,105,189,124"/>
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#worldobject" title="Stores a Location or other real world objects at this road network &#160;node/place, e.g used for act_at_node()" alt="" coords="17,124,189,143"/>
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#__cmp__" title="Compares two RoutingNodes by their id." alt="" coords="17,145,189,164"/>
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#__init__" title="Inits the RoutingNode." alt="" coords="17,164,189,183"/>
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#__repr__" title="String respresentation of RoutingNode." alt="" coords="17,183,189,201"/>
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#cleanup" title="Clears RoutingNode&#39;s route_dist and neighbors" alt="" coords="17,201,189,220"/>
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#get_route" title="Returns the next RoutingNode on the route from this routingNode to &lt;node&gt;" alt="" coords="17,220,189,239"/>
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#get_route_dist" title="Returns the next RoutingNode and distance to it on the route from this &#160;routingNode to &lt;node&gt;" alt="" coords="17,239,189,257"/>
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#get_routes" title="Yields all distances from this RoutingNode to all nodes as 2&#45;tuples &lt;n, &#160;distance&gt;." alt="" coords="17,257,189,276"/>
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#on_visit" title="What has to be done when a Person visits this node in simulation?" alt="" coords="17,276,189,295"/>
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#set_route" title="Sets value of route_next (&lt;next&gt;) and route_dist (&lt;dist&gt;) for route from &#160;this RoutingNode to &lt;to&gt;" alt="" coords="17,295,189,313"/>
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#setup" title="Set up arrays route_next and route_dist with default values" alt="" coords="17,313,189,332"/>
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#setup2" title="Feed arrays route_next and route_dist with routing information to direct &#160;neighbors." alt="" coords="17,332,189,351"/>
+<area shape="rect" id="node144" href="mosp.routing.RoutingNode-class.html#update" title="Calculate some routing data for all RoutingNodes in self.todo." alt="" coords="17,351,189,369"/>
+<area shape="rect" id="node1" href="mosp.routing.RoutingNode-class.html" title="A routing node." alt="" coords="5,6,200,375"/>
+<area shape="rect" id="node2" href="mosp.geo.osm.Node-class.html" title="A geo&#45;model node." alt="" coords="44,395,164,434"/>
+</map>
+  <img src="uml_class_diagram_for_mosp_rou.png" alt='' usemap="#uml_class_diagram_for_mosp_rou" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>A routing node.</p>
+
+<hr />
+<div class="fields">      <p><strong>Author:</strong>
+        F. Ludwig
+      </p>
+</div><!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__cmp__"></a><span class="summary-sig-name">__cmp__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">o</span>)</span><br />
+      Compares two RoutingNodes by their id.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.__cmp__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.routing.RoutingNode-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">id</span>)</span><br />
+      Inits the RoutingNode.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.routing.RoutingNode-class.html#__repr__" class="summary-sig-name">__repr__</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      String respresentation of RoutingNode.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.__repr__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="cleanup"></a><span class="summary-sig-name">cleanup</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Clears RoutingNode's route_dist and neighbors</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.cleanup">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">RoutingNode</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.routing.RoutingNode-class.html#get_route" class="summary-sig-name">get_route</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">node</span>)</span><br />
+      Returns the next RoutingNode on the route from this routingNode to 
+      &lt;node&gt;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.get_route">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">[RoutingNode, float]</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.routing.RoutingNode-class.html#get_route_dist" class="summary-sig-name">get_route_dist</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">node</span>)</span><br />
+      Returns the next RoutingNode and distance to it on the route from 
+      this routingNode to &lt;node&gt;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.get_route_dist">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_routes"></a><span class="summary-sig-name">get_routes</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Yields all distances from this RoutingNode to all nodes as 2-tuples 
+      &lt;n, distance&gt;.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.get_routes">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.routing.RoutingNode-class.html#on_visit" class="summary-sig-name">on_visit</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">visitor</span>)</span><br />
+      What has to be done when a Person visits this node in simulation?</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.on_visit">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.routing.RoutingNode-class.html#set_route" class="summary-sig-name">set_route</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">to</span>,
+        <span class="summary-sig-arg">next</span>,
+        <span class="summary-sig-arg">dist</span>)</span><br />
+      Sets value of route_next (&lt;next&gt;) and route_dist (&lt;dist&gt;)
+      for route from this RoutingNode to &lt;to&gt;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.set_route">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.routing.RoutingNode-class.html#setup" class="summary-sig-name">setup</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">nodes_num</span>)</span><br />
+      Set up arrays route_next and route_dist with default values</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.setup">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.routing.RoutingNode-class.html#setup2" class="summary-sig-name">setup2</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">nodes_num</span>)</span><br />
+      Feed arrays route_next and route_dist with routing information to 
+      direct neighbors.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.setup2">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Boolean</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.routing.RoutingNode-class.html#update" class="summary-sig-name">update</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">nodes_num</span>)</span><br />
+      Calculate some routing data for all RoutingNodes in self.todo.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.update">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="id"></a><span class="summary-name">id</span><br />
+      RoutingNode id
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="n"></a><span class="summary-name">n</span><br />
+      list of sorted neighbor keys = mapping of route_next ids (0..254) to
+      mosp nodes (any id)
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="neighbors"></a><span class="summary-name">neighbors</span><br />
+      dict of neighbor RoutingNodes of this RoutingNode, keys=RoutingNode, 
+      values=its distance
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="todo"></a><span class="summary-name">todo</span><br />
+      todo list for routing table calculation
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="ways"></a><span class="summary-name">ways</span><br />
+      dict of ways the RoutingNode is connect with
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="worldobject"></a><span class="summary-name">worldobject</span><br />
+      Stores a Location or other real world objects at this road network 
+      node/place, e.g used for act_at_node()
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">id</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Inits the RoutingNode.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__repr__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__repr__</span>(<span class="sig-arg">self</span>)</span>
+    <br /><em class="fname">(Representation operator)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.__repr__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>String respresentation of RoutingNode.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__repr__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_route"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_route</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.get_route">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the next RoutingNode on the route from this routingNode to 
+  &lt;node&gt;</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> - destination node</li>
+    </ul></dd>
+    <dt>Returns: RoutingNode</dt>
+        <dd>next RoutingNode on route</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_route_dist"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_route_dist</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.get_route_dist">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the next RoutingNode and distance to it on the route from this
+  routingNode to &lt;node&gt;</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> - destination node</li>
+    </ul></dd>
+    <dt>Returns: [RoutingNode, float]</dt>
+        <dd>2-tupel list &lt;next RoutingNode, distance&gt;</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="on_visit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">on_visit</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">visitor</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.on_visit">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>What has to be done when a Person visits this node in simulation?</p>
+  <p>Must be overwritten in simulation implementation to make it come 
+  alive.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>visitor</code></strong> - visiting Person</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="set_route"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">set_route</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">to</span>,
+        <span class="sig-arg">next</span>,
+        <span class="sig-arg">dist</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.set_route">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets value of route_next (&lt;next&gt;) and route_dist (&lt;dist&gt;) 
+  for route from this RoutingNode to &lt;to&gt;</p>
+  <p>Updates a routing table entry within table calculation, also marks 
+  destination as dirty for recalculation.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="setup"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setup</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">nodes_num</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.setup">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Set up arrays route_next and route_dist with default values</p>
+  <ul>
+    <li>
+      route_dist default = 0.
+    </li>
+    <li>
+      route_next default = max_int = 255: a RoutingNode should never have 
+      255 neighbors! for performace (mem usage) reasons we store id of the 
+      x-th sorted neighbor instead of the mosp wide node id.
+    </li>
+  </ul>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>nodes_num</code></strong> - number of way nodes</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setup2"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setup2</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">nodes_num</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.setup2">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Feed arrays route_next and route_dist with routing information to 
+  direct neighbors.</p>
+  <p>self is source, for all neighbors as destination: 
+  self.set_route(neighborX, via itself (neighborX), distance)</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>nodes_num</code></strong> - number of way nodes</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="update"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">update</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">nodes_num</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.routing-pysrc.html#RoutingNode.update">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculate some routing data for all RoutingNodes in self.todo.</p>
+  <p>For any node X in todo: set distance from any of my neighbor to X as 
+  the sum of the distance from my neighbor to me plus the distance from me 
+  to X. Finally: empty todo list.</p>
+  <dl class="fields">
+    <dt>Returns: Boolean</dt>
+        <dd>self.todo has not been empty?</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:29 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

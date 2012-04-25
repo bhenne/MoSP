@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>mosp.core.DateTime</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="mosp-module.html">Package&nbsp;mosp</a> ::
+        <a href="mosp.core-module.html">Module&nbsp;core</a> ::
+        Class&nbsp;DateTime
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="mosp.core.DateTime-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class DateTime</h1><p class="nomargin-top"><span class="codelink"><a href="mosp.core-pysrc.html#DateTime">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_mosp_cor" name="uml_class_diagram_for_mosp_cor">
+<area shape="rect" id="node41" href="mosp.core.DateTime-class.html#fromtick" title="Returns a DateTime object representing simulation time." alt="" coords="17,780,159,799"/>
+<area shape="rect" id="node1" href="mosp.core.DateTime-class.html" title="Simulation DateTime extension." alt="" coords="5,747,171,805"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="datetime.datetime.hour" alt="" coords="28,289,148,308"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="datetime.datetime.max" alt="" coords="28,308,148,327"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="datetime.datetime.microsecond" alt="" coords="28,327,148,345"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="datetime.datetime.min" alt="" coords="28,345,148,364"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="datetime.datetime.minute" alt="" coords="28,364,148,383"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="datetime.datetime.resolution" alt="" coords="28,383,148,401"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="datetime.datetime.second" alt="" coords="28,401,148,420"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="datetime.datetime.tzinfo" alt="" coords="28,420,148,439"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="x+y" alt="" coords="28,441,148,460"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="x==y" alt="" coords="28,460,148,479"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="x&gt;=y" alt="" coords="28,479,148,497"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="x.__getattribute__(&#39;name&#39;) &lt;==&gt; x.name" alt="" coords="28,497,148,516"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="x&gt;y" alt="" coords="28,516,148,535"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="hash(x)" alt="" coords="28,535,148,553"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="x&lt;=y" alt="" coords="28,553,148,572"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="x&lt;y" alt="" coords="28,572,148,591"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="x!=y" alt="" coords="28,591,148,609"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="datetime.datetime.__new__" alt="" coords="28,609,148,628"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="y+x" alt="" coords="28,628,148,647"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="helper for pickle" alt="" coords="28,647,148,665"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="repr(x)" alt="" coords="28,665,148,684"/>
+<area shape="rect" id="node42" href="javascript:void(0);" title="Return UTC time tuple, compatible with time.localtime()." alt="" coords="28,703,148,721"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="datetime(year, month, day[, hour[, minute[, second[, microsecond[,tzinfo]]]]])" alt="" coords="16,265,160,727"/>
+<area shape="rect" id="node43" href="javascript:void(0);" title="datetime.date.day" alt="" coords="40,31,136,49"/>
+<area shape="rect" id="node43" href="javascript:void(0);" title="datetime.date.month" alt="" coords="40,49,136,68"/>
+<area shape="rect" id="node43" href="javascript:void(0);" title="datetime.date.year" alt="" coords="40,68,136,87"/>
+<area shape="rect" id="node43" href="javascript:void(0);" title="Formats self with strftime." alt="" coords="40,89,136,108"/>
+<area shape="rect" id="node43" href="javascript:void(0);" title="int &#45;&gt; date corresponding to a proleptic Gregorian ordinal." alt="" coords="40,108,136,127"/>
+<area shape="rect" id="node43" href="javascript:void(0);" title="Return a 3&#45;tuple containing ISO year, week number, and weekday." alt="" coords="40,127,136,145"/>
+<area shape="rect" id="node43" href="javascript:void(0);" title="Return the day of the week represented by the date." alt="" coords="40,145,136,164"/>
+<area shape="rect" id="node43" href="javascript:void(0);" title="format &#45;&gt; strftime() style string." alt="" coords="40,164,136,183"/>
+<area shape="rect" id="node43" href="javascript:void(0);" title="Current date or datetime: &#160;same as &#160;self.__class__.fromtimestamp(time.time())." alt="" coords="40,183,136,201"/>
+<area shape="rect" id="node43" href="javascript:void(0);" title="Return proleptic Gregorian ordinal." alt="" coords="40,201,136,220"/>
+<area shape="rect" id="node43" href="javascript:void(0);" title="Return the day of the week represented by the date." alt="" coords="40,220,136,239"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="date(year, month, day) &#45;&#45;&gt; date object" alt="" coords="28,6,148,245"/>
+</map>
+  <img src="uml_class_diagram_for_mosp_cor.png" alt='' usemap="#uml_class_diagram_for_mosp_cor" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Simulation DateTime extension.</p>
+
+<hr />
+<div class="fields">      <p><strong>Author:</strong>
+        F. Ludwig
+      </p>
+</div><!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>datetime.datetime</code></b>:
+      <code>__add__</code>,
+      <code>__eq__</code>,
+      <code>__ge__</code>,
+      <code>__getattribute__</code>,
+      <code>__gt__</code>,
+      <code>__hash__</code>,
+      <code>__le__</code>,
+      <code>__lt__</code>,
+      <code>__ne__</code>,
+      <code>__new__</code>,
+      <code>__radd__</code>,
+      <code>__reduce__</code>,
+      <code>__repr__</code>,
+      <code>__rsub__</code>,
+      <code>__str__</code>,
+      <code>__sub__</code>,
+      <code>astimezone</code>,
+      <code>combine</code>,
+      <code>ctime</code>,
+      <code>date</code>,
+      <code>dst</code>,
+      <code>fromtimestamp</code>,
+      <code>isoformat</code>,
+      <code>now</code>,
+      <code>replace</code>,
+      <code>strptime</code>,
+      <code>time</code>,
+      <code>timetuple</code>,
+      <code>timetz</code>,
+      <code>tzname</code>,
+      <code>utcfromtimestamp</code>,
+      <code>utcnow</code>,
+      <code>utcoffset</code>,
+      <code>utctimetuple</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>datetime.date</code></b>:
+      <code>__format__</code>,
+      <code>fromordinal</code>,
+      <code>isocalendar</code>,
+      <code>isoweekday</code>,
+      <code>strftime</code>,
+      <code>today</code>,
+      <code>toordinal</code>,
+      <code>weekday</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__init__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS METHODS ==================== -->
+<a name="section-ClassMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.core.DateTime-class.html#fromtick" class="summary-sig-name">fromtick</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">sim</span>,
+        <span class="summary-sig-arg">tick</span>)</span><br />
+      Returns a DateTime object representing simulation time.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.core-pysrc.html#DateTime.fromtick">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>datetime.datetime</code></b>:
+      <code>max</code>,
+      <code>min</code>,
+      <code>resolution</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>datetime.datetime</code></b>:
+      <code>hour</code>,
+      <code>microsecond</code>,
+      <code>minute</code>,
+      <code>second</code>,
+      <code>tzinfo</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>datetime.date</code></b>:
+      <code>day</code>,
+      <code>month</code>,
+      <code>year</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="fromtick"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">fromtick</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">sim</span>,
+        <span class="sig-arg">tick</span>)</span>
+    <br /><em class="fname">Class Method</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.core-pysrc.html#DateTime.fromtick">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a DateTime object representing simulation time.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>DateTime object with time as 
+          sim.start_timestamp+tick/sim_rel_speed</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:27 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
