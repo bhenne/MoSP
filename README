@@ -15,12 +15,12 @@ mobile security and privacy issues as well as corresponding solutions.
 
 == Contents ==
 
- data				example and test maps
- doc				code documentation (currently epydoc)
- mosp				Python code of the MoSP simulator
- mosp_examples		example simulations showing features of the simulator
- mosp_tools			tools for map and simulator stuff
- viewer				pyglet based simulation viewer
+ data               example and test maps
+ doc                code documentation (currently epydoc)
+ mosp               Python code of the MoSP simulator
+ mosp_examples      example simulations showing features of the simulator
+ mosp_tools         tools for map and simulator stuff
+ viewer             pyglet based simulation viewer
 
 
 == Dependencies ==
@@ -31,6 +31,7 @@ mobile security and privacy issues as well as corresponding solutions.
  
  * epydoc for api doc generation
  * pyglet for the sim_viewer
+ * urllib3 for the sim_viewer
  * libchamplain with python bindings for deprecated playerChamplain
 
 

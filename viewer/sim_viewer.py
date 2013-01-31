@@ -16,7 +16,6 @@ import struct
 import math
 
 import socket
-import asyncore
 
 import pyglet
 # Disable error checking for increased performance
@@ -25,7 +24,7 @@ from pyglet import gl
 from pyglet.window import key, mouse
 
 from lib import tilenames as tiles
-from lib.tileloader import TileLoader
+from lib.tileloader2 import TileLoader
 from lib.calculations import *
 
 __author__ = "P. Tute"
@@ -88,7 +87,7 @@ class SimViewer(pyglet.window.Window):
     
     """
 
-    def __init__(self, lat=0, lon=0, zoom=16, host='localhost', port=60001, **kwargs):
+    def __init__(self, lat=0, lon=0, zoom=15, host='localhost', port=60001, **kwargs):
         """Initialize the viewer.
 
         @param lat: Latitude to center view on (default 0).
@@ -181,6 +180,7 @@ class SimViewer(pyglet.window.Window):
         
         self.tiles = {}
         self.tiles_used = {}
+        self.tileloader = TileLoader(tile_list=self.tiles, cache_dir=self.cache_dir)
 
         # batched drawing to increase performance
         self.drawing_batch = pyglet.graphics.Batch()
@@ -242,7 +242,8 @@ class SimViewer(pyglet.window.Window):
             self.socket.connect((self.host, self.port))
             print 'connected'
         except socket.error as (errno, message):
-            if errno == 115:
+            if errno == 115:    # Linux
+            #if errno == 36:    # OS X
                 # [Errno 115] Operation now in progress
                 # ... since we use non-blocking sockets
                 # this exception is not needed
@@ -254,7 +255,7 @@ class SimViewer(pyglet.window.Window):
 
         pyglet.clock.schedule_interval(self.receive, 1/30.0)
         pyglet.clock.schedule_interval(self.on_draw, 1/60.0)
-        pyglet.clock.schedule_interval(self.asyncloop, 0.5)
+        pyglet.clock.schedule_interval(self.reload_tiles, 0.5)
 
     def receive(self, dt):
         """Receive data from a given port and parse it to create drawable objects.
@@ -648,21 +649,16 @@ class SimViewer(pyglet.window.Window):
                 else:
                     self.heatmap_quad_coords_offset.append(coord + self.offset_y + self.drawing_offset)
 
-    def asyncloop(self, dt):
-        """Iterate through all open syncore sockets.
-        
-        This has to be a method so it can be scheduled. It has no other use.
-        
-        """
+    def reload_tiles(self, dt):
+        """Loads newly downloaded tiles from file""" 
 
-        if asyncore.socket_map:
-            asyncore.loop(count=1)
+        self.tileloader.load_images()
 
     def get_image(self, x, y, z, layer='mapnik'):
         """Load an image from the cache folder or download it.
 
         Try to load from cache-folder first, download and cache if no image was found.
-        The image is placed in self.tiles by this method or by the TileLoader after downloading.
+        The image is placed in self.tiles by this method or by the TileLoader.load_images() after downloading.
 
         @param x: OSM-tile number in x-direction
         @type x: int
@@ -680,8 +676,7 @@ class SimViewer(pyglet.window.Window):
 
         if not os.path.exists(os.path.join(self.cache_dir, *parts)):
             # Image is not cached yet. Create necessary folders and download image."
-            tl = TileLoader(self, x, y, z, layer)
-            asyncore.loop(count=1)
+            self.tileloader.enqueue_tile(x, y, z, layer)
             return
         # Image is cached. Try to load it.
         try:
@@ -770,6 +765,7 @@ class SimViewer(pyglet.window.Window):
 
         """
 
+        self.tileloader.load_images()
         self.clear()
         # draw tiles
         for coord in self.tiles_used:
