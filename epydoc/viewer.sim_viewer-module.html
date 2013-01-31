@@ -136,7 +136,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="__maintainer__"></a><span class="summary-name">__maintainer__</span> = <code title="'B. Henne'"><code class="variable-quote">'</code><code class="variable-string">B. Henne</code><code class="variable-quote">'</code></code>
+        <a name="__maintainer__"></a><span class="summary-name">__maintainer__</span> = <code title="&quot;B. Henne&quot;">&quot;B. Henne&quot;</code>
     </td>
   </tr>
 <tr>
@@ -159,15 +159,10 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="viewer.sim_viewer-module.html#MESSAGE_TYPES" class="summary-name">MESSAGE_TYPES</a> = <code title="{'\x00': 'coords',
- '\x01': 'point',
- '\x02': 'rectangle',
- '\x03': 'circle',
- '\x04': 'triangle',
- '\x05': 'text',
- '\x06': 'heatmap',
- '\x07': 'direct-text',
-..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">\x00</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">coords</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\x01</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">point</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\x02</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">r</code><code class="variable-ellipsis">...</code></code><br />
+        <a href="viewer.sim_viewer-module.html#MESSAGE_TYPES" class="summary-name">MESSAGE_TYPES</a> = <code title="{'\x00': 'coords', '\x01': 'point', '\x02': 'rectangle', '\x03': 'circ\
+le', '\x04': 'triangle', '\x05': 'text', '\x06': 'heatmap', '\x07': 'd\
+irect-text', '\xFD': 'delete', '\xFE': 'draw', '\xFF': 'simulation_end\
+ed',}">{'\x00': 'coords', '\x01': 'point', '\x02': 'r<code class="variable-ellipsis">...</code></code><br />
       Supported message types for lookup after receiving an identifier.
     </td>
   </tr>
@@ -175,15 +170,11 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="viewer.sim_viewer-module.html#MESSAGE_SIZE" class="summary-name">MESSAGE_SIZE</a> = <code title="{'\x00': 16,
- '\x01': 64,
- '\x02': 81,
- '\x03': 65,
- '\x04': 93,
- '\x05': 76,
- '\x06': 52,
- '\x07': 60,
-..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">\x00</code><code class="variable-quote">'</code><code class="variable-op">: </code>16<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\x01</code><code class="variable-quote">'</code><code class="variable-op">: </code>64<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\x02</code><code class="variable-quote">'</code><code class="variable-op">: </code>81<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\x03</code><code class="variable-quote">'</code><code class="variable-op">: </code>65<code class="variable-ellipsis">...</code></code><br />
+        <a href="viewer.sim_viewer-module.html#MESSAGE_SIZE" class="summary-name">MESSAGE_SIZE</a> = <code title="{'\x00': struct.calcsize('!dd'), '\x01': struct.calcsize('!iddi4dd'), \
+'\x02': struct.calcsize('!i4di?4dd'), '\x03': struct.calcsize('!iddi?4\
+dd'), '\x04': struct.calcsize('!i2d2d2d?4dd'), '\x05': struct.calcsize\
+('!iddiii4did'), '\x06': struct.calcsize('!ddi4d'), '\x07': struct.cal\
+csize('!iiii4did'), '\xFD': struct.calcsize('!i'),}">{'\x00': struct.calcsize('!dd'), '\x01': struct<code class="variable-ellipsis">...</code></code><br />
       The precalculated size of commonly used structs.
     </td>
   </tr>
@@ -191,12 +182,8 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="viewer.sim_viewer-module.html#ID_TYPE_PREFIX" class="summary-name">ID_TYPE_PREFIX</a> = <code title="{'\x00': 0,
- '\x01': 0,
- '\x02': 100000,
- '\x03': 200000,
- '\x04': 300000,
- '\x05': 0}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">\x00</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\x01</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\x02</code><code class="variable-quote">'</code><code class="variable-op">: </code>100000<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">\x03</code><code class="variable-quote">'</code><code class="variable-ellipsis">...</code></code><br />
+        <a href="viewer.sim_viewer-module.html#ID_TYPE_PREFIX" class="summary-name">ID_TYPE_PREFIX</a> = <code title="{'\x00': 0, '\x01': 0, '\x02': 100000, '\x03': 200000, '\x04': 300000,\
+ '\x05': 0,}">{'\x00': 0, '\x01': 0, '\x02': 100000, '\x03'<code class="variable-ellipsis">...</code></code><br />
       These values will be added to the IDs of the respecting object.
     </td>
   </tr>
@@ -204,45 +191,9 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="viewer.sim_viewer-module.html#PIXEL_DISTANCE" class="summary-name">PIXEL_DISTANCE</a> = <code title="{0: 1.40625,
- 1: 0.703125,
- 2: 0.3515625,
- 3: 0.17578125,
- 4: 0.087890625,
- 5: 0.0439453125,
- 6: 0.02197265625,
- 7: 0.010986328125,
-..."><code class="variable-group">{</code>0<code class="variable-op">: </code>1.40625<code class="variable-op">, </code>1<code class="variable-op">: </code>0.703125<code class="variable-op">, </code>2<code class="variable-op">: </code>0.3515625<code class="variable-op">, </code>3<code class="variable-op">: </code>0.<code class="variable-ellipsis">...</code></code><br />
+        <a name="PIXEL_DISTANCE"></a><span class="summary-name">PIXEL_DISTANCE</span> = <code title="{}">{}</code><br />
       precalculate lat/lon distance when moving one pixel for each 
       zoom-level
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'viewer'"><code class="variable-quote">'</code><code class="variable-string">viewer</code><code class="variable-quote">'</code></code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="i"></a><span class="summary-name">i</span> = <code title="18">18</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="left"></a><span class="summary-name">left</span> = <code title="-180.0">-180.0</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="right"></a><span class="summary-name">right</span> = <code title="-179.998626709">-179.998626709</code>
     </td>
   </tr>
 </table>
@@ -295,15 +246,10 @@
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">\x00</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">coords</code><code class="variable-quote">'</code><code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x01</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">point</code><code class="variable-quote">'</code><code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x02</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">rectangle</code><code class="variable-quote">'</code><code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x03</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">circle</code><code class="variable-quote">'</code><code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x04</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">triangle</code><code class="variable-quote">'</code><code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x05</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">text</code><code class="variable-quote">'</code><code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x06</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">heatmap</code><code class="variable-quote">'</code><code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x07</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">direct-text</code><code class="variable-quote">'</code><code class="variable-op">,</code>
-<code class="variable-ellipsis">...</code>
+{'\x00': 'coords', '\x01': 'point', '\x02': 'rectangle', '\x03': 'circ<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+le', '\x04': 'triangle', '\x05': 'text', '\x06': 'heatmap', '\x07': 'd<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+irect-text', '\xFD': 'delete', '\xFE': 'draw', '\xFF': 'simulation_end<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ed',}
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -321,15 +267,11 @@
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">\x00</code><code class="variable-quote">'</code><code class="variable-op">: </code>16<code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x01</code><code class="variable-quote">'</code><code class="variable-op">: </code>64<code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x02</code><code class="variable-quote">'</code><code class="variable-op">: </code>81<code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x03</code><code class="variable-quote">'</code><code class="variable-op">: </code>65<code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x04</code><code class="variable-quote">'</code><code class="variable-op">: </code>93<code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x05</code><code class="variable-quote">'</code><code class="variable-op">: </code>76<code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x06</code><code class="variable-quote">'</code><code class="variable-op">: </code>52<code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x07</code><code class="variable-quote">'</code><code class="variable-op">: </code>60<code class="variable-op">,</code>
-<code class="variable-ellipsis">...</code>
+{'\x00': struct.calcsize('!dd'), '\x01': struct.calcsize('!iddi4dd'), <span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+'\x02': struct.calcsize('!i4di?4dd'), '\x03': struct.calcsize('!iddi?4<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+dd'), '\x04': struct.calcsize('!i2d2d2d?4dd'), '\x05': struct.calcsize<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+('!iddiii4did'), '\x06': struct.calcsize('!ddi4d'), '\x07': struct.cal<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+csize('!iiii4did'), '\xFD': struct.calcsize('!i'),}
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -349,39 +291,8 @@
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">\x00</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x01</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x02</code><code class="variable-quote">'</code><code class="variable-op">: </code>100000<code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x03</code><code class="variable-quote">'</code><code class="variable-op">: </code>200000<code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x04</code><code class="variable-quote">'</code><code class="variable-op">: </code>300000<code class="variable-op">,</code>
- <code class="variable-quote">'</code><code class="variable-string">\x05</code><code class="variable-quote">'</code><code class="variable-op">: </code>0<code class="variable-group">}</code>
-</pre></td></tr></table>
-</dd>
-  </dl>
-</td></tr></table>
-</div>
-<a name="PIXEL_DISTANCE"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <h3 class="epydoc">PIXEL_DISTANCE</h3>
-  <p>precalculate lat/lon distance when moving one pixel for each 
-  zoom-level</p>
-  <dl class="fields">
-  </dl>
-  <dl class="fields">
-    <dt>Value:</dt>
-      <dd><table><tr><td><pre class="variable">
-<code class="variable-group">{</code>0<code class="variable-op">: </code>1.40625<code class="variable-op">,</code>
- 1<code class="variable-op">: </code>0.703125<code class="variable-op">,</code>
- 2<code class="variable-op">: </code>0.3515625<code class="variable-op">,</code>
- 3<code class="variable-op">: </code>0.17578125<code class="variable-op">,</code>
- 4<code class="variable-op">: </code>0.087890625<code class="variable-op">,</code>
- 5<code class="variable-op">: </code>0.0439453125<code class="variable-op">,</code>
- 6<code class="variable-op">: </code>0.02197265625<code class="variable-op">,</code>
- 7<code class="variable-op">: </code>0.010986328125<code class="variable-op">,</code>
-<code class="variable-ellipsis">...</code>
+{'\x00': 0, '\x01': 0, '\x02': 100000, '\x03': 200000, '\x04': 300000,<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ '\x05': 0,}
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -416,7 +327,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:26 2012
+    Generated by Epydoc 3.0.1 on Thu Jan 31 14:51:13 2013
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

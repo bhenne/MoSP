@@ -3,7 +3,7 @@
           "DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>viewer.lib.tileloader</title>
+  <title>viewer.lib.tileloader2</title>
   <link rel="stylesheet" href="epydoc.css" type="text/css" />
   <script type="text/javascript" src="epydoc.js"></script>
 </head>
@@ -41,7 +41,7 @@
       <span class="breadcrumbs">
         <a href="viewer-module.html">Package&nbsp;viewer</a> ::
         <a href="viewer.lib-module.html">Package&nbsp;lib</a> ::
-        Module&nbsp;tileloader
+        Module&nbsp;tileloader2
       </span>
     </td>
     <td>
@@ -51,25 +51,25 @@
     onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
         <tr><td align="right"><span class="options"
             >[<a href="frames.html" target="_top">frames</a
-            >]&nbsp;|&nbsp;<a href="viewer.lib.tileloader-module.html"
+            >]&nbsp;|&nbsp;<a href="viewer.lib.tileloader2-module.html"
             target="_top">no&nbsp;frames</a>]</span></td></tr>
       </table>
     </td>
   </tr>
 </table>
 <!-- ==================== MODULE DESCRIPTION ==================== -->
-<h1 class="epydoc">Module tileloader</h1><p class="nomargin-top"><span class="codelink"><a href="viewer.lib.tileloader-pysrc.html">source&nbsp;code</a></span></p>
-<p>Loads OSM tiles from the Web</p>
+<h1 class="epydoc">Module tileloader2</h1><p class="nomargin-top"><span class="codelink"><a href="viewer.lib.tileloader2-pysrc.html">source&nbsp;code</a></span></p>
+<p>Loads OSM tiles from the Web using threading and urllib3</p>
 
 <hr />
 <div class="fields">      <p><strong>Author:</strong>
-        P. Tute
+        B. Henne
       </p>
       <p><strong>Contact:</strong>
         henne@dcsec.uni-hannover.de
       </p>
       <p><strong>Copyright:</strong>
-        (c) 2011, DCSec, Leibniz Universitaet Hannover, Germany
+        (c) 2012, DCSec, Leibniz Universitaet Hannover, Germany
       </p>
       <p><strong>License:</strong>
         GPLv3
@@ -95,9 +95,42 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="viewer.lib.tileloader.TileLoader-class.html" class="summary-name">TileLoader</a><br />
-      This class uses asynchttp to download OSM-tiles in an asynchronous 
-      manner.
+        <a href="viewer.lib.tileloader2.TileLoader-class.html" class="summary-name">TileLoader</a><br />
+      A tile downloader using threads for downloads
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="test"></a><span class="summary-sig-name">test</span>()</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="viewer.lib.tileloader2-pysrc.html#test">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
     </td>
   </tr>
 </table>
@@ -129,24 +162,12 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="PORT"></a><span class="summary-name">PORT</span> = <code title="80">80</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="METHOD"></a><span class="summary-name">METHOD</span> = <code title="'GET'">'GET'</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a href="viewer.lib.tileloader-module.html#LAYERS" class="summary-name">LAYERS</a> = <code title="{&quot;tah&quot;: [&quot;cassini.toolserver.org:8080&quot;, &quot;/http://a.tile.openstreetmap.\
+        <a href="viewer.lib.tileloader2-module.html#LAYERS" class="summary-name">LAYERS</a> = <code title="{&quot;tah&quot;: [&quot;cassini.toolserver.org:8080&quot;, &quot;/http://a.tile.openstreetmap.\
 org/+http://toolserver.org/~cmarqu/hill/&quot;], &quot;oam&quot;: [&quot;oam1.hypercube.te\
-lascience.org&quot;, &quot;/tiles/1.0.0/openaerialmap-900913/&quot;], &quot;mapnik&quot;: [&quot;a.t\
-ile.openstreetmap.org&quot;, &quot;/&quot;]}">{&quot;tah&quot;: [&quot;cassini.toolserver.org:8080&quot;, &quot;/http://a.ti<code class="variable-ellipsis">...</code></code>
+lascience.org&quot;, &quot;/tiles/1.0.0/openaerialmap-900913/&quot;], &quot;mapnikold&quot;: [&quot;\
+tile.openstreetmap.org&quot;, &quot;/mapnik/&quot;], &quot;mapnik&quot;: [[&quot;a.tile.openstreetma\
+p.org&quot;, &quot;b.tile.openstreetmap.org&quot;, &quot;c.tile.openstreetmap.org&quot;], &quot;/&quot;],\
+}">{&quot;tah&quot;: [&quot;cassini.toolserver.org:8080&quot;, &quot;/http://a.ti<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 </table>
@@ -182,8 +203,10 @@ ile.openstreetmap.org&quot;, &quot;/&quot;]}">{&quot;tah&quot;: [&quot;cassini.t
       <dd><table><tr><td><pre class="variable">
 {&quot;tah&quot;: [&quot;cassini.toolserver.org:8080&quot;, &quot;/http://a.tile.openstreetmap.<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
 org/+http://toolserver.org/~cmarqu/hill/&quot;], &quot;oam&quot;: [&quot;oam1.hypercube.te<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-lascience.org&quot;, &quot;/tiles/1.0.0/openaerialmap-900913/&quot;], &quot;mapnik&quot;: [&quot;a.t<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
-ile.openstreetmap.org&quot;, &quot;/&quot;]}
+lascience.org&quot;, &quot;/tiles/1.0.0/openaerialmap-900913/&quot;], &quot;mapnikold&quot;: [&quot;<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+tile.openstreetmap.org&quot;, &quot;/mapnik/&quot;], &quot;mapnik&quot;: [[&quot;a.tile.openstreetma<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+p.org&quot;, &quot;b.tile.openstreetmap.org&quot;, &quot;c.tile.openstreetmap.org&quot;], &quot;/&quot;],<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+}
 </pre></td></tr></table>
 </dd>
   </dl>
