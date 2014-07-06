@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>mosp.external_persons.external_person</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="mosp-module.html">Package&nbsp;mosp</a> ::
+        <a href="mosp.external_persons-module.html">Package&nbsp;external_persons</a> ::
+        Module&nbsp;external_person
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="mosp.external_persons.external_person-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="mosp.external_persons.external_person-module.html">Module mosp.external_persons.external_person</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">""" Wrapper for a real person using an Android smartphone."""</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-string">"../.."</tt><tt class="py-op">)</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">time</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">SimPy</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Class mosp.core.Simulation=mosp.core.Simulation-class.html"><a title="mosp.core.Simulation" class="py-name" href="#" onclick="return doclink('link-0', 'Simulation', 'link-0');">Simulation</a></tt> <tt class="py-keyword">import</tt> <tt class="py-name">infinity</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-1" class="py-name" targets="Package mosp=mosp-module.html"><a title="mosp" class="py-name" href="#" onclick="return doclink('link-1', 'mosp', 'link-1');">mosp</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module mosp.core=mosp.core-module.html"><a title="mosp.core" class="py-name" href="#" onclick="return doclink('link-2', 'core', 'link-2');">core</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class mosp.core.Person=mosp.core.Person-class.html"><a title="mosp.core.Person" class="py-name" href="#" onclick="return doclink('link-3', 'Person', 'link-3');">Person</a></tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-4" class="py-name"><a title="mosp" class="py-name" href="#" onclick="return doclink('link-4', 'mosp', 'link-1');">mosp</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Package mosp.geo=mosp.geo-module.html"><a title="mosp.geo" class="py-name" href="#" onclick="return doclink('link-5', 'geo', 'link-5');">geo</a></tt> <tt class="py-keyword">import</tt> <tt id="link-6" class="py-name" targets="Module mosp.geo.utm=mosp.geo.utm-module.html"><a title="mosp.geo.utm" class="py-name" href="#" onclick="return doclink('link-6', 'utm', 'link-6');">utm</a></tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt id="link-7" class="py-name" targets="Variable mosp_tools.slowcat.__author__=mosp_tools.slowcat-module.html#__author__,Variable viewer.lib.tilenames.__author__=viewer.lib.tilenames-module.html#__author__"><a title="mosp_tools.slowcat.__author__
+viewer.lib.tilenames.__author__" class="py-name" href="#" onclick="return doclink('link-7', '__author__', 'link-7');">__author__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"P. Tute"</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt id="link-8" class="py-name" targets="Variable mosp.external_persons.external_data_manager.__maintainer__=mosp.external_persons.external_data_manager-module.html#__maintainer__,Variable mosp.external_persons.external_person.__maintainer__=mosp.external_persons.external_person-module.html#__maintainer__,Variable mosp.geo.utils.__maintainer__=mosp.geo.utils-module.html#__maintainer__,Variable mosp.geo.utm.__maintainer__=mosp.geo.utm-module.html#__maintainer__,Variable mosp.group.__maintainer__=mosp.group-module.html#__maintainer__,Variable mosp.routing.__maintainer__=mosp.routing-module.html#__maintainer__,Variable mosp.test.test_collide.__maintainer__=mosp.test.test_collide-module.html#__maintainer__,Variable mosp.test.test_routing.__maintainer__=mosp.test.test_routing-module.html#__maintainer__,Variable mosp.test.test_utm.__maintainer__=mosp.test.test_utm-module.html#__maintainer__,Variable mosp_examples.external_device_wiggler.__maintainer__=mosp_examples.external_device_wiggler-module.html#__maintainer__,Variable mosp_examples.message_example.__maintainer__=mosp_examples.message_example-module.html#__maintainer__,Variable mosp_examples.random_wiggler.__maintainer__=mosp_examples.random_wiggler-module.html#__maintainer__,Variable mosp_examples.routing_wiggler.__maintainer__=mosp_examples.routing_wiggler-module.html#__maintainer__,Variable mosp_examples.socketplayer_demo_wiggler.__maintainer__=mosp_examples.socketplayer_demo_wiggler-module.html#__maintainer__,Variable mosp_examples.zombie_wiggler.__maintainer__=mosp_examples.zombie_wiggler-module.html#__maintainer__,Variable viewer.lib.calculations.__maintainer__=viewer.lib.calculations-module.html#__maintainer__,Variable viewer.lib.tileloader.__maintainer__=viewer.lib.tileloader-module.html#__maintainer__,Variable viewer.lib.tileloader2.__maintainer__=viewer.lib.tileloader2-module.html#__maintainer__,Variable viewer.sim_viewer.__maintainer__=viewer.sim_viewer-module.html#__maintainer__"><a title="mosp.external_persons.external_data_manager.__maintainer__
+mosp.external_persons.external_person.__maintainer__
+mosp.geo.utils.__maintainer__
+mosp.geo.utm.__maintainer__
+mosp.group.__maintainer__
+mosp.routing.__maintainer__
+mosp.test.test_collide.__maintainer__
+mosp.test.test_routing.__maintainer__
+mosp.test.test_utm.__maintainer__
+mosp_examples.external_device_wiggler.__maintainer__
+mosp_examples.message_example.__maintainer__
+mosp_examples.random_wiggler.__maintainer__
+mosp_examples.routing_wiggler.__maintainer__
+mosp_examples.socketplayer_demo_wiggler.__maintainer__
+mosp_examples.zombie_wiggler.__maintainer__
+viewer.lib.calculations.__maintainer__
+viewer.lib.tileloader.__maintainer__
+viewer.lib.tileloader2.__maintainer__
+viewer.sim_viewer.__maintainer__" class="py-name" href="#" onclick="return doclink('link-8', '__maintainer__', 'link-8');">__maintainer__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"B. Henne"</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-name">__contact__</tt> <tt class="py-op">=</tt> <tt class="py-string">"henne@dcsec.uni-hannover.de"</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-name">__copyright__</tt> <tt class="py-op">=</tt> <tt class="py-string">"(c) 2010-2011, DCSec, Leibniz Universitaet Hannover, Germany"</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt id="link-9" class="py-name" targets="Variable viewer.lib.tilenames.__license__=viewer.lib.tilenames-module.html#__license__"><a title="viewer.lib.tilenames.__license__" class="py-name" href="#" onclick="return doclink('link-9', '__license__', 'link-9');">__license__</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"GPLv3"</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="ExternalPerson"></a><div id="ExternalPerson-def"><a name="L21"></a><tt class="py-lineno"> 21</tt> <a class="py-toggle" href="#" id="ExternalPerson-toggle" onclick="return toggle('ExternalPerson');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="mosp.external_persons.external_person.ExternalPerson-class.html">ExternalPerson</a><tt class="py-op">(</tt><tt class="py-base-class">Person</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExternalPerson-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ExternalPerson-expanded"><a name="ExternalPerson.__init__"></a><div id="ExternalPerson.__init__-def"><a name="L22"></a><tt class="py-lineno"> 22</tt> <a class="py-toggle" href="#" id="ExternalPerson.__init__-toggle" onclick="return toggle('ExternalPerson.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.external_persons.external_person.ExternalPerson-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">id</tt><tt class="py-op">,</tt> <tt class="py-param">sim</tt><tt class="py-op">,</tt> <tt class="py-param">random</tt><tt class="py-op">,</tt> <tt class="py-param">speed</tt><tt class="py-op">=</tt><tt class="py-number">1.4</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExternalPerson.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExternalPerson.__init__-expanded"><a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-10" class="py-name" targets="Class mosp.external_persons.external_person.ExternalPerson=mosp.external_persons.external_person.ExternalPerson-class.html"><a title="mosp.external_persons.external_person.ExternalPerson" class="py-name" href="#" onclick="return doclink('link-10', 'ExternalPerson', 'link-10');">ExternalPerson</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method mosp.collide.Line.__init__()=mosp.collide.Line-class.html#__init__,Method mosp.collide.Point.__init__()=mosp.collide.Point-class.html#__init__,Method mosp.collide.Rectangle.__init__()=mosp.collide.Rectangle-class.html#__init__,Method mosp.collide.World.__init__()=mosp.collide.World-class.html#__init__,Method mosp.collide.WorldPart.__init__()=mosp.collide.WorldPart-class.html#__init__,Method mosp.controller.Controller.__init__()=mosp.controller.Controller-class.html#__init__,Method mosp.controller.SimulationControlled.__init__()=mosp.controller.SimulationControlled-class.html#__init__,Method mosp.core.Person.__init__()=mosp.core.Person-class.html#__init__,Method mosp.core.Simulation.__init__()=mosp.core.Simulation-class.html#__init__,Method mosp.external_persons.external_data_manager.ConnectionService.__init__()=mosp.external_persons.external_data_manager.ConnectionService-class.html#__init__,Method mosp.external_persons.external_data_manager.ExternalDataManager.__init__()=mosp.external_persons.external_data_manager.ExternalDataManager-class.html#__init__,Method mosp.external_persons.external_person.ExternalPerson.__init__()=mosp.external_persons.external_person.ExternalPerson-class.html#__init__,Method mosp.geo.osm.Node.__init__()=mosp.geo.osm.Node-class.html#__init__,Method mosp.geo.osm.NodePlaceHolder.__init__()=mosp.geo.osm.NodePlaceHolder-class.html#__init__,Method mosp.geo.osm.OSMModel.__init__()=mosp.geo.osm.OSMModel-class.html#__init__,Method mosp.geo.osm.OSMXMLFileParser.__init__()=mosp.geo.osm.OSMXMLFileParser-class.html#__init__,Method mosp.geo.osm.Way.__init__()=mosp.geo.osm.Way-class.html#__init__,Method mosp.geo.osm.WaySegment.__init__()=mosp.geo.osm.WaySegment-class.html#__init__,Method mosp.group.Call.__init__()=mosp.group.Call-class.html#__init__,Method mosp.group.CallGroup.__init__()=mosp.group.CallGroup-class.html#__init__,Method mosp.group.Message.__init__()=mosp.group.Message-class.html#__init__,Method mosp.gui.gimp_palette.gimp_palette.GimpPalette.__init__()=mosp.gui.gimp_palette.gimp_palette.GimpPalette-class.html#__init__,Method mosp.gui.playerChamplain.AnimatedMarker.__init__()=mosp.gui.playerChamplain.AnimatedMarker-class.html#__init__,Method mosp.gui.playerChamplain.Player.__init__()=mosp.gui.playerChamplain.Player-class.html#__init__,Method mosp.locations.Cafe.__init__()=mosp.locations.Cafe-class.html#__init__,Method mosp.locations.Exit.__init__()=mosp.locations.Exit-class.html#__init__,Method mosp.locations.Location.__init__()=mosp.locations.Location-class.html#__init__,Method mosp.locations.LocationClosedException.__init__()=mosp.locations.LocationClosedException-class.html#__init__,Method mosp.monitors.ChildprocessPlayerChamplainMonitor.__init__()=mosp.monitors.ChildprocessPlayerChamplainMonitor-class.html#__init__,Method mosp.monitors.EmptyMonitor.__init__()=mosp.monitors.EmptyMonitor-class.html#__init__,Method mosp.monitors.NoSimulationMonitorDefinedException.__init__()=mosp.monitors.NoSimulationMonitorDefinedException-class.html#__init__,Method mosp.monitors.RecordFilePlayerMonitor.__init__()=mosp.monitors.RecordFilePlayerMonitor-class.html#__init__,Method mosp.monitors.SocketPlayerMonitor.__init__()=mosp.monitors.SocketPlayerMonitor-class.html#__init__,Method mosp.routing.RoutingNode.__init__()=mosp.routing.RoutingNode-class.html#__init__,Method mosp_examples.BTvirus_wiggler.BTVirusWiggler.__init__()=mosp_examples.BTvirus_wiggler.BTVirusWiggler-class.html#__init__,Method mosp_examples.action_wiggler.StopActionsWiggler.__init__()=mosp_examples.action_wiggler.StopActionsWiggler-class.html#__init__,Method mosp_examples.exit_wiggler.WigglerExit.__init__()=mosp_examples.exit_wiggler.WigglerExit-class.html#__init__,Method mosp_examples.external_device_wiggler.ExternalZombieWiggler.__init__()=mosp_examples.external_device_wiggler.ExternalZombieWiggler-class.html#__init__,Method mosp_examples.external_device_wiggler.ZombieWiggler.__init__()=mosp_examples.external_device_wiggler.ZombieWiggler-class.html#__init__,Method mosp_examples.passivate_wiggler.Alarm.__init__()=mosp_examples.passivate_wiggler.Alarm-class.html#__init__,Method mosp_examples.poi_act_wiggler.PoiActWiggler.__init__()=mosp_examples.poi_act_wiggler.PoiActWiggler-class.html#__init__,Method mosp_examples.poi_wiggler.PoiWiggler.__init__()=mosp_examples.poi_wiggler.PoiWiggler-class.html#__init__,Method mosp_examples.routing_wiggler.RoutingShowcaseWiggler.__init__()=mosp_examples.routing_wiggler.RoutingShowcaseWiggler-class.html#__init__,Method mosp_examples.statemachine_wiggler.DrunkWiggler.__init__()=mosp_examples.statemachine_wiggler.DrunkWiggler-class.html#__init__,Method mosp_examples.statemachine_wiggler.SocketPlayerClock.__init__()=mosp_examples.statemachine_wiggler.SocketPlayerClock-class.html#__init__,Method mosp_examples.statemachine_wiggler.WorkWiggler.__init__()=mosp_examples.statemachine_wiggler.WorkWiggler-class.html#__init__,Method mosp_examples.zombie_wiggler.ZombieWiggler.__init__()=mosp_examples.zombie_wiggler.ZombieWiggler-class.html#__init__,Method mosp_tools.heatmap.heatmap.Heatmap.__init__()=mosp_tools.heatmap.heatmap.Heatmap-class.html#__init__,Method mosp_tools.node_finder.AnimatedMarker.__init__()=mosp_tools.node_finder.AnimatedMarker-class.html#__init__,Method viewer.lib.asynchttp.AsyncHTTPConnection.__init__()=viewer.lib.asynchttp.AsyncHTTPConnection-class.html#__init__,Method viewer.lib.asynchttp.AsyncHTTPException.__init__()=viewer.lib.asynchttp.AsyncHTTPException-class.html#__init__,Method viewer.lib.asynchttp.AsyncHTTPResponse.__init__()=viewer.lib.asynchttp.AsyncHTTPResponse-class.html#__init__,Method viewer.lib.asynchttp.__test_AsyncHTTPConnection.__init__()=viewer.lib.asynchttp.__test_AsyncHTTPConnection-class.html#__init__,Method viewer.lib.tileloader.TileLoader.__init__()=viewer.lib.tileloader.TileLoader-class.html#__init__,Method viewer.lib.tileloader2.TileLoader.__init__()=viewer.lib.tileloader2.TileLoader-class.html#__init__,Method viewer.sim_viewer.SimViewer.__init__()=viewer.sim_viewer.SimViewer-class.html#__init__"><a title="mosp.collide.Line.__init__
+mosp.collide.Point.__init__
+mosp.collide.Rectangle.__init__
+mosp.collide.World.__init__
+mosp.collide.WorldPart.__init__
+mosp.controller.Controller.__init__
+mosp.controller.SimulationControlled.__init__
+mosp.core.Person.__init__
+mosp.core.Simulation.__init__
+mosp.external_persons.external_data_manager.ConnectionService.__init__
+mosp.external_persons.external_data_manager.ExternalDataManager.__init__
+mosp.external_persons.external_person.ExternalPerson.__init__
+mosp.geo.osm.Node.__init__
+mosp.geo.osm.NodePlaceHolder.__init__
+mosp.geo.osm.OSMModel.__init__
+mosp.geo.osm.OSMXMLFileParser.__init__
+mosp.geo.osm.Way.__init__
+mosp.geo.osm.WaySegment.__init__
+mosp.group.Call.__init__
+mosp.group.CallGroup.__init__
+mosp.group.Message.__init__
+mosp.gui.gimp_palette.gimp_palette.GimpPalette.__init__
+mosp.gui.playerChamplain.AnimatedMarker.__init__
+mosp.gui.playerChamplain.Player.__init__
+mosp.locations.Cafe.__init__
+mosp.locations.Exit.__init__
+mosp.locations.Location.__init__
+mosp.locations.LocationClosedException.__init__
+mosp.monitors.ChildprocessPlayerChamplainMonitor.__init__
+mosp.monitors.EmptyMonitor.__init__
+mosp.monitors.NoSimulationMonitorDefinedException.__init__
+mosp.monitors.RecordFilePlayerMonitor.__init__
+mosp.monitors.SocketPlayerMonitor.__init__
+mosp.routing.RoutingNode.__init__
+mosp_examples.BTvirus_wiggler.BTVirusWiggler.__init__
+mosp_examples.action_wiggler.StopActionsWiggler.__init__
+mosp_examples.exit_wiggler.WigglerExit.__init__
+mosp_examples.external_device_wiggler.ExternalZombieWiggler.__init__
+mosp_examples.external_device_wiggler.ZombieWiggler.__init__
+mosp_examples.passivate_wiggler.Alarm.__init__
+mosp_examples.poi_act_wiggler.PoiActWiggler.__init__
+mosp_examples.poi_wiggler.PoiWiggler.__init__
+mosp_examples.routing_wiggler.RoutingShowcaseWiggler.__init__
+mosp_examples.statemachine_wiggler.DrunkWiggler.__init__
+mosp_examples.statemachine_wiggler.SocketPlayerClock.__init__
+mosp_examples.statemachine_wiggler.WorkWiggler.__init__
+mosp_examples.zombie_wiggler.ZombieWiggler.__init__
+mosp_tools.heatmap.heatmap.Heatmap.__init__
+mosp_tools.node_finder.AnimatedMarker.__init__
+viewer.lib.asynchttp.AsyncHTTPConnection.__init__
+viewer.lib.asynchttp.AsyncHTTPException.__init__
+viewer.lib.asynchttp.AsyncHTTPResponse.__init__
+viewer.lib.asynchttp.__test_AsyncHTTPConnection.__init__
+viewer.lib.tileloader.TileLoader.__init__
+viewer.lib.tileloader2.TileLoader.__init__
+viewer.sim_viewer.SimViewer.__init__" class="py-name" href="#" onclick="return doclink('link-11', '__init__', 'link-11');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">id</tt><tt class="py-op">,</tt> <tt id="link-12" class="py-name" targets="Variable mosp.group.Message.sim=mosp.group.Message-class.html#sim"><a title="mosp.group.Message.sim" class="py-name" href="#" onclick="return doclink('link-12', 'sim', 'link-12');">sim</a></tt><tt class="py-op">,</tt> <tt class="py-name">random</tt><tt class="py-op">,</tt> <tt class="py-name">speed</tt><tt class="py-op">=</tt><tt class="py-number">1.4</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kwargs</tt><tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">        <tt class="py-comment">#Person.__init__(self, id, sim, random, speed=1.4, **kwargs)</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">new_next_node</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">new_last_node</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">last_received_coords</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-string">'Created external person with ID '</tt><tt class="py-op">,</tt> <tt class="py-name">id</tt><tt class="py-op">,</tt> <tt class="py-string">'.'</tt> </tt>
+</div><a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"> </tt>
+<a name="ExternalPerson.current_coords_free_move"></a><div id="ExternalPerson.current_coords_free_move-def"><a name="L30"></a><tt class="py-lineno"> 30</tt> <a class="py-toggle" href="#" id="ExternalPerson.current_coords_free_move-toggle" onclick="return toggle('ExternalPerson.current_coords_free_move');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.external_persons.external_person.ExternalPerson-class.html#current_coords_free_move">current_coords_free_move</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExternalPerson.current_coords_free_move-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExternalPerson.current_coords_free_move-expanded"><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">        <tt class="py-docstring">"""Return the last received location.</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring">        @todo: interpolation between received coordinates</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">last_received_coords</tt> <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">last_received_coords</tt> <tt class="py-keyword">else</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="ExternalPerson.calculate_duration_free_move"></a><div id="ExternalPerson.calculate_duration_free_move-def"><a name="L38"></a><tt class="py-lineno"> 38</tt> <a class="py-toggle" href="#" id="ExternalPerson.calculate_duration_free_move-toggle" onclick="return toggle('ExternalPerson.calculate_duration_free_move');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.external_persons.external_person.ExternalPerson-class.html#calculate_duration_free_move">calculate_duration_free_move</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExternalPerson.calculate_duration_free_move-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExternalPerson.calculate_duration_free_move-expanded"><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">infinity</tt> </tt>
+</div><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"> </tt>
+<a name="ExternalPerson.next_target"></a><div id="ExternalPerson.next_target-def"><a name="L41"></a><tt class="py-lineno"> 41</tt> <a class="py-toggle" href="#" id="ExternalPerson.next_target-toggle" onclick="return toggle('ExternalPerson.next_target');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.external_persons.external_person.ExternalPerson-class.html#next_target">next_target</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExternalPerson.next_target-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExternalPerson.next_target-expanded"><a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-docstring">"""Set last and next node based on received data."""</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">last_node</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">new_last_node</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">next_node</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">new_next_node</tt> </tt>
+</div><a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"> </tt>
+<a name="ExternalPerson.reactivate"></a><div id="ExternalPerson.reactivate-def"><a name="L46"></a><tt class="py-lineno"> 46</tt> <a class="py-toggle" href="#" id="ExternalPerson.reactivate-toggle" onclick="return toggle('ExternalPerson.reactivate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.external_persons.external_person.ExternalPerson-class.html#reactivate">reactivate</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">at</tt> <tt class="py-op">=</tt> <tt class="py-string">'undefined'</tt><tt class="py-op">,</tt> <tt class="py-param">delay</tt> <tt class="py-op">=</tt> <tt class="py-string">'undefined'</tt><tt class="py-op">,</tt> <tt class="py-param">prior</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExternalPerson.reactivate-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExternalPerson.reactivate-expanded"><a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">        <tt class="py-docstring">"""Reactivates passivated person and optionally restarts stopped actions."""</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">        <tt id="link-13" class="py-name"><a title="mosp.core.Person" class="py-name" href="#" onclick="return doclink('link-13', 'Person', 'link-3');">Person</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method mosp.core.Person.reactivate()=mosp.core.Person-class.html#reactivate,Method mosp.external_persons.external_person.ExternalPerson.reactivate()=mosp.external_persons.external_person.ExternalPerson-class.html#reactivate"><a title="mosp.core.Person.reactivate
+mosp.external_persons.external_person.ExternalPerson.reactivate" class="py-name" href="#" onclick="return doclink('link-14', 'reactivate', 'link-14');">reactivate</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"> </tt>
+<a name="ExternalPerson.pause_movement"></a><div id="ExternalPerson.pause_movement-def"><a name="L50"></a><tt class="py-lineno"> 50</tt> <a class="py-toggle" href="#" id="ExternalPerson.pause_movement-toggle" onclick="return toggle('ExternalPerson.pause_movement');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.external_persons.external_person.ExternalPerson-class.html#pause_movement">pause_movement</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">duration</tt><tt class="py-op">,</tt> <tt class="py-param">location_offset_xy</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">deactivateActions</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExternalPerson.pause_movement-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExternalPerson.pause_movement-expanded"><a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-docstring">"""Stops movement of person. Currently only works with passivating at next_node.  </tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-docstring">        Currently cannot be used to stop on a way like after infect!</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-docstring">        @param duration: pause duration</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-docstring">        @param location_offset_xy: optional random offset to be added to current location when stopping.</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-docstring">        @param deactivateActions: deactive actions while pausing?</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt id="link-15" class="py-name"><a title="mosp.core.Person" class="py-name" href="#" onclick="return doclink('link-15', 'Person', 'link-3');">Person</a></tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Method mosp.core.Person.pause_movement()=mosp.core.Person-class.html#pause_movement,Method mosp.external_persons.external_person.ExternalPerson.pause_movement()=mosp.external_persons.external_person.ExternalPerson-class.html#pause_movement"><a title="mosp.core.Person.pause_movement
+mosp.external_persons.external_person.ExternalPerson.pause_movement" class="py-name" href="#" onclick="return doclink('link-16', 'pause_movement', 'link-16');">pause_movement</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">duration</tt><tt class="py-op">,</tt> <tt class="py-name">location_offset_xy</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">deactivateActions</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"> </tt>
+<a name="ExternalPerson.act_at_node"></a><div id="ExternalPerson.act_at_node-def"><a name="L60"></a><tt class="py-lineno"> 60</tt> <a class="py-toggle" href="#" id="ExternalPerson.act_at_node-toggle" onclick="return toggle('ExternalPerson.act_at_node');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.external_persons.external_person.ExternalPerson-class.html#act_at_node">act_at_node</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">node</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExternalPerson.act_at_node-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExternalPerson.act_at_node-expanded"><a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-docstring">"""Actions of the person when arriving at a node. To be overwritten with an implementation.</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">        This method is executes when the Person arrives at a node.</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-docstring">        @param node: is the next_node the Person arrives at"""</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"> </tt>
+<a name="ExternalPerson.think"></a><div id="ExternalPerson.think-def"><a name="L67"></a><tt class="py-lineno"> 67</tt> <a class="py-toggle" href="#" id="ExternalPerson.think-toggle" onclick="return toggle('ExternalPerson.think');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.external_persons.external_person.ExternalPerson-class.html#think">think</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExternalPerson.think-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExternalPerson.think-expanded"><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-docstring">"""Think about what to do next.</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-docstring">        This method can include all logic of the person (what to do, where to go etc.).</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-docstring">        Decisions could be made by using flags for example.</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-docstring">        This is where a new self.dest_node and self.start_node should be set if necessary.</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-docstring">        self.next_node should not be set here. This should be done in self.next_target.</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-docstring">        @return: time until next wakeup (int, ticks), returning a negative number or 0 will cause self.go() to find a time</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring">        @note: This method provides only the most basic functionality. Overwrite (and if necessary call) it to implement own behaviour.</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">        <tt class="py-comment">#print '\tcorrect think'</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-number">1000</tt> </tt>
+</div><a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"> </tt>
+<a name="ExternalPerson.handle_interrupts"></a><div id="ExternalPerson.handle_interrupts-def"><a name="L81"></a><tt class="py-lineno"> 81</tt> <a class="py-toggle" href="#" id="ExternalPerson.handle_interrupts-toggle" onclick="return toggle('ExternalPerson.handle_interrupts');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.external_persons.external_person.ExternalPerson-class.html#handle_interrupts">handle_interrupts</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExternalPerson.handle_interrupts-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExternalPerson.handle_interrupts-expanded"><a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-docstring">"""Find out, what caused an interrupt and act accordingly.</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring">        This method is called whenever a person is interrupted.</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-docstring">        This is the place to implement own reactions to interrupts. Calling methods that were send via a send() call is done BEFORE this method is called. Handling pause, stop, removal and change of movement speed is done automatically AFTER this method is called. Removing the corresponding flag (setting it to False) in this method allows for handling these things on your own.</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-docstring">        @note: This method does nothing per default. Implement it to react to interrupts. If you do not want or need to react to interrupts, ignore this method.</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt id="link-17" class="py-name"><a title="mosp.core.Person" class="py-name" href="#" onclick="return doclink('link-17', 'Person', 'link-3');">Person</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Method mosp.core.Person.handle_interrupts()=mosp.core.Person-class.html#handle_interrupts,Method mosp.external_persons.external_person.ExternalPerson.handle_interrupts()=mosp.external_persons.external_person.ExternalPerson-class.html#handle_interrupts"><a title="mosp.core.Person.handle_interrupts
+mosp.external_persons.external_person.ExternalPerson.handle_interrupts" class="py-name" href="#" onclick="return doclink('link-18', 'handle_interrupts', 'link-18');">handle_interrupts</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">     </tt>
+<a name="ExternalPerson.receive"></a><div id="ExternalPerson.receive-def"><a name="L90"></a><tt class="py-lineno"> 90</tt> <a class="py-toggle" href="#" id="ExternalPerson.receive-toggle" onclick="return toggle('ExternalPerson.receive');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="mosp.external_persons.external_person.ExternalPerson-class.html#receive">receive</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">message</tt><tt class="py-op">,</tt> <tt class="py-param">sender</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExternalPerson.receive-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExternalPerson.receive-expanded"><a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-docstring">"""Receive a message and handle it.</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">        Removal from the message queue and earliest arrival time are handled automatically.</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-docstring">        @param message: a message from the persons message queue.</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-docstring">        @param sender: the sender of the message.</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-docstring">        @return: True if the message should be removed from the queue, False else. It will then be delivered again in the next cycle.</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-19" class="py-name"><a title="mosp.core.Person" class="py-name" href="#" onclick="return doclink('link-19', 'Person', 'link-3');">Person</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Method mosp.controller.Controller.receive()=mosp.controller.Controller-class.html#receive,Method mosp.core.Person.receive()=mosp.core.Person-class.html#receive,Method mosp.external_persons.external_person.ExternalPerson.receive()=mosp.external_persons.external_person.ExternalPerson-class.html#receive,Method mosp_examples.message_example.MsgRandomWiggler.receive()=mosp_examples.message_example.MsgRandomWiggler-class.html#receive,Method viewer.sim_viewer.SimViewer.receive()=viewer.sim_viewer.SimViewer-class.html#receive"><a title="mosp.controller.Controller.receive
+mosp.core.Person.receive
+mosp.external_persons.external_person.ExternalPerson.receive
+mosp_examples.message_example.MsgRandomWiggler.receive
+viewer.sim_viewer.SimViewer.receive" class="py-name" href="#" onclick="return doclink('link-20', 'receive', 'link-20');">receive</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">message</tt><tt class="py-op">,</tt> <tt class="py-name">sender</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Jul  6 13:59:53 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

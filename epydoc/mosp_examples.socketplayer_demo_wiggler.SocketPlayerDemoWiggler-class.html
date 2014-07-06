@@ -60,60 +60,60 @@
 <!-- ==================== CLASS DESCRIPTION ==================== -->
 <h1 class="epydoc">Class SocketPlayerDemoWiggler</h1><p class="nomargin-top"><span class="codelink"><a href="mosp_examples.socketplayer_demo_wiggler-pysrc.html#SocketPlayerDemoWiggler">source&nbsp;code</a></span></p>
 <center>
-<center>  <map id="uml_class_diagram_for_mosp_exa_15" name="uml_class_diagram_for_mosp_exa_15">
-<area shape="rect" id="node219" href="mosp_examples.socketplayer_demo_wiggler.SocketPlayerDemoWiggler-class.html#next_target" title="Randomly finds a new next_node to move to." alt="" coords="176,1044,335,1063"/>
-<area shape="rect" id="node1" href="mosp_examples.socketplayer_demo_wiggler.SocketPlayerDemoWiggler-class.html" title="Implements a simple person doing only random movement on the map." alt="" coords="164,1011,345,1069"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#current_coords" title="returns current coordinates of Person" alt="" coords="99,423,412,441"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#current_way" title="current way the Person is assigned to, used for collision" alt="" coords="99,441,412,460"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#dest_node" title="final node of current routed walk" alt="" coords="99,460,412,479"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#last_coord" title="coordinates where current walking starts = coordinates of last_node plus &#160;offset" alt="" coords="99,479,412,497"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#last_node" title="node where current walking starts" alt="" coords="99,497,412,516"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#need_next_target" title="if True, self.next_target() will be called and this will be set to False" alt="" coords="99,516,412,535"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#next_node" title="node where current walking stops, next node to walk to" alt="" coords="99,535,412,553"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#p_agenttype" title="mosp.core.Person.p_agenttype" alt="" coords="99,553,412,572"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#p_color" title="property color id: marker color of Person &#45; DEPRECATED, use color_rgba &#160;instead" alt="" coords="99,572,412,591"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#p_color_rgba" title="property color: marker color of Person as RGBA 4&#45;tuple" alt="" coords="99,591,412,609"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#p_id" title="property id: unique id of the Person" alt="" coords="99,609,412,628"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#p_speed" title="property speed: movement speed of the Person." alt="" coords="99,628,412,647"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#passivate" title="if true, Person is passivated on next round of go()" alt="" coords="99,647,412,665"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#y" title="Should not be used." alt="" coords="99,684,412,703"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#__getstate__" title="Returns Person information for pickling using the pickle module." alt="" coords="99,705,412,724"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#__init__" title="Initializes the Person." alt="" coords="99,724,412,743"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#act_at_node" title="Actions of the person when arriving at a node." alt="" coords="99,743,412,761"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#call_stop_actions" title="Sets stop_all_actions und interrupts." alt="" coords="99,761,412,780"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#collide_circle" title="Checks if this person collides with the given circle." alt="" coords="99,780,412,799"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#collide_rectangle" title="Checks if this person collides with the given rectangle." alt="" coords="99,799,412,817"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#current_coords_impl" title="Calculates the current position from remaining time using last_coord and &#160;target_coord to implement road width" alt="" coords="99,817,412,836"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#get_near" title="Returns Persons near this Person." alt="" coords="99,836,412,855"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#get_properties" title="Return all the person&#39;s properties (variables and properties p_*) as a &#160;dictionary." alt="" coords="99,855,412,873"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#get_random_way_node" title="Returns a random way_node from sim.way_nodes." alt="" coords="99,873,412,892"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#get_speed" title="property speed: movement speed of the Person." alt="" coords="99,892,412,911"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#go" title="The main&#45;loop of every person." alt="" coords="99,911,412,929"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#handle_interrupts" title="Find out, what caused an interrupt and act accordingly." alt="" coords="99,929,412,948"/>
-<area shape="rect" id="node220" href="mosp.core.Person-class.html#think" title="Think about what to do next." alt="" coords="99,967,412,985"/>
-<area shape="rect" id="node2" href="mosp.core.Person-class.html" title="A basic simulated Person." alt="" coords="87,398,423,991"/>
-<area shape="rect" id="node222" href="javascript:void(0);" title="hash(x)" alt="" coords="363,31,476,49"/>
-<area shape="rect" id="node222" href="javascript:void(0);" title="repr(x)" alt="" coords="363,52,476,71"/>
-<area shape="rect" id="node222" href="javascript:void(0);" title="str(x)" alt="" coords="363,71,476,89"/>
-<area shape="rect" id="node222" href="javascript:void(0);" title="SimPy.Lister.Lister.attrnames" alt="" coords="363,89,476,108"/>
-<area shape="rect" id="node3" href="javascript:void(0);" title="SimPy.Lister.Lister" alt="" coords="351,6,487,114"/>
-<area shape="rect" id="node221" href="javascript:void(0);" title="Multi &#45; functional test for reneging for &#39;request&#39; and &#39;get&#39;: (1)If res of type Resource: &#160;&#160;&#160;&#160;Tests whether resource res was acquired when proces reactivated." alt="" coords="217,167,623,185"/>
-<area shape="rect" id="node221" href="javascript:void(0);" title="SimPy.Lib.Process.active" alt="" coords="217,185,623,204"/>
-<area shape="rect" id="node221" href="javascript:void(0);" title="Application function to cancel all event notices for this Process &#160;instance;(should be all event notices for the _generator_)." alt="" coords="217,204,623,223"/>
-<area shape="rect" id="node221" href="javascript:void(0);" title="Application function to interrupt active processes" alt="" coords="217,223,623,241"/>
-<area shape="rect" id="node221" href="javascript:void(0);" title="Application function for an interrupt victim to get out of &#39;interrupted&#39; &#160;state." alt="" coords="217,241,623,260"/>
-<area shape="rect" id="node221" href="javascript:void(0);" title="SimPy.Lib.Process.interrupted" alt="" coords="217,260,623,279"/>
-<area shape="rect" id="node221" href="javascript:void(0);" title="SimPy.Lib.Process.passive" alt="" coords="217,279,623,297"/>
-<area shape="rect" id="node221" href="javascript:void(0);" title="SimPy.Lib.Process.queuing" alt="" coords="217,297,623,316"/>
-<area shape="rect" id="node221" href="javascript:void(0);" title="Activates PEM of this Process." alt="" coords="217,316,623,335"/>
-<area shape="rect" id="node221" href="javascript:void(0);" title="Test for reneging for &#39;yield put ." alt="" coords="217,335,623,353"/>
-<area shape="rect" id="node221" href="javascript:void(0);" title="SimPy.Lib.Process.terminated" alt="" coords="217,353,623,372"/>
-<area shape="rect" id="node5" href="javascript:void(0);" title="Superclass of classes which may use generator functions" alt="" coords="205,134,635,378"/>
-<area shape="rect" id="node223" href="mosp.collide.Point-class.html#collide_polygon" title="Checks if this point collides with the given polygon." alt="" coords="17,251,165,269"/>
-<area shape="rect" id="node223" href="mosp.collide.Point-class.html#get_points" title="Yields the coordinates (x, y) of the point." alt="" coords="17,269,165,288"/>
-<area shape="rect" id="node4" href="mosp.collide.Point-class.html" title="A collidable point." alt="" coords="5,218,176,294"/>
+<center>  <map id="uml_class_diagram_for_mosp_exa_17" name="uml_class_diagram_for_mosp_exa_17">
+<area shape="rect" id="node1_46" href="mosp_examples.socketplayer_demo_wiggler.SocketPlayerDemoWiggler-class.html#next_target" title="Randomly finds a new next_node to move to." alt="" coords="309,1044,469,1063"/>
+<area shape="rect" id="node1" href="mosp_examples.socketplayer_demo_wiggler.SocketPlayerDemoWiggler-class.html" title="Implements a simple person doing only random movement on the map." alt="" coords="297,1011,481,1069"/>
+<area shape="rect" id="node2_47" href="mosp.core.Person-class.html#current_coords" title="returns current coordinates of Person" alt="" coords="232,423,547,441"/>
+<area shape="rect" id="node2_48" href="mosp.core.Person-class.html#current_way" title="current way the Person is assigned to, used for collision" alt="" coords="232,441,547,460"/>
+<area shape="rect" id="node2_49" href="mosp.core.Person-class.html#dest_node" title="final node of current routed walk" alt="" coords="232,460,547,479"/>
+<area shape="rect" id="node2_50" href="mosp.core.Person-class.html#last_coord" title="coordinates where current walking starts = coordinates of last_node plus &#160;offset" alt="" coords="232,479,547,497"/>
+<area shape="rect" id="node2_51" href="mosp.core.Person-class.html#last_node" title="node where current walking starts" alt="" coords="232,497,547,516"/>
+<area shape="rect" id="node2_52" href="mosp.core.Person-class.html#need_next_target" title="if True, self.next_target() will be called and this will be set to False" alt="" coords="232,516,547,535"/>
+<area shape="rect" id="node2_53" href="mosp.core.Person-class.html#next_node" title="node where current walking stops, next node to walk to" alt="" coords="232,535,547,553"/>
+<area shape="rect" id="node2_54" href="mosp.core.Person-class.html#p_agenttype" title="mosp.core.Person.p_agenttype" alt="" coords="232,553,547,572"/>
+<area shape="rect" id="node2_55" href="mosp.core.Person-class.html#p_color" title="property color id: marker color of Person &#45; DEPRECATED, use color_rgba &#160;instead" alt="" coords="232,572,547,591"/>
+<area shape="rect" id="node2_56" href="mosp.core.Person-class.html#p_color_rgba" title="property color: marker color of Person as RGBA 4&#45;tuple" alt="" coords="232,591,547,609"/>
+<area shape="rect" id="node2_57" href="mosp.core.Person-class.html#p_id" title="property id: unique id of the Person" alt="" coords="232,609,547,628"/>
+<area shape="rect" id="node2_58" href="mosp.core.Person-class.html#p_speed" title="property speed: movement speed of the Person." alt="" coords="232,628,547,647"/>
+<area shape="rect" id="node2_59" href="mosp.core.Person-class.html#passivate" title="if true, Person is passivated on next round of go()" alt="" coords="232,647,547,665"/>
+<area shape="rect" id="node2_60" href="mosp.core.Person-class.html#y" title="Should not be used." alt="" coords="232,684,547,703"/>
+<area shape="rect" id="node2_61" href="mosp.core.Person-class.html#__getstate__" title="Returns Person information for pickling using the pickle module." alt="" coords="232,705,547,724"/>
+<area shape="rect" id="node2_62" href="mosp.core.Person-class.html#__init__" title="Initializes the Person." alt="" coords="232,724,547,743"/>
+<area shape="rect" id="node2_63" href="mosp.core.Person-class.html#act_at_node" title="Actions of the person when arriving at a node." alt="" coords="232,743,547,761"/>
+<area shape="rect" id="node2_64" href="mosp.core.Person-class.html#calculate_duration" title="Calculate the time needed for walking to the next node." alt="" coords="232,761,547,780"/>
+<area shape="rect" id="node2_65" href="mosp.core.Person-class.html#call_stop_actions" title="Sets stop_all_actions und interrupts." alt="" coords="232,780,547,799"/>
+<area shape="rect" id="node2_66" href="mosp.core.Person-class.html#collide_circle" title="Checks if this person collides with the given circle." alt="" coords="232,799,547,817"/>
+<area shape="rect" id="node2_67" href="mosp.core.Person-class.html#collide_rectangle" title="Checks if this person collides with the given rectangle." alt="" coords="232,817,547,836"/>
+<area shape="rect" id="node2_68" href="mosp.core.Person-class.html#current_coords_impl" title="Calculates the current position from remaining time using last_coord and &#160;target_coord to implement road width" alt="" coords="232,836,547,855"/>
+<area shape="rect" id="node2_69" href="mosp.core.Person-class.html#get_near" title="Returns Persons near this Person." alt="" coords="232,855,547,873"/>
+<area shape="rect" id="node2_70" href="mosp.core.Person-class.html#get_properties" title="Return all the person&#39;s properties (variables and properties p_*) as a &#160;dictionary." alt="" coords="232,873,547,892"/>
+<area shape="rect" id="node2_71" href="mosp.core.Person-class.html#get_random_way_node" title="Returns a random way_node from sim.way_nodes." alt="" coords="232,892,547,911"/>
+<area shape="rect" id="node2_72" href="mosp.core.Person-class.html#get_speed" title="property speed: movement speed of the Person." alt="" coords="232,911,547,929"/>
+<area shape="rect" id="node2_73" href="mosp.core.Person-class.html#go" title="The main&#45;loop of every person." alt="" coords="232,929,547,948"/>
+<area shape="rect" id="node2_74" href="mosp.core.Person-class.html#think" title="Think about what to do next." alt="" coords="232,967,547,985"/>
+<area shape="rect" id="node2" href="mosp.core.Person-class.html" title="A basic simulated Person." alt="" coords="220,398,559,991"/>
+<area shape="rect" id="node3_75" href="javascript:void(0);" title="Multi &#45; functional test for reneging for &#39;request&#39; and &#39;get&#39;: (1)If res of type Resource: &#160;&#160;&#160;&#160;Tests whether resource res was acquired when proces reactivated." alt="" coords="17,167,427,185"/>
+<area shape="rect" id="node3_76" href="javascript:void(0);" title="SimPy.Lib.Process.active" alt="" coords="17,185,427,204"/>
+<area shape="rect" id="node3_77" href="javascript:void(0);" title="Application function to cancel all event notices for this Process &#160;instance;(should be all event notices for the _generator_)." alt="" coords="17,204,427,223"/>
+<area shape="rect" id="node3_78" href="javascript:void(0);" title="Application function to interrupt active processes" alt="" coords="17,223,427,241"/>
+<area shape="rect" id="node3_79" href="javascript:void(0);" title="Application function for an interrupt victim to get out of &#39;interrupted&#39; &#160;state." alt="" coords="17,241,427,260"/>
+<area shape="rect" id="node3_80" href="javascript:void(0);" title="SimPy.Lib.Process.interrupted" alt="" coords="17,260,427,279"/>
+<area shape="rect" id="node3_81" href="javascript:void(0);" title="SimPy.Lib.Process.passive" alt="" coords="17,279,427,297"/>
+<area shape="rect" id="node3_82" href="javascript:void(0);" title="SimPy.Lib.Process.queuing" alt="" coords="17,297,427,316"/>
+<area shape="rect" id="node3_83" href="javascript:void(0);" title="Activates PEM of this Process." alt="" coords="17,316,427,335"/>
+<area shape="rect" id="node3_84" href="javascript:void(0);" title="Test for reneging for &#39;yield put ." alt="" coords="17,335,427,353"/>
+<area shape="rect" id="node3_85" href="javascript:void(0);" title="SimPy.Lib.Process.terminated" alt="" coords="17,353,427,372"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="Superclass of classes which may use generator functions" alt="" coords="5,134,438,378"/>
+<area shape="rect" id="node4_86" href="javascript:void(0);" title="SimPy.Lister.Lister.indent" alt="" coords="167,31,277,49"/>
+<area shape="rect" id="node4_87" href="javascript:void(0);" title="repr(x)" alt="" coords="167,52,277,71"/>
+<area shape="rect" id="node4_88" href="javascript:void(0);" title="str(x)" alt="" coords="167,71,277,89"/>
+<area shape="rect" id="node4_89" href="javascript:void(0);" title="SimPy.Lister.Lister.attrnames" alt="" coords="167,89,277,108"/>
+<area shape="rect" id="node4" href="javascript:void(0);" title="SimPy.Lister.Lister" alt="" coords="154,6,289,114"/>
+<area shape="rect" id="node5_90" href="mosp.collide.Point-class.html#collide_polygon" title="Checks if this point collides with the given polygon." alt="" coords="480,251,631,269"/>
+<area shape="rect" id="node5_91" href="mosp.collide.Point-class.html#get_points" title="Yields the coordinates (x, y) of the point." alt="" coords="480,269,631,288"/>
+<area shape="rect" id="node5" href="mosp.collide.Point-class.html" title="A collidable point." alt="" coords="467,218,642,294"/>
 </map>
-  <img src="uml_class_diagram_for_mosp_exa_15.png" alt='' usemap="#uml_class_diagram_for_mosp_exa_15" ismap="ismap" class="graph-without-title" />
+  <img src="uml_class_diagram_for_mosp_exa_17.gif" alt='' usemap="#uml_class_diagram_for_mosp_exa_17" ismap="ismap" class="graph-without-title" />
 </center>
 </center>
 <hr />
@@ -163,6 +163,7 @@
       <code><a href="mosp.core.Person-class.html#__getstate__">__getstate__</a></code>,
       <code><a href="mosp.core.Person-class.html#__init__">__init__</a></code>,
       <code><a href="mosp.core.Person-class.html#act_at_node">act_at_node</a></code>,
+      <code><a href="mosp.core.Person-class.html#calculate_duration">calculate_duration</a></code>,
       <code><a href="mosp.core.Person-class.html#call_stop_actions">call_stop_actions</a></code>,
       <code><a href="mosp.core.Person-class.html#collide_circle">collide_circle</a></code>,
       <code><a href="mosp.core.Person-class.html#collide_rectangle">collide_rectangle</a></code>,
@@ -413,7 +414,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:31 2012
+    Generated by Epydoc 3.0.1 on Sun Jul  6 13:59:52 2014
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

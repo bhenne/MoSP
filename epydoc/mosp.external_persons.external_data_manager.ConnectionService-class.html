@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>mosp.external_persons.external_data_manager.ConnectionService</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="mosp-module.html">Package&nbsp;mosp</a> ::
+        <a href="mosp.external_persons-module.html">Package&nbsp;external_persons</a> ::
+        <a href="mosp.external_persons.external_data_manager-module.html">Module&nbsp;external_data_manager</a> ::
+        Class&nbsp;ConnectionService
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="mosp.external_persons.external_data_manager.ConnectionService-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class ConnectionService</h1><p class="nomargin-top"><span class="codelink"><a href="mosp.external_persons.external_data_manager-pysrc.html#ConnectionService">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_mosp_ext" name="uml_class_diagram_for_mosp_ext">
+<area shape="rect" id="node1_8" href="mosp.external_persons.external_data_manager.ConnectionService-class.html#__init__" title="x.__init__(...) initializes x; see help(type(x)) for signature" alt="" coords="17,39,475,57"/>
+<area shape="rect" id="node1_9" href="mosp.external_persons.external_data_manager.ConnectionService-class.html#dummylocation" title="mosp.external_persons.external_data_manager.ConnectionService.dummylocation" alt="" coords="17,57,475,76"/>
+<area shape="rect" id="node1_10" href="mosp.external_persons.external_data_manager.ConnectionService-class.html#location" title="Handle incoming location from $HOSTNAME:$PORT/location?$PARAMS." alt="" coords="17,76,475,95"/>
+<area shape="rect" id="node1_11" href="mosp.external_persons.external_data_manager.ConnectionService-class.html#add_match" title="Add a new set of values to the known locations and remove an old one if &#160;necessary." alt="" coords="17,95,475,113"/>
+<area shape="rect" id="node1_12" href="mosp.external_persons.external_data_manager.ConnectionService-class.html#fuzzy_map_match" title="Match the received coordinates to the OSM&#45;map using fuzzy logic." alt="" coords="17,113,475,132"/>
+<area shape="rect" id="node1_13" href="mosp.external_persons.external_data_manager.ConnectionService-class.html#initial_fuzzy_match" title="Perform initial map match based on fuzzy logic using the peach package." alt="" coords="17,132,475,151"/>
+<area shape="rect" id="node1_14" href="mosp.external_persons.external_data_manager.ConnectionService-class.html#subsequent_fuzzy_match" title="Perform subsequent matching along the identified segment and check for &#160;transition into new segment." alt="" coords="17,151,475,169"/>
+<area shape="rect" id="node1_15" href="mosp.external_persons.external_data_manager.ConnectionService-class.html#calculate_angle" title="Calculate the angle between two lines identified by start and end points." alt="" coords="17,169,475,188"/>
+<area shape="rect" id="node1" href="mosp.external_persons.external_data_manager.ConnectionService-class.html" title="mosp.external_persons.external_data_manager.ConnectionService" alt="" coords="5,6,486,194"/>
+</map>
+  <img src="uml_class_diagram_for_mosp_ext.gif" alt='' usemap="#uml_class_diagram_for_mosp_ext" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.external_persons.external_data_manager.ConnectionService-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">address</span>,
+        <span class="summary-sig-arg">port</span>,
+        <span class="summary-sig-arg">conn</span>,
+        <span class="summary-sig-arg">map_path</span>,
+        <span class="summary-sig-arg">free_move_only</span>,
+        <span class="summary-sig-arg">hmac_key</span>)</span><br />
+      x.__init__(...) initializes x; see help(type(x)) for signature</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.external_persons.external_data_manager-pysrc.html#ConnectionService.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.external_persons.external_data_manager.ConnectionService-class.html#dummylocation" class="summary-sig-name">dummylocation</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">id</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">lat</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">lon</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">acc</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">speed</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">bearing</span>=<span class="summary-sig-default">''</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.external_persons.external_data_manager-pysrc.html#ConnectionService.dummylocation">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.external_persons.external_data_manager.ConnectionService-class.html#location" class="summary-sig-name">location</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">id</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">lat</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">lon</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">acc</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">hmac</span>=<span class="summary-sig-default">''</span>)</span><br />
+      Handle incoming location from $HOSTNAME:$PORT/location?$PARAMS.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.external_persons.external_data_manager-pysrc.html#ConnectionService.location">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.external_persons.external_data_manager.ConnectionService-class.html#add_match" class="summary-sig-name">add_match</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">time</span>,
+        <span class="summary-sig-arg">id</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">acc</span>,
+        <span class="summary-sig-arg">way_segment</span>)</span><br />
+      Add a new set of values to the known locations and remove an old one 
+      if necessary.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.external_persons.external_data_manager-pysrc.html#ConnectionService.add_match">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.external_persons.external_data_manager.ConnectionService-class.html#fuzzy_map_match" class="summary-sig-name">fuzzy_map_match</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">id</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">acc</span>,
+        <span class="summary-sig-arg">time</span>)</span><br />
+      Match the received coordinates to the OSM-map using fuzzy logic.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.external_persons.external_data_manager-pysrc.html#ConnectionService.fuzzy_map_match">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.external_persons.external_data_manager.ConnectionService-class.html#initial_fuzzy_match" class="summary-sig-name">initial_fuzzy_match</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">previous_x</span>,
+        <span class="summary-sig-arg">previous_y</span>,
+        <span class="summary-sig-arg">acc</span>,
+        <span class="summary-sig-arg">candidates</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Perform initial map match based on fuzzy logic using the peach 
+      package.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.external_persons.external_data_manager-pysrc.html#ConnectionService.initial_fuzzy_match">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.external_persons.external_data_manager.ConnectionService-class.html#subsequent_fuzzy_match" class="summary-sig-name">subsequent_fuzzy_match</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">acc</span>,
+        <span class="summary-sig-arg">segment</span>,
+        <span class="summary-sig-arg">id</span>)</span><br />
+      Perform subsequent matching along the identified segment and check 
+      for transition into new segment.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.external_persons.external_data_manager-pysrc.html#ConnectionService.subsequent_fuzzy_match">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="mosp.external_persons.external_data_manager.ConnectionService-class.html#calculate_angle" class="summary-sig-name">calculate_angle</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">start1</span>,
+        <span class="summary-sig-arg">end1</span>,
+        <span class="summary-sig-arg">start2</span>,
+        <span class="summary-sig-arg">end2</span>)</span><br />
+      Calculate the angle between two lines identified by start and end 
+      points.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="mosp.external_persons.external_data_manager-pysrc.html#ConnectionService.calculate_angle">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">address</span>,
+        <span class="sig-arg">port</span>,
+        <span class="sig-arg">conn</span>,
+        <span class="sig-arg">map_path</span>,
+        <span class="sig-arg">free_move_only</span>,
+        <span class="sig-arg">hmac_key</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.external_persons.external_data_manager-pysrc.html#ConnectionService.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="dummylocation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">dummylocation</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">id</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">lat</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">lon</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">acc</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">speed</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">bearing</span>=<span class="sig-default">''</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.external_persons.external_data_manager-pysrc.html#ConnectionService.dummylocation">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@expose</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="location"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">location</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">id</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">lat</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">lon</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">acc</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">hmac</span>=<span class="sig-default">''</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.external_persons.external_data_manager-pysrc.html#ConnectionService.location">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Handle incoming location from $HOSTNAME:$PORT/location?$PARAMS.</p>
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@expose</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="add_match"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">add_match</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">time</span>,
+        <span class="sig-arg">id</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">acc</span>,
+        <span class="sig-arg">way_segment</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.external_persons.external_data_manager-pysrc.html#ConnectionService.add_match">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Add a new set of values to the known locations and remove an old one 
+  if necessary.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>time</code></strong> - Timestamp of receive-time</li>
+        <li><strong class="pname"><code>id</code></strong> - id of the person</li>
+        <li><strong class="pname"><code>x</code></strong> - x coordinate of received location</li>
+        <li><strong class="pname"><code>y</code></strong> - y coordinate of received location</li>
+        <li><strong class="pname"><code>acc</code></strong> - accuracy of received location</li>
+        <li><strong class="pname"><code>way_segment</code></strong> - the current way segment the person was matched to</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="fuzzy_map_match"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">fuzzy_map_match</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">id</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">acc</span>,
+        <span class="sig-arg">time</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.external_persons.external_data_manager-pysrc.html#ConnectionService.fuzzy_map_match">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Match the received coordinates to the OSM-map using fuzzy logic.</p>
+  <p>Algorithm is based on 
+  http://d-scholarship.pitt.edu/11787/4/Ren,_Ming_Dissertation.pdf (Chapter
+  4.3)</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>id</code></strong> - id of the person</li>
+        <li><strong class="pname"><code>x</code></strong> - x coordinate of received location</li>
+        <li><strong class="pname"><code>y</code></strong> - y coordinate of received location</li>
+        <li><strong class="pname"><code>acc</code></strong> - accuracy of received location</li>
+        <li><strong class="pname"><code>time</code></strong> - timestamp of receival</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>a list with format [person_id, node_id_start, node_id_end, 
+          matched_x, matched_y, time_received] or None if no match was 
+          found</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="initial_fuzzy_match"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">initial_fuzzy_match</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">previous_x</span>,
+        <span class="sig-arg">previous_y</span>,
+        <span class="sig-arg">acc</span>,
+        <span class="sig-arg">candidates</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.external_persons.external_data_manager-pysrc.html#ConnectionService.initial_fuzzy_match">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Perform initial map match based on fuzzy logic using the peach 
+  package.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>x</code></strong> - x coordinate of received location</li>
+        <li><strong class="pname"><code>y</code></strong> - y coordinate of received location</li>
+        <li><strong class="pname"><code>previous_x</code></strong> - x coordinate of last received location</li>
+        <li><strong class="pname"><code>previous_y</code></strong> - y coordinate of last received location</li>
+        <li><strong class="pname"><code>acc</code></strong> - accuracy of received location</li>
+        <li><strong class="pname"><code>candidates</code></strong> - an iterable containing a set of predefined candidate segments 
+          (default is None)</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>a tuple containing (identified segment, matched x, matched y)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="subsequent_fuzzy_match"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">subsequent_fuzzy_match</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">acc</span>,
+        <span class="sig-arg">segment</span>,
+        <span class="sig-arg">id</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.external_persons.external_data_manager-pysrc.html#ConnectionService.subsequent_fuzzy_match">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Perform subsequent matching along the identified segment and check for
+  transition into new segment.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>x</code></strong> - x coordinate of received location</li>
+        <li><strong class="pname"><code>y</code></strong> - y coordinate of received location</li>
+        <li><strong class="pname"><code>acc</code></strong> - accuracy of received location</li>
+        <li><strong class="pname"><code>segment</code></strong> - the way segment the person is currently moving on</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>a tuple containing (identified segment, matched x, matched y)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="calculate_angle"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">calculate_angle</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">start1</span>,
+        <span class="sig-arg">end1</span>,
+        <span class="sig-arg">start2</span>,
+        <span class="sig-arg">end2</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="mosp.external_persons.external_data_manager-pysrc.html#ConnectionService.calculate_angle">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculate the angle between two lines identified by start and end 
+  points.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>start1</code></strong> (tuple (x, y)) - starting point of line one</li>
+        <li><strong class="pname"><code>end1</code></strong> (tuple (x, y)) - ending point of line one</li>
+        <li><strong class="pname"><code>start2</code></strong> (tuple (x, y)) - starting point of line two</li>
+        <li><strong class="pname"><code>end2</code></strong> (tuple (x, y)) - ending point of line two</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>angle in degrees as integer</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://bhenne.github.com/MoSP/">Mobile Security &amp; Privacy (MoSP) Simulator</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Jul  6 13:59:49 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -61,50 +61,51 @@
 <h1 class="epydoc">Class SimulationControlled</h1><p class="nomargin-top"><span class="codelink"><a href="mosp.controller-pysrc.html#SimulationControlled">source&nbsp;code</a></span></p>
 <center>
 <center>  <map id="uml_class_diagram_for_mosp_con_2" name="uml_class_diagram_for_mosp_con_2">
-<area shape="rect" id="node34" href="mosp.controller.SimulationControlled-class.html#__init__" title="Initialize the MOSP Simulation." alt="" coords="17,713,632,732"/>
-<area shape="rect" id="node34" href="mosp.controller.SimulationControlled-class.html#send_string" title="Send a string to the controller." alt="" coords="17,732,632,751"/>
-<area shape="rect" id="node34" href="mosp.controller.SimulationControlled-class.html#shutdownServer" title="Stops the simulation and closes connection to controller." alt="" coords="17,751,632,769"/>
-<area shape="rect" id="node34" href="mosp.controller.SimulationControlled-class.html#get_data_from_sim" title="Send all available data to the controller." alt="" coords="17,769,632,788"/>
-<area shape="rect" id="node34" href="mosp.controller.SimulationControlled-class.html#put_data_to_sim" title="Receive data from the controller." alt="" coords="17,788,632,807"/>
-<area shape="rect" id="node34" href="mosp.controller.SimulationControlled-class.html#enable_step" title="Receives the number of steps to and sets self.do_step accordingly." alt="" coords="17,807,632,825"/>
-<area shape="rect" id="node34" href="mosp.controller.SimulationControlled-class.html#identify" title="Send type, name and associated osm&#45;node&#45;id to controller." alt="" coords="17,825,632,844"/>
-<area shape="rect" id="node34" href="mosp.controller.SimulationControlled-class.html#register" title="Receive description data of other simulations and make them adressable." alt="" coords="17,844,632,863"/>
-<area shape="rect" id="node34" href="mosp.controller.SimulationControlled-class.html#process_data" title="Extract usable data from received message." alt="" coords="17,863,632,881"/>
-<area shape="rect" id="node34" href="mosp.controller.SimulationControlled-class.html#run" title="Run Simulation after setup in external&#45;controlled modus." alt="" coords="17,881,632,900"/>
-<area shape="rect" id="node34" href="mosp.controller.SimulationControlled-class.html#send_person" title="Prepare a person to be send to another simulation." alt="" coords="17,900,632,919"/>
-<area shape="rect" id="node1" href="mosp.controller.SimulationControlled-class.html" title="The MoSP Simulation, extended for use with an external controller." alt="" coords="5,681,643,925"/>
-<area shape="rect" id="node35" href="mosp.core.Simulation-class.html#geo" title="the geo&#45;modell of the Simulation" alt="" coords="145,409,505,428"/>
-<area shape="rect" id="node35" href="mosp.core.Simulation-class.html#messages" title="stores scheduled Calls of PersonGroups for execution as zombie&#39;s infect()" alt="" coords="145,428,505,447"/>
-<area shape="rect" id="node35" href="mosp.core.Simulation-class.html#monitors" title="contains all Monitors of the Simulation" alt="" coords="145,447,505,465"/>
-<area shape="rect" id="node35" href="mosp.core.Simulation-class.html#next_person_id" title="the next id that will be given to a new person" alt="" coords="145,465,505,484"/>
-<area shape="rect" id="node35" href="mosp.core.Simulation-class.html#person_alarm_clock" title="central Process for waking up Persons on pause" alt="" coords="145,484,505,503"/>
-<area shape="rect" id="node35" href="mosp.core.Simulation-class.html#persons" title="stores simulated Persons" alt="" coords="145,503,505,521"/>
-<area shape="rect" id="node35" href="mosp.core.Simulation-class.html#random" title="central simulation&#45;wide random generator" alt="" coords="145,521,505,540"/>
-<area shape="rect" id="node35" href="mosp.core.Simulation-class.html#removed_persons" title="stores removed Persons for later use" alt="" coords="145,540,505,559"/>
-<area shape="rect" id="node35" href="mosp.core.Simulation-class.html#__getstate__" title="Returns Simulation information for pickling using the pickle module." alt="" coords="145,561,505,580"/>
-<area shape="rect" id="node35" href="mosp.core.Simulation-class.html#add_monitor" title="Add a Monitor to Simulation to produce any kind of output." alt="" coords="145,580,505,599"/>
-<area shape="rect" id="node35" href="mosp.core.Simulation-class.html#add_persons" title="Add a Person to Simulation." alt="" coords="145,599,505,617"/>
-<area shape="rect" id="node35" href="mosp.core.Simulation-class.html#del_person" title="Remove a person from the simulation." alt="" coords="145,617,505,636"/>
-<area shape="rect" id="node35" href="mosp.core.Simulation-class.html#readd_person" title="Add a previously removed person to the simulation again." alt="" coords="145,636,505,655"/>
-<area shape="rect" id="node2" href="mosp.core.Simulation-class.html" title="A MOSP Simulation." alt="" coords="133,385,517,661"/>
-<area shape="rect" id="node37" href="javascript:void(0);" title="SimPy.Simulation.Simulation.initialize" alt="" coords="109,39,541,57"/>
-<area shape="rect" id="node37" href="javascript:void(0);" title="SimPy.Simulation.Simulation.now" alt="" coords="109,57,541,76"/>
-<area shape="rect" id="node37" href="javascript:void(0);" title="Application function to stop simulation run" alt="" coords="109,76,541,95"/>
-<area shape="rect" id="node37" href="javascript:void(0);" title="Returns string with eventlist as; t1: processname, processname2 t2: &#160;processname4, processname5, ." alt="" coords="109,95,541,113"/>
-<area shape="rect" id="node37" href="javascript:void(0);" title="Returns list of all times for which events are scheduled." alt="" coords="109,113,541,132"/>
-<area shape="rect" id="node37" href="javascript:void(0);" title="Application function to activate passive process." alt="" coords="109,132,541,151"/>
-<area shape="rect" id="node37" href="javascript:void(0);" title="Application function to reactivate a process which is active, suspended or &#160;passive." alt="" coords="109,151,541,169"/>
-<area shape="rect" id="node37" href="javascript:void(0);" title="Starts data collection of all designated Monitor and Tally objects (default = all) at time &#39;when&#39;." alt="" coords="109,169,541,188"/>
-<area shape="rect" id="node37" href="javascript:void(0);" title="Checks if there are events which can be processed." alt="" coords="109,188,541,207"/>
-<area shape="rect" id="node37" href="javascript:void(0);" title="Returns the time of the next event or infinity, if no more events are &#160;scheduled." alt="" coords="109,207,541,225"/>
-<area shape="rect" id="node37" href="javascript:void(0);" title="Executes the next uncancelled event in the eventqueue." alt="" coords="109,225,541,244"/>
-<area shape="rect" id="node3" href="javascript:void(0);" title="SimPy.Simulation.Simulation" alt="" coords="97,6,553,250"/>
-<area shape="rect" id="node36" href="javascript:void(0);" title="SimPy.SimulationRT.SimulationRT.rtnow" alt="" coords="169,303,481,321"/>
-<area shape="rect" id="node36" href="javascript:void(0);" title="Resets the ratio simulation time over clock time(seconds)." alt="" coords="169,321,481,340"/>
-<area shape="rect" id="node36" href="javascript:void(0);" title="Simulates until simulation time reaches ``until``." alt="" coords="169,340,481,359"/>
-<area shape="rect" id="node4" href="javascript:void(0);" title="SimPy.SimulationRT.SimulationRT" alt="" coords="157,270,493,365"/>
+<area shape="rect" id="node1_39" href="mosp.controller.SimulationControlled-class.html#__init__" title="Initialize the MOSP Simulation." alt="" coords="17,732,640,751"/>
+<area shape="rect" id="node1_40" href="mosp.controller.SimulationControlled-class.html#send_string" title="Send a string to the controller." alt="" coords="17,751,640,769"/>
+<area shape="rect" id="node1_41" href="mosp.controller.SimulationControlled-class.html#shutdownServer" title="Stops the simulation and closes connection to controller." alt="" coords="17,769,640,788"/>
+<area shape="rect" id="node1_42" href="mosp.controller.SimulationControlled-class.html#get_data_from_sim" title="Send all available data to the controller." alt="" coords="17,788,640,807"/>
+<area shape="rect" id="node1_43" href="mosp.controller.SimulationControlled-class.html#put_data_to_sim" title="Receive data from the controller." alt="" coords="17,807,640,825"/>
+<area shape="rect" id="node1_44" href="mosp.controller.SimulationControlled-class.html#enable_step" title="Receives the number of steps to and sets self.do_step accordingly." alt="" coords="17,825,640,844"/>
+<area shape="rect" id="node1_45" href="mosp.controller.SimulationControlled-class.html#identify" title="Send type, name and associated osm&#45;node&#45;id to controller." alt="" coords="17,844,640,863"/>
+<area shape="rect" id="node1_46" href="mosp.controller.SimulationControlled-class.html#register" title="Receive description data of other simulations and make them adressable." alt="" coords="17,863,640,881"/>
+<area shape="rect" id="node1_47" href="mosp.controller.SimulationControlled-class.html#process_data" title="Extract usable data from received message." alt="" coords="17,881,640,900"/>
+<area shape="rect" id="node1_48" href="mosp.controller.SimulationControlled-class.html#run" title="Run Simulation after setup in external&#45;controlled modus." alt="" coords="17,900,640,919"/>
+<area shape="rect" id="node1_49" href="mosp.controller.SimulationControlled-class.html#send_person" title="Prepare a person to be send to another simulation." alt="" coords="17,919,640,937"/>
+<area shape="rect" id="node1" href="mosp.controller.SimulationControlled-class.html" title="The MoSP Simulation, extended for use with an external controller." alt="" coords="5,699,651,943"/>
+<area shape="rect" id="node2_50" href="mosp.core.Simulation-class.html#geo" title="the geo&#45;modell of the Simulation" alt="" coords="147,409,511,428"/>
+<area shape="rect" id="node2_51" href="mosp.core.Simulation-class.html#messages" title="stores scheduled Calls of PersonGroups for execution as zombie&#39;s infect()" alt="" coords="147,428,511,447"/>
+<area shape="rect" id="node2_52" href="mosp.core.Simulation-class.html#monitors" title="contains all Monitors of the Simulation" alt="" coords="147,447,511,465"/>
+<area shape="rect" id="node2_53" href="mosp.core.Simulation-class.html#next_person_id" title="the next id that will be given to a new person" alt="" coords="147,465,511,484"/>
+<area shape="rect" id="node2_54" href="mosp.core.Simulation-class.html#person_alarm_clock" title="central Process for waking up Persons on pause" alt="" coords="147,484,511,503"/>
+<area shape="rect" id="node2_55" href="mosp.core.Simulation-class.html#persons" title="stores simulated Persons" alt="" coords="147,503,511,521"/>
+<area shape="rect" id="node2_56" href="mosp.core.Simulation-class.html#random" title="central simulation&#45;wide random generator" alt="" coords="147,521,511,540"/>
+<area shape="rect" id="node2_57" href="mosp.core.Simulation-class.html#removed_persons" title="stores removed Persons for later use" alt="" coords="147,540,511,559"/>
+<area shape="rect" id="node2_58" href="mosp.core.Simulation-class.html#__getstate__" title="Returns Simulation information for pickling using the pickle module." alt="" coords="147,561,511,580"/>
+<area shape="rect" id="node2_59" href="mosp.core.Simulation-class.html#add_monitor" title="Add a Monitor to Simulation to produce any kind of output." alt="" coords="147,580,511,599"/>
+<area shape="rect" id="node2_60" href="mosp.core.Simulation-class.html#add_persons" title="Add a Person to Simulation." alt="" coords="147,599,511,617"/>
+<area shape="rect" id="node2_61" href="mosp.core.Simulation-class.html#del_person" title="Remove a person from the simulation." alt="" coords="147,617,511,636"/>
+<area shape="rect" id="node2_62" href="mosp.core.Simulation-class.html#get_person" title="Find a person by its ID." alt="" coords="147,636,511,655"/>
+<area shape="rect" id="node2_63" href="mosp.core.Simulation-class.html#readd_person" title="Add a previously removed person to the simulation again." alt="" coords="147,655,511,673"/>
+<area shape="rect" id="node2" href="mosp.core.Simulation-class.html" title="A MOSP Simulation." alt="" coords="134,385,522,679"/>
+<area shape="rect" id="node3_64" href="javascript:void(0);" title="SimPy.SimulationRT.SimulationRT.rtnow" alt="" coords="171,303,487,321"/>
+<area shape="rect" id="node3_65" href="javascript:void(0);" title="Resets the ratio simulation time over clock time(seconds)." alt="" coords="171,321,487,340"/>
+<area shape="rect" id="node3_66" href="javascript:void(0);" title="Simulates until simulation time reaches ``until``." alt="" coords="171,340,487,359"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="SimPy.SimulationRT.SimulationRT" alt="" coords="158,270,498,365"/>
+<area shape="rect" id="node4_67" href="javascript:void(0);" title="SimPy.Simulation.Simulation.initialize" alt="" coords="111,39,547,57"/>
+<area shape="rect" id="node4_68" href="javascript:void(0);" title="SimPy.Simulation.Simulation.now" alt="" coords="111,57,547,76"/>
+<area shape="rect" id="node4_69" href="javascript:void(0);" title="Application function to stop simulation run" alt="" coords="111,76,547,95"/>
+<area shape="rect" id="node4_70" href="javascript:void(0);" title="Returns string with eventlist as; t1: processname, processname2 t2: &#160;processname4, processname5, ." alt="" coords="111,95,547,113"/>
+<area shape="rect" id="node4_71" href="javascript:void(0);" title="Returns list of all times for which events are scheduled." alt="" coords="111,113,547,132"/>
+<area shape="rect" id="node4_72" href="javascript:void(0);" title="Application function to activate passive process." alt="" coords="111,132,547,151"/>
+<area shape="rect" id="node4_73" href="javascript:void(0);" title="Application function to reactivate a process which is active, suspended or &#160;passive." alt="" coords="111,151,547,169"/>
+<area shape="rect" id="node4_74" href="javascript:void(0);" title="Starts data collection of all designated Monitor and Tally objects (default = all) at time &#39;when&#39;." alt="" coords="111,169,547,188"/>
+<area shape="rect" id="node4_75" href="javascript:void(0);" title="Checks if there are events which can be processed." alt="" coords="111,188,547,207"/>
+<area shape="rect" id="node4_76" href="javascript:void(0);" title="Returns the time of the next event or infinity, if no more events are &#160;scheduled." alt="" coords="111,207,547,225"/>
+<area shape="rect" id="node4_77" href="javascript:void(0);" title="Executes the next uncancelled event in the eventqueue." alt="" coords="111,225,547,244"/>
+<area shape="rect" id="node4" href="javascript:void(0);" title="SimPy.Simulation.Simulation" alt="" coords="98,6,558,250"/>
 </map>
-  <img src="uml_class_diagram_for_mosp_con_2.png" alt='' usemap="#uml_class_diagram_for_mosp_con_2" ismap="ismap" class="graph-without-title" />
+  <img src="uml_class_diagram_for_mosp_con_2.gif" alt='' usemap="#uml_class_diagram_for_mosp_con_2" ismap="ismap" class="graph-without-title" />
 </center>
 </center>
 <hr />
@@ -344,6 +345,7 @@
       <code><a href="mosp.core.Simulation-class.html#add_monitor">add_monitor</a></code>,
       <code><a href="mosp.core.Simulation-class.html#add_persons">add_persons</a></code>,
       <code><a href="mosp.core.Simulation-class.html#del_person">del_person</a></code>,
+      <code><a href="mosp.core.Simulation-class.html#get_person">get_person</a></code>,
       <code><a href="mosp.core.Simulation-class.html#readd_person">readd_person</a></code>
       </p>
     <p class="indent-wrapped-lines"><b>Inherited from <code>SimPy.SimulationRT.SimulationRT</code></b>:
@@ -800,7 +802,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Apr 24 12:38:27 2012
+    Generated by Epydoc 3.0.1 on Sun Jul  6 13:59:48 2014
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
