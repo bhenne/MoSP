@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <Switch
+        android:id="@+id/serviceSwitch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/switch_text"
+        android:textOn="@string/switch_on"
+        android:textOff="@string/switch_off"
+        android:checked="true"/>
+    <View 
+        android:layout_width="fill_parent"
+		android:layout_height="1dip"
+		android:background="@android:color/white"/>
+    <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/overviewTitle"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"/>
+    <View 
+        android:layout_width="fill_parent"
+		android:layout_height="1dip"
+		android:background="@android:color/darker_gray"/>
+    
+    <ListView 
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:id="@+id/overviewList">
+    </ListView>
+<!--     <ScrollView  -->
+<!--         android:layout_height="fill_parent" -->
+<!--         android:layout_width="fill_parent"> -->
+<!--         <TextView  -->
+<!--             android:id="@+id/overviewText" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_width="fill_parent"/> -->
+<!--     </ScrollView> -->
+
+</LinearLayout>

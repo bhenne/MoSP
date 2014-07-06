@@ -26,6 +26,7 @@ class World(object):
         calculate_grid() must be called after all objects have been loaded."""
         self.grid_size = int(grid_size)
         self.obj = set()
+        self.free_obj = set()
         self.grid = {}
 
     def add(self, obj):
@@ -108,7 +109,7 @@ class World(object):
         """Checks all registered walkable objects for a collision with a
         given circle. Simplest implementation, least performance."""
         re = set()
-        for obj in self.obj:
+        for obj in self.obj | self.free_obj:
             if obj.collide_circle(x, y, radius):
                 re.add(obj)
         return re
@@ -131,6 +132,7 @@ class World(object):
 
         # set() pos contains all objects that have to be tested for collision
         pos = rect.get(r_x, {}).get(r_y, set())
+        pos = pos | self.free_obj
 
         # check direct neighbor grid segments
         top = bottom = left = right = False
@@ -200,6 +202,7 @@ class World(object):
 
         # set() pos contains all objects that have to be tested for collision
         pos = rect.get(r_x, {}).get(r_y, set())
+        pos = pos | self.free_obj
         
         # Lines are boundaries of segment r_x, r_y
         top_line = Line(r_x, r_y, r_x + grid_size, r_y)
@@ -269,7 +272,7 @@ class World(object):
     def collide_rectangle(self, x_min, y_min, x_max, y_max):
         """Checks all registered walkable objects for a collision with a given rectangle."""
         re = set()
-        for obj in self.obj:
+        for obj in self.obj | self.free_obj:
             if obj.collide_rectangle(x_min, y_min, x_max, y_max):
                 re.add(obj)
         return re

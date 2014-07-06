@@ -305,7 +305,7 @@ class OSMModel(collide.World):
                 y < min_y or
                 y > max_y)
         
-    def initialize(self, sim):
+    def initialize(self, sim, enable_routing=True):
         """Initializes the model by parsing and manipulating OSM XML data."""
         #parse osm file
         parser = xml.sax.make_parser()
@@ -465,16 +465,21 @@ class OSMModel(collide.World):
         pass # replaces next logging statement
         #logging.debug('created borders %.2f' % (time.time() - t))
 
-        t = time.time()
-        routing.calc(self.way_nodes, self.path[:-4])
-        #routing.calc(self.nodes, self.path[:-4]+'_exits', setup=True)   # setup=True as quick fix for broken routing data after adding exit nodes => TODO: fix later
-        pass # replaces next logging statement
-        #logging.debug('routing.calc 2 %.2fs' % (time.time() - t))
+        if enable_routing:
+            t = time.time()
+            routing.calc(self.way_nodes, self.path[:-4])
+            #routing.calc(self.nodes, self.path[:-4]+'_exits', setup=True)   # setup=True as quick fix for broken routing data after adding exit nodes => TODO: fix later
+            pass # replaces next logging statement
+            #logging.debug('routing.calc 2 %.2fs' % (time.time() - t))
 
         t = time.time()
         self.calculate_grid(cache_base_path=self.path[:-4])
         pass # replaces next logging statement
         #logging.debug('calculate_grid colliding %.2fs' % (time.time() - t))
+
+        if not enable_routing:
+            for node in self.way_nodes:
+                node.neighbors = {}
         
         self.way_nodes_by_id = {}
         for node in self.way_nodes:

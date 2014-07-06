@@ -219,3 +219,53 @@ def calc(nodes, path=None, dist=True, check=True, setup=True):
         for node in nodes:
             node.cleanup()
 
+
+def slow_calc(nodes, path=None, dist=True, check=True, setup=True):
+    """Calculate routing tables in a slower, but memory-saving way.
+
+    This method should be used, when big maps are used.
+
+    @param path: sets the base path. It is used to save a cached version of
+    the routing tables
+    
+    @param dist: if set to false the distance between every node to every
+    other node is not held in memory
+    
+    @param check: even if the routing tables are loaded from cache files its
+    checked if they are complete - by doing at least one
+    routing iteration. If check is false this is skipped
+    @author: P. Tute
+    """
+    import networkx as nx
+    graph = nx.Graph()
+    cache = None
+    if path:
+        cache_path = path + '.routes'
+        cache_path_bz2 = cache_path + '.bz2'
+        if os.path.exists(cache_path_bz2):
+            cache = bz2.BZ2File(cache_path_bz2)
+        elif os.path.exists(cache_path):
+            cache = open(cache_path)
+
+    nodes_num = float(len(nodes))
+    if cache:
+        pass # replaces next logging statement
+        #logging.debug('using %s for routing cache' % cache)
+        cache_nodes_num = struct.unpack('!I', cache.read(4))[0]
+        # TODO fix reading of cached routes for networkx!!!
+        if cache_nodes_num == len(nodes):
+            setup = False
+            for node in nodes:
+                node.route_next = array.array('B')
+                node.route_next.fromstring(cache.read(len(nodes)))
+                if dist or check:
+                    node.route_dist = array.array('H')
+                    node.route_dist.fromstring(cache.read(len(nodes)*2))
+
+    if setup:
+        # fill graph with nodes and edges
+        graph.add_nodes_from(nodes)
+        for node in nodes:
+            for neigh in node.neighbors:
+                graph.add_edge(node, neigh, {'dist': node.neighbors[neigh]})
+

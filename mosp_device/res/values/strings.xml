@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MoSP Mobile Device</string>
+
+    <string name="notification_text">MoSP Service is running</string>
+    
+    <string name="switch_text">MoSP Service</string>
+    <string name="switch_on">Running</string>
+    <string name="switch_off">Stopped</string>
+    
+    <string name="overviewTitle">Sent locations:</string>
+    
+    <string name="refresh">Refresh</string>
+    <string name="clear">Clear</string>
+    
+    <string name="prefsMenuItem">Settings</string>
+    <string name="prefsNotificationTitle">Show notification</string>
+    <string name="prefsNotificationSummaryOn">Notification is shown while service is running</string>
+    <string name="prefsNotificationSummaryOff">No notification while service is running</string>
+    <string name="prefsHostAddressTitle">Host address</string>
+    <string name="prefsHostAddressSummary">Address of the host running the MoSP web service</string>
+    <string name="prefsHostPortTitle">Host port</string>
+    <string name="prefsHostPortSummary">Port of the MoSP web service on the specified host</string>
+    <string name="prefsPersonIdTitle">Person ID</string>
+    <string name="prefsPersonIdSummary">ID that is used for this person in MoSP</string>
+    
+    <string name="invalidHostTitle">Invalid host data!</string>
+    <string name="invalidHostInfo">Please enter valid host data in settings.</string>
+    
+    <string name="errorConnectionTitle">Error while sending data</string>
+    <string name="errorConnectionInfo">An error occured while sending location…</string>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/noteMenuCancel"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:title="@string/noteMenuCancel">
+    </item>
+<<<<<<< .mine
+    <item android:id="@+id/noteMenuDraw"
+        android:title="@string/noteMenuDraw"
+        android:icon="@android:drawable/ic_menu_edit">
+=======
+    <item
+        android:id="@+id/noteMenuDraw"
+        android:icon="@android:drawable/picture_frame"
+        android:title="@string/noteMenuDraw">
+>>>>>>> .r23
+    </item>
+
+</menu>

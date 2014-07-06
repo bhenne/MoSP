@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+<!--     <ListPreference android:title="@string/prefsThemeTitle" -->
+<!--         android:summary="@string/prefsThemeSummary" -->
+<!--         android:key="theme" -->
+<!--         android:entries="@array/prefsThemeItems" android:entryValues="@array/prefsThemeValues" -->
+<!--         android:persistent="true" android:defaultValue="0" -->
+<!--     	android:shouldDisableView="false" > -->
+<!--     </ListPreference> -->
+    
+    <CheckBoxPreference android:title="@string/prefsNotificationTitle"
+        android:summaryOn="@string/prefsNotificationSummaryOn"
+        android:summaryOff="@string/prefsNotificationSummaryOff"
+        android:key="notification"
+        android:persistent="true"
+        android:defaultValue="true"
+	/>
+    
+    <EditTextPreference android:title="@string/prefsHostAddressTitle"
+        android:dialogTitle="@string/prefsHostAddressTitle"
+        android:key="address"
+        android:persistent="true"
+        android:summary="@string/prefsHostAddressSummary"
+    />
+
+    <EditTextPreference android:title="@string/prefsHostPortTitle"
+        android:dialogTitle="@string/prefsHostPortTitle"
+        android:key="port"
+        android:persistent="true"
+        android:summary="@string/prefsHostPortSummary"
+        android:numeric="integer"
+    />
+    
+    <EditTextPreference android:title="@string/prefsPersonIdTitle"
+        android:dialogTitle="@string/prefsPersonIdTitle"
+        android:key="id"
+        android:persistent="true"
+        android:summary="@string/prefsPersonIdSummary"
+        android:numeric="integer"
+    />
+    
+</PreferenceScreen>

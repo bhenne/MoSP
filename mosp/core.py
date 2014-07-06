@@ -98,6 +98,19 @@ class Simulation(SimulationRT.SimulationRT):
             self.activate(pers, pers.go(), 0)
             self.persons.add(pers)
 
+    def get_person(self, id):
+        """Find a person by its ID.
+
+        @param: the ID of the person
+        @return: the person or None, if the ID was not found
+
+        """
+        result = self.persons.filter(p_id=id)
+        if len(result) == 1:
+            return result.pop()
+        else:
+            return None
+
     def del_person(self, person):
         """Remove a person from the simulation.
 
@@ -159,8 +172,22 @@ class Simulation(SimulationRT.SimulationRT):
         self.rtset(self.rel_speed)
 
         last_event_time = 0
+        avg_delta = 0
         while self._timestamps and not self._stop:
             next_event_time = self.peek()
+
+            # new implementation of real_time, only rel_speed = 1
+            if real_time and self.rel_speed == 1:
+                now = time.time()
+                sim_now = self.start_timestamp + self.now()
+                delta = now - sim_now
+                #avg_delta = 0.8 * avg_delta + 0.2 * delta
+
+                #print '-'*50
+                #print 'delta (>0, wenn sim zu langsam)', delta
+                #print 'avg_delta', avg_delta
+                if delta < 0:
+                    time.sleep(-delta)
 
             if last_event_time != next_event_time:
                 pass # replaces next logging statement
@@ -169,12 +196,15 @@ class Simulation(SimulationRT.SimulationRT):
                 if next_event_time > until:
                     break
 
-                if real_time:
-                    delay = (
-                            next_event_time / self.rel_speed -
-                            (self.wallclock() - self.rtstart)
-                    )
-                    if delay > 0: time.sleep(delay)
+                #print '-'*50
+                #print 'delta (>0, wenn sim zu langsam)', delta
+                #print 'avg_delta', avg_delta
+                if real_time and self.rel_speed != 1: 
+                    delay = ( 
+                            next_event_time / self.rel_speed - 
+                            (self.wallclock() - self.rtstart) 
+                            ) 
+                    if delay > 0: time.sleep(delay) 
 
                 # do communication stuff
                 while self.messages and self.messages[0].time < next_event_time:
@@ -400,7 +430,11 @@ class Person(SimulationRT.Process, collide.Point):
         """Checks if this person collides with the given circle.
         Overwrites point.collide_circle for performance optimization:
         call current_coords only once per x-y-pair"""
-        selfx, selfy = self.current_coords()
+        current_coords = self.current_coords()
+        if current_coords is None:
+            # Might happen when an external person did not receive coordinates yet
+            return False
+        selfx, selfy = current_coords
         return math.sqrt((selfx - x)**2 + (selfy - y)**2) <= radius
 
     def collide_rectangle(self, x_min, y_min, x_max, y_max):
@@ -491,7 +525,7 @@ class Person(SimulationRT.Process, collide.Point):
         if self.last_node == self.next_node:
             self._duration = 0
         else:
-            self._duration = int(math.ceil(distN2N(self.last_coord, self.target_coord) / self.p_speed))
+            self._duration = self.calculate_duration()
         # the actual go-loop
         while True:
             yield hold, self, max(sleep, 1)
@@ -506,7 +540,7 @@ class Person(SimulationRT.Process, collide.Point):
                 self.handle_interrupts()
                 self.last_coord = self.current_coords()
                 # this also handles changes in speed due to recalculating self._duration
-                self._duration = int(math.ceil(distN2N(self.last_coord, self.target_coord) / self.p_speed))
+                self._duration = self.calculate_duration()
             sleep = self.think()
             # stop actions if necessary
             if self.stop_all_actions:
@@ -547,16 +581,20 @@ class Person(SimulationRT.Process, collide.Point):
                     # double code here? target_coord must be calculated (again) after next way of user has been set
                     # To Be Refactured
                     self.target_coord = self.next_target_coord()
-                    self._duration = int(math.ceil(distN2N(self.last_coord, self.target_coord) / self.p_speed))
+                    self._duration = self.calculate_duration()
                 self._start_time = self.sim.now()
             # determine length of sleep
-            self._duration = max(int(math.ceil(distN2N(self.last_coord, self.target_coord) / self.p_speed)),
+            self._duration = max(self.calculate_duration(),
                                  1)
             if sleep < 1:
                 sleep = self._duration
             else:
                 sleep = min(sleep, self._duration)
             #move
+
+    def calculate_duration(self):
+        """Calculate the time needed for walking to the next node."""
+        return int(math.ceil(distN2N(self.last_coord, self.target_coord) / self.p_speed))
 
     def reactivate(self, at = 'undefined', delay = 'undefined', prior = False):
         """Reactivates passivated person and optionally restarts stopped actions."""
@@ -688,13 +726,22 @@ class Person(SimulationRT.Process, collide.Point):
         @param self_included: if True, this Person itself is included in resulting PersonGroup
         @return: PersonGroup containing all Persons in distance
         @rtype: mosp.group.PersonGroup"""
-        x, y = self.current_coords()
+        current_coords = self.current_coords()
         re = group.PersonGroup()
-        for segment in self.sim.geo.collide_circle(x, y, dist):
-            for person in segment.persons:
-                if person.collide_circle(x, y, dist):
-                    if self_included or person != self:
-                        re.add(person)
+        if current_coords is None:
+            # Person does not have coordinates yet. This might happen with external devices as persons.
+            return re
+        x, y = current_coords
+        for element in self.sim.geo.collide_circle(x, y, dist):
+            if isinstance(element, Person):
+                if element.collide_circle(x, y, dist):
+                    if self_included or element != self:
+                        re.add(element)
+            else:
+                for person in element.persons:
+                    if person.collide_circle(x, y, dist):
+                        if self_included or person != self:
+                            re.add(person)
         return re
 
     def readd_actions(self):

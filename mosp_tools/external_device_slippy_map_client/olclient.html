@@ -1,0 +1,142 @@
+<html>
+     
+    <head>
+         
+        <title>
+            OpenLayers-based MoSP external device test client
+        </title>
+         <style type="text/css">
+         html, body, #basicMap {
+         width: 800px;
+         height: 400px;
+         margin: 0;
+         }
+         </style>
+         
+        <script src="http://www.openlayers.org/api/OpenLayers.js">
+        </script>
+         
+        <script>
+             function init() {
+             map = new OpenLayers.Map("basicMap");
+             var mapnik = new OpenLayers.Layer.OSM();
+             var fromProjection = new OpenLayers.Projection("EPSG:4326"); // Transform from WGS 1984
+             var toProjection = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+             var position = new OpenLayers.LonLat(9.723091,52.379282).transform(fromProjection, toProjection);
+             var zoom = 16; 
+            
+             map.addControl(
+             new OpenLayers.Control.MousePosition({
+             prefix: '<a target="_blank" ' +
+             'href="http://spatialreference.org/ref/epsg/4326/">' +
+             'EPSG:4326</a> coordinates: ',
+             separator: ' | ',
+             numDigits: 6,
+             displayProjection: fromProjection,
+             emptyString: 'Mouse is not over map.'
+             })
+             );
+             
+             map.addLayer(mapnik);
+             map.setCenter(position, zoom);
+            
+             OpenLayers.Control.Click = OpenLayers.Class(OpenLayers.Control, { 
+             defaultHandlerOptions: {
+             'single': true,
+             'double': false,
+             'pixelTolerance': 0,
+             'stopSingle': false,
+             'stopDouble': false
+             },
+            
+             initialize: function(options) {
+             this.handlerOptions = OpenLayers.Util.extend(
+             {}, this.defaultHandlerOptions
+             );
+             OpenLayers.Control.prototype.initialize.apply(
+             this, arguments
+             ); 
+             this.handler = new OpenLayers.Handler.Click(
+             this, {
+             'click': this.trigger
+             }, this.handlerOptions
+             );
+             }, 
+            
+             trigger: function(e) {
+             var lonlat = map.getLonLatFromPixel(e.xy);
+             var ll = lonlat.transform(toProjection, fromProjection);
+             // alert("You clicked near " + lonlat.lat + " N, " + lonlat.lon + " E");
+             var getUrl = document.getElementById('surl').value+'?id='+document.getElementById('pid').value+'&lat='+lonlat.lat+'&lon='+lonlat.lon+'&acc='+document.getElementById('acc').value;
+             document.getElementById('lat').value = lonlat.lat;
+             document.getElementById('lon').value = lonlat.lon;
+             document.getElementById('lastcall').innerText = getUrl;
+             xmlHttpObject.open('get', getUrl);
+             xmlHttpObject.onreadystatechange = setstate;
+             xmlHttpObject.send(null);
+             }
+            
+             });
+            
+             var click = new OpenLayers.Control.Click();
+             map.addControl(click);
+             click.activate();
+            
+            var xmlHttpObject = false;
+            if (typeof XMLHttpRequest != 'undefined')
+            {
+             xmlHttpObject = new XMLHttpRequest();
+            }
+            if (!xmlHttpObject)
+            {
+             try
+             {
+             xmlHttpObject = new ActiveXObject("Msxml2.XMLHTTP");
+             }
+             catch(e)
+             {
+             try
+             {
+             xmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+             }
+             catch(e)
+             {
+             xmlHttpObject = null;
+             }
+             }
+            }
+             
+            function setstate() {
+             if (xmlHttpObject.readyState == 4)
+             {
+             // alert("Request wurde erfolgreich verarbeitet.");
+             document.getElementById('lastcall').innerText = document.getElementById('lastcall').innerText + ' -- OK.'
+             }
+            } 
+            
+             }
+        </script>
+    </head>
+     
+    <body onload="init();">
+         
+        <div id="lastcall">
+        </div>
+         
+        <div id="basicMap">
+        </div>
+         
+        <div id="params">
+             
+            <form>
+                 URL: <input type="text" id="surl" value="http://prisim.dcsec.uni-hannover.de:8080/dummylocation" size="75"/><br />
+                 Person ID: <input type="text" id="pid" value="0" size="3" /><br />
+                 Latitude: <input type="text" id="lat" value="" size="10" readonly="readonly"/><br />
+                 Longitude: <input type="text" id="lon" value="" size="10" readonly="readonly"/><br />
+                 Accuracy: <input type="text" id="acc" value="10" size="4" /><br />
+            </form>
+             
+        </div>
+         
+    </body>
+</html>

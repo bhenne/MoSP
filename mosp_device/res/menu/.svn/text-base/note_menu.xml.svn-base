@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/noteMenuCancel"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:title="@string/noteMenuCancel">
+    </item>
+    <item
+        android:id="@+id/noteMenuDraw"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="@string/noteMenuEnableDraw"
+        android:checkable="true"
+        android:checked="false">
+    </item>
+    <item 
+		android:id="@+id/noteMenuColor"
+		android:icon="@android:drawable/ic_menu_edit"
+		android:title="@string/painterColor"
+        android:visible="false">
+    </item>
+	<item 
+		android:id="@+id/noteMenuEraser"
+		android:icon="@android:drawable/ic_menu_edit"
+		android:title="@string/painterErase"
+		android:checkable="true"
+		android:checked="false"
+        android:visible="false">
+    </item>
+    
+</menu>

@@ -217,6 +217,8 @@ class SocketPlayerMonitor(EmptyMonitor):
             yield hold, self, self.tick
             for pers in self:
                 pos = pers.current_coords()
+                if pos is None:
+                    continue
                 lon, lat = utm.utm_to_latlong(pos[0], pos[1], self.sim.geo.zone)
                 (r, g, b, a) = pers.p_color_rgba
                 ttl = 0

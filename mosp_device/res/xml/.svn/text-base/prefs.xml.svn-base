@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+<!--     <ListPreference android:title="@string/prefsThemeTitle" -->
+<!--         android:summary="@string/prefsThemeSummary" -->
+<!--         android:key="theme" -->
+<!--         android:entries="@array/prefsThemeItems" android:entryValues="@array/prefsThemeValues" -->
+<!--         android:persistent="true" android:defaultValue="0" -->
+<!--     	android:shouldDisableView="false" > -->
+<!--     </ListPreference> -->
+    
+    <CheckBoxPreference android:title="@string/prefsLocationTitle"
+        android:summaryOn="@string/prefsLocationSummaryTrue"
+        android:summaryOff="@string/prefsLocationSummaryFalse"
+        android:key="location"
+        android:persistent="true" android:defaultValue="true">
+    </CheckBoxPreference>
+
+</PreferenceScreen>
