@@ -87,7 +87,7 @@ class SimViewer(pyglet.window.Window):
     
     """
 
-    def __init__(self, lat=0, lon=0, zoom=15, host='localhost', port=60001, **kwargs):
+    def __init__(self, lat=0, lon=0, zoom=15, host='localhost', port=60001, ugly_drag=False, **kwargs):
         """Initialize the viewer.
 
         @param lat: Latitude to center view on (default 0).
@@ -100,6 +100,7 @@ class SimViewer(pyglet.window.Window):
         @type host: string
         @param port: The port used by the simulation (default 60001).
         @type port: int
+        @param ugly_drag: If set to True, dragging the map with the mouse will look uglier, but run faster (default False).
         @param kwargs: @see http://pyglet.org/doc/api/pyglet.window.Window-class.html#__init__
         
         """
@@ -117,6 +118,7 @@ class SimViewer(pyglet.window.Window):
         self.center_lat, self.center_lon = tiles.xy2latlon(self.center_x, self.center_y, self.zoom)
         self.default_lat, self.default_lon = self.center_lat, self.center_lon
         self.offset_x , self.offset_y = 0, 0
+        self.ugly_drag = ugly_drag
 
         self.cache_dir = '.cache'
         self.data_dir = 'data'
@@ -243,15 +245,16 @@ class SimViewer(pyglet.window.Window):
             print 'connected'
         except socket.error as (errno, message):
             if errno == 115:    # Linux
-            #if errno == 36:    # OS X
                 # [Errno 115] Operation now in progress
                 # ... since we use non-blocking sockets
                 # this exception is not needed
                 pass
+            elif errno == 36:   # same for OS X
+                pass
             else:
                 print 'error while connecting'
                 print '\t', errno, message
-                raise socket.error, (errno, message)
+                raise
 
         pyglet.clock.schedule_interval(self.receive, 1/30.0)
         pyglet.clock.schedule_interval(self.on_draw, 1/60.0)
@@ -362,9 +365,10 @@ class SimViewer(pyglet.window.Window):
                     break
             except socket.error as (errno, msg):
                 if errno != 11:
+                    raise
+                else:
                     # [Errno 11] Resource temporarily unavailable
-                    # this can happen an can be ignored
-                    print '\t', msg
+                    # might happen, if no data is available from the simulation, try again later
                     break
 
     def update_coordinates(self, points=None, rects=None, circles=None, triangles=None, texts=None, hms=None, all=False):
@@ -737,6 +741,7 @@ class SimViewer(pyglet.window.Window):
 
         self.update_coordinates(all=True)
         self.update_vertex_lists()
+        self.on_draw()
 
     def meters_to_pixels(self, m):
         """Calculate the number of pixels that equal the given distance in.
@@ -935,6 +940,8 @@ class SimViewer(pyglet.window.Window):
             self.mouse_drag = True
             self.offset_x = self.offset_x + dx
             self.offset_y = self.offset_y + dy
+            if not self.ugly_drag:
+                self.update_vertex_lists()
 
     def on_mouse_release(self, x, y, buttons, modifiers):
         """This is called by pyglet when a mouse button is released.
@@ -945,7 +952,7 @@ class SimViewer(pyglet.window.Window):
 
         if buttons & mouse.LEFT and self.mouse_drag:
             self.mouse_drag = False
-            self.handle_offset()
+            self.handle_offset(update_tiles=self.ugly_drag)
 
     def on_mouse_scroll(self, x, y, scroll_x, scroll_y):
         """This is called by pyglet when the mouse-wheel is scrolled.
@@ -956,14 +963,15 @@ class SimViewer(pyglet.window.Window):
 
         self.change_zoom(scroll_y)
 
-    def handle_offset(self):
+    def handle_offset(self, update_tiles=True):
         """Check, if new tiles need to be loaded because of the current offset.
 
         If the offset is bigger than one tile, the appropriate tile
         will become the new center and the offset is changed accordingly.
 
-        """
+        @param update_tiles: If True, self.update_tiles() will be called after adjusting for offset (default).
 
+        """
         #Casts to float and back to int while calculating center are necessary
         #because python floors the results for integer division:
         #8.0 / (-7.0) = -1.143 --> rounded down to -2
@@ -974,7 +982,8 @@ class SimViewer(pyglet.window.Window):
         self.offset_y = (self.offset_y % TILE_SIZE if self.offset_y >= 0
                          else -(-self.offset_y % TILE_SIZE))
         self.center_lat, self.center_lon = tiles.xy2latlon(self.center_x, self.center_y, self.zoom)
-        self.update_tiles()
+        if update_tiles:
+            self.update_tiles()
 
     def remove_drawing(self, dt, type, id):
         """Remove a drawing-object from the viewer.
